@@ -13,6 +13,6 @@ public class Activity2 extends Activity {
 		setContentView(R.layout.activity_activity2);
 		
 		TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-		Activity1.data1 = telephonyManager.getDeviceId();
+		Activity1.data1 = telephonyManager.getDeviceId(); //source
 	}
 }
