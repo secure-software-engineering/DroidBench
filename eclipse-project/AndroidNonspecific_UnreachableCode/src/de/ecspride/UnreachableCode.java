@@ -5,7 +5,17 @@ import android.content.Context;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.util.Log;
-
+/**
+ * @testcase_name LogNoLeak
+ * @version 0.1
+ * @author Secure Software Engineering Group (SSE), European Center for Security and Privacy by Design (EC SPRIDE) 
+ * @author_mail siegfried.rasthofer@cased.de
+ * 
+ * @description A method that is never called contains a dataflow from source to sink
+ * @dataflow source -> deviceid -> sink
+ * @number_of_leaks 1
+ * @challenges the analysis has to discover that the unit is not called
+ */
 public class UnreachableCode extends Activity {
 
     @Override
@@ -17,9 +27,9 @@ public class UnreachableCode extends Activity {
     //this method is never called
   	private void unrechable(){
   		TelephonyManager tm =(TelephonyManager)getBaseContext().getSystemService(Context.TELEPHONY_SERVICE);
-  		String deviceid = tm.getDeviceId();
+  		String deviceid = tm.getDeviceId(); //source
   		
-  		Log.i("INFO", deviceid);
+  		Log.i("INFO", deviceid); //sink
   	}
     
 }

