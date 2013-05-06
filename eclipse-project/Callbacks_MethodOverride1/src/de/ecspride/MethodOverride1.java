@@ -12,7 +12,6 @@ import android.util.Log;
  * @author_mail siegfried.rasthofer@cased.de
  * 
  * @description This example contains a location information leakage in the attachBaseContext(Context base) callback method.
- 
  * @dataflow attachBaseContext: source -> uid -> sink 
  * @number_of_leaks 1
  * @challenges the analysis must be able to detect the leak in an internal Android method that is overwritten.
