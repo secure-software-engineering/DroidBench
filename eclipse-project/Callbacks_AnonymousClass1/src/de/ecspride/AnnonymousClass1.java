@@ -60,6 +60,6 @@ public class AnnonymousClass1 extends Activity {
     @Override
 	protected void onResume(){
 		super.onResume();
-		Log.i("TAG", "Latitude: " + latitude + "Longtitude: " + longitude); //sink
+		Log.i("TAG", "Latitude: " + latitude + "Longtitude: " + longitude); //sink, two leaks
 	}
 }

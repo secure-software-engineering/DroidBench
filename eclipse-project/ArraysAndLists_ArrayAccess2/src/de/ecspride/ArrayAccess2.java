@@ -31,7 +31,7 @@ public class ArrayAccess2 extends Activity {
 		array[4] = "no taint";
 		
 		SmsManager sm = SmsManager.getDefault();
-		sm.sendTextMessage("+49 1234", null, array[calculateIndex()], null, null); //sink
+		sm.sendTextMessage("+49 1234", null, array[calculateIndex()], null, null); //sink, no leak
 		
 	}
 	

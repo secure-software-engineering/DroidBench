@@ -35,6 +35,6 @@ public class ListAccess1 extends Activity {
 		listData.add("neutral text");
 		
 		SmsManager sms = SmsManager.getDefault();
-        sms.sendTextMessage("+49 1234", null, listData.get(0), null, null);  //sink
+        sms.sendTextMessage("+49 1234", null, listData.get(0), null, null);  //sink, no leak
     }
 }
