@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ImplicitFlow3</string>
+    <string name="menu_settings">Settings</string>
+    <string name="leak1">First leak already occurs in onCreate()</string>
+    <string name="leak2">2. leak on click</string>
+
+</resources>
