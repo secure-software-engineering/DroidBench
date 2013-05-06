@@ -12,12 +12,11 @@ import android.telephony.TelephonyManager;
  * @author_mail siegfried.rasthofer@cased.de
  * 
  * @description an array is created which is filled with untainted and tainted (deviceId source) data.
- *  The untainted data is sent via sms.
+ *  The untainted data of a constant array position is retrieved and sent via sms.
  * @dataflow -
  * @number_of_leaks 0
  * @challenges the analysis must distinguish between different array positions to recognize that the tainted
  *  data does not get leaked. 
- *
  */
 public class ArrayAccess1 extends Activity {
 	public static String[] arrayData;
@@ -37,6 +36,6 @@ public class ArrayAccess1 extends Activity {
 		SmsManager sms = SmsManager.getDefault();
 		
 		//no data leak: 3rd argument of sendTextmessage() is not tainted
-        sms.sendTextMessage("+49 1234", null, arrayData[2], null, null);  //sink
+        sms.sendTextMessage("+49 1234", null, arrayData[2], null, null);  //sink, no leak
     }    
 }

@@ -7,20 +7,19 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
 
 /**
- * Location Information Leakage
+ * @testcase_name LocationLeak1
+ * @version 0.1
+ * @author Secure Software Engineering Group (SSE), European Center for Security and Privacy by Design (EC SPRIDE) 
+ * @author_mail siegfried.rasthofer@cased.de
  * 
- * This example contains a location information leakage in the onResume() callback method.
- * The data source is placed into the onLocationChanged() callback method, especially the parameter "loc".
- * 
- * Difficulty:
- * 	- Correct emulation of the Android activity lifecycle
- * 		- Correct integration of the callback method onLocationChanged
- * 	- Detection of callback methods as source
- * 
- * @author Siegfried Rasthofer
+ * @description This example contains a location information leakage in the onResume() callback method.
+ *  The data source is placed into the onLocationChanged() callback method, especially the parameter "loc".
+ * @dataflow onLocationChanged: source -> latitude, longtitude; onResume: latitude -> sink, longtitude -> sink 
+ * @number_of_leaks 2
+ * @challenges the analysis must be able to emulate the Android activity lifecycle correctly,
+ *  integrate the callback method onLocationChanged and detect the callback methods as source.
  */
 public class LocationLeak1 extends Activity {
 	private String latitude = "";
@@ -42,15 +41,13 @@ public class LocationLeak1 extends Activity {
     protected void onResume (){
     	super.onResume();
     	
-    	Log.d("Latitude", "Latitude: " + latitude);
-    	Log.d("Longtitude", "Longtitude: " + longtitude);
-    	Toast.makeText(getApplicationContext(), "Latitude: " + latitude, Toast.LENGTH_LONG).show();
-		Toast.makeText(getApplicationContext(), "Longtitude: " + longtitude, Toast.LENGTH_LONG).show();
+    	Log.d("Latitude", "Latitude: " + latitude); //sink, leak
+    	Log.d("Longtitude", "Longtitude: " + longtitude); //sink, leak
     }
     
     private class MyLocationListener implements LocationListener {  
 		  @Override  
-		  public void onLocationChanged(Location loc) {  
+		  public void onLocationChanged(Location loc) {  //source
 			  double lat = loc.getLatitude();
 				double lon = loc.getLongitude();
 				
