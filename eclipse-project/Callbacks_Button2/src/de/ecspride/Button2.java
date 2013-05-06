@@ -10,12 +10,16 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * This app contains the following challenges:
- * 	- Ability to check Listeners
- *  - Ability to know that the callback of button3 is clickOnButton3 (XML-file)
- *  - There is only one data leak iff first button3 and then button1 is pressed!
- *  
- * @author Siegfried Rasthofer
+ * @testcase_name Button2
+ * @version 0.1
+ * @author Secure Software Engineering Group (SSE), European Center for Security and Privacy by Design (EC SPRIDE) 
+ * @author_mail siegfried.rasthofer@cased.de
+ * 
+ * @description Sources and sinks are called in button callbacks. There is only one data leak iff first button3 and then button1 is pressed!
+ * @dataflow clickOnButton3: source -> imei, onClick (button1): imei -> sinks 
+ * @number_of_leaks 2
+ * @challenges the analysis must be able to analyze listeners, know that callback of button3 is ClickOnButton3 (defined in xml file)
+ *  and has to handle the arbitrary order of the listener callbacks.
  */
 public class Button2 extends Activity {
 	private String imei = null;
@@ -32,8 +36,8 @@ public class Button2 extends Activity {
 		    	
 		    	SmsManager sm = SmsManager.getDefault();
 		    	String number = "+49 1234";
-		    	sm.sendTextMessage(number, null, imei, null, null);
-		        Log.i("TAG", "sendIMEI: " + imei);
+		    	sm.sendTextMessage(number, null, imei, null, null); //sink
+		        Log.i("TAG", "sendIMEI: " + imei); //sink
 		        
 		        imei = null;
 		    }
@@ -45,14 +49,14 @@ public class Button2 extends Activity {
 		    @Override
 		    public void onClick(View v) {
 		        imei = null;
-		        Log.i("TAG", "Button 2: " + imei);
+		        Log.i("TAG", "Button 2: " + imei); //sink
 		    }
 		});
     }
 
     public void clickOnButton3(View view){
 		TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-		imei = telephonyManager.getDeviceId();
+		imei = telephonyManager.getDeviceId(); //source
 		Log.i("TAG", "Button3: " + imei);
 	}
 }
