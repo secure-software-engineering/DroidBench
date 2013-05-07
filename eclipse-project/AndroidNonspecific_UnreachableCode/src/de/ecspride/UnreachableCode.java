@@ -25,7 +25,7 @@ public class UnreachableCode extends Activity {
     }
 
     //this method is never called
-  	private void unrechable(){
+  	private void unreachable(){
   		TelephonyManager tm =(TelephonyManager)getBaseContext().getSystemService(Context.TELEPHONY_SERVICE);
   		String deviceid = tm.getDeviceId(); //source
   		
