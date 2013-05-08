@@ -1,7 +1,13 @@
 DroidBench
 ==========
-DroidBench is an open test suite for evaluating the
-effectiveness of taint-analysis tools specifically for Android apps. Version 1.0 comprises the following test cases:
+DroidBench is an open test suite for evaluating the effectiveness of taint-analysis tools specifically for Android apps. 
+The suite can be used to assess both static and dynamic taint analyses, but in particular it contains test cases for interesting static-analysis problems (field sensitivity, object sensitivity, tradeoffs in access-path lengths etc.) as well as for Android-specific challenges like correctly modeling an application’s lifecycle, adequately handling asynchronous callbacks and interacting with the UI.
+
+The distribution contains an eclipse workspace with all source-code projects as well as readily compiled APKs.
+
+Version 1.0
+===========
+Version 1.0 comprises the following 39 test cases:
 
 Arrays and Lists
 ----------------
