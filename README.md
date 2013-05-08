@@ -5,6 +5,12 @@ The suite can be used to assess both static and dynamic taint analyses, but in p
 
 The distribution contains an eclipse workspace with all source-code projects as well as readily compiled APKs.
 
+DroidBench was created by Christian Fritz, Steven Arzt and Siegfried Rasthofer of the [EC SPRIDE Secure Software Engineering Group](http://sse.ec-spride.de/).
+
+We welcome your contributions!
+------------------------------
+**You are most welcome to contribute additional test cases to DroidBench.** To do so, please fork the project, commit an appropriate Eclipse source project and APK, update this README and then send us a pull request.
+
 Version 1.0
 ===========
 Version 1.0 comprises the following 39 test cases:
