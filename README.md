@@ -75,6 +75,9 @@ General Java
 
 Miscellaneous Android-Specific
 ------------------------------
+* **ApplicationLifecycle1**: A secret value is obtained when the application is launched and leaked when the main activity is resumed.
+* **ApplicationLifecycle2**: A secret value is obtained on application start and leaked in the low memory callback.
+* **ApplicationLifecycle3**: A secret value is obtained when a content provider is initialized and leaked when the application runs afterwards.
 * **PrivateDataLeak1**: Summary test case containing various challenges.
 * **PrivateDataLeak2**: Leaks a value from a password field.
 * **DirectLeak1**: The device id is read out and sent via SMS on the activity's `onCreate()` event.
