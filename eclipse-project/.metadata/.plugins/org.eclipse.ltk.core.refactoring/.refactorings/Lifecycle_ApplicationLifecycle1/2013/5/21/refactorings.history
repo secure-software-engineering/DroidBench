@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;de.ecspride.applicationlifecycle1&apos; to &apos;de.ecspride&apos;&#x0A;- Original project: &apos;Lifecycle_ApplicationLifecycle1&apos;&#x0A;- Original element: &apos;Lifecycle_ApplicationLifecycle1/src/de.ecspride.applicationlifecycle1&apos;&#x0A;- Renamed element: &apos;Lifecycle_ApplicationLifecycle1/src/de.ecspride&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;de.ecspride.applicationlifecycle1&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;de.ecspride.applicationlifecycle1" name="de.ecspride" qualified="false" references="true" stamp="1369341224170" textual="false" version="1.0"/>
+</session>
