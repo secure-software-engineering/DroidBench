@@ -35,6 +35,9 @@ Callbacks
 * **LocationLeak3**: Similar to LocationLeak1, but the callback handler is in a dedicated class decoupled from the activity using an interface.
 * **MethodOverride1**: Overwrites an internal Android method to hide a leak.
 * **MultiHandlers1**: Contains two activities and two handlers that do not leak any data if the correct activity is used with the correct handler.
+* **Ordering1**: Leaks variable contents before the handler initializing them is even registered.
+* **RegisterGlobal1**: Both source and sink are part of a global (application-level) lifecycle handler.
+* **Unregister1**: Registers and directly unregisters a callback before it can be invoked. The code in the callback can thus never leak any data.
 
 Field and Object Sensitivity
 ----------------------------
@@ -83,6 +86,7 @@ Miscellaneous Android-Specific
 * **DirectLeak1**: The device id is read out and sent via SMS on the activity's `onCreate()` event.
 * **InactiveActivity**: Data leak in a disabled activity.
 * **LogNoLeak**: Writes untainted data into a log file.
+* **Obfuscation1**: This APK contains an own implementation of android.telephony.TelephonyManager. However, on a real device the preloaded OS implementation will always hide the custom one and you will always get a real IMEI. Testes on Galaxy Nexus 4, no guarantees for the emulator, though.
 
 Implicit Flows
 --------------
