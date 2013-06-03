@@ -91,3 +91,10 @@ Miscellaneous Android-Specific
 Implicit Flows
 --------------
 * **ImplicitFlow1-4**: Test cases for implicit flows.
+
+Reflection
+----------
+* **Reflection1**: Sensitive data is stored in a field of a reflective class and directly read out again and leaked.
+* **Reflection2**: Sensitive data is stored in a field of a reflective class, read out again using a method implemented in the "unknown" class and leaked.
+* **Reflection3**: Sensitive data is stored using a setter in a reflective class, read back using a getter and then leaked. No type information on the target class is used.
+* **Reflection4**: Sensitive data is read using a function in a reflective class and leaked using another function in the same reflective class.
