@@ -42,7 +42,7 @@ Callbacks
 Field and Object Sensitivity
 ----------------------------
 * **FieldSensitivity1**: Both tainted and untainted data is stored in a data object; the untainted value is leaked.
-* **FieldSensitivity2**: Similar to FieldSensitivity1, but source and sink calls are dis- tributed across the lifecycle.
+* **FieldSensitivity2**: Similar to FieldSensitivity1, but source and sink calls are distributed across the lifecycle.
 * **FieldSensitivity3**: Both tainted and untainted data is stored in a data object; the tainted value is leaked. Source and sink calls are distributed across the lifecycle.
 * **FieldSensitivity4**: Field contents are sent before tainting the field.
 * **InheritedObjects1**: Chooses an object’s actual type based on a conditional. Only one possible type leads to a leak.
