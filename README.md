@@ -83,8 +83,11 @@ Miscellaneous Android-Specific
 * **ApplicationLifecycle3**: A secret value is obtained when a content provider is initialized and leaked when the application runs afterwards.
 * **PrivateDataLeak1**: Summary test case containing various challenges.
 * **PrivateDataLeak2**: Leaks a value from a password field.
+* **PrivateDataLeak3**: The IMEI is written into a file, read out again and then leaked.
 * **DirectLeak1**: The device id is read out and sent via SMS on the activity's `onCreate()` event.
 * **InactiveActivity**: Data leak in a disabled activity.
+* **Library1**: not a test case on its own, part of Library2.
+* **Library2**: The IMEI is read out inside a custom library and then leaked in the app.
 * **LogNoLeak**: Writes untainted data into a log file.
 * **Obfuscation1**: This APK contains an own implementation of android.telephony.TelephonyManager. However, on a real device the preloaded OS implementation will always hide the custom one and you will always get a real IMEI. Testes on Galaxy Nexus 4, no guarantees for the emulator, though.
 
