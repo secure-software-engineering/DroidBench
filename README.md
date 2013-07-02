@@ -22,7 +22,7 @@ Arrays and Lists
 ----------------
 * **ArrayAccess1**: Stores both a tainted and an untainted value in an array and then leaks the untainted one. Array indices are constants.
 * **ArrayAccess2**: Stores both a tainted and an untainted value in an array and then leaks the untainted one. Array indices are calculated.
-* **HashMapAccess1**: Stores both a tainted and an untainted value in a hash map and then leaks the untainted one. Map keys are constants.
+* **HashMapAccess1**: Stores both a tainted and an untainted value in a hash map and then leaks the untainted one. Map keys are constants. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **ListAccess1**: Both a tainted and an untainted value are stored in a list. Only the untainted value is leaked.
 
 Callbacks
@@ -30,15 +30,15 @@ Callbacks
 * **AnonymousClass1**: Registers a callback handler for location updates in an anonymous inner class and leaks the incoming location data inside the callback.
 * **Button1**: The sink is called after the user clicks a button. The button handler is defined via XML.
 * **Button2**: Only clicking buttons in a specific order leads to a data leak.
-* **Button3**: A new callback is registered in another callback's handler. The second handler leaks the data obtained by the first handler.
+* **Button3**: A new callback is registered in another callback's handler. The second handler leaks the data obtained by the first handler. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **LocationLeak1**: Registers a listener for location updates, stores the value and leaks it later in the lifecycle.
 * **LocationLeak2**: Similar to LocationLeak1, but the activity class directly implements the callback interface.
-* **LocationLeak3**: Similar to LocationLeak1, but the callback handler is in a dedicated class decoupled from the activity using an interface.
+* **LocationLeak3**: Similar to LocationLeak1, but the callback handler is in a dedicated class decoupled from the activity using an interface. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **MethodOverride1**: Overwrites an internal Android method to hide a leak.
-* **MultiHandlers1**: Contains two activities and two handlers that do not leak any data if the correct activity is used with the correct handler.
-* **Ordering1**: Leaks variable contents before the handler initializing them is even registered.
-* **RegisterGlobal1**: Both source and sink are part of a global (application-level) lifecycle handler.
-* **Unregister1**: Registers and directly unregisters a callback before it can be invoked. The code in the callback can thus never leak any data.
+* **MultiHandlers1**: Contains two activities and two handlers that do not leak any data if the correct activity is used with the correct handler. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Ordering1**: Leaks variable contents before the handler initializing them is even registered. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **RegisterGlobal1**: Both source and sink are part of a global (application-level) lifecycle handler. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Unregister1**: Registers and directly unregisters a callback before it can be invoked. The code in the callback can thus never leak any data. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 
 Field and Object Sensitivity
 ----------------------------
@@ -58,7 +58,7 @@ Inter-App Communication
 
 Lifecycle
 ---------
-* **BroadcastReceiverLifecycle1**: Calls to sources and sinks distributed across a broadcast receiver lifecycle.
+* **BroadcastReceiverLifecycle1**: Calls to sources and sinks distributed across a broadcast receiver lifecycle. 
 * **ActivityLifecycle1**: Calls to sources and sinks distributed across an activity lifecycle.
 * **ActivityLifecycle2**: Activity class inherited from a superclass containing the lifecycle method which leaks the tainted value.
 * **ActivityLifecycle3**: Calls to sources and sinks distributed across instance state handling methods.
@@ -67,10 +67,10 @@ Lifecycle
 
 General Java
 ------------
-* **Exceptions1**: Saves a tainted value into a local variable, raises an exception and sends the value out in the exception handler.
-* **Exceptions2**: Saves a tainted value into a local variable, implicitly raises an exception (ArrayIndexOutOfBounds) and sends the data out in the exception handler.
-* **Exceptions3**: Saves a tainted value into a local variable, but the exception handler which would send it out is never invoked.
-* **Exceptions4**: Throws and exception containing a tainted value and sends it out in the exception handler.
+* **Exceptions1**: Saves a tainted value into a local variable, raises an exception and sends the value out in the exception handler. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Exceptions2**: Saves a tainted value into a local variable, implicitly raises an exception (ArrayIndexOutOfBounds) and sends the data out in the exception handler. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Exceptions3**: Saves a tainted value into a local variable, but the exception handler which would send it out is never invoked. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Exceptions4**: Throws and exception containing a tainted value and sends it out in the exception handler. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **Loop1**: Contains a simple loop and a data leak.
 * **Loop2**: Retrieves location information through a callback and leaks it via nested loops.
 * **SourceCodeSpecific1**: Uses unusual code construct `a = p ? b : c.`
@@ -79,26 +79,26 @@ General Java
 
 Miscellaneous Android-Specific
 ------------------------------
-* **ApplicationLifecycle1**: A secret value is obtained when the application is launched and leaked when the main activity is resumed.
-* **ApplicationLifecycle2**: A secret value is obtained on application start and leaked in the low memory callback.
-* **ApplicationLifecycle3**: A secret value is obtained when a content provider is initialized and leaked when the application runs afterwards.
+* **ApplicationLifecycle1**: A secret value is obtained when the application is launched and leaked when the main activity is resumed. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **ApplicationLifecycle2**: A secret value is obtained on application start and leaked in the low memory callback. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **ApplicationLifecycle3**: A secret value is obtained when a content provider is initialized and leaked when the application runs afterwards. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **PrivateDataLeak1**: Summary test case containing various challenges.
 * **PrivateDataLeak2**: Leaks a value from a password field.
-* **PrivateDataLeak3**: The IMEI is written into a file, read out again and then leaked.
+* **PrivateDataLeak3**: The IMEI is written into a file, read out again and then leaked. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **DirectLeak1**: The device id is read out and sent via SMS on the activity's `onCreate()` event.
 * **InactiveActivity**: Data leak in a disabled activity.
-* **Library1**: not a test case on its own, part of Library2.  <img src="https://github.com/secure-software-engineering/DroidBench/blob/develop/new.gif"/>
-* **Library2**: The IMEI is read out inside a custom library and then leaked in the app.
+* **Library1**: not a test case on its own, part of Library2.  <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Library2**: The IMEI is read out inside a custom library and then leaked in the app. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **LogNoLeak**: Writes untainted data into a log file.
-* **Obfuscation1**: This APK contains an own implementation of android.telephony.TelephonyManager. However, on a real device the preloaded OS implementation will always hide the custom one and you will always get a real IMEI. Testes on Galaxy Nexus 4, no guarantees for the emulator, though.
+* **Obfuscation1**: This APK contains an own implementation of android.telephony.TelephonyManager. However, on a real device the preloaded OS implementation will always hide the custom one and you will always get a real IMEI. Testes on Galaxy Nexus 4, no guarantees for the emulator, though. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 
 Implicit Flows
 --------------
 * **ImplicitFlow1-4**: Test cases for implicit flows.
 
-Reflection
+Reflection <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 ----------
-* **Reflection1**: Sensitive data is stored in a field of a reflective class and directly read out again and leaked.
-* **Reflection2**: Sensitive data is stored in a field of a reflective class, read out again using a method implemented in the "unknown" class and leaked.
-* **Reflection3**: Sensitive data is stored using a setter in a reflective class, read back using a getter and then leaked. No type information on the target class is used.
-* **Reflection4**: Sensitive data is read using a function in a reflective class and leaked using another function in the same reflective class.
+* **Reflection1**: Sensitive data is stored in a field of a reflective class and directly read out again and leaked. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Reflection2**: Sensitive data is stored in a field of a reflective class, read out again using a method implemented in the "unknown" class and leaked. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Reflection3**: Sensitive data is stored using a setter in a reflective class, read back using a getter and then leaked. No type information on the target class is used. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Reflection4**: Sensitive data is read using a function in a reflective class and leaked using another function in the same reflective class. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
