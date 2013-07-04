@@ -31,6 +31,7 @@ Callbacks
 * **Button1**: The sink is called after the user clicks a button. The button handler is defined via XML.
 * **Button2**: Only clicking buttons in a specific order leads to a data leak.
 * **Button3**: A new callback is registered in another callback's handler. The second handler leaks the data obtained by the first handler. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Button4**: The sink is called after the user clicks a button. The button handler is defined via XML using an include directive.
 * **LocationLeak1**: Registers a listener for location updates, stores the value and leaks it later in the lifecycle.
 * **LocationLeak2**: Similar to LocationLeak1, but the activity class directly implements the callback interface.
 * **LocationLeak3**: Similar to LocationLeak1, but the callback handler is in a dedicated class decoupled from the activity using an interface. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
