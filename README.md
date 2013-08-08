@@ -76,6 +76,7 @@ General Java
 * **Loop2**: Retrieves location information through a callback and leaks it via nested loops.
 * **SourceCodeSpecific1**: Uses unusual code construct `a = p ? b : c.`
 * **StaticInitialization1**: Passes a tainted value into a static initialization method.
+* **StaticInitialization2**: Sensitive data is obtained during static initialization of a class and leaked in non-static code
 * **UnreachableCode**: Passes tainted data into a method that is never called.
 
 Miscellaneous Android-Specific

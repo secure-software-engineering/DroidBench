@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 /**
- * @testcase_name StaticInitialization
+ * @testcase_name StaticInitialization1
  * @version 0.1
  * @author Secure Software Engineering Group (SSE), European Center for Security and Privacy by Design (EC SPRIDE) 
  * @author_mail siegfried.rasthofer@cased.de
