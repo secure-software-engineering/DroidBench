@@ -102,3 +102,7 @@ Reflection <img src="https://raw.github.com/secure-software-engineering/DroidBen
 * **Reflection2**: Sensitive data is stored in a field of a reflective class, read out again using a method implemented in the "unknown" class and leaked. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **Reflection3**: Sensitive data is stored using a setter in a reflective class, read back using a getter and then leaked. No type information on the target class is used. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **Reflection4**: Sensitive data is read using a function in a reflective class and leaked using another function in the same reflective class. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+
+Anti-TaintDroid (ScrubDroid)
+----------------------------
+* **DirectBuffer**: Test case for under/over tainted ByteBuffers. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
