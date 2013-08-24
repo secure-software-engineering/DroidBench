@@ -65,6 +65,7 @@ Lifecycle
 * **ActivityLifecycle3**: Calls to sources and sinks distributed across instance state handling methods.
 * **ActivityLifecycle4**: A tainted value is obtained on `onPause()` and leaked when the activity is restarted later.
 * **ServiceLifecycle1**: Calls to sources and sinks distributed across a service lifecycle.
+* **FragmentLifecycle1**: Calls to sources and sinks distributed across a fragment lifecycle.
 
 General Java
 ------------
