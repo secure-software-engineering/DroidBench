@@ -7,6 +7,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 /**
  * @testcase_name AnnonymousClass1
  * @version 0.1
@@ -40,6 +41,7 @@ public class AnnonymousClass1 extends Activity {
    
 		@Override
 		public void onLocationChanged(Location location) { //source
+			Toast.makeText(getApplicationContext(), "aa", Toast.LENGTH_LONG).show();
 			latitude = location.getLatitude();
 			longitude = location.getLongitude();		    
 		}
@@ -60,6 +62,6 @@ public class AnnonymousClass1 extends Activity {
     @Override
 	protected void onResume(){
 		super.onResume();
-		Log.i("TAG", "Latitude: " + latitude + "Longtitude: " + longitude); //sink, two leaks
+		Log.i("LOG", "Latitude: " + latitude + "Longtitude: " + longitude); //sink, two leaks
 	}
 }
