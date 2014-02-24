@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
+
 /**
  * @testcase_name IntentSink1
  * @version 0.1
@@ -17,7 +18,7 @@ import android.telephony.TelephonyManager;
  * @challenges the analysis must be able to track the taint in the intent and recognize the setResult sink. 
  */
 public class IntentSink1 extends Activity {
-
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,7 +1,5 @@
 package de.ecspride;
 
-import android.content.Context;
-import android.telephony.TelephonyManager;
 
 /**
  * THIS IS NOT A TEST CASE ON ITS OWN. IT IS A PART OF LIBRARY2.
