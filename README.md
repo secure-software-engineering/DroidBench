@@ -79,6 +79,7 @@ General Java
 * **Exceptions4**: Throws and exception containing a tainted value and sends it out in the exception handler.
 * **Loop1**: Contains a simple loop and a data leak.
 * **Loop2**: Retrieves location information through a callback and leaks it via nested loops.
+* **DirectBuffer**: Test case for under/over tainted ByteBuffers. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **SourceCodeSpecific1**: Uses unusual code construct `a = p ? b : c.`
 * **StaticInitialization1**: Passes a tainted value into a static initialization method.
 * **StaticInitialization2**: Sensitive data is obtained during static initialization of a class and leaked in non-static code
