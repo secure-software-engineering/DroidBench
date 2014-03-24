@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  
+1. SourceApplication/SinkApplication: specifying it as package name of app
+2. SourceClass/SinkClass: specifying it as full class (component name usually) name
+   using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
+-->
+
+<DroidBench>
+    <TestCaseName>InterCompCommunication_startactivityforresult2</TestCaseName>
+    <Version>2.0</Version>
+    <Author>Serval, SnT, University of Luxembourg</Author>
+    <AuthorEmail>li.li@uni.lu</AuthorEmail>
+    <Description>
+        A deviceid within an Intent is transfered to another Component by ICC method startActivityForResult.
+        And then the deviceid is logged.
+        The two components are in the same application.
+    </Description>
+    <Challenge>
+        First, the analysis has to find the link between two components cased by startActivityForResult.
+        Second, the analysis has to be aware that a sensitive data (deviceid) is transferred 
+        to another component within an Intent.
+    </Challenge>
+    
+    <NumberOfLeak>1</NumberOfLeak>
+    <Leaks>
+        <Leak>
+            <SourceApplication>lu.uni.serval.icc_startactivityforresult2</SourceApplication>
+            <SourceClass>lu.uni.serval.icc_startactivityforresult2.InFlowActivity</SourceClass>
+            <SourceMethod>getDeviceId()</SourceMethod>
+            
+            <SinkApplication>lu.uni.serval.icc_startactivityforresult2</SinkApplication>
+            <SinkClass>lu.uni.serval.icc_startactivityforresult2.OutFlowActivity</SinkClass>
+            <SinkMethod>i(java.lang.String,java.lang.String)</SinkMethod>
+        </Leak>
+    </Leaks>
+</DroidBench>
