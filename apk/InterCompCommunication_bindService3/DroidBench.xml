@@ -7,7 +7,7 @@
 -->
 
 <DroidBench>
-    <TestCaseName>InterCompCommunication_bindService1</TestCaseName>
+    <TestCaseName>InterCompCommunication_bindService3</TestCaseName>
     <Version>2.0</Version>
     <Author>Serval, SnT, University of Luxembourg</Author>
     <AuthorEmail>li.li@uni.lu</AuthorEmail>
@@ -25,12 +25,12 @@
     <NumberOfLeak>1</NumberOfLeak>
     <Leaks>
         <Leak>
-            <SourceApplication>lu.uni.serval.icc_bindservice1</SourceApplication>
-            <SourceClass>lu.uni.serval.icc_bindservice1.OutFlowActivity</SourceClass>
+            <SourceApplication>lu.uni.serval.icc_bindservice3</SourceApplication>
+            <SourceClass>lu.uni.serval.icc_bindservice3.OutFlowActivity</SourceClass>
             <SourceMethod>getDeviceId()</SourceMethod>
             
-            <SinkApplication>lu.uni.serval.icc_bindservice1</SinkApplication>
-            <SinkClass>lu.uni.serval.icc_bindservice1.InFlowService</SinkClass>
+            <SinkApplication>lu.uni.serval.icc_bindservice3</SinkApplication>
+            <SinkClass>lu.uni.serval.icc_bindservice3.OutFlowActivity</SinkClass>
             <SinkMethod>i(java.lang.String,java.lang.String)</SinkMethod>
         </Leak>
     </Leaks>

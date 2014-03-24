@@ -12,12 +12,12 @@
     <Author>Serval, SnT, University of Luxembourg</Author>
     <AuthorEmail>li.li@uni.lu</AuthorEmail>
     <Description>
-        A deviceid within an Intent is transfered to another Component by ICC method bindService.
+        A deviceid within an Intent is transfered to another Component by ICC method sendBroadcast.
         And then the deviceid is logged.
         The two components are in the same application.
     </Description>
     <Challenge>
-        First, the analysis has to find the link between two components cased by bindService.
+        First, the analysis has to find the link between two components cased by sendBroadcast.
         Second, the analysis has to be aware that a sensitive data (deviceid) is transferred 
         to another component within an Intent.
     </Challenge>
@@ -25,12 +25,12 @@
     <NumberOfLeak>1</NumberOfLeak>
     <Leaks>
         <Leak>
-            <SourceApplication>lu.uni.serval.icc_bindservice1</SourceApplication>
-            <SourceClass>lu.uni.serval.icc_bindservice1.OutFlowActivity</SourceClass>
+            <SourceApplication>lu.uni.serval.icc_sendBroadcast1</SourceApplication>
+            <SourceClass>lu.uni.serval.icc_sendBroadcast1.OutFlowActivity</SourceClass>
             <SourceMethod>getDeviceId()</SourceMethod>
             
-            <SinkApplication>lu.uni.serval.icc_bindservice1</SinkApplication>
-            <SinkClass>lu.uni.serval.icc_bindservice1.InFlowService</SinkClass>
+            <SinkApplication>lu.uni.serval.icc_sendBroadcast1</SinkApplication>
+            <SinkClass>lu.uni.serval.icc_sendBroadcast1.InFlowReceiver</SinkClass>
             <SinkMethod>i(java.lang.String,java.lang.String)</SinkMethod>
         </Leak>
     </Leaks>

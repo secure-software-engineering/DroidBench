@@ -7,7 +7,7 @@
 -->
 
 <DroidBench>
-    <TestCaseName>InterCompCommunication_bindService1</TestCaseName>
+    <TestCaseName>InterCompCommunication_bindService4</TestCaseName>
     <Version>2.0</Version>
     <Author>Serval, SnT, University of Luxembourg</Author>
     <AuthorEmail>li.li@uni.lu</AuthorEmail>
@@ -22,15 +22,24 @@
         to another component within an Intent.
     </Challenge>
     
-    <NumberOfLeak>1</NumberOfLeak>
+    <NumberOfLeak>2</NumberOfLeak>
     <Leaks>
         <Leak>
-            <SourceApplication>lu.uni.serval.icc_bindservice1</SourceApplication>
-            <SourceClass>lu.uni.serval.icc_bindservice1.OutFlowActivity</SourceClass>
+            <SourceApplication>lu.uni.serval.icc_bindservice4</SourceApplication>
+            <SourceClass>lu.uni.serval.icc_bindservice4.OutFlowActivity</SourceClass>
             <SourceMethod>getDeviceId()</SourceMethod>
             
-            <SinkApplication>lu.uni.serval.icc_bindservice1</SinkApplication>
-            <SinkClass>lu.uni.serval.icc_bindservice1.InFlowService</SinkClass>
+            <SinkApplication>lu.uni.serval.icc_bindservice4</SinkApplication>
+            <SinkClass>lu.uni.serval.icc_bindservice4.OutFlowActivity</SinkClass>
+            <SinkMethod>i(java.lang.String,java.lang.String)</SinkMethod>
+        </Leak>
+        <Leak>
+            <SourceApplication>lu.uni.serval.icc_bindservice4</SourceApplication>
+            <SourceClass>lu.uni.serval.icc_bindservice4.OutFlowActivity</SourceClass>
+            <SourceMethod>getDeviceId()</SourceMethod>
+            
+            <SinkApplication>lu.uni.serval.icc_bindservice4</SinkApplication>
+            <SinkClass>lu.uni.serval.icc_bindservice4.InFlowActivity</SinkClass>
             <SinkMethod>i(java.lang.String,java.lang.String)</SinkMethod>
         </Leak>
     </Leaks>

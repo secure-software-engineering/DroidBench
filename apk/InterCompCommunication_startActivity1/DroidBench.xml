@@ -26,11 +26,11 @@
     <Leaks>
         <Leak>
             <SourceApplication>lu.uni.serval.icc_startactivity1</SourceApplication>
-            <SourceClass>lu.uni.serval.icc_startactivity1.SendActivity</SourceClass>
-            <SourceMethod>getDeviceId()</getDeviceId></SourceMethod>
+            <SourceClass>lu.uni.serval.icc_startactivity1.OutFlowActivity</SourceClass>
+            <SourceMethod>getDeviceId()</SourceMethod>
             
             <SinkApplication>lu.uni.serval.icc_startactivity1</SinkApplication>
-            <SinkClass>lu.uni.serval.icc_startactivity1.ReceiverActivity</SinkClass>
+            <SinkClass>lu.uni.serval.icc_startactivity1.InFlowActivity</SinkClass>
             <SinkMethod>i(java.lang.String,java.lang.String)</SinkMethod>
         </Leak>
     </Leaks>
