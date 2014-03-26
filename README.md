@@ -107,3 +107,8 @@ Reflection
 * **Reflection2**: Sensitive data is stored in a field of a reflective class, read out again using a method implemented in the "unknown" class and leaked.
 * **Reflection3**: Sensitive data is stored using a setter in a reflective class, read back using a getter and then leaked. No type information on the target class is used.
 * **Reflection4**: Sensitive data is read using a function in a reflective class and leaked using another function in the same reflective class.
+
+Threading <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+-----------
+
+* **AsyncTask1**: Sensitive data is read in onCreate() and send out in a dedicated thread started using Android's AsyncTask mechanism.
