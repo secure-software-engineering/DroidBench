@@ -67,7 +67,8 @@ Lifecycle
 * **ApplicationLifecycle1**:  Obtains a secret value when the application is launched and sends it out in the onResume() method of the main activity.
 * **ApplicationLifecycle2**:  Obtains a secret value when the application is launched and sends it out in the low memory callback of the application.
 * **ApplicationLifecycle3**:  Obtains a secret value when a content provider is initialized and leaks it in the onCreate() method of the application.
-* **BroadcastReceiverLifecycle1**: Calls to sources and sinks distributed across a broadcast receiver lifecycle. 
+* **BroadcastReceiverLifecycle1**: Calls to sources and sinks distributed across a broadcast receiver lifecycle.
+* **BroadcastReceiverLifecycle2**: The sensitive data is read in onCreate() and sent out in a dynamically registered broadcast receiver. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/> 
 * **FragmentLifecycle1**: Calls to sources and sinks distributed across a fragment lifecycle.
 * **ServiceLifecycle1**: Calls to sources and sinks distributed across a service lifecycle.
 
