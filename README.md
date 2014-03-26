@@ -14,9 +14,9 @@ We welcome your contributions!
 ------------------------------
 **You are most welcome to contribute additional test cases to DroidBench.** To do so, please fork the project, commit an appropriate Eclipse source project and APK, update this README and then send us a pull request.
 
-Version 1.2
+Version 1.3
 ===========
-Version 1.2 comprises the following 64 test cases:
+Version 1.3 comprises the following <TODO> test cases:
 
 Arrays and Lists
 ----------------
