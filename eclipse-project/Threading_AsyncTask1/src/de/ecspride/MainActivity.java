@@ -18,8 +18,7 @@ import android.view.Menu;
  *   using Android's AsyncTask mechanism.
  * @dataflow onCreate: source -> doInBackground() -> sink
  * @number_of_leaks 1
- * @challenges The analysis must be able to correctly handle sources and sinks in classes
- * 	used through reflection.
+ * @challenges The analysis must be able to correctly handle Android's AsyncTask mechanism.
  */
 public class MainActivity extends Activity {
 
