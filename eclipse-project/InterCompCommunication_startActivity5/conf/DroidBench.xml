@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  
+1. SourceApplication/SinkApplication: specifying it as package name of app
+2. SourceClass/SinkClass: specifying it as full class (component name usually) name
+   using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
+-->
+
+<DroidBench>
+    <TestCaseName>InterCompCommunication_startactivity5</TestCaseName>
+    <Version>2.0</Version>
+    <Author>Serval, SnT, University of Luxembourg</Author>
+    <AuthorEmail>li.li@uni.lu</AuthorEmail>
+    <Description>
+        This app does not contain any privacy leaks, it is used to verify if a detecting tool
+        can distinguish the Intent's type.
+        If the tool cannot distinguish the Intent's type, then false alarm will be detected.
+    </Description>
+    <Challenge>
+        To distinguish the Intent's type.
+    </Challenge>
+    
+    <NumberOfLeak>0</NumberOfLeak>
+    <Leaks>
+    </Leaks>
+</DroidBench>
