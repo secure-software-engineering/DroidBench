@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  
+1. SourceApplication/SinkApplication: specifying it as package name of app
+2. SourceClass/SinkClass: specifying it as full class (component name usually) name
+   using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
+-->
+
+<DroidBench>
+    <TestCaseName>InterCompCommunication_insert1</TestCaseName>
+    <Version>2.0</Version>
+    <Author>Serval, SnT, University of Luxembourg</Author>
+    <AuthorEmail>li.li@uni.lu</AuthorEmail>
+    <Description>
+        A deviceid within a Content Provider is be inserted by an Activity,
+        Then, it is logged.
+        The two components are in the same application.
+    </Description>
+    <Challenge>
+        First, the analysis has to find the link between two components cased by insert.
+        Second, the analysis has to be aware that a sensitive data (deviceid) is transferred 
+        to another component.
+    </Challenge>
+    
+    <NumberOfLeak>1</NumberOfLeak>
+    <Leaks>
+        <Leak>
+            <SourceApplication>lu.uni.serval.icc_insert1</SourceApplication>
+            <SourceClass>lu.uni.serval.icc_insert1.OutFlowActivity</SourceClass>
+            <SourceMethod>getDeviceId()</SourceMethod>
+            
+            <SinkApplication>lu.uni.serval.icc_insert1</SinkApplication>
+            <SinkClass>lu.uni.serval.icc_insert1.InFlowProvider</SinkClass>
+            <SinkMethod>i(java.lang.String,java.lang.String)</SinkMethod>
+        </Leak>
+    </Leaks>
+</DroidBench>
