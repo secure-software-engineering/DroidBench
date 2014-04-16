@@ -115,3 +115,8 @@ Threading <img src="https://raw.github.com/secure-software-engineering/DroidBenc
 * **AsyncTask1**: Sensitive data is read in onCreate() and send out in a dedicated thread started using Android's AsyncTask mechanism.
 * **JavaThread1**: Sensitive data is read in onCreate() and send out in a dedicated thread started using Java's normal threading mechanism.
 * **Executor1**: Sensitive data is read in onCreate() and send out in a dedicated thread started using Java's Executor mechanism.
+
+Emulator Detection <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+--------------------
+
+* **EmulatorDetection_ContentProvider1**: This test case detects the Android emulator by checking the IMEI in a content provider. The IMEI is only sent via SMS in the activity if the app runs on a real phone.

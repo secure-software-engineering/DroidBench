@@ -18,3 +18,4 @@ local.properties
 .classpath
 .project
 /.metadata
+/appcompat_v7
