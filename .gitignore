@@ -17,3 +17,6 @@ local.properties
 # Eclipse project files
 /.metadata
 /appcompat_v7
+/appcompat_v7_2
+/appcompat_v7_3
+/appcompat_v7_4
