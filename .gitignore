@@ -15,7 +15,5 @@ gen/
 local.properties
 
 # Eclipse project files
-.classpath
-.project
 /.metadata
 /appcompat_v7
