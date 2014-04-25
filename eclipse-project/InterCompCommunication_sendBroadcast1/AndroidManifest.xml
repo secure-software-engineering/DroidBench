@@ -29,6 +29,15 @@
                 <action android:name="lu.uni.serval.icc_sendBroadcast1.ACTION" />
             </intent-filter>
         </receiver>
+        
+        <receiver
+            android:name="lu.uni.serval.icc_sendBroadcast1.IsolateReceiver"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="lu.uni.serval.icc_sendBroadcast1.ISOLATE_ACTION" />
+            </intent-filter>
+        </receiver>
+        
     </application>
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
