@@ -30,6 +30,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
+        
+        <receiver
+            android:name="lu.uni.serval.iac_sendbroadcast1_sink.IsolateReceiver"
+            android:label="@string/app_name" >
+        </receiver>
     </application>
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />

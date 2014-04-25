@@ -28,8 +28,7 @@ public class OutFlowActivity extends Activity {
 		public void onServiceConnected(ComponentName name, IBinder binder) 
 		{
 			LocalBinder lb = (LocalBinder) binder;
-			InFlowService rs = lb.getServiceInstance();
-			String imei = rs.getDeviceId();
+			String imei = lb.getDeviceId();
 			Log.i("DroidBench", imei);
 			
 			OutFlowActivity.this.unbindService(this);

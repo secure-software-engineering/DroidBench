@@ -21,5 +21,4 @@ public class OutFlowActivity extends Activity {
 		
 		startService(i);
 	}
-
 }

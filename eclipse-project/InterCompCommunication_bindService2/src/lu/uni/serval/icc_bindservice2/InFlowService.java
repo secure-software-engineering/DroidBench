@@ -9,14 +9,8 @@ import android.telephony.TelephonyManager;
 
 public class InFlowService extends Service {
 
-	IBinder mBinder = new LocalBinder();
+	LocalBinder mBinder = new LocalBinder();
 	
-	public String getDeviceId() {
-		TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-		String imei = telephonyManager.getDeviceId();
-		return imei;
-	}
-
 	@Override
 	public IBinder onBind(Intent intent) {
 		return mBinder;
@@ -24,9 +18,11 @@ public class InFlowService extends Service {
 
 	class LocalBinder extends Binder
 	{
-		public InFlowService getServiceInstance()
+		public String getDeviceId()
 		{
-			return InFlowService.this;
+			TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+			String imei = telephonyManager.getDeviceId();
+			return imei;
 		}
 	}
 }

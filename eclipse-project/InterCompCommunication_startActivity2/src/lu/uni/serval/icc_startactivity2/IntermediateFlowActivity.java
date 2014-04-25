@@ -12,7 +12,10 @@ public class IntermediateFlowActivity extends Activity
 		setContentView(R.layout.activity_main);
 		
 		Intent i = getIntent();
-		i.setClassName("lu.uni.serval.icc_startactivity2", "lu.uni.serval.icc_startactivity2.InFlowActivity");
-		this.startActivity(i);
+		String imei = i.getStringExtra("DroidBench");
+		
+		Intent i2 = new Intent(this, lu.uni.serval.icc_startactivity2.InFlowActivity.class);
+		i2.putExtra("DroidBench", imei);
+		this.startActivity(i2);
 	}
 }

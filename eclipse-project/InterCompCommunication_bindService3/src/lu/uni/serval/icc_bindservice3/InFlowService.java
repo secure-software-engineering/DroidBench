@@ -7,24 +7,26 @@ import android.os.IBinder;
 
 public class InFlowService extends Service {
 
-	String imei = "";
-	IBinder mBinder = new LocalBinder();
-	
-	public String getDeviceId() {
-		return imei;
-	}
-
 	@Override
 	public IBinder onBind(Intent intent) {
-		imei = intent.getStringExtra("DroidBench");
-		return mBinder;
+		String imei = intent.getStringExtra("DroidBench");
+		LocalBinder binder = new LocalBinder(imei);
+		
+		return binder;
 	}
 
 	class LocalBinder extends Binder
 	{
-		public InFlowService getServiceInstance()
+		String imei;
+		
+		public LocalBinder(String imei)
 		{
-			return InFlowService.this;
+			this.imei = imei;
+		}
+		
+		public String getDeviceId()
+		{
+			return imei;
 		}
 	}
 }

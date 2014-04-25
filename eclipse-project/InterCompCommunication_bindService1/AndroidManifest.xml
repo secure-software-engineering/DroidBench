@@ -27,6 +27,11 @@
             android:name="lu.uni.serval.icc_bindservice1.InFlowService"
             android:label="@string/app_name" >
         </service>
+        
+        <service
+            android:name="lu.uni.serval.icc_bindservice1.IsolateService"
+            android:label="@string/app_name" >
+        </service>
     </application>
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />

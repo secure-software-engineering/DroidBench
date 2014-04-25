@@ -32,6 +32,11 @@
             android:name="lu.uni.serval.icc_startactivity2.InFlowActivity"
             android:label="@string/app_name" >
         </activity>
+        
+        <activity
+            android:name="lu.uni.serval.icc_startactivity2.IsolateActivity"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />

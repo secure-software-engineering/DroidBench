@@ -30,6 +30,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </service>
+        
+        <service
+            android:name="lu.uni.serval.iac_startservice1_sink.IsolateService"
+            android:label="@string/app_name" >
+        </service>
     </application>
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />

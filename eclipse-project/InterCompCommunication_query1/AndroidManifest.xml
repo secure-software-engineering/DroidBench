@@ -26,6 +26,8 @@
         <provider android:name="lu.uni.serval.icc_query1.InFlowProvider" 
             android:authorities="lu.uni.serval.icc_query1"/>
         
+        <provider android:name="lu.uni.serval.icc_query1.IsolateProvider" 
+            android:authorities="lu.uni.serval.icc_query1"/>
     </application>
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
