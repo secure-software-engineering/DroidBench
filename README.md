@@ -121,4 +121,5 @@ Emulator Detection <img src="https://raw.github.com/secure-software-engineering/
 --------------------
 
 * **EmulatorDetection_ContentProvider1**: This test case detects the Android emulator by checking the IMEI in a content provider. The IMEI is only sent via SMS in the activity if the app runs on a real phone.
+* **EmulatorDetection_IMEI1**: This test case detects the Android emulator by truncating the secret data which is leaked at a position computed from the IMEI. On an emulator, the IMEI is expected to be 00..0.
 * **EmulatorDetection_PlayStore1**: This test case detects the Android emulator by whether the Play Store app is installed on the phone. The IMEI is only sent via SMS if the app runs on a real phone.
