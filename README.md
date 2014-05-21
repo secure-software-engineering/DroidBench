@@ -78,6 +78,7 @@ General Java
 * **Exceptions2**: Saves a tainted value into a local variable, implicitly raises an exception (ArrayIndexOutOfBounds) and sends the data out in the exception handler.
 * **Exceptions3**: Saves a tainted value into a local variable, but the exception handler which would send it out is never invoked.
 * **Exceptions4**: Throws and exception containing a tainted value and sends it out in the exception handler.
+* **FactoryMethods1**: Obtains a LocationManager from a factory method contained in the Android operating system, reads out the location, and leaks it.
 * **Loop1**: Contains a simple loop and a data leak.
 * **Loop2**: Retrieves location information through a callback and leaks it via nested loops.
 * **DirectBuffer**: Test case for under/over tainted ByteBuffers. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
