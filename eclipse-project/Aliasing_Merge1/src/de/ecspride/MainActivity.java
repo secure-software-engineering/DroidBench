@@ -21,7 +21,7 @@ import android.view.ViewGroup;
  * @description Sensitive data is assigned to a heap object which is
  * 		then shuffled around. Only constant data is leaked.
  * @dataflow source -> no connection to sink
- * @number_of_leaks 1
+ * @number_of_leaks 0
  * @challenges Aliases must be computed precisely or a false positive
  * 		will be found.
  */
