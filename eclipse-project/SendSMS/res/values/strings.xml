@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SendSMS</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Component: org.cert.SendSMS.MainActivity</string>
+    <string name="button_text">Send</string>
+
+</resources>
