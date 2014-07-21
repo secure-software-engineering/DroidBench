@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Echoer</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Component: org.cert.echoer.MainActivity</string>
+    <string name="button_text">Send Result Back</string>
+
+</resources>
