@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  
+1. SourceApplication/SinkApplication: specifying it as package name of app
+2. SourceClass/SinkClass: specifying it as full class (component name usually) name
+   using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
+-->
+
+<DroidBench>
+    <TestCaseName>InterCompCommunication_startactivity6</TestCaseName>
+    <Version>2.0</Version>
+    <Author>Serval, SnT, University of Luxembourg</Author>
+    <AuthorEmail>li.li@uni.lu</AuthorEmail>
+    <Description>
+        The different extra keys are used to test whether the analysis tools are able to distinguish them or not.
+        This case does not contain any leaks, if a tool reports leaks in this case, false results are alarmed.
+    </Description>
+    <Challenge>
+        To distinguish the extra keys of Intents.
+    </Challenge>
+    
+    <NumberOfLeak>0</NumberOfLeak>
+    <Leaks>
+    </Leaks>
+</DroidBench>
