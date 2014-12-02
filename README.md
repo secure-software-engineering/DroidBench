@@ -121,6 +121,7 @@ Threading <img src="https://raw.github.com/secure-software-engineering/DroidBenc
 
 * **AsyncTask1**: Sensitive data is read in onCreate() and send out in a dedicated thread started using Android's AsyncTask mechanism.
 * **JavaThread1**: Sensitive data is read in onCreate() and send out in a dedicated thread started using Java's normal threading mechanism.
+* **JavaThread2**: Sensitive data is read in onCreate() and send out in a dedicated thread started using Java's Runnable mechanism.
 * **Executor1**: Sensitive data is read in onCreate() and send out in a dedicated thread started using Java's Executor mechanism.
 * **Looper1**: Sensitive data is read in onCreate() and enqueued for a custom thread hosting an Android Looper whose handler sends out the data.
 
