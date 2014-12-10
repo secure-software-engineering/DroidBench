@@ -1,0 +1,393 @@
+###########################
+APP: AndroidSpecific_DirectLeak1 
+FLOW: <de.ecspride.MainActivity: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.MainActivity 27} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.MainActivity 27} 
+
+
+###########################
+APP: AndroidSpecific_InactiveActivity 
+FLOW: <de.ecspride.InactiveActivity: void onCreate(android.os.Bundle)> |  {<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.InactiveActivity 29} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.InactiveActivity 27}  | FALSE_POSITIVE
+
+###########################
+APP: AndroidSpecific_LogNoLeak 
+FLOW: NONE
+
+###########################
+APP: AndroidSpecific_Obfuscation1 
+FLOW: <de.ecspride.MainActivity: void onCreate(android.os.Bundle)>  | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.MainActivity 35} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.MainActivity 33} 
+
+
+###########################
+APP: AndroidSpecific_PrivateDataLeak1 
+FLOW: <de.ecspride.PrivateDateLeakage: void sendMessage(android.view.View)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.PrivateDateLeakage 54} <= {<android.widget.EditText: android.text.Editable getText()>/USER_INPUT/Line: de.ecspride.PrivateDateLeakage 39} 
+
+FLOW: <de.ecspride.PrivateDateLeakage: void sendMessage(android.view.View)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.PrivateDateLeakage 54} <= {<android.widget.EditText: android.text.Editable getText()>/USER_INPUT/Line: de.ecspride.PrivateDateLeakage 38} 
+
+###########################
+APP: AndroidSpecific_PrivateDataLeak2 
+FLOW: <de.ecspride.PrivateDataLeak2: void onCreate(android.os.Bundle)> | {<android.util.Log: int v(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.PrivateDataLeak2 26} <= {<android.widget.EditText: android.text.Editable getText()>/USER_INPUT/Line: de.ecspride.PrivateDataLeak2 26} 
+
+
+###########################
+APP: AndroidSpecific_PrivateDataLeak3 
+FLOW: <de.ecspride.MainActivity: void onResume()> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.MainActivity 57} <= {<java.io.InputStream: int read(byte[])>/IO/Line: de.ecspride.MainActivity 53} | PARTIAL_FLOW | #private mode
+FLOW: <de.ecspride.MainActivity: void onResume()> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.MainActivity 57} <= {<android.content.ContextWrapper: java.io.FileInputStream openFileInput(java.lang.String)>/FILE_INFORMATION/Line: de.ecspride.MainActivity 49}  | PARTIAL_FLOW
+
+
+###########################
+APP: AndroidSpecific_PrivateDataLeak3 
+FLOW: <de.ecspride.MainActivity: void onCreate(android.os.Bundle)> | {<android.content.ContextWrapper: java.io.FileOutputStream openFileOutput(java.lang.String,int)>/FILE/Line: de.ecspride.MainActivity 35} <= {<java.io.InputStream: int read(byte[])>/IO/Line: de.ecspride.MainActivity 53}  | REVERSE_FLOW  
+FLOW: <de.ecspride.MainActivity: void onCreate(android.os.Bundle)> | {<android.content.ContextWrapper: java.io.FileOutputStream openFileOutput(java.lang.String,int)>/FILE/Line: de.ecspride.MainActivity 35} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.MainActivity 32} | PARTIAL_FLOW
+FLOW: <de.ecspride.MainActivity: void onCreate(android.os.Bundle)> | {<android.content.ContextWrapper: java.io.FileOutputStream openFileOutput(java.lang.String,int)>/FILE/Line: de.ecspride.MainActivity 35} <= {<android.content.ContextWrapper: java.io.FileInputStream openFileInput(java.lang.String)>/FILE_INFORMATION/Line: de.ecspride.MainActivity 49} | REVERSE_FLOW
+
+###########################
+APP: AndroidSpecific_PrivateDataLeak3 
+FLOW: <de.ecspride.MainActivity: void onCreate(android.os.Bundle)> | {<java.io.OutputStream: void write(byte[])>/IO/Line: de.ecspride.MainActivity 36} <= {<java.io.InputStream: int read(byte[])>/IO/Line: de.ecspride.MainActivity 53}  | REVERSE_FLOW
+FLOW: <de.ecspride.MainActivity: void onCreate(android.os.Bundle)> {<java.io.OutputStream: void write(byte[])>/IO/Line: de.ecspride.MainActivity 36} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.MainActivity 32}  | PARTIAL_FLOW | #file open as private mode
+FLOW: <de.ecspride.MainActivity: void onCreate(android.os.Bundle)> | {<java.io.OutputStream: void write(byte[])>/IO/Line: de.ecspride.MainActivity 36} <= {<android.content.ContextWrapper: java.io.FileInputStream openFileInput(java.lang.String)>/FILE_INFORMATION/Line: de.ecspride.MainActivity 49} | REVERSE_FLOW
+
+
+###########################
+APP: ArraysAndLists_ArrayAccess1 
+FLOW: <de.ecspride.ArrayAccess1: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.ArrayAccess1 39} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.ArrayAccess1 32} | FALSE_POSITIVE 
+
+###########################
+APP: ArraysAndLists_ArrayAccess2 
+FLOW: <de.ecspride.ArrayAccess2: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.ArrayAccess2 34} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.ArrayAccess2 30} | FALSE_POSITIVE
+
+###########################
+APP: ArraysAndLists_HashMapAccess1 
+FLOW: <de.ecspride.HashMapAccess1: void onCreate(android.os.Bundle)>  | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.HashMapAccess1 37} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.HashMapAccess1 33} | FALSE_POSITIVE
+
+
+###########################
+APP: ArraysAndLists_ListAccess1 
+FLOW: <de.ecspride.ListAccess1: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.ListAccess1 38} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.ListAccess1 34} | FALSE_POSITIVE
+
+
+###########################
+APP: Callbacks_AnonymousClass1 
+FLOW: <de.ecspride.AnnonymousClass1: void onResume()> | {<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.AnnonymousClass1 65} <= {<android.location.Location: double getLatitude()>/LOCATION_INFORMATION/Line: de.ecspride.AnnonymousClass1 45} 
+FLOW: <de.ecspride.AnnonymousClass1: void onResume()> | {<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.AnnonymousClass1 65} <= {<android.location.Location: double getLongitude()>/LOCATION_INFORMATION/Line: de.ecspride.AnnonymousClass1 46}
+
+
+###########################
+APP: Callbacks_Button1 
+FLOW: <de.ecspride.Button1: void sendMessage(android.view.View)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.Button1 37} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.Button1 31} 
+
+
+###########################
+APP: Callbacks_Button2 
+FLOW: <de.ecspride.Button2$2: void onClick(android.view.View)> | {<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.Button2 52} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.Button2 59} 
+
+
+###########################
+APP: Callbacks_Button2 
+FLOW: <de.ecspride.Button2$1: void onClick(android.view.View)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.Button2 39} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.Button2 59} 
+
+
+###########################
+APP: Callbacks_Button2 
+FLOW: <de.ecspride.Button2$1: void onClick(android.view.View)> | {<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.Button2 40} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.Button2 59}  
+
+
+###########################
+APP: Callbacks_Button2 
+FLOW: <de.ecspride.Button2: void clickOnButton3(android.view.View)> | {<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.Button2 60} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.Button2 59}  
+
+
+###########################
+APP: Callbacks_Button3 
+FLOW: <de.ecspride.Button2Listener: void onClick(android.view.View)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.Button2Listener 20} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.Button1Listener 21} 
+
+
+###########################
+APP: Callbacks_Button3 
+FLOW: <de.ecspride.Button2Listener: void onClick(android.view.View)> | {<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.Button2Listener 18} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.Button1Listener 21} 
+
+
+###########################
+APP: Callbacks_Button3 
+FLOW: <de.ecspride.Button2Listener: void onClick(android.view.View)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.Button2Listener 20} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.Button1Listener 21} 
+
+###########################
+APP: Callbacks_Button3 
+FLOW: <de.ecspride.Button2Listener: void onClick(android.view.View)> | {<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.Button2Listener 18} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.Button1Listener 21} 
+
+
+###########################
+APP: Callbacks_Button4 
+FLOW: <de.ecspride.Button4: void sendMessage(android.view.View)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.Button4 37} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.Button4 31} 
+
+
+###########################
+APP: Callbacks_LocationLeak1 
+FLOW: <de.ecspride.LocationLeak1: void onResume()> | {<android.util.Log: int d(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.LocationLeak1 44} <= {<android.location.Location: double getLatitude()>/LOCATION_INFORMATION/Line: de.ecspride.LocationLeak1 51} 
+
+
+###########################
+APP: Callbacks_LocationLeak1 
+FLOW: <de.ecspride.LocationLeak1: void onResume()>  | {<android.util.Log: int d(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.LocationLeak1 45} <= {<android.location.Location: double getLongitude()>/LOCATION_INFORMATION/Line: de.ecspride.LocationLeak1 52} 
+
+
+###########################
+APP: Callbacks_LocationLeak2 
+FLOW: <de.ecspride.LocationLeak2: void onResume()> | {<android.util.Log: int d(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.LocationLeak2 44} <= {<android.location.Location: double getLatitude()>/LOCATION_INFORMATION/Line: de.ecspride.LocationLeak2 51} 
+
+
+###########################
+APP: Callbacks_LocationLeak2 
+FLOW: <de.ecspride.LocationLeak2: void onResume()> | {<android.util.Log: int d(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.LocationLeak2 45} <= {<android.location.Location: double getLongitude()>/LOCATION_INFORMATION/Line: de.ecspride.LocationLeak2 52} 
+
+
+###########################
+APP: Callbacks_LocationLeak3 
+FLOW: <de.ecspride.LocationLeak3: void onResume()> | {<android.util.Log: int d(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.LocationLeak3 44} <= {<android.location.Location: double getLatitude()>/LOCATION_INFORMATION/Line: de.ecspride.MyLocationListener 17} 
+FLOW: <de.ecspride.LocationLeak3: void onResume()> | {<android.util.Log: int d(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.LocationLeak3 44} <= {<android.location.Location: double getLongitude()>/LOCATION_INFORMATION/Line: de.ecspride.MyLocationListener 17} 
+
+
+###########################
+APP: Callbacks_MethodOverride1 
+FLOW: <de.ecspride.MethodOverride1: void attachBaseContext(android.content.Context)> | {<android.util.Log: int d(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.MethodOverride1 32} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.MethodOverride1 31} 
+
+
+###########################
+APP: Callbacks_MultiHandlers1 
+FLOW: NONE
+
+###########################
+APP: Callbacks_Ordering1 
+FLOW: <de.ecspride.MainActivity: void onCreate(android.os.Bundle)> | {<android.util.Log: int d(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.MainActivity 37} <= {<android.location.Location: double getLatitude()>/LOCATION_INFORMATION/Line: de.ecspride.MainActivity 72} | FALSE_POSITIVE | #Leaking value is not senstive at onCreate()
+
+
+###########################
+APP: Callbacks_Ordering1 
+FLOW: <de.ecspride.MainActivity: void onCreate(android.os.Bundle)> | {<android.util.Log: int d(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.MainActivity 38} <= {<android.location.Location: double getLongitude()>/LOCATION_INFORMATION/Line: de.ecspride.MainActivity 73}  | FALSE_POSITIVE | #Leaking value is not senstive at onCreate()
+
+
+###########################
+APP: Callbacks_RegisterGlobal1 
+FLOW: <de.ecspride.MyApplication$ApplicationCallbacks: void onActivityPaused(android.app.Activity)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.MyApplication 49} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.MyApplication 31} 
+
+
+###########################
+APP: Callbacks_RegisterGlobal2 
+FLOW: <de.ecspride.MyApplication$1: void onConfigurationChanged(android.content.res.Configuration)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.MyApplication 25} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.MyApplication 19} 
+
+
+###########################
+APP: Callbacks_Unregister1 
+FLOW: <de.ecspride.MainActivity$1: void onClick(android.view.View)> 
+
+{<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.MainActivity 43} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.MainActivity 39} | FALSE_POSITIVE | #callback later set to NULL
+
+
+###########################
+APP: FieldAndObjectSensitivity_FieldSensitivity1 
+FLOW: NONE
+
+
+###########################
+APP: FieldAndObjectSensitivity_FieldSensitivity2 
+FLOW: NONE
+
+###########################
+APP: FieldAndObjectSensitivity_FieldSensitivity3 
+FLOW: <de.ecspride.FieldSensitivity3: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.FieldSensitivity3 32} <= {<android.telephony.TelephonyManager: java.lang.String getSimSerialNumber()>/UNIQUE_IDENTIFIER/Line: de.ecspride.FieldSensitivity3 29} 
+
+
+###########################
+APP: FieldAndObjectSensitivity_FieldSensitivity4 
+FLOW: <de.ecspride.FieldSensitivity4: void onCreate(android.os.Bundle)>  | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.FieldSensitivity4 33} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.FieldSensitivity4 28} 
+
+
+###########################
+APP: FieldAndObjectSensitivity_InheritedObjects1 
+FLOW: <de.ecspride.InheritedObjects1: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.InheritedObjects1 38} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.VarA 6} 
+
+
+###########################
+APP: FieldAndObjectSensitivity_ObjectSensitivity1 
+FLOW: <de.ecspride.ObjectSensitivity1: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.ObjectSensitivity1 36} <= {<java.util.AbstractSequentialList: java.lang.Object get(int)>/util/Line: de.ecspride.ObjectSensitivity1 36} 
+
+
+###########################
+APP: FieldAndObjectSensitivity_ObjectSensitivity2 
+FLOW: <de.ecspride.OverwiteValue: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.OverwiteValue 41} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.OverwiteValue 31} 
+
+
+###########################
+APP: GeneralJava_Exceptions1 
+FLOW: <de.ecspride.Exceptions1: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.Exceptions1 35} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.Exceptions1 30} 
+
+
+###########################
+APP: GeneralJava_Exceptions2 
+FLOW: <de.ecspride.Exceptions2: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.Exceptions2 37} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.Exceptions2 30} 
+
+
+###########################
+APP: GeneralJava_Exceptions3 
+FLOW: <de.ecspride.Exceptions3: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.Exceptions3 37} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.Exceptions3 30} 
+
+
+###########################
+APP: GeneralJava_Exceptions4 
+FLOW: <de.ecspride.Exceptions4: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.Exceptions4 34} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.Exceptions4 29} 
+
+
+###########################
+APP: GeneralJava_Loop1 
+FLOW: <de.ecspride.LoopExample1: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.LoopExample1 35} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.LoopExample1 27} 
+
+
+###########################
+APP: GeneralJava_Loop2 
+FLOW: <de.ecspride.LoopExample2: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.LoopExample2 37} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.LoopExample2 27} 
+
+
+###########################
+APP: GeneralJava_SourceCodeSpecific1 
+FLOW: <de.ecspride.MainActivity: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.MainActivity 50} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.MainActivity 41} 
+
+
+###########################
+APP: GeneralJava_StaticInitialization1 
+FLOW: <de.ecspride.MainActivity: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.MainActivity 33} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.MainActivity 26} 
+
+
+###########################
+APP: GeneralJava_StaticInitialization2 
+FLOW: <de.ecspride.MainActivity: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.MainActivity 32} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.MainActivity 37} 
+
+
+###########################
+APP: GeneralJava_VirtualDispatch1 
+FLOW: <de.ecspride.VirtualDispatch1: void clickButton(android.view.View)> | {<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.DataLeak 13} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.VirtualDispatch1 34} 
+
+
+###########################
+APP: ImplicitFlows_ImplicitFlow1 
+FLOW: <de.ecspride.ImplicitFlow1: void onCreate(android.os.Bundle)> | {<java.io.PrintStream: void println(java.lang.String)>/IO/Line: de.ecspride.ImplicitFlow1 52} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.ImplicitFlow1 27} | MISSED
+
+
+###########################
+APP: ImplicitFlows_ImplicitFlow1 
+FLOW: <de.ecspride.ImplicitFlow1: void onCreate(android.os.Bundle)> | {<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.ImplicitFlow1 76} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.ImplicitFlow1 27}  | MISSED
+
+
+###########################
+APP: ImplicitFlows_ImplicitFlow2 
+FLOW: <de.ecspride.ImplicitFlow2: void checkPassword(android.view.View)> | {<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.ImplicitFlow2 37} <= {<>/IMPLICIT/Line: de.ecspride.ImplicitFlow2 33}  | MISSED
+
+
+###########################
+APP: ImplicitFlows_ImplicitFlow2 
+FLOW: <de.ecspride.ImplicitFlow2: void checkPassword(android.view.View)>  | {<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.ImplicitFlow2 39} <= {<>/IMPLICIT/Line: de.ecspride.ImplicitFlow2 33}  | MISSED
+
+
+###########################
+APP: ImplicitFlows_ImplicitFlow3 
+FLOW: <de.ecspride.ImplicitFlow3: void onCreate(android.os.Bundle)> | {<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.ImplicitFlow3 72} <= {<>/IMPLICIT/Line: de.ecspride.ImplicitFlow3 50}
+
+
+###########################
+APP: ImplicitFlows_ImplicitFlow3 
+FLOW: <de.ecspride.ImplicitFlow3: void onCreate(android.os.Bundle)> | {<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.ImplicitFlow3 78} <= {<>/IMPLICIT/Line: de.ecspride.ImplicitFlow3 50}
+
+
+###########################
+APP: ImplicitFlows_ImplicitFlow4 
+FLOW: <de.ecspride.ImplicitFlow4: void checkUsernamePassword(android.view.View)> | {<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.ImplicitFlow4 38} <= {<>/IMPLICIT/Line: de.ecspride.ImplicitFlow4 36} | MISSED
+
+
+FLOW: <de.ecspride.ImplicitFlow4: void checkUsernamePassword(android.view.View)>  | {<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: de.ecspride.ImplicitFlow4 42} <= {<>/IMPLICIT/Line: de.ecspride.ImplicitFlow4 36} | MISSED
+
+###########################
+APP: InterAppCommunication_ActivityCommunication1 
+FLOW: <de.ecspride.Activity1: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.Activity1 26} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.Activity2 16} 
+
+
+###########################
+APP: InterAppCommunication_IntentSink1 
+FLOW: <de.ecspride.IntentSink1: void onCreate(android.os.Bundle)> | {<android.app.Activity: void setResult(int,android.content.Intent)>/IPC/Line: de.ecspride.IntentSink1 31} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.IntentSink1 28} 
+FLOW: <de.ecspride.IntentSink1: void onCreate(android.os.Bundle)> | {<android.app.Activity: void setResult(int,android.content.Intent)>/IPC/Line: de.ecspride.IntentSink1 31} <= {<android.app.Activity: android.content.Intent getIntent()>/IPC/Line: de.ecspride.IntentSink1 29}  | FALSE_POSITIVE | #getIntent is not really the source
+
+
+###########################
+APP: InterAppCommunication_IntentSink2 
+FLOW: <de.ecspride.IntentSink2: void startIntent(android.view.View)> | {<android.app.Activity: void startActivity(android.content.Intent)>/START_ACTIVITY/Line: de.ecspride.IntentSink2 41} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.IntentSink2 36} 
+
+
+###########################
+APP: InterAppCommunication_IntentSource1 
+FLOW: <lu.uni.snt.serval.IntentSource1: void onCreate(android.os.Bundle)>  | {<android.app.Activity: void startActivityForResult(android.content.Intent,int)>/IPC/Line: lu.uni.snt.serval.IntentSource1 29} <= {<android.app.Activity: android.content.Intent getIntent()>/IPC/Line: lu.uni.snt.serval.IntentSource1 27} | FALSE_POSITIVE
+
+
+###########################
+APP: InterAppCommunication_IntentSource1 
+FLOW: <lu.uni.snt.serval.IntentSource1: void onActivityResult(int,int,android.content.Intent)> | {<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: lu.uni.snt.serval.IntentSource1 40} <= {<android.app.Activity: android.content.Intent getIntent()>/IPC/Line: lu.uni.snt.serval.IntentSource1 27}  | QUESTION | #onActivityResult() is treated as a source ??? How do we do this
+
+###########################
+APP: Lifecycle_ActivityLifecycle1 
+FLOW: <de.ecspride.ActivityLifecycle1: void onStart()> | {<java.net.URL: java.net.URLConnection openConnection()>/NETWORK/Line: de.ecspride.ActivityLifecycle1 50} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.ActivityLifecycle1 34} 
+
+
+###########################
+APP: Lifecycle_ActivityLifecycle2 
+FLOW: <de.ecspride.GeneralActivity: void onResume()> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.GeneralActivity 13} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.MainActivity 27} 
+
+###########################
+APP: Lifecycle_ActivityLifecycle3 
+FLOW: <de.ecspride.MainActivity: void onRestoreInstanceState(android.os.Bundle)>  | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.MainActivity 39} <= {<android.telephony.TelephonyManager: java.lang.String getSubscriberId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.MainActivity 33} 
+
+
+###########################
+APP: Lifecycle_ActivityLifecycle4 
+FLOW: <de.ecspride.MainActivity: void onPause()> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.MainActivity 34} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.MainActivity 41} 
+
+
+###########################
+APP: Lifecycle_ApplicationLifecycle1 
+FLOW: <de.ecspride.MainActivity: void onResume()> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.MainActivity 19} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.ApplicationLifecyle1 28} 
+
+
+###########################
+APP: Lifecycle_ApplicationLifecycle2 
+FLOW: <de.ecspride.ApplicationLifecyle2: void onLowMemory()> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.ApplicationLifecyle2 35} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.ApplicationLifecyle2 29} 
+
+
+###########################
+APP: Lifecycle_ApplicationLifecycle3 
+FLOW: <de.ecspride.ApplicationLifecyle3: void onCreate()> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.ApplicationLifecyle3 27} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.ContentProvider 32} 
+
+
+###########################
+APP: Lifecycle_BroadcastReceiverLifecycle1 
+FLOW: <de.ecspride.TestReceiver: void onReceive(android.content.Context,android.content.Intent)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.TestReceiver 28} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.TestReceiver 24} 
+
+
+###########################
+APP: Lifecycle_FragmentLifecycle1 
+FLOW: <de.ecspride.ExampleFragment: void onActivityCreated(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.ExampleFragment 15} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.MainActivity 27} 
+
+
+###########################
+APP: Lifecycle_ServiceLifecycle1 
+FLOW: <de.ecspride.MainService: void onLowMemory()> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.MainService 40} <= {<android.telephony.TelephonyManager: java.lang.String getSimSerialNumber()>/UNIQUE_IDENTIFIER/Line: de.ecspride.MainService 27} 
+
+
+###########################
+APP: Reflection_Reflection1 
+FLOW: <de.ecspride.MainActivity: void onCreate(android.os.Bundle)>  | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.MainActivity 35} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.MainActivity 32} | MISSED | #reflection is not resolved
+
+
+###########################
+APP: Reflection_Reflection2 
+FLOW: <de.ecspride.MainActivity: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.MainActivity 37} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.MainActivity 34} | MISSED | #reflection is not resolved
+
+###########################
+APP: Reflection_Reflection3 
+FLOW: <de.ecspride.MainActivity: void onCreate(android.os.Bundle)> | {<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: de.ecspride.MainActivity 48} <= {<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: de.ecspride.MainActivity 37}  | MISSED | #reflection
+
+
+

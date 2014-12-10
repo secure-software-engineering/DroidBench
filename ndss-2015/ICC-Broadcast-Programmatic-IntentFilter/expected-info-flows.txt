@@ -1,1 +1,0 @@
-FLOW:<edu.droidsafe.BroadcastTest: void onDestroy()>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: edu.droidsafe.BroadcastTest 24}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.droidsafe.BroadcastTest 34/ARG}
