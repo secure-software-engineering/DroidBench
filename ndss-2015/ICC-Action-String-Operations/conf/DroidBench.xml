@@ -3,24 +3,29 @@
 <!--  
 1. SourceApplication/SinkApplication: specifying it as package name of app
 2. SourceClass/SinkClass: specifying it as full class (component name usually) name
-   using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
+using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
 -->
 
 <DroidBench>
-    <TestCaseName>InterCompCommunication_startactivity4</TestCaseName>
-    <Version>2.0</Version>
-    <Author>Serval, SnT, University of Luxembourg</Author>
-    <AuthorEmail>li.li@uni.lu</AuthorEmail>
-    <Description>
-        This app does not contain any privacy leaks, it is used to verify if a detecting tool
-        can distinguish the Intent's URI.
-        If the tool cannot distinguish the Intent's URI, then false alarm will be detected.
-    </Description>
-    <Challenge>
-        To distinguish the Intent's RUI.
-    </Challenge>
-    
-    <NumberOfLeak>0</NumberOfLeak>
-    <Leaks>
-    </Leaks>
+<TestCaseName>ICC-Action-String-Operations</TestCaseName>
+<Version>2.1</Version>
+  <Author>Michael Gordon, Massachusetts Institute of Technology</Author>
+  <AuthorEmail>mgodon@mit.edu</AuthorEmail>
+  <Description>
+  </Description>
+  <Challenge>
+  </Challenge>
+
+  <NumberOfLeak>0</NumberOfLeak>
+  <Leaks>
+  <Leak>
+     <SourceApplication></SourceApplication>
+     <SourceClass></SourceClass>
+     <SourceMethod></SourceMethod>
+
+     <SinkApplication></SinkApplication>
+     <SinkClass></SinkClass>
+     <SinkMethod></SinkMethod>
+  </Leak>
+  </Leaks>
 </DroidBench>

@@ -3,35 +3,29 @@
 <!--  
 1. SourceApplication/SinkApplication: specifying it as package name of app
 2. SourceClass/SinkClass: specifying it as full class (component name usually) name
-   using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
+using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
 -->
 
 <DroidBench>
-    <TestCaseName>InterCompCommunication_startactivity1</TestCaseName>
-    <Version>2.0</Version>
-    <Author>Serval, SnT, University of Luxembourg</Author>
-    <AuthorEmail>li.li@uni.lu</AuthorEmail>
-    <Description>
-        A deviceid within an Intent is transfered to another Component by ICC method startActivity.
-        And then the deviceid is logged.
-        The two components are in the same application.
-    </Description>
-    <Challenge>
-        First, the analysis has to find the link between two components cased by startActivity.
-        Second, the analysis has to be aware that a sensitive data (deviceid) is transferred 
-        to another component within an Intent.
-    </Challenge>
-    
-    <NumberOfLeak>1</NumberOfLeak>
-    <Leaks>
-        <Leak>
-            <SourceApplication>lu.uni.serval.icc_startactivity1</SourceApplication>
-            <SourceClass>lu.uni.serval.icc_startactivity1.OutFlowActivity</SourceClass>
-            <SourceMethod>getDeviceId()</SourceMethod>
-            
-            <SinkApplication>lu.uni.serval.icc_startactivity1</SinkApplication>
-            <SinkClass>lu.uni.serval.icc_startactivity1.InFlowActivity</SinkClass>
-            <SinkMethod>i(java.lang.String,java.lang.String)</SinkMethod>
-        </Leak>
-    </Leaks>
+<TestCaseName>ICC-Non-Constant-Class-Object</TestCaseName>
+<Version>2.1</Version>
+  <Author>Michael Gordon, Massachusetts Institute of Technology</Author>
+  <AuthorEmail>mgodon@mit.edu</AuthorEmail>
+  <Description>
+  </Description>
+  <Challenge>
+  </Challenge>
+
+  <NumberOfLeak>0</NumberOfLeak>
+  <Leaks>
+  <Leak>
+     <SourceApplication></SourceApplication>
+     <SourceClass></SourceClass>
+     <SourceMethod></SourceMethod>
+
+     <SinkApplication></SinkApplication>
+     <SinkClass></SinkClass>
+     <SinkMethod></SinkMethod>
+  </Leak>
+  </Leaks>
 </DroidBench>

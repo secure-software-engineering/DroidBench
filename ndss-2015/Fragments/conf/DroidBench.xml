@@ -7,7 +7,7 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
 -->
 
 <DroidBench>
-<TestCaseName>ICC-Event-Ordering</TestCaseName>
+<TestCaseName>Fragments</TestCaseName>
 <Version>2.1</Version>
   <Author>Michael Gordon, Massachusetts Institute of Technology</Author>
   <AuthorEmail>mgodon@mit.edu</AuthorEmail>
