@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <!--  
 1. SourceApplication/SinkApplication: specifying it as package name of app
 2. SourceClass/SinkClass: specifying it as full class (component name usually) name
@@ -12,20 +10,23 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
   <Author>Michael Gordon, Massachusetts Institute of Technology</Author>
   <AuthorEmail>mgodon@mit.edu</AuthorEmail>
   <Description>
+      Device Id is retrieved during onResume() lifecycle event and later leaked during onStop().  There is also
+      onLowMemory event that may confuse some analysis tools.
   </Description>
   <Challenge>
+      The analysis must account for all legal ordering of asynch events with respect to the activity life cycle
   </Challenge>
 
-  <NumberOfLeak>0</NumberOfLeak>
+  <NumberOfLeak>1</NumberOfLeak>
   <Leaks>
   <Leak>
-     <SourceApplication></SourceApplication>
-     <SourceClass></SourceClass>
-     <SourceMethod></SourceMethod>
+     <SourceApplication>edu.mit</SourceApplication>
+     <SourceClass>edu.mit.MainActivity</SourceClass>
+     <SourceMethod>getDeviceId()</SourceMethod>
 
-     <SinkApplication></SinkApplication>
-     <SinkClass></SinkClass>
-     <SinkMethod></SinkMethod>
+     <SinkApplication>edu.mit</SinkApplication>
+     <SinkClass>edu.mit.MainActivity</SinkClass>
+     <SinkMethod>i(java.lang.String,java.lang.String)</SinkMethod>
   </Leak>
   </Leaks>
 </DroidBench>
