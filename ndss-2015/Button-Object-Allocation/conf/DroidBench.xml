@@ -9,23 +9,25 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
 <DroidBench>
 <TestCaseName>Button-Object-Allocation</TestCaseName>
 <Version>2.1</Version>
-  <Author>Michael Gordon, Massachusetts Institute of Technology</Author>
-  <AuthorEmail>mgodon@mit.edu</AuthorEmail>
+  <Author>Droidsafe Project</Author>
+  <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
   <Description>
+  Test correct modeling of button object maintained by the runtime and delivered to onClick events handler is defined via XML.
   </Description>
   <Challenge>
+  Must correctly model that a Button is represented by a single object in the runtime, and that object is delivered to multiple calls of onClick
   </Challenge>
 
-  <NumberOfLeak>0</NumberOfLeak>
+  <NumberOfLeak>1</NumberOfLeak>
   <Leaks>
   <Leak>
-     <SourceApplication></SourceApplication>
-     <SourceClass></SourceClass>
-     <SourceMethod></SourceMethod>
+     <SourceApplication>edu.mit.button_object_allocation</SourceApplication>
+     <SourceClass>edu.mit.button_object_allocation.Button1</SourceClass>
+     <SourceMethod>getDeviceId()</SourceMethod>
 
-     <SinkApplication></SinkApplication>
-     <SinkClass></SinkClass>
-     <SinkMethod></SinkMethod>
+     <SinkApplication>edu.mit.button_object_allocation</SinkApplication>
+     <SinkClass>edu.mit.button_object_allocation.Button1</SinkClass>
+     <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>
 </DroidBench>

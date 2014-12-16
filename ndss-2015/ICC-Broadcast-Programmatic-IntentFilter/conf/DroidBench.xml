@@ -9,23 +9,25 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
 <DroidBench>
 <TestCaseName>ICC-Broadcast-Programmatic-IntentFilter</TestCaseName>
 <Version>2.1</Version>
-  <Author>Michael Gordon, Massachusetts Institute of Technology</Author>
-  <AuthorEmail>mgodon@mit.edu</AuthorEmail>
+  <Author>Droidsafe Project</Author>
+  <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
   <Description>
+  Testing BroadcastReceiver through programmatic setting up of IntentFilter.
   </Description>
   <Challenge>
+  The analysis tool has to be able to recognize a broadcast receiver and models its IntentFilter.
   </Challenge>
 
-  <NumberOfLeak>0</NumberOfLeak>
+  <NumberOfLeak>1</NumberOfLeak>
   <Leaks>
   <Leak>
-     <SourceApplication></SourceApplication>
-     <SourceClass></SourceClass>
-     <SourceMethod></SourceMethod>
+     <SourceApplication>edu.mit.icc_broadcast_programmatic_intentfilter</SourceApplication>
+     <SourceClass>edu.mit.icc_broadcast_programmatic_intentfilter.BroadcastTest</SourceClass>
+     <SourceMethod>getDeviceId()</SourceMethod>
 
-     <SinkApplication></SinkApplication>
-     <SinkClass></SinkClass>
-     <SinkMethod></SinkMethod>
+     <SinkApplication>edu.mit.icc_broadcast_programmatic_intentfilter</SinkApplication>
+     <SinkClass>edu.mit.icc_broadcast_programmatic_intentfilter.BroadcastTest</SinkClass>
+     <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>
 </DroidBench>

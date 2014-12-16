@@ -9,23 +9,25 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
 <DroidBench>
 <TestCaseName>Activity-Saved-State</TestCaseName>
 <Version>2.1</Version>
-  <Author>Michael Gordon, Massachusetts Institute of Technology</Author>
-  <AuthorEmail>mgodon@mit.edu</AuthorEmail>
+  <Author>Droidsafe Project</Author>
+  <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
   <Description>
+  Test of saving Activity state in Bundle.
   </Description>
   <Challenge>
+  The analysis tool has to take into account the savedState bundle keeping tainted sensitive information.
   </Challenge>
 
-  <NumberOfLeak>0</NumberOfLeak>
+  <NumberOfLeak>1</NumberOfLeak>
   <Leaks>
   <Leak>
-     <SourceApplication></SourceApplication>
-     <SourceClass></SourceClass>
-     <SourceMethod></SourceMethod>
+     <SourceApplication>edu.mit.activity_saved_state</SourceApplication>
+     <SourceClass>edu.mit.activity_saved_state.MainActivity</SourceClass>
+     <SourceMethod>getDeviceId()</SourceMethod>
 
-     <SinkApplication></SinkApplication>
-     <SinkClass></SinkClass>
-     <SinkMethod></SinkMethod>
+     <SinkApplication>edu.mit.activity_saved_state</SinkApplication>
+     <SinkClass>edu.mit.activity_saved_state.MainActivity</SinkClass>
+     <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>
 </DroidBench>

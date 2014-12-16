@@ -1,3 +1,4 @@
+FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: edu.mit.MainActivity 32}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.MainActivity 27/ARG}
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--  
@@ -9,23 +10,23 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
 <DroidBench>
 <TestCaseName>Intent-Class-Modeling</TestCaseName>
 <Version>2.1</Version>
-  <Author>Michael Gordon, Massachusetts Institute of Technology</Author>
-  <AuthorEmail>mgodon@mit.edu</AuthorEmail>
+  <Author>Droidsafe Project</Author>
+  <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
   <Description>
   </Description>
   <Challenge>
   </Challenge>
 
-  <NumberOfLeak>0</NumberOfLeak>
+  <NumberOfLeak>1</NumberOfLeak>
   <Leaks>
   <Leak>
-     <SourceApplication></SourceApplication>
-     <SourceClass></SourceClass>
-     <SourceMethod></SourceMethod>
+     <SourceApplication>edu.mit.intent_class_modeling</SourceApplication>
+     <SourceClass>edu.mit.intent_class_modeling.</SourceClass>
+     <SourceMethod>getDeviceId()</SourceMethod>
 
-     <SinkApplication></SinkApplication>
-     <SinkClass></SinkClass>
-     <SinkMethod></SinkMethod>
+     <SinkApplication>edu.mit.intent_class_modeling</SinkApplication>
+     <SinkClass>edu.mit.intent_class_modeling.</SinkClass>
+     <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>
 </DroidBench>

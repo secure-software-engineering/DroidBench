@@ -1,3 +1,5 @@
+FLOW:<edu.mit.InFlowActivity: void onCreate(android.os.Bundle)>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: edu.mit.InFlowActivity 23}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.InFlowActivity 30/ARG}
+MISSING: FLOW:<lu.uni.serval.icc_startactivity4.OutFlowActivity: void onCreate(android.os.Bundle)>|{<android.app.Activity: void startActivity(android.content.Intent)>/IPC/Line: lu.uni.serval.icc_startactivity4.OutFlowActivity 23}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: lu.uni.serval.icc_startactivity4.OutFlowActivity 18/ARG}
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--  
@@ -9,23 +11,23 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
 <DroidBench>
 <TestCaseName>ICC-Event-Ordering</TestCaseName>
 <Version>2.1</Version>
-  <Author>Michael Gordon, Massachusetts Institute of Technology</Author>
-  <AuthorEmail>mgodon@mit.edu</AuthorEmail>
+  <Author>Droidsafe Project</Author>
+  <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
   <Description>
   </Description>
   <Challenge>
   </Challenge>
 
-  <NumberOfLeak>0</NumberOfLeak>
+  <NumberOfLeak>1</NumberOfLeak>
   <Leaks>
   <Leak>
-     <SourceApplication></SourceApplication>
-     <SourceClass></SourceClass>
-     <SourceMethod></SourceMethod>
+     <SourceApplication>edu.mit.icc_event_ordering</SourceApplication>
+     <SourceClass>edu.mit.icc_event_ordering.</SourceClass>
+     <SourceMethod>getDeviceId()</SourceMethod>
 
-     <SinkApplication></SinkApplication>
-     <SinkClass></SinkClass>
-     <SinkMethod></SinkMethod>
+     <SinkApplication>edu.mit.icc_event_ordering</SinkApplication>
+     <SinkClass>edu.mit.icc_event_ordering.</SinkClass>
+     <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>
 </DroidBench>

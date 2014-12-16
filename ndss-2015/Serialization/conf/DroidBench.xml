@@ -1,3 +1,7 @@
+FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<java.io.ObjectOutputStream: void writeObject(java.lang.Object)>/SERIALIZATION/Line: edu.mit.MainActivity 37}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.MainActivity 31/ARG}
+FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<java.io.ObjectOutputStream: void writeObject(java.lang.Object)>/SERIALIZATION/Line: edu.mit.MainActivity 37}<={<java.io.ObjectInputStream: java.lang.Object readObject()>/SERIALIZATION/Line: edu.mit.MainActivity 44/RECEIVER}
+FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: edu.mit.MainActivity 47}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.MainActivity 31/ARG}
+FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<java.io.ObjectOutputStream: void writeObject(java.lang.Object)>/SERIALIZATION/Line: edu.mit.MainActivity 37}<={<java.io.ObjectInputStream: java.lang.Object readObject()>/SERIALIZATION/Line: edu.mit.MainActivity 44/ARG}
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--  
@@ -9,23 +13,23 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
 <DroidBench>
 <TestCaseName>Serialization</TestCaseName>
 <Version>2.1</Version>
-  <Author>Michael Gordon, Massachusetts Institute of Technology</Author>
-  <AuthorEmail>mgodon@mit.edu</AuthorEmail>
+  <Author>Droidsafe Project</Author>
+  <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
   <Description>
   </Description>
   <Challenge>
   </Challenge>
 
-  <NumberOfLeak>0</NumberOfLeak>
+  <NumberOfLeak>1</NumberOfLeak>
   <Leaks>
   <Leak>
-     <SourceApplication></SourceApplication>
-     <SourceClass></SourceClass>
-     <SourceMethod></SourceMethod>
+     <SourceApplication>edu.mit.serialization</SourceApplication>
+     <SourceClass>edu.mit.serialization.</SourceClass>
+     <SourceMethod>getDeviceId()</SourceMethod>
 
-     <SinkApplication></SinkApplication>
-     <SinkClass></SinkClass>
-     <SinkMethod></SinkMethod>
+     <SinkApplication>edu.mit.serialization</SinkApplication>
+     <SinkClass>edu.mit.serialization.</SinkClass>
+     <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>
 </DroidBench>

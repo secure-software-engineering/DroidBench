@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <!--  
 1. SourceApplication/SinkApplication: specifying it as package name of app
 2. SourceClass/SinkClass: specifying it as full class (component name usually) name
@@ -7,26 +9,24 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
 <DroidBench>
 <TestCaseName>Activity-Asynchronous-Event-Ordering</TestCaseName>
 <Version>2.1</Version>
-  <Author>Michael Gordon, Massachusetts Institute of Technology</Author>
-  <AuthorEmail>mgodon@mit.edu</AuthorEmail>
+  <Author>Droidsafe Project</Author>
+  <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
   <Description>
-      Device Id is retrieved during onResume() lifecycle event and later leaked during onStop().  There is also
-      onLowMemory event that may confuse some analysis tools.
+  Account for the asynchronous event firing of onLowMemory
   </Description>
-  <Challenge>
-      The analysis must account for all legal ordering of asynch events with respect to the activity life cycle
+  <Challenge>The analysis must account for all legal ordering of asynch events with respect to the activity life cycle.  onLowMemory() is added to confuse the analysis tool.
   </Challenge>
 
   <NumberOfLeak>1</NumberOfLeak>
   <Leaks>
   <Leak>
-     <SourceApplication>edu.mit</SourceApplication>
-     <SourceClass>edu.mit.MainActivity</SourceClass>
+     <SourceApplication>edu.mit.activity_asynchronous_event_ordering</SourceApplication>
+     <SourceClass>edu.mit.activity_asynchronous_event_ordering.MainActivity</SourceClass>
      <SourceMethod>getDeviceId()</SourceMethod>
 
-     <SinkApplication>edu.mit</SinkApplication>
-     <SinkClass>edu.mit.MainActivity</SinkClass>
-     <SinkMethod>i(java.lang.String,java.lang.String)</SinkMethod>
+     <SinkApplication>edu.mit.activity_asynchronous_event_ordering</SinkApplication>
+     <SinkClass>edu.mit.activity_asynchronous_event_ordering.MainActivity</SinkClass>
+     <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>
 </DroidBench>

@@ -1,3 +1,6 @@
+FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<java.lang.ProcessBuilder: java.lang.ProcessBuilder command(java.lang.String[])>/OS_COMMAND/Line: edu.mit.MainActivity 30}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.MainActivity 26/RECEIVER}
+FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<java.lang.ProcessBuilder: java.lang.ProcessBuilder command(java.lang.String[])>/OS_COMMAND/Line: edu.mit.MainActivity 30}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.MainActivity 26/ARG}
+FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<java.lang.ProcessBuilder: java.lang.Process start()>/OS_COMMAND/Line: edu.mit.MainActivity 31}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.MainActivity 26/RECEIVER}
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--  
@@ -9,23 +12,23 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
 <DroidBench>
 <TestCaseName>Non-Sink-Argument-Flow</TestCaseName>
 <Version>2.1</Version>
-  <Author>Michael Gordon, Massachusetts Institute of Technology</Author>
-  <AuthorEmail>mgodon@mit.edu</AuthorEmail>
+  <Author>Droidsafe Project</Author>
+  <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
   <Description>
   </Description>
   <Challenge>
   </Challenge>
 
-  <NumberOfLeak>0</NumberOfLeak>
+  <NumberOfLeak>1</NumberOfLeak>
   <Leaks>
   <Leak>
-     <SourceApplication></SourceApplication>
-     <SourceClass></SourceClass>
-     <SourceMethod></SourceMethod>
+     <SourceApplication>edu.mit.non_sink_argument_flow</SourceApplication>
+     <SourceClass>edu.mit.non_sink_argument_flow.</SourceClass>
+     <SourceMethod>getDeviceId()</SourceMethod>
 
-     <SinkApplication></SinkApplication>
-     <SinkClass></SinkClass>
-     <SinkMethod></SinkMethod>
+     <SinkApplication>edu.mit.non_sink_argument_flow</SinkApplication>
+     <SinkClass>edu.mit.non_sink_argument_flow.</SinkClass>
+     <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>
 </DroidBench>
