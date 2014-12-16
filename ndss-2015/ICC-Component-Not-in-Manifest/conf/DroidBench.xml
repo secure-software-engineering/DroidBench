@@ -1,7 +1,3 @@
-FLOW:<edu.mit.InFlowActivity: void onCreate(android.os.Bundle)>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: edu.mit.InFlowActivity 18}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.OutFlowActivity 18/ARG}
-MISSING: MISSING: FLOW:<lu.uni.serval.icc_startactivity1.OutFlowActivity: void onCreate(android.os.Bundle)>|{<android.app.Activity: void startActivity(android.content.Intent)>/IPC/Line: lu.uni.serval.icc_startactivity1.OutFlowActivity 22}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: lu.uni.serval.icc_startactivity1.OutFlowActivity 17/ARG}
-MISSING: MISSING: FLOW:<lu.uni.serval.icc_startactivity1.InFlowActivity: void onCreate(android.os.Bundle)>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: lu.uni.serval.icc_startactivity1.InFlowActivity 17}<={<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>/IPC/Line: lu.uni.serval.icc_startactivity1.InFlowActivity 16/ARG}
-MISSING: FLOW:<lu.uni.serval.icc_startactivity1.InFlowActivity: void onCreate(android.os.Bundle)>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: lu.uni.serval.icc_startactivity1.InFlowActivity 17}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: lu.uni.serval.icc_startactivity1.OutFlowActivity 17/ARG}
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--  
@@ -16,19 +12,21 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
   <Author>Droidsafe Project</Author>
   <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
   <Description>
+  Testing if the component(activity) not declared in AndroidManifest.xml is analyzed by the analysis tool.
   </Description>
   <Challenge>
+  The analysis tool must be able to identify whether a component is declared in the AndroidManifest.xml.  When a component not in the AndroidManifest.xml, it will not be seen by the system. 
   </Challenge>
 
-  <NumberOfLeak>1</NumberOfLeak>
+  <NumberOfLeak>0</NumberOfLeak>
   <Leaks>
   <Leak>
      <SourceApplication>edu.mit.icc_component_not_in_manifest</SourceApplication>
-     <SourceClass>edu.mit.icc_component_not_in_manifest.</SourceClass>
+     <SourceClass>edu.mit.icc_component_not_in_manifest.OutFlowActivity</SourceClass>
      <SourceMethod>getDeviceId()</SourceMethod>
 
      <SinkApplication>edu.mit.icc_component_not_in_manifest</SinkApplication>
-     <SinkClass>edu.mit.icc_component_not_in_manifest.</SinkClass>
+     <SinkClass>edu.mit.icc_component_not_in_manifest.InFlowActivity</SinkClass>
      <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>

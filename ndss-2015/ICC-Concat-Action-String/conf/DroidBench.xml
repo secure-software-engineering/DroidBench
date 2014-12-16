@@ -1,8 +1,3 @@
-FLOW:<edu.mit.OutFlowActivity: void onCreate(android.os.Bundle)>|{<android.app.Activity: void startActivity(android.content.Intent)>/IPC/Line: edu.mit.OutFlowActivity 29}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.OutFlowActivity 24/ARG}
-FLOW:<edu.mit.InFlowActivity: void onCreate(android.os.Bundle)>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: edu.mit.InFlowActivity 18}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.OutFlowActivity 24/ARG}
-MISSING: MISSING: FLOW:<lu.uni.serval.icc_startactivity4.OutFlowActivity: void onCreate(android.os.Bundle)>|{<android.app.Activity: void startActivity(android.content.Intent)>/IPC/Line: lu.uni.serval.icc_startactivity4.OutFlowActivity 23}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: lu.uni.serval.icc_startactivity4.OutFlowActivity 18/ARG}
-MISSING: FLOW:<lu.uni.serval.icc_startactivity4.InFlowActivity: void onCreate(android.os.Bundle)>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: lu.uni.serval.icc_startactivity4.InFlowActivity 17}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: lu.uni.serval.icc_startactivity4.OutFlowActivity 22/ARG}
-MISSING: FLOW:<lu.uni.serval.icc_startactivity4.OutFlowActivity: void onCreate(android.os.Bundle)>|{<android.app.Activity: void startActivity(android.content.Intent)>/IPC/Line: lu.uni.serval.icc_startactivity4.OutFlowActivity 27}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: lu.uni.serval.icc_startactivity4.OutFlowActivity 22/ARG}
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--  
@@ -17,19 +12,21 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
   <Author>Droidsafe Project</Author>
   <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
   <Description>
+  Testing if string concatenation can be analyzed in the Intent.ACTION field.
   </Description>
   <Challenge>
+  The analysis tool needs to be able to analyze constant string with concatenation operation and able to resolve the Intent for the resulted string and follow tainted data to the next Activity.
   </Challenge>
 
   <NumberOfLeak>1</NumberOfLeak>
   <Leaks>
   <Leak>
      <SourceApplication>edu.mit.icc_concat_action_string</SourceApplication>
-     <SourceClass>edu.mit.icc_concat_action_string.</SourceClass>
+     <SourceClass>edu.mit.icc_concat_action_string.InFlowActivity</SourceClass>
      <SourceMethod>getDeviceId()</SourceMethod>
 
      <SinkApplication>edu.mit.icc_concat_action_string</SinkApplication>
-     <SinkClass>edu.mit.icc_concat_action_string.</SinkClass>
+     <SinkClass>edu.mit.icc_concat_action_string.OutFlowActivity</SinkClass>
      <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>
