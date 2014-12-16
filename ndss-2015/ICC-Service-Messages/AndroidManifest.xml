@@ -30,7 +30,7 @@
             android:hardwareAccelerated="true">
 
 
-        <activity android:name="edu.mit.ActivityMessenger" android:label="ActivityMessenger">
+        <activity android:name="edu.mit.icc_service_messages.ActivityMessenger" android:label="ActivityMessenger">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -38,7 +38,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name="edu.mit.MessengerService" android:exported="false"></service>
+        <service android:name="edu.mit.icc_service_messages.MessengerService" android:exported="false"></service>
 
     </application>
 

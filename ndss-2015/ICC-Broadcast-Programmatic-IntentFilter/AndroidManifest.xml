@@ -6,7 +6,7 @@
     <application 
     android:icon="@drawable/icon" 
     android:label="BroadcastTest">
-        <activity android:name="edu.mit.BroadcastTest"
+        <activity android:name="edu.mit.icc_broadcast_programmatic_intentfilter.BroadcastTest"
                   android:label="BroadcastTest">
             <intent-filter>
                 <action 
