@@ -1,6 +1,6 @@
-package edu.mit.icc_component_class_constant;
+package edu.mit.icc_componentname_class_constant;
 
-import lu.uni.serval.icc_startactivity4.R;
+import edu.mit.icc_componentname_class_constant.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

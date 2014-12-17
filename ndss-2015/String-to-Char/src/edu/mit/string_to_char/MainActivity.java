@@ -1,11 +1,12 @@
 package edu.mit.string_to_char;
 
-import edu.mit.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+
+import edu.mit.string_to_char.R;
 
 /**
  * @testcase_name String-to-Char

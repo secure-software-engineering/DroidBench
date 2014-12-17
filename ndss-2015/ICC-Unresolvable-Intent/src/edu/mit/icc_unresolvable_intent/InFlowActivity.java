@@ -1,6 +1,6 @@
 package edu.mit.icc_unresolvable_intent;
 
-import lu.uni.serval.icc_startactivity4.R;
+import edu.mit.icc_unresolvable_intent.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

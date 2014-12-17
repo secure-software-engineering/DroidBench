@@ -1,6 +1,6 @@
 package edu.mit.icc_intent_passed_through_api;
 
-import lu.uni.serval.icc_startactivity4.R;
+import edu.mit.icc_intent_passed_through_api.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

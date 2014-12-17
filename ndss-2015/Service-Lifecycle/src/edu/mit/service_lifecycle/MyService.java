@@ -1,4 +1,4 @@
-package edu.mit.service_life_cycle;
+package edu.mit.service_lifecycle;
 
 import android.app.Service;
 import android.telephony.SmsManager;

@@ -1,9 +1,7 @@
 package edu.mit.activity_asynchronous_event_ordering;
 
-import edu.mit.R;
 import android.app.Activity;
 import android.os.Bundle;
-import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 

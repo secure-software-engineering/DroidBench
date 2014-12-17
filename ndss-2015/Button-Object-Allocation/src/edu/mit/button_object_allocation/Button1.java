@@ -1,6 +1,6 @@
 package edu.mit.button_object_allocation;
 
-import edu.mit.R;
+import edu.mit.button_object_allocation.R;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;

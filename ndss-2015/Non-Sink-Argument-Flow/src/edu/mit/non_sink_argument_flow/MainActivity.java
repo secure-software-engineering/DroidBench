@@ -7,7 +7,7 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import java.util.LinkedList;
 
-import edu.mit.R;
+import edu.mit.non_sink_argument_flow.R;
 
 /**
  * @testcase_name Non-Sink-Argument-Flow

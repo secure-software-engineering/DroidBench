@@ -1,6 +1,6 @@
 package edu.mit.dynamic_dispatch;
 
-import edu.mit.R;
+import edu.mit.dynamic_dispatch.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.telephony.SmsManager;

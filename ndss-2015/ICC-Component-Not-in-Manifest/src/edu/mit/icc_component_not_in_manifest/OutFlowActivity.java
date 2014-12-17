@@ -1,6 +1,6 @@
 package edu.mit.icc_component_not_in_manifest;
 
-import lu.uni.serval.icc_startactivity1.R;
+import edu.mit.icc_component_not_in_manifest.R;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;

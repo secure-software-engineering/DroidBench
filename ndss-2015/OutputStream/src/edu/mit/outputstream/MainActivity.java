@@ -7,7 +7,7 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import java.io.ByteArrayOutputStream;
 
-import edu.mit.R;
+import edu.mit.outputstream.R;
 
 /**
  * @testcase_name OutputStream

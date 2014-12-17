@@ -1,6 +1,6 @@
 package edu.mit.parcel;
 
-import edu.mit.R;
+import edu.mit.parcel.R;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;

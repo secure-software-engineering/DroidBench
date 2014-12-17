@@ -9,7 +9,7 @@ import android.telephony.TelephonyManager;
 import java.util.List;
 import java.util.LinkedList;
 
-import lu.uni.serval.icc_startactivity4.R;
+import edu.mit.icc_intent_passed_through_api.R;
 
 public class OutFlowActivity extends Activity {
 

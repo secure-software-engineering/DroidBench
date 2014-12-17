@@ -1,6 +1,5 @@
 package edu.mit.activity_saved_state;
 
-import edu.mit.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.telephony.SmsManager;

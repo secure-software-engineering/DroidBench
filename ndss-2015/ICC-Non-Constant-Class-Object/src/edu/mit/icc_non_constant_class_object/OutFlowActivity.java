@@ -1,6 +1,6 @@
 package edu.mit.icc_non_constant_class_object;
 
-import lu.uni.serval.icc_startactivity1.R;
+import edu.mit.icc_non_constant_class_object.R;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;

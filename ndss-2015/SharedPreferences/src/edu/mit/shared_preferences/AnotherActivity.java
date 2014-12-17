@@ -1,6 +1,6 @@
 package edu.mit.shared_preferences;
 
-import edu.mit.R;
+import edu.mit.shared_preferences.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.telephony.SmsManager;

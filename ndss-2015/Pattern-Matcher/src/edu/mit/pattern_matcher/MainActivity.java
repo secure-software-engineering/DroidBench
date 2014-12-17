@@ -8,7 +8,7 @@ import android.util.Log;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-import edu.mit.R;
+import edu.mit.pattern_matcher.R;
 
 /**
  * @testcase_name PatternMatcher

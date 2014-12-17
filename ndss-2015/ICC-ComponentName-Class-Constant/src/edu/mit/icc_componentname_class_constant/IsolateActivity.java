@@ -1,4 +1,4 @@
-package edu.mit.icc_component_class_constant;
+package edu.mit.icc_componentname_class_constant;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -1,6 +1,6 @@
 package edu.mit.clinit;
 
-import edu.mit.R;
+import edu.mit.clinit.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.telephony.SmsManager;

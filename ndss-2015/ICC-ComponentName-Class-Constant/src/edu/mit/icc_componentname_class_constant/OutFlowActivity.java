@@ -1,4 +1,4 @@
-package edu.mit.icc_component_class_constant;
+package edu.mit.icc_componentname_class_constant;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import java.util.Random;
 
-import lu.uni.serval.icc_startactivity4.R;
+import edu.mit.icc_componentname_class_constant.R;
 import android.content.ComponentName;
 
 public class OutFlowActivity extends Activity {

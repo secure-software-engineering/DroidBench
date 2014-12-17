@@ -7,7 +7,7 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import java.util.Formatter;
 
-import edu.mit.R;
+import edu.mit.string_formatter.R;
 
 /**
  * @testcase_name String Format

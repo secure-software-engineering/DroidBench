@@ -9,7 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import java.util.Random;
 
-import lu.uni.serval.icc_startactivity4.R;
+import edu.mit.icc_event_ordering.R;
 
 public class OutFlowActivity extends Activity {
 

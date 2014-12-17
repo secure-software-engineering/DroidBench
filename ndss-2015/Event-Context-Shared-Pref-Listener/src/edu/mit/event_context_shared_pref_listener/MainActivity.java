@@ -1,6 +1,6 @@
 package edu.mit.event_context_shared_pref_listener;
 
-import edu.mit.R;
+import edu.mit.event_context_shared_pref_listener.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.telephony.SmsManager;

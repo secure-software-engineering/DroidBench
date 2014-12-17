@@ -8,7 +8,7 @@ import android.util.Log;
 import java.util.List;
 import java.util.LinkedList;
 
-import edu.mit.R;
+import edu.mit.clone.R;
 
 /**
  * @testcase_name Clone

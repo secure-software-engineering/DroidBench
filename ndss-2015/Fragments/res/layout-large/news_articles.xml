@@ -20,13 +20,13 @@ limitations under the License.
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <fragment android:name="edu.mit.HeadlinesFragment"
+    <fragment android:name="edu.mit.fragments.HeadlinesFragment"
               android:id="@+id/headlines_fragment"
               android:layout_weight="1"
               android:layout_width="0dp"
               android:layout_height="match_parent" />
 
-    <fragment android:name="edu.mit.ArticleFragment"
+    <fragment android:name="edu.mit.fragments.ArticleFragment"
               android:id="@+id/article_fragment"
               android:layout_weight="2"
               android:layout_width="0dp"

@@ -19,7 +19,7 @@ import android.view.View;
 import android.os.Bundle;
 import java.util.ArrayList;
 
-import com.example.android.apis.app.R;
+import edu.mit.icc_service_messages.R;
 
 import android.content.ComponentName;
 import android.content.Context;

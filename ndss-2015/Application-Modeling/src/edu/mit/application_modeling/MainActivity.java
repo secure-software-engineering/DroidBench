@@ -1,6 +1,5 @@
 package edu.mit.application_modeling;
 
-import edu.mit.R;
 import android.content.Intent;
 import android.app.Activity;
 import android.os.Bundle;

@@ -1,6 +1,6 @@
 package edu.mit.icc_concat_action_string;
 
-import lu.uni.serval.icc_startactivity4.R;
+import edu.mit.icc_concat_action_string.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,6 +1,6 @@
 package edu.mit.icc_intent_class_modeling;
 
-import edu.mit.R;
+import edu.mit.icc_intent_class_modeling.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.telephony.SmsManager;

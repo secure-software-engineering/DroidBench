@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import java.util.Random;
 
-import lu.uni.serval.icc_startactivity4.R;
+import edu.mit.icc_pass_action_string_through_api.R;
 
 public class OutFlowActivity extends Activity {
 

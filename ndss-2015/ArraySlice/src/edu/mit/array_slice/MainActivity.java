@@ -1,6 +1,6 @@
 package edu.mit.array_slice;
 
-import edu.mit.R;
+import edu.mit.array_slice.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
