@@ -1,7 +1,3 @@
-FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<java.io.ObjectOutputStream: void writeObject(java.lang.Object)>/SERIALIZATION/Line: edu.mit.MainActivity 37}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.MainActivity 31/ARG}
-FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<java.io.ObjectOutputStream: void writeObject(java.lang.Object)>/SERIALIZATION/Line: edu.mit.MainActivity 37}<={<java.io.ObjectInputStream: java.lang.Object readObject()>/SERIALIZATION/Line: edu.mit.MainActivity 44/RECEIVER}
-FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: edu.mit.MainActivity 47}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.MainActivity 31/ARG}
-FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<java.io.ObjectOutputStream: void writeObject(java.lang.Object)>/SERIALIZATION/Line: edu.mit.MainActivity 37}<={<java.io.ObjectInputStream: java.lang.Object readObject()>/SERIALIZATION/Line: edu.mit.MainActivity 44/ARG}
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--  
@@ -16,19 +12,21 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
   <Author>Droidsafe Project</Author>
   <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
   <Description>
+  Test serialization end to end flow
   </Description>
   <Challenge>
+  The analysis tool must be able to reason through various in-memory serializations.
   </Challenge>
 
   <NumberOfLeak>1</NumberOfLeak>
   <Leaks>
   <Leak>
      <SourceApplication>edu.mit.serialization</SourceApplication>
-     <SourceClass>edu.mit.serialization.</SourceClass>
+     <SourceClass>edu.mit.serialization.MainActivity</SourceClass>
      <SourceMethod>getDeviceId()</SourceMethod>
 
      <SinkApplication>edu.mit.serialization</SinkApplication>
-     <SinkClass>edu.mit.serialization.</SinkClass>
+     <SinkClass>edu.mit.serialization.MainActivity</SinkClass>
      <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>

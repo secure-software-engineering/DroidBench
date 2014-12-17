@@ -1,4 +1,3 @@
-FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>/SMS_MMS/Line: edu.mit.MainActivity 68}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.MainActivity 39/ARG}
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--  
@@ -13,19 +12,21 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
   <Author>Droidsafe Project</Author>
   <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
   <Description>
+  Testing marshalling and unmarshalling of values.
   </Description>
   <Challenge>
+  The analysis tool has to be able follow taint through marshalling and unmarshalling via Parcel. 
   </Challenge>
 
   <NumberOfLeak>1</NumberOfLeak>
   <Leaks>
   <Leak>
      <SourceApplication>edu.mit.parcel</SourceApplication>
-     <SourceClass>edu.mit.parcel.</SourceClass>
+     <SourceClass>edu.mit.parcel.MainActivity</SourceClass>
      <SourceMethod>getDeviceId()</SourceMethod>
 
      <SinkApplication>edu.mit.parcel</SinkApplication>
-     <SinkClass>edu.mit.parcel.</SinkClass>
+     <SinkClass>edu.mit.parcel.MainActivity</SinkClass>
      <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>

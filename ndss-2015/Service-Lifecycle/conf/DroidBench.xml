@@ -1,5 +1,3 @@
-FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: edu.mit.MyService 14}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.MyService 17/ARG}
-FLOW:<edu.mit.MyService: int onStartCommand(android.content.Intent,int,int)>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: edu.mit.MyService 14}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.MyService 17/ARG}
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--  
@@ -14,8 +12,10 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
   <Author>Droidsafe Project</Author>
   <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
   <Description>
+  Test accurate modeling of Service object allocation and lifecycle
   </Description>
   <Challenge>
+  The analysis tool must be able to information leak through repeating of service.startService().  
   </Challenge>
 
   <NumberOfLeak>1</NumberOfLeak>

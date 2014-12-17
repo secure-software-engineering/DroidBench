@@ -1,4 +1,3 @@
-FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: edu.mit.MainActivity 30}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.MainActivity 26/ARG}
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--  
@@ -13,19 +12,21 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
   <Author>Droidsafe Project</Author>
   <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
   <Description>
+  Track flows through an API field setter and a direct field access
   </Description>
   <Challenge>
+  Must have accurate modeling for API classes that expose fields
   </Challenge>
 
   <NumberOfLeak>1</NumberOfLeak>
   <Leaks>
   <Leak>
      <SourceApplication>edu.mit.public_api_field</SourceApplication>
-     <SourceClass>edu.mit.public_api_field.</SourceClass>
+     <SourceClass>edu.mit.public_api_field.MainActivity</SourceClass>
      <SourceMethod>getDeviceId()</SourceMethod>
 
      <SinkApplication>edu.mit.public_api_field</SinkApplication>
-     <SinkClass>edu.mit.public_api_field.</SinkClass>
+     <SinkClass>edu.mit.public_api_field.MainActivity</SinkClass>
      <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>

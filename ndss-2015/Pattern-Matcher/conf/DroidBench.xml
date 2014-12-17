@@ -1,4 +1,3 @@
-FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: edu.mit.MainActivity 35}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.MainActivity 28/ARG}
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--  
@@ -13,19 +12,21 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
   <Author>Droidsafe Project</Author>
   <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
   <Description>
+  Test common usage of pattern and matcher in Java
   </Description>
   <Challenge>
+  Flows through multiple object allocated in API code
   </Challenge>
 
   <NumberOfLeak>1</NumberOfLeak>
   <Leaks>
   <Leak>
      <SourceApplication>edu.mit.pattern_matcher</SourceApplication>
-     <SourceClass>edu.mit.pattern_matcher.</SourceClass>
+     <SourceClass>edu.mit.pattern_matcher.MainActivity</SourceClass>
      <SourceMethod>getDeviceId()</SourceMethod>
 
      <SinkApplication>edu.mit.pattern_matcher</SinkApplication>
-     <SinkClass>edu.mit.pattern_matcher.</SinkClass>
+     <SinkClass>edu.mit.pattern_matcher.MainActivity</SinkClass>
      <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>
