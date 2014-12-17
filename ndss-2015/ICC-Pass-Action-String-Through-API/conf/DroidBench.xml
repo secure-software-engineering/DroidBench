@@ -22,11 +22,11 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
   <Leaks>
   <Leak>
      <SourceApplication>edu.mit.icc_pass_action_string_through_api</SourceApplication>
-     <SourceClass>edu.mit.icc_pass_action_string_through_api.</SourceClass>
+     <SourceClass>edu.mit.icc_pass_action_string_through_api.OutFlowActivity</SourceClass>
      <SourceMethod>getDeviceId()</SourceMethod>
 
      <SinkApplication>edu.mit.icc_pass_action_string_through_api</SinkApplication>
-     <SinkClass>edu.mit.icc_pass_action_string_through_api.</SinkClass>
+     <SinkClass>edu.mit.icc_pass_action_string_through_api.InFlowActivity</SinkClass>
      <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>

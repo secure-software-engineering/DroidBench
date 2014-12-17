@@ -1,4 +1,3 @@
-FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: edu.mit.MainActivity 35}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.MainActivity 27/ARG}
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--  
@@ -13,19 +12,21 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
   <Author>Droidsafe Project</Author>
   <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
   <Description>
+  Test underlying api calls to an objects toString() method
   </Description>
   <Challenge>
+  The analysis tool has to be able to see under the hood of Array.toString().
   </Challenge>
 
   <NumberOfLeak>1</NumberOfLeak>
   <Leaks>
   <Leak>
-     <SourceApplication>edu.mit.tostring</SourceApplication>
-     <SourceClass>edu.mit.tostring.</SourceClass>
+     <SourceApplication>edu.mit.to_string</SourceApplication>
+     <SourceClass>edu.mit.to_string.MainActivity</SourceClass>
      <SourceMethod>getDeviceId()</SourceMethod>
 
-     <SinkApplication>edu.mit.tostring</SinkApplication>
-     <SinkClass>edu.mit.tostring.</SinkClass>
+     <SinkApplication>edu.mit.to_string</SinkApplication>
+     <SinkClass>edu.mit.to_string.MainActivity</SinkClass>
      <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>

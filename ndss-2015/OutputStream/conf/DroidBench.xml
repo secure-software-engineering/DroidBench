@@ -1,6 +1,3 @@
-FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: edu.mit.MainActivity 34}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.MainActivity 26/ARG}
-FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<java.io.ByteArrayOutputStream: void write(byte[],int,int)>/IO/Line: edu.mit.MainActivity 30}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.MainActivity 26/ARG}
-FLOW:<edu.mit.MainActivity: void onCreate(android.os.Bundle)>|{<java.io.ByteArrayOutputStream: void write(byte[],int,int)>/IO/Line: edu.mit.MainActivity 30}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.MainActivity 26/RECEIVER}
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--  
@@ -28,8 +25,8 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
      <SourceClass>edu.mit.outputstream.MainActivity</SourceClass>
      <SourceMethod>getDeviceId()</SourceMethod>
 
-     <SinkApplication>edu.mit.outputstream.MainActivity</SinkApplication>
-     <SinkClass>edu.mit.outputstream.</SinkClass>
+     <SinkApplication>edu.mit.outputstream</SinkApplication>
+     <SinkClass>edu.mit.outputstream.MainActivity</SinkClass>
      <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>

@@ -22,11 +22,11 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
   <Leaks>
   <Leak>
      <SourceApplication>edu.mit.event_ordering</SourceApplication>
-     <SourceClass>edu.mit.event_ordering.</SourceClass>
+     <SourceClass>edu.mit.event_ordering.MainActivity </SourceClass>
      <SourceMethod>getDeviceId()</SourceMethod>
 
      <SinkApplication>edu.mit.event_ordering</SinkApplication>
-     <SinkClass>edu.mit.event_ordering.</SinkClass>
+     <SinkClass>edu.mit.event_ordering.MainActivity </SinkClass>
      <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>

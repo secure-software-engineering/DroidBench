@@ -12,19 +12,21 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
   <Author>Droidsafe Project</Author>
   <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
   <Description>
+  Testing interaction of Fragments and their parent Activity.
   </Description>
   <Challenge>
+  The analysis tool must have Fragment, its callbacks, and association with the parent Activity properly. 
   </Challenge>
 
   <NumberOfLeak>1</NumberOfLeak>
   <Leaks>
   <Leak>
      <SourceApplication>edu.mit.fragments</SourceApplication>
-     <SourceClass>edu.mit.fragments.</SourceClass>
+     <SourceClass>edu.mit.fragments.HeadlinesFragment</SourceClass>
      <SourceMethod>getDeviceId()</SourceMethod>
 
      <SinkApplication>edu.mit.fragments</SinkApplication>
-     <SinkClass>edu.mit.fragments.</SinkClass>
+     <SinkClass>edu.mit.fragments.ArticleFragment </SinkClass>
      <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>

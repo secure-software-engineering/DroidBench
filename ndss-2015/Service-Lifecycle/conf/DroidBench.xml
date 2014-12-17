@@ -15,18 +15,18 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
   Test accurate modeling of Service object allocation and lifecycle
   </Description>
   <Challenge>
-  The analysis tool must be able to information leak through repeating of service.startService().  
+  The analysis tool must be able to track information leak through repeating of service.startService().  
   </Challenge>
 
   <NumberOfLeak>1</NumberOfLeak>
   <Leaks>
   <Leak>
      <SourceApplication>edu.mit.service_lifecycle</SourceApplication>
-     <SourceClass>edu.mit.service_lifecycle.</SourceClass>
+     <SourceClass>edu.mit.service_lifecycle.MainActivity</SourceClass>
      <SourceMethod>getDeviceId()</SourceMethod>
 
      <SinkApplication>edu.mit.service_lifecycle</SinkApplication>
-     <SinkClass>edu.mit.service_lifecycle.</SinkClass>
+     <SinkClass>edu.mit.service_lifecycle.MyService</SinkClass>
      <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
   </Leak>
   </Leaks>
