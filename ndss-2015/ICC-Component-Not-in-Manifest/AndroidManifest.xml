@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="lu.uni.serval.icc_startactivity1"
+    package="edu.mit.icc_component_not_in_manifest"
     android:versionCode="1"
     android:versionName="1.0" >
 
