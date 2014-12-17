@@ -18,7 +18,7 @@ public class OutFlowActivity extends Activity {
 		TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 		String imei = telephonyManager.getDeviceId(); //source
 
-		ComponentName cn = new ComponentName(this, "lu.uni.serval.icc_startactivity1.InFlowActivity");
+		ComponentName cn = new ComponentName(this, "edu.mit.icc_intent_component_name.InFlowActivity");
 		
 		Intent i = new Intent();
 		i.setComponent(cn);

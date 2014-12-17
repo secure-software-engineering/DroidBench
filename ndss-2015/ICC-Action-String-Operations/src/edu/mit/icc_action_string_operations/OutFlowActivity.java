@@ -22,8 +22,7 @@ public class OutFlowActivity extends Activity {
 		
 		TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 		String imei = telephonyManager.getDeviceId(); //source
-		
-		Intent i = new Intent("ignorelu.uni.serval.icc_startactivity4.ACTION".substring(6));
+		Intent i = new Intent("ignore.edu.mit.icc_action_string_operations.ACTION".substring(7))
 		i.putExtra("DroidBench", imei);
 		
 		startActivity(i);

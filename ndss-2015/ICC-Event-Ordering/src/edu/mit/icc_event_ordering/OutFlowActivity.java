@@ -19,7 +19,7 @@ public class OutFlowActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		Intent i = new Intent("lu.uni.serval.icc_startactivity4.ACTION");
+		Intent i = new Intent("edu.mit.icc_event_ordering.ACTION");
 
 		startActivity(i);
 	}
