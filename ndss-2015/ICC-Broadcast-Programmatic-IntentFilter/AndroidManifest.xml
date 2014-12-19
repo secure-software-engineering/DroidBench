@@ -17,4 +17,6 @@
         </activity>
     </application>
 <uses-sdk android:minSdkVersion="15"></uses-sdk>
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
 </manifest> 

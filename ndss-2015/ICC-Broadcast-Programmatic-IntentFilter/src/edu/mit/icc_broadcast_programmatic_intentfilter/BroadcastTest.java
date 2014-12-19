@@ -14,14 +14,16 @@ import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 
 public class BroadcastTest extends Activity {
-    private static String ACTION = "action";
+    private static String ACTION = "edu.mit.icc_broadcast_programmatic_intentfilter.action";
 
     public void onCreate(Bundle bundle) {
+    	super.onCreate(bundle);
         BroadcastReceiver receiver = new BroadcastReceiver(){
                 public void onReceive(Context c, Intent i) {
                     String taint = i.getStringExtra("imei");
-		    
-                    Log.i("DroidBench", taint);
+
+                    if (taint != null)
+                    	Log.i("DroidBench", taint);
                 }				  
             };
 
@@ -37,5 +39,6 @@ public class BroadcastTest extends Activity {
         intent.putExtra("imei", imei);
 
         sendBroadcast(intent);
+        super.onDestroy();
     }
 }
