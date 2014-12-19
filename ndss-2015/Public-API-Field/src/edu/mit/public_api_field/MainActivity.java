@@ -7,6 +7,7 @@ import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.graphics.PointF;
+import android.gesture.Prediction;
 
 /**
  * @testcase_name Public-API-Field
@@ -25,9 +26,10 @@ public class MainActivity extends Activity {
          
         TelephonyManager mgr = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
         String imei = mgr.getDeviceId();  //source
-        float f = Float.valueOf(imei);
-        PointF point = new PointF(f, 0.0f);
+        float fx = Float.valueOf(imei.substring(0, 8));
+        float fy = Float.valueOf(imei.substring(8));
+        PointF point = new PointF(fx, fy);
                 
-        Log.i("DroidBench", "IMEI: " + point.x);  //sink, leak
+        Log.i("DroidBench", "IMEI: " + point.x + point.y);  //sink, leak
     }
 }

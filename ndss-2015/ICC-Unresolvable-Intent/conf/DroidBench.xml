@@ -20,14 +20,5 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
 
   <NumberOfLeak>0</NumberOfLeak>
   <Leaks>
-  <Leak>
-     <SourceApplication>edu.mit.icc_unresolvable_intent</SourceApplication>
-     <SourceClass>edu.mit.icc_unresolvable_intent.OutflowActivity</SourceClass>
-     <SourceMethod>getDeviceId()</SourceMethod>
-
-     <SinkApplication>edu.mit.icc_unresolvable_intent</SinkApplication>
-     <SinkClass>edu.mit.icc_unresolvable_intent.InflowActivity</SinkClass>
-     <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
-  </Leak>
   </Leaks>
 </DroidBench>
