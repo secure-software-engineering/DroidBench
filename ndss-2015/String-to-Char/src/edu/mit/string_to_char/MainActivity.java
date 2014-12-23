@@ -14,7 +14,7 @@ import edu.mit.string_to_char.R;
  * @description Test conversion of String to char[]
  * @dataflow source -> sink
  * @number_of_leaks 1
- * @challenges -
+ * @challenges  The analysis tool has to be able to follow taint through character-string conversion
  */
 public class MainActivity extends Activity {
 

@@ -12,6 +12,14 @@ import java.util.Random;
 
 import edu.mit.icc_concat_action_string.R;
 
+/**
+ * @testcase_name ICC-Concat-Action-String
+ * 
+ * @description   Testing if string concatenation can be analyzed in the Intent.ACTION field
+ * @dataflow source -> sink
+ * @number_of_leaks 1
+ * @challenges   The analysis tool needs to be able to analyze constant string with concatenation operation and able to resolve the Intent for the resulted string and follow tainted data to the next Activity
+ */
 public class OutFlowActivity extends Activity {
 
 

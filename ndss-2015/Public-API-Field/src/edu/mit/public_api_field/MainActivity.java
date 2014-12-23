@@ -30,6 +30,6 @@ public class MainActivity extends Activity {
         float fy = Float.valueOf(imei.substring(8));
         PointF point = new PointF(fx, fy);
                 
-        Log.i("DroidBench", "IMEI: " + point.x + point.y);  //sink, leak
+        Log.i("DroidBench", "IMEI: " + point.x + "" + point.y);  //sink, leak
     }
 }

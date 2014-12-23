@@ -11,6 +11,14 @@ import java.util.Random;
 import edu.mit.icc_componentname_class_constant.R;
 import android.content.ComponentName;
 
+/**
+ * @testcase_name ICC-ComponentName-Class-Constant
+ * 
+ * @description Testing the component resolution throught Activity's classname
+ * @dataflow source -> sink
+ * @number_of_leaks 1
+ * @challenges   The analysis tool has to be able to resolve component from a name and track it through startActivity
+ */
 public class OutFlowActivity extends Activity {
  
     @Override

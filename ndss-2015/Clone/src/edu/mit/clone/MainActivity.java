@@ -13,10 +13,10 @@ import edu.mit.clone.R;
 /**
  * @testcase_name Clone
  * 
- * @description Easy testcase: Clone
+ * @description Tesging LinkedList.clone
  * @dataflow source -> sink
  * @number_of_leaks 1
- * @challenges - must model clone
+ * @challenges - must model clone of list
  */
 public class MainActivity extends Activity {
 

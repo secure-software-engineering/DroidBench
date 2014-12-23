@@ -14,7 +14,7 @@ public class MyService extends Service {
 	Log.i("DroidBench", value);  //sink, leak
 	
 	TelephonyManager mgr = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
-        value = mgr.getDeviceId();
+        value = mgr.getDeviceId(); //source
 	
 	return Service.START_NOT_STICKY;
     }

@@ -26,7 +26,14 @@ import android.content.Context;
 import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 
-
+/**
+ * @testcase_name ICC-Service-Messages 
+ * 
+ * @description   Testing message passing mechanism through Services 
+ * @dataflow source -> sink
+ * @number_of_leaks 1
+ * @challenges    The analysis tool has to be able through ICC message passing / Handler constructs.
+ */
 public class ActivityMessenger extends Activity {
     /** Messenger for communicating with the service. */
     Messenger mService = null;

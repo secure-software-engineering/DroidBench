@@ -7,6 +7,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 
+/**
+ * @testcase_name ICC-Component-Not-in-Manifest
+ * 
+ * @description Testing if Activity not in the Manifest is also analyzed.
+ * @dataflow 
+ * @number_of_leaks 0 
+ * @challenges The analysis must recognize that activity is not startable if it is not in the AndroidManifest.xml 
+ */
 public class OutFlowActivity extends Activity {
 
 	@Override

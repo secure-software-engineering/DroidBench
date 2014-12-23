@@ -10,6 +10,14 @@ import java.util.Random;
 
 import edu.mit.icc_unresolvable_intent.R;
 
+/**
+ * @testcase_name ICC-Unresolvable-Intent
+ * 
+ * @description Testing unresolvable Intent.
+ * @dataflow source -> sink
+ * @number_of_leaks 1
+ * @challenges   The analysis tool has to be able to identify unresolvable Intent and not associate the unresolved Intent with any Activity 
+ */
 public class OutFlowActivity extends Activity {
 
     private static final String AB = ".abcdefghijklmnopqrstuvwxyz";

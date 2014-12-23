@@ -9,10 +9,10 @@ import android.util.Log;
 /**
  * @testcase_name ArrayCopy
  * 
- * @description Easy testcase: System.arraycopy()
+ * @description Testing System.arraycopy()
  * @dataflow source -> sink
  * @number_of_leaks 1
- * @challenges - must model arraycopy()
+ * @challenges - The analysis tool must have a model for System.arraycopy()
  */
 public class MainActivity extends Activity {
 
@@ -22,12 +22,12 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
          
         TelephonyManager mgr = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
-        String imei = mgr.getDeviceId();
+        String imei = mgr.getDeviceId(); //source
         String[] array = new String[1];
         array[0] = imei;
         String[] arraycopy = new String[1];
         System.arraycopy(array, 0, arraycopy, 0, 1);
         
-        Log.i("DroidBench", arraycopy[0]);
+        Log.i("DroidBench", arraycopy[0]); //sink
     }
 }

@@ -21,6 +21,14 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.FragmentTransaction;
 
+/**
+ * @testcase_name Fragments 
+ * 
+ * @description Testing alysis of Android Fragments and their associated Activity
+ * @dataflow source -> sink
+ * @number_of_leaks 1
+ * @challenges  The analysis tool must have Fragment, its callbacks, and association with the parent Activity properly
+ */
 public class MainActivity extends Activity 
         implements HeadlinesFragment.OnHeadlineSelectedListener {
 

@@ -11,6 +11,14 @@ import java.util.LinkedList;
 
 import edu.mit.icc_intent_passed_through_api.R;
 
+/**
+ * @testcase_name ICC-Intent-Passed-Through-API
+ * 
+ * @description   Testing an Intent passed through a linked-list then used to start an Activity 
+ * @dataflow source -> sink
+ * @number_of_leaks 1
+ * @challenges  The analysis tool has to be able to track an Intent through a list operation 
+ */
 public class OutFlowActivity extends Activity {
 
 

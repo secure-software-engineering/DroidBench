@@ -12,7 +12,6 @@ public class AnotherActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-	
-	Log.i("DroidBench", ((MyApplication)getApplication()).imei);
+        Log.i("DroidBench", ((MyApplication)getApplication()).imei); //sink
     }
 }

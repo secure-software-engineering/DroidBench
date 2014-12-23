@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
          
         TelephonyManager mgr = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
-        String imei = mgr.getDeviceId();
+        String imei = mgr.getDeviceId(); //source
         S s1 = new S(imei);
 
         try {
@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
             S s2 = (S)iis.readObject();
             iis.close();
         
-            Log.i("DroidBench", s2.toString());
+            Log.i("DroidBench", s2.toString());//sink
         } catch (Exception e) {
         }
     }

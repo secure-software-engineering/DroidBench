@@ -14,7 +14,7 @@ import android.util.Log;
  * and passes the object correctly to calls of getApplication()
  * @dataflow source -> sink
  * @number_of_leaks 1
- * @challenges -
+ * @challenges The analysis tool has to be able to resolve explicit Intent carrying tainted sensitive information
  */
 public class MainActivity extends Activity {
 
@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 	
 	TelephonyManager mgr = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
-	String imei = mgr.getDeviceId();	
+	String imei = mgr.getDeviceId();	//source
 	
 	((MyApplication)getApplication()).imei = imei;
 	

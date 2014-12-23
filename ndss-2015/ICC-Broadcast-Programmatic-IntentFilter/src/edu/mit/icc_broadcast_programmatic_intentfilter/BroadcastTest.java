@@ -13,6 +13,14 @@ import android.util.Log;
 import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 
+/**
+ * @testcase_name ICC-Broadcast-Programmatic-IntentFilter
+ * 
+ * @description   Testing BroadcastReceiver through programmatic setting up of IntentFilter 
+ * @dataflow source -> sink
+ * @number_of_leaks 1
+ * @challenges    The analysis tool has to be able to recognize a broadcast receiver and models its IntentFilter
+ */
 public class BroadcastTest extends Activity {
     private static String ACTION = "edu.mit.icc_broadcast_programmatic_intentfilter.action";
 
@@ -23,7 +31,7 @@ public class BroadcastTest extends Activity {
                     String taint = i.getStringExtra("imei");
 
                     if (taint != null)
-                    	Log.i("DroidBench", taint);
+                    	Log.i("DroidBench", taint); //sink
                 }				  
             };
 
@@ -33,7 +41,7 @@ public class BroadcastTest extends Activity {
     public void onDestroy() {
         //this is tainted!!!
 	TelephonyManager mgr = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
-	String imei = mgr.getDeviceId();
+	String imei = mgr.getDeviceId(); //source
 
         Intent intent = new Intent(ACTION);
         intent.putExtra("imei", imei);

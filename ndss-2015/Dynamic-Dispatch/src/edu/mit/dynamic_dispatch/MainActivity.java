@@ -10,6 +10,14 @@ import android.widget.EditText;
 
 import android.telephony.TelephonyManager;
 
+/**
+ * @testcase_name Dynamic-Dispatch
+ * 
+ * @description Testing dispatching of overiding methods
+ * @dataflow source -> sink
+ * @number_of_leaks 1
+ * @challenges The analysis tool has to be able to differentiate the base and the derived class objects
+ */
 public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +52,7 @@ class A {
 class B extends A {
     public static TelephonyManager mgr;
     public String f() {
-        return mgr.getDeviceId();
+        return mgr.getDeviceId(); //source
     }
 }
 

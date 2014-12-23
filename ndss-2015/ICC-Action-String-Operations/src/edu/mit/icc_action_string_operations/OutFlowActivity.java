@@ -12,6 +12,14 @@ import java.util.Random;
 
 import edu.mit.icc_action_string_operations.R;
 
+/**
+ * @testcase_name ICC-Action-String-Operations
+ * 
+ * @description  Testing substring operation and explicit intent resolution
+ * @dataflow source -> sink
+ * @number_of_leaks 1
+ * @challenges   The analysis tool has to be able to evaluate substring operation and track tainted value through another Activity.
+ */
 public class OutFlowActivity extends Activity {
 
 
@@ -22,7 +30,7 @@ public class OutFlowActivity extends Activity {
 		
 		TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 		String imei = telephonyManager.getDeviceId(); //source
-		Intent i = new Intent("ignore.edu.mit.icc_action_string_operations.ACTION".substring(7))
+		Intent i = new Intent("ignore.edu.mit.icc_action_string_operations.ACTION".substring(7));
 		i.putExtra("DroidBench", imei);
 		
 		startActivity(i);

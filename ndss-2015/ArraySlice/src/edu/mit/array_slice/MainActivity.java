@@ -8,12 +8,12 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 
 /**
- * @testcase_name ??
+ * @testcase_name ArraySlice 
  * 
- * @description Easy testcase: The value of a source is directly sent to a sink
+ * @description Testing whether an element in a multidimensional array is tracked
  * @dataflow source -> sink
  * @number_of_leaks 1
- * @challenges -
+ * @challenges The analysis tool has to be able to track an element within a multidimensional array
  */
 public class MainActivity extends Activity {
 
@@ -23,12 +23,12 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
          
         TelephonyManager mgr = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
-        String imei = mgr.getDeviceId();
+        String imei = mgr.getDeviceId(); //source
         String[][] array = new String[1][1];
         array[0][0] = imei;
 
         String[] slice = array[0];
         
-        Log.i("DroidBench", slice[0]);
+        Log.i("DroidBench", slice[0]); //sink
     }
 }

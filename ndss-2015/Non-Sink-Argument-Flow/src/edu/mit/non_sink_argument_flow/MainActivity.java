@@ -15,7 +15,7 @@ import edu.mit.non_sink_argument_flow.R;
  * @description Flow to sink is through memory reachable from receiver, but not through argument
  * @dataflow source -> sink
  * @number_of_leaks 1
- * @challenges -
+ * @challenges   The analysis tool has to be able to track taint flown to sink through a receiver
  */
 public class MainActivity extends Activity {
 

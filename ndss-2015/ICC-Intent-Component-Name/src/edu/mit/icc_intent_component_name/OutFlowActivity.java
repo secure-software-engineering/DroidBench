@@ -8,6 +8,14 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.content.ComponentName;
 
+/**
+ * @testcase_name ICC-Intent-Component-Name 
+ * 
+ * @description   Testing the intent resolution of component name 
+ * @dataflow source -> sink
+ * @number_of_leaks 1
+ * @challenges The analysis tool must be able to resolve Intent's component from a component name and follow the taint to another Activity. 
+ */
 public class OutFlowActivity extends Activity {
 
 	@Override

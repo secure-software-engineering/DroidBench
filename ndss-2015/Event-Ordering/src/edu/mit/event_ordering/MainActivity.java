@@ -11,7 +11,7 @@ import android.util.Log;
  * @testcase_name Event-Ordering
  * 
  * @description Test case for considering all possible event orderings for event
- * There is a leak whtn onLowMemory is called twice without a call to onContentChanged()
+ * There is a leak when onLowMemory is called twice without a call to onContentChanged()
  * @dataflow source -> sink
  * @number_of_leaks 1
  * @challenges -

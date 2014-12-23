@@ -12,6 +12,14 @@ import java.util.Random;
 
 import edu.mit.icc_pass_action_string_through_api.R;
 
+/**
+ * @testcase_name ICC-Pass-Action-String-Through-API 
+ * 
+ * @description  Testing Intent resolution of a string that has been passed through a list
+ * @dataflow source -> sink
+ * @number_of_leaks 1
+ * @challenges   The analysis tool has to be able to track a string through the list, then resolve Intent's action and follow the Intent to the Activity to be activated
+ */
 public class OutFlowActivity extends Activity {
 
 

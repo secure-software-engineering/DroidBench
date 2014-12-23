@@ -27,8 +27,8 @@ public class MainActivity extends Activity {
 	super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 	
-	s = "";
-	Test t = new Test();	//could call static initializer if has been called previously
+        s = "";
+        Test t = new Test();	//could call static initializer if has been called previously
                 
         Log.i("DroidBench", s);  //sink, possible leak depending on runtime execution of Test's clinit
     }
