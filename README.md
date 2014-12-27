@@ -21,6 +21,8 @@ Version 1.2 comprises the following 64 test cases:
 
 Arrays and Lists
 ----------------
+* **ArrayCopy**: Stores a tainted value in an array and then uses System.arraycopy to copy the data to a new array which is then leaked to log.
+* **ArraySlice**: Stores a tainted value in a 2-dimensional array and accesses it through a reference pointing to a slice containing the tainted value.
 * **ArrayAccess1**: Stores both a tainted and an untainted value in an array and then leaks the untainted one. Array indices are constants.
 * **ArrayAccess2**: Stores both a tainted and an untainted value in an array and then leaks the untainted one. Array indices are calculated.
 * **HashMapAccess1**: Stores both a tainted and an untainted value in a hash map and then leaks the untainted one. Map keys are constants.
@@ -72,6 +74,14 @@ Lifecycle
 * **FragmentLifecycle1**: Calls to sources and sinks distributed across a fragment lifecycle.
 * **ServiceLifecycle1**: Calls to sources and sinks distributed across a service lifecycle.
 
+* **Activity-Asynchronous-Event-Ordering**: obtains IMEI during onResume() and leaks it durin onStop().
+* **Activity-Saved-State**: IMEI is saved during onSaveInstanceState() via bundle's persistence and leaked during the next onCreate()
+* **Application-Modeling**: Stores IMEI in Application's object and later leaks it in a different Activity.
+* **Button-Object-Allocation**: IMEI is obtained during Activity's onCreate() and is later leaked through onClick's callback defined in layout's xml.
+* **Event-Context-Shared-Pref-Listener**: onCreate(), IMEI is put into the SharedPreferences and it triggers onSharePreferenceChanged() which then leaks the IMEI to Android Log.
+* **Event-Ordering**: IMEI is obtained the first time onLowMemory is called, and is leaked the secondtime onLowMemory is called.
+
+
 General Java
 ------------
 * **Exceptions1**: Saves a tainted value into a local variable, raises an exception and sends the value out in the exception handler.
@@ -84,6 +94,10 @@ General Java
 * **StaticInitialization1**: Passes a tainted value into a static initialization method.
 * **StaticInitialization2**: Sensitive data is obtained during static initialization of a class and leaked in non-static code
 * **UnreachableCode**: Passes tainted data into a method that is never called.
+
+* **Clinit**: IMEI is obtained during static initializer and is stored and overriding in the Activity's field which was not tainted at the beginning.
+* **Clone**: IMEI is added to a linkedlist, and the list is cloned to a new list, then the tainted member of the newlist is leaked.
+* **Dynamic-Dispatch**: A method in the base class returns untainted information, the same method in one of the derived classes returns sensitive (IMEI) information.  That information is later leaked through SMS.
 
 Miscellaneous Android-Specific
 ------------------------------
