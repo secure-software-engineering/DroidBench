@@ -13,9 +13,9 @@ import edu.mit.icc_unresolvable_intent.R;
 /**
  * @testcase_name ICC-Unresolvable-Intent
  * 
- * @description Testing unresolvable Intent.
+ * @description An intent is created with a random selection of 2 constant strings to start an Activity.
  * @dataflow source -> sink
- * @number_of_leaks 1
+ * @number_of_leaks 2 
  * @challenges   The analysis tool has to be able to identify unresolvable Intent and not associate the unresolved Intent with any Activity 
  */
 public class OutFlowActivity extends Activity {
@@ -24,7 +24,7 @@ public class OutFlowActivity extends Activity {
 
     String randomString() {
         if (rnd.nextBoolean())
-            return "edu.mit.icc_unresolvable_intent.ACTION";
+            return "edu.mit.icc_unresolvable_intent.ACTION"; 
         else
             return "edu.mit.icc_unresolvable_intent.EDIT";
     }

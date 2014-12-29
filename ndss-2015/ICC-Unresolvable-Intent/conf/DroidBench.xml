@@ -12,13 +12,30 @@ using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
   <Author>Droidsafe Project</Author>
   <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
   <Description>
-  Testing unresolvalbe Intent.
+  Testing Intents that cannot be resolved statically.
   </Description>
   <Challenge>
-  The analysis tool has to be able to identify unresolvable Intent and not associate the unresolved Intent with any Activity
-  </Challenge>
-
-  <NumberOfLeak>0</NumberOfLeak>
+  The analysis tool has to be able to resolve different values of Intent to start an Activity</Challenge>
+  <NumberOfLeak>2</NumberOfLeak>
   <Leaks>
+      <Leak>
+     <SourceApplication>edu.mit.icc_unresolvable_intent</SourceApplication>
+     <SourceClass>edu.mit.icc_service_messages.OutFlowActivity</SourceClass>
+     <SourceMethod>getDeviceId()</SourceMethod>
+
+     <SinkApplication>edu.mit.icc_unresolvable_intent</SinkApplication>
+     <SinkClass>edu.mit.icc_service_messages.InFlowActivity</SinkClass>
+     <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
+     </Leak>
+     
+     <Leak>
+     <SourceApplication>edu.mit.icc_unresolvable_intent</SourceApplication>
+     <SourceClass>edu.mit.icc_service_messages.OutFlowActivity</SourceClass>
+     <SourceMethod>getDeviceId()</SourceMethod>
+
+     <SinkApplication>edu.mit.icc_unresolvable_intent</SinkApplication>
+     <SinkClass>edu.mit.icc_service_messages.InFlowActivity2</SinkClass>
+     <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
+     </Leak>
   </Leaks>
 </DroidBench>
