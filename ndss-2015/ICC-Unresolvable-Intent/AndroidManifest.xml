@@ -33,7 +33,7 @@
         </activity>
         
         <activity
-            android:name="edu.mit.icc_unresolvable_intent.IsolateActivity"
+            android:name="edu.mit.icc_unresolvable_intent.InFlowActivity2"
             android:label="@string/app_name" >
 	  <intent-filter>
 	    <action android:name="edu.mit.icc_unresolvable_intent.EDIT" />

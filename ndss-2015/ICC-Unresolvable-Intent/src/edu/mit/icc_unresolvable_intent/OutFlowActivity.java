@@ -22,7 +22,7 @@ public class OutFlowActivity extends Activity {
 
     private static Random rnd = new Random(System.currentTimeMillis());
 
-    String randomString( int len ) {
+    String randomString() {
         if (rnd.nextBoolean())
             return "edu.mit.icc_unresolvable_intent.ACTION";
         else
@@ -37,7 +37,7 @@ public class OutFlowActivity extends Activity {
 		TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 		String imei = telephonyManager.getDeviceId(); //source
 		
-		Intent i = new Intent(randomString(20));
+		Intent i = new Intent(randomString());
 		i.putExtra("DroidBench", imei);
 		
 		startActivity(i);
