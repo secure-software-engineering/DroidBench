@@ -34,7 +34,7 @@ SharedPreferences
 StringFormatter
 String-to-Char
 ToString
-Two-Components-Share-Memory
+Two-Components-Share-Memory 
 '
 
 #APPS=$APPS_NON_ICC
@@ -44,14 +44,16 @@ SCRIPTDIR=`dirname $0`
 APPS=`cat $SCRIPTDIR/apps.txt`
 SCRIPTDIR=`(cd $SCRIPTDIR && pwd)`
 if [ "$#" -eq 0 ]; then
-    echo "$SCRIPTNAME makefile | project | build | apk-setup | check-info | specdump | create-expected | gen-review | gen-droidbench"
+    echo "$SCRIPTNAME makefile | project | build | apk-setup | check-info | specdump | create-expected | gen-review | gen-droidbench | fix-manifest"
     exit -1
 fi 
 
 CMD=$1
 for APP in $APPS; do
     #runds dump $APP;
-    #echo $APP
+    echo $APP
+    app=`echo $APP | tr 'A-Z' 'a-z' | tr '-' '_' `
+    PKG=edu.mit.$app
     case $CMD in
         makefile)
         (cd $APP; echo "NAME:= $APP" > Makefile; cat $MAKE_TEMPLATE >> Makefile);;
@@ -60,7 +62,11 @@ for APP in $APPS; do
         (cd $APP; grep FLOW droidsafe-gen/info-flow-results.txt >  expected-info-flows.txt);;
 
         gen-droidbench)
-        (cd $APP; mkdir -p conf && cat ../test-doc/DroidBench.xml | sed "s/TEST_CASE/$APP/" > conf/DroidBench.xml);;
+        (cd $APP; mkdir -p conf && cat expected-info-flows.txt ../test-doc/DroidBench.xml | sed "s/TEST_CASE/$APP/" | sed "s/APP/$app/" > conf/DroidBench.xml);;
+
+        fix-manifest)
+        (cd $APP; ../test-doc/manifest-package.py AndroidManifest.xml $PKG);;
+
 
         gen-review)
         echo "######################"
@@ -75,6 +81,9 @@ for APP in $APPS; do
 
         build)
             (cd $APP; make build);;
+
+        release)
+            (cd $APP; ant release);;
 
         apk-setup)
             (mkdir -p apk/$APP; cd apk/$APP; ln -sf ../../$APP/expected-info-flows.txt; ln -sf ../../$APP/bin/$APP-debug.apk $APP.apk;
