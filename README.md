@@ -60,6 +60,19 @@ Inter-App Communication
 * **IntentSink2**: Similar to IntentSink, but the value is sent out in a callback method defined in XML.
 * **ActivityCommunication1**: Contains two activities that communicate using static fields.
 * **IntentSource1**: Two tainted leaks: the first one is that a tainted value is leaked to another app using an intent by startActivityForResult. The other one is that onActivityResult method gets intent as tainted data and then logs it.
+*
+* **ICC-Action-String-Operations**: IMEI is obtained in one Activity and stored in an Intent's extra for starting the next Activity which will then leak IMEI to log.
+* **ICC-Broadcast-Programmatic-IntentFilter**:  IMEI is obtained in an Activity and stored in the Intent's extra of the Intent to the BroadcastReceiver which was registered programmatically.  The Receiver leaks the IMEI info.
+* **ICC-Component-Not-In-Manifest**: IMEI is obtained in one Activity and is stored in the Intent's to start a leaking Activity which is not in the AndroidManifest.xml.  No leak happens as it is not valid.
+* **ICC-ComponentName-Class-Constant**: Another Activity is started using class name.  IEMI is leaked in the Activity to be started.
+* **ICC-Concat-Action-String": An Intent for starting another Activity is created by concatenating two constant strings.  The Activity to be started leaks the IMEI which was passed in as the Intent's extra.   
+* **ICC-Event-Ordering**: IMEI is obtained and stored in the SharedPreferences of the secondary Activity (InFlowActivity).  The first Activity (OutFlowActivity) starts the second Activity.  The second-time the 2nd Activity is started, IMEI is leaked to log.
+* **ICC-Intent-ComponentName**: A Activity is started using constant component's Name and Intent.setComponent.  The started Activity leaks the IMEI to log.
+* **ICC-Intent-Passed-Through-API**: An Intent to start another Activity is passed through LinkedList's add() and retreived with LinkedList.get().  The retrieved Intent is used to start a leaking Activity.
+* **ICC-Non-Constant-Class-Object**: An Activity class is created and its classname is retrieved using getClass() on the instance object.  The classname is then used to start the second Activity which then leaks IMEI information form Intent's extra.
+* **ICC-Pass-Action-Through-API**: An action for the Intent to start another Activity is passed through and retreived with LinkedList.get().  The retrieved String is used to start the leaking Activity.
+* **ICC-Service-Messages**: IMEI is obtained and sent to a Service which then leaks the info in the Messenger's Handler.  
+* **ICC-Unresolvable-Intent**:  The app tries to start an Activity int an Intent that cannot be resolved statically.  One of the two Activities may be started based on a random boolean, and both of them leak IMEI from the starting Activity to log.   
 
 Lifecycle
 ---------
@@ -73,14 +86,15 @@ Lifecycle
 * **BroadcastReceiverLifecycle1**: Calls to sources and sinks distributed across a broadcast receiver lifecycle. 
 * **FragmentLifecycle1**: Calls to sources and sinks distributed across a fragment lifecycle.
 * **ServiceLifecycle1**: Calls to sources and sinks distributed across a service lifecycle.
-
+*
 * **Activity-Asynchronous-Event-Ordering**: obtains IMEI during onResume() and leaks it durin onStop().
 * **Activity-Saved-State**: IMEI is saved during onSaveInstanceState() via bundle's persistence and leaked during the next onCreate()
 * **Application-Modeling**: Stores IMEI in Application's object and later leaks it in a different Activity.
 * **Button-Object-Allocation**: IMEI is obtained during Activity's onCreate() and is later leaked through onClick's callback defined in layout's xml.
 * **Event-Context-Shared-Pref-Listener**: onCreate(), IMEI is put into the SharedPreferences and it triggers onSharePreferenceChanged() which then leaks the IMEI to Android Log.
 * **Event-Ordering**: IMEI is obtained the first time onLowMemory is called, and is leaked the secondtime onLowMemory is called.
-
+* **Fragments**:  IMEI is obtained from one Fragment's click callback and is leaked through another Fragment's callback.
+* **Service-Lifecycle**: IMEI is obtained at the end of onStartCommand and is stored to a service's field.  It is leaked the second time the service command starts.
 
 General Java
 ------------
@@ -94,10 +108,18 @@ General Java
 * **StaticInitialization1**: Passes a tainted value into a static initialization method.
 * **StaticInitialization2**: Sensitive data is obtained during static initialization of a class and leaked in non-static code
 * **UnreachableCode**: Passes tainted data into a method that is never called.
-
+*
 * **Clinit**: IMEI is obtained during static initializer and is stored and overriding in the Activity's field which was not tainted at the beginning.
 * **Clone**: IMEI is added to a linkedlist, and the list is cloned to a new list, then the tainted member of the newlist is leaked.
 * **Dynamic-Dispatch**: A method in the base class returns untainted information, the same method in one of the derived classes returns sensitive (IMEI) information.  That information is later leaked through SMS.
+* **NonSink-Argument-Flow**: IMEI is obtained and leaked through ProcessBuilder's start().  
+* **OutputStream**: IMEI is obtained and passed through ByteArrayOutputStream as String bytes back to String.
+* **Public-API-Field**: IMEI is obtained and converted to 2 floating point numbers as x and y of PointF.  Value of PointF is leaked.
+* **Serialization**:  IMEI is obtained and serialized/deserialzed throught ObjectOutputStream and ObjectInputStream.
+* **Pattern-Matcher**: IMEI is matched against .* regular expression, and the matched group is leaked.
+* **String-To-Char**: IMEI is obtained and stored in the char[]  which is then later converted to String before leaked to log.
+* **String-Formater**: IMEI is passed to a formatter and then the formatted buffer is converted back to String before leaked to log.
+* **ToString**: IMEI is stored in an array of String which is then converted back to String using Arrays.toString().
 
 Miscellaneous Android-Specific
 ------------------------------
@@ -110,6 +132,11 @@ Miscellaneous Android-Specific
 * **PrivateDataLeak1**: Summary test case containing various challenges.
 * **PrivateDataLeak2**: Leaks a value from a password field.
 * **PrivateDataLeak3**: The IMEI is written into a file, read out again and then leaked.
+*
+* **Intent-Class-Modeling**:  IMEI is retrieved and stored to Intent.action as a data holder. 
+* **Parcel**: IEMI is marshalled and unmarshalled from a Parcel and then leaked to SMS.
+* **SharedPreferences:  IMEI is obtained in the one Activity and stored in the SharedPreferences which is leaked by another Activity.
+* **Two-Components-Shared-Memory**: IMEI is stored in a singleton object in one Activity and leaked in a different Activity.
 
 Implicit Flows
 --------------
