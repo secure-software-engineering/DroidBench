@@ -20,14 +20,13 @@ import edu.mit.icc_unresolvable_intent.R;
  */
 public class OutFlowActivity extends Activity {
 
-    private static final String AB = ".abcdefghijklmnopqrstuvwxyz";
-    private static Random rnd = new Random();
+    private static Random rnd = new Random(System.currentTimeMillis());
 
     String randomString( int len ) {
-	StringBuilder sb = new StringBuilder( len );
-	for( int i = 0; i < len; i++ ) 
-	    sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );
-	return sb.toString();
+        if (rnd.nextBoolean())
+            return "edu.mit.icc_unresolvable_intent.ACTION";
+        else
+            return "edu.mit.icc_unresolvable_intent.EDIT";
     }
 
 	@Override

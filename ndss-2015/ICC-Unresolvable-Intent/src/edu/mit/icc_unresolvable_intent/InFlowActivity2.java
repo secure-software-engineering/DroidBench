@@ -8,7 +8,7 @@ import android.util.Log;
 /*
  * This class is used to make sure that privacy detecting tools can distinguish the different components.
  */
-public class IsolateActivity extends Activity 
+public class InFlowActivity2 extends Activity 
 {
 
 	@Override
