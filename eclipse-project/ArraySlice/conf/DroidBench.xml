@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  
+1. SourceApplication/SinkApplication: specifying it as package name of app
+2. SourceClass/SinkClass: specifying it as full class (component name usually) name
+using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
+-->
+
+<DroidBench>
+<TestCaseName>array_slice</TestCaseName>
+<Version>2.1</Version>
+  <Author>Droidsafe Project</Author>
+  <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
+  <Description>
+  Tesing the tainted element in a multidimensional array being tracked.
+  </Description>
+  <Challenge>
+  The analysis tool has to be able to track an element withing a multidimensional array.
+  </Challenge>
+
+  <NumberOfLeak>1</NumberOfLeak>
+  <Leaks>
+  <Leak>
+     <SourceApplication>edu.mit.array_slice</SourceApplication>
+     <SourceClass>edu.mit.array_slice.MainActivity</SourceClass>
+     <SourceMethod>getDeviceId()</SourceMethod>
+
+     <SinkApplication>edu.mit.array_slice</SinkApplication>
+     <SinkClass>edu.mit.array_slice.MainActivity</SinkClass>
+     <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
+  </Leak>
+  </Leaks>
+</DroidBench>

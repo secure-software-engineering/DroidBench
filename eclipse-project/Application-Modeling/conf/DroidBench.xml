@@ -1,0 +1,35 @@
+FLOW:<edu.mit.AnotherActivity: void onCreate(android.os.Bundle)>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: edu.mit.AnotherActivity 16}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.MainActivity 27/ARG}
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  
+1. SourceApplication/SinkApplication: specifying it as package name of app
+2. SourceClass/SinkClass: specifying it as full class (component name usually) name
+using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
+-->
+
+<DroidBench>
+<TestCaseName>Application-Modeling</TestCaseName>
+<Version>2.1</Version>
+  <Author>Droidsafe Project</Author>
+  <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
+  <Description>
+  Test if modeling correctly instantiates a single application object from the manifest
+  and passes the object correctly to calls of getApplication()
+  </Description>
+  <Challenge>
+  The analysis tool has to be able to resolve explicit intent carrying tainted sensitive information.
+  </Challenge>
+
+  <NumberOfLeak>1</NumberOfLeak>
+  <Leaks>
+  <Leak>
+     <SourceApplication>edu.mit.application_modeling</SourceApplication>
+     <SourceClass>edu.mit.application_modeling.MainActivity</SourceClass>
+     <SourceMethod>getDeviceId()</SourceMethod>
+
+     <SinkApplication>edu.mit.application_modeling</SinkApplication>
+     <SinkClass>edu.mit.application_modeling.AnotherActivity</SinkClass>
+     <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
+  </Leak>
+  </Leaks>
+</DroidBench>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  
+1. SourceApplication/SinkApplication: specifying it as package name of app
+2. SourceClass/SinkClass: specifying it as full class (component name usually) name
+using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
+-->
+
+<DroidBench>
+<TestCaseName>ICC-Service-Messages</TestCaseName>
+<Version>2.1</Version>
+  <Author>Droidsafe Project</Author>
+  <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
+  <Description>
+  Testing message passing mechanism through Services.
+  </Description>
+  <Challenge>
+  The analysis tool has to be able through ICC message passing / Handler constructs.
+  </Challenge>
+
+  <NumberOfLeak>1</NumberOfLeak>
+  <Leaks>
+  <Leak>
+     <SourceApplication>edu.mit.icc_service_messages</SourceApplication>
+     <SourceClass>edu.mit.icc_service_messages.ActivityMessenger</SourceClass>
+     <SourceMethod>getDeviceId()</SourceMethod>
+
+     <SinkApplication>edu.mit.icc_service_messages</SinkApplication>
+     <SinkClass>edu.mit.icc_service_messages.IncomingHandler</SinkClass>
+     <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
+  </Leak>
+  </Leaks>
+</DroidBench>

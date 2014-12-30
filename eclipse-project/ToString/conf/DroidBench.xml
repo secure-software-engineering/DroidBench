@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  
+1. SourceApplication/SinkApplication: specifying it as package name of app
+2. SourceClass/SinkClass: specifying it as full class (component name usually) name
+using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
+-->
+
+<DroidBench>
+<TestCaseName>ToString</TestCaseName>
+<Version>2.1</Version>
+  <Author>Droidsafe Project</Author>
+  <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
+  <Description>
+  Test underlying api calls to an objects toString() method
+  </Description>
+  <Challenge>
+  The analysis tool has to be able to see under the hood of Array.toString().
+  </Challenge>
+
+  <NumberOfLeak>1</NumberOfLeak>
+  <Leaks>
+  <Leak>
+     <SourceApplication>edu.mit.to_string</SourceApplication>
+     <SourceClass>edu.mit.to_string.MainActivity</SourceClass>
+     <SourceMethod>getDeviceId()</SourceMethod>
+
+     <SinkApplication>edu.mit.to_string</SinkApplication>
+     <SinkClass>edu.mit.to_string.MainActivity</SinkClass>
+     <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
+  </Leak>
+  </Leaks>
+</DroidBench>

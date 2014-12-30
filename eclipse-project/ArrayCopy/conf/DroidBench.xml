@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  
+1. SourceApplication/SinkApplication: specifying it as package name of app
+2. SourceClass/SinkClass: specifying it as full class (component name usually) name
+using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
+-->
+
+<DroidBench>
+<TestCaseName>ArrayCopy</TestCaseName>
+<Version>2.1</Version>
+  <Author>Droidsafe Project</Author>
+  <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
+  <Description>
+  Testing System.arraycopy operation
+  </Description>
+  <Challenge>
+  The analysis system has to have the System.arraycopy method modeled to be able to follow the taint.
+  </Challenge>
+
+  <NumberOfLeak>1</NumberOfLeak>
+  <Leaks>
+  <Leak>
+     <SourceApplication>edu.mit.array_copy</SourceApplication>
+     <SourceClass>edu.mit.array_copy.MainActivity</SourceClass>
+     <SourceMethod>getDeviceId()</SourceMethod>
+
+     <SinkApplication>edu.mit.array_copy</SinkApplication>
+     <SinkClass>edu.mit.array_copy.MainActivity</SinkClass>
+     <SinkMethod>i(java.lang.String,java.lang.String)></SinkMethod>
+  </Leak>
+  </Leaks>
+</DroidBench>

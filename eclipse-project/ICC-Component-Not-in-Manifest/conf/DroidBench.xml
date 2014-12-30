@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  
+1. SourceApplication/SinkApplication: specifying it as package name of app
+2. SourceClass/SinkClass: specifying it as full class (component name usually) name
+using a.b.c.d$0 specifies all the anonymous sub class of a.b.c.d
+-->
+
+<DroidBench>
+<TestCaseName>ICC-Component-Not-in-Manifest</TestCaseName>
+<Version>2.1</Version>
+  <Author>Droidsafe Project</Author>
+  <AuthorEmail>droidsafe@csail.mit.edu</AuthorEmail>
+  <Description>
+  Testing if the component(activity) not declared in AndroidManifest.xml is analyzed by the analysis tool.
+  </Description>
+  <Challenge>
+  The analysis tool must be able to identify whether a component is declared in the AndroidManifest.xml.  When a component not in the AndroidManifest.xml, it will not be seen by the system. 
+  </Challenge>
+
+  <NumberOfLeak>0</NumberOfLeak>
+  <Leaks>
+  </Leaks>
+</DroidBench>
