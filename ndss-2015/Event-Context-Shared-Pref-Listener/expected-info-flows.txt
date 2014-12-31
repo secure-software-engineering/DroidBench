@@ -1,1 +1,0 @@
-FLOW:<edu.mit.MainActivity: void onSharedPreferenceChanged(android.content.SharedPreferences,java.lang.String)>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: edu.mit.MainActivity 40}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.MainActivity 27/ARG}

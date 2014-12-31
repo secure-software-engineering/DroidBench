@@ -1,2 +1,0 @@
-FLOW:<edu.mit.Button1: void sendMessage(android.view.View)>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: edu.mit.Button1 35}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.Button1 31/ARG}
-FLOW:<edu.mit.Button1: void sendMessage(android.view.View)>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: edu.mit.Button1 35}<={<android.widget.TextView: java.lang.CharSequence getHint()>/widget/Line: edu.mit.Button1 35/ARG}
