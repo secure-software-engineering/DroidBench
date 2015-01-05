@@ -65,7 +65,7 @@ Inter-App Communication
 * **ICC-Broadcast-Programmatic-IntentFilter**:  IMEI is obtained in an Activity and stored in the Intent's extra of the Intent to the BroadcastReceiver which was registered programmatically.  The Receiver leaks the IMEI info.
 * **ICC-Component-Not-In-Manifest**: IMEI is obtained in one Activity and is stored in the Intent's to start a leaking Activity which is not in the AndroidManifest.xml.  No leak happens as it is not valid.
 * **ICC-ComponentName-Class-Constant**: Another Activity is started using class name.  IEMI is leaked in the Activity to be started.
-* **ICC-Concat-Action-String": An Intent for starting another Activity is created by concatenating two constant strings.  The Activity to be started leaks the IMEI which was passed in as the Intent's extra.   
+* **ICC-Concat-Action-String**: An Intent for starting another Activity is created by concatenating two constant strings.  The Activity to be started leaks the IMEI which was passed in as the Intent's extra.   
 * **ICC-Event-Ordering**: IMEI is obtained and stored in the SharedPreferences of the secondary Activity (InFlowActivity).  The first Activity (OutFlowActivity) starts the second Activity.  The second-time the 2nd Activity is started, IMEI is leaked to log.
 * **ICC-Intent-ComponentName**: A Activity is started using constant component's Name and Intent.setComponent.  The started Activity leaks the IMEI to log.
 * **ICC-Intent-Passed-Through-API**: An Intent to start another Activity is passed through LinkedList's add() and retreived with LinkedList.get().  The retrieved Intent is used to start a leaking Activity.
@@ -135,7 +135,7 @@ Miscellaneous Android-Specific
 *
 * **Intent-Class-Modeling**:  IMEI is retrieved and stored to Intent.action as a data holder. 
 * **Parcel**: IEMI is marshalled and unmarshalled from a Parcel and then leaked to SMS.
-* **SharedPreferences:  IMEI is obtained in the one Activity and stored in the SharedPreferences which is leaked by another Activity.
+* **SharedPreferences**:  IMEI is obtained in the one Activity and stored in the SharedPreferences which is leaked by another Activity.
 * **Two-Components-Shared-Memory**: IMEI is stored in a singleton object in one Activity and leaked in a different Activity.
 
 Implicit Flows
