@@ -11,6 +11,21 @@ import android.util.Log;
 import android.view.Menu;
 import android.widget.Button;
 
+/**
+ * @testcase_name StartActivityForResult1
+ * @version 0.1
+ * @author Contributed by the DidFail project 
+ * @author_mail (Maintainer) steven.arzt@cased.de
+ * 
+ * @description Reads the user's geographical location (via GPS) and leaks
+ * 		it to the file system, and passes it to another activity using
+ * 		startActivityForResult which writes it to a file.
+ * @dataflow getLastKnownLocation -> startActivityForResult
+ * 		-> onActivityResult -> FileOutputStream
+ * @number_of_leaks 1
+ * @challenges Inter-component communication using startActivityForResult
+ * 		must be handled correctly
+ */
 public class MainActivity extends Activity {
 
 	@Override
