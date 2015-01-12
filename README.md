@@ -52,20 +52,17 @@ Field and Object Sensitivity
 * **ObjectSensitivity2**: Writes a tainted value into a field and then overwrites it with untainted data.
 
 Inter-App Communication
------------------------
-* **IntentSource1**: Two tainted leaks: the first one is that a tainted value is leaked to another app using an intent by startActivityForResult. The other one is that onActivityResult method gets intent as tainted data and then logs it.
-
-DidFail Toy Apps (Inter-App Communication)
 ------------------------------------------
 * **Echoer**: Receives data and echoes it back to the sender.
 * **SendSMS**: Reads the Device ID, passes it through Echoer, and then sends it in a text message.
+* **StartActivityForResult1**: Reads the user's geographical location (via GPS), passes it through Echoer, and then writes it to a file.
 
 Inter-Component Communication
 ------------------------------
 * **ActivityCommunication1**: Contains two activities that communicate using static fields.
-* **StartActivityForResult1**: Reads the user's geographical location (via GPS) and leaks it to the file system, and passes it to another activity using startActivityForResult which writes it to a file.
 * **IntentSink1**: A tainted value is leaked as the result of an activity.
 * **IntentSink2**: Similar to IntentSink, but the value is sent out in a callback method defined in XML.
+* **IntentSource1**: Two tainted leaks: the first one is that a tainted value is leaked to another app using an intent by startActivityForResult. The other one is that onActivityResult method gets intent as tainted data and then logs it.
 
 Lifecycle
 ---------
