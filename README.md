@@ -18,6 +18,11 @@ Version 1.3
 ===========
 Version 1.3 comprises the following <TODO> test cases:
 
+Aliasing <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+---------
+
+* **Merge1**: Sensitive data is assigned to a heap object which is then shuffled around. Only constant data is leaked.
+
 Arrays and Lists
 ----------------
 * **ArrayAccess1**: Stores both a tainted and an untainted value in an array and then leaks the untainted one. Array indices are constants.
@@ -92,6 +97,7 @@ General Java
 * **StaticInitialization1**: Passes a tainted value into a static initialization method.
 * **StaticInitialization2**: Sensitive data is obtained during static initialization of a class and leaked in non-static code
 * **UnreachableCode**: Passes tainted data into a method that is never called.
+* **VirtualDispatch1**: Depending on a click counter, one class or another is instantiated. However, only one of the classes actually leaks data, the only ever leaks a constant string.
 
 Miscellaneous Android-Specific
 ------------------------------
@@ -131,8 +137,3 @@ Emulator Detection <img src="https://raw.github.com/secure-software-engineering/
 * **EmulatorDetection_ContentProvider1**: This test case detects the Android emulator by checking the IMEI in a content provider. The IMEI is only sent via SMS in the activity if the app runs on a real phone.
 * **EmulatorDetection_IMEI1**: This test case detects the Android emulator by truncating the secret data which is leaked at a position computed from the IMEI. On an emulator, the IMEI is expected to be 00..0.
 * **EmulatorDetection_PlayStore1**: This test case detects the Android emulator by whether the Play Store app is installed on the phone. The IMEI is only sent via SMS if the app runs on a real phone.
-
-Aliasing <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
----------
-
-* **Aliasing_Merge1**: Sensitive data is assigned to a heap object which is then shuffled around. Only constant data is leaked.
