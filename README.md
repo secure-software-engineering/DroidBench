@@ -16,7 +16,7 @@ We welcome your contributions!
 
 Version 2.0
 ===========
-Version 2.0 comprises the following 118 test cases:
+Version 2.0 comprises the following 120 test cases:
 
 Aliasing <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 ---------
@@ -130,6 +130,8 @@ General Java
 * **UnreachableCode**: Passes tainted data into a method that is never called.
 * **VirtualDispatch1**: Depending on a click counter, one class or another is instantiated. However, only one of the classes actually leaks data, the only ever leaks a constant string. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **VirtualDispatch2**: A method in the base class returns untainted information, the same method in one of the derived classes returns sensitive (IMEI) information.  That information is later leaked through SMS. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **VirtualDispatch3*: Two classes implement an interface, but only one of them returns sensitive data. The leak however happens on the other implementation that only returns constant data.
+* **VirtualDispatch4*: Similator to VirtualDispatch3, but with slightly more type information.
 
 Miscellaneous Android-Specific
 ------------------------------
