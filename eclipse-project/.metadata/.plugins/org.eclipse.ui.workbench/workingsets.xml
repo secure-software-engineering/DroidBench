@@ -28,8 +28,8 @@
 <item elementID="=Lifecycle_AsynchronousEventOrdering1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=Lifecycle_ActivitySavedState1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=Lifecycle_EventOrdering1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=Lifecycle_SharedPreferenceChanged1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=Lifecycle_ActivityLifecycle4" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=Lifecycle_SharedPreferenceChanged1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1421140407927_6" label="ImplicitFlows" name="ImplicitFlows">
 <item elementID="=ImplicitFlows_ImplicitFlow4" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
@@ -39,35 +39,35 @@
 </workingSet>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1421140437466_7" label="GeneralJava" name="GeneralJava">
 <item elementID="=GeneralJava_Clone1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=GeneralJava_VirtualDispatch4" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=GeneralJava_Serialization1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=GeneralJava_FactoryMethods1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=GeneralJava_StaticInitialization1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=GeneralJava_Loop2" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=GeneralJava_Exceptions4" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=GeneralJava_VirtualDispatch3" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=GeneralJava_UnreachableCode" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=GeneralJava_Exceptions1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=GeneralJava_StringPatternMatching1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=GeneralJava_Loop1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=GeneralJava_SourceCodeSpecific1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=GeneralJava_StaticInitialization3" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=GeneralJava_StringFormatter1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=GeneralJava_StaticInitialization3" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=GeneralJava_VirtualDispatch2" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=GeneralJava_Exceptions2" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=GeneralJava_StringToCharArray1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=GeneralJava_StaticInitialization2" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=GeneralJava_VirtualDispatch1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=GeneralJava_Exceptions3" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=GeneralJava_StringToOutputStream1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=GeneralJava_StartProcessWithSecret1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=GeneralJava_VirtualDispatch3" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=GeneralJava_VirtualDispatch4" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=GeneralJava_StringToOutputStream1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1421140515934_8" label="FieldAndObjectSensitivity" name="FieldAndObjectSensitivity">
 <item elementID="=FieldAndObjectSensitivity_ObjectSensitivity2" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=FieldAndObjectSensitivity_FieldSensitivity1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=FieldAndObjectSensitivity_FieldSensitivity3" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=FieldAndObjectSensitivity_ObjectSensitivity1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=FieldAndObjectSensitivity_FieldSensitivity4" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=FieldAndObjectSensitivity_ObjectSensitivity1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=FieldAndObjectSensitivity_InheritedObjects1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=FieldAndObjectSensitivity_FieldSensitivity2" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
@@ -90,17 +90,17 @@
 <item elementID="=Callbacks_Button5" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=Callbacks_Unregister1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=Callbacks_Button1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=Callbacks_LocationLeak1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=Callbacks_RegisterGlobal1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=Callbacks_LocationLeak1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1421140576242_11" label="ArraysAndLists" name="ArraysAndLists">
-<item elementID="=ArraysAndLists_ArrayAccess1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=ArraysAndLists_ArrayCopy1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=ArraysAndLists_ArrayAccess1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=ArraysAndLists_MultidimensionalArray1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=ArraysAndLists_ListAccess1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=ArraysAndLists_ArrayAccess2" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=ArraysAndLists_HashMapAccess1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=ArraysAndLists_ArrayToString1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=ArraysAndLists_HashMapAccess1" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1421140594312_12" label="AndroidSpecific" name="AndroidSpecific">
 <item elementID="=AndroidSpecific_Library2" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
@@ -140,8 +140,8 @@
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1369340279299_0" label="Window Working Set" name="Aggregate for window 1369340279298"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1389364056886_1" label="Window Working Set" name="Aggregate for window 1389364056885"/>
+<mruList name="AndroidSpecific"/>
 <mruList name="GeneralJava"/>
 <mruList name="InterComponentCommunication"/>
-<mruList name="AndroidSpecific"/>
 <mruList name="Lifecycle"/>
 </workingSetManager>

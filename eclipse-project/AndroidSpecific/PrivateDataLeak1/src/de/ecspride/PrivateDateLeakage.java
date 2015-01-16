@@ -9,7 +9,7 @@ import android.widget.EditText;
 import de.ecspride.data.User;
 /**
  * @testcase_name PrivateDataLeak1
- * @version 0.1
+ * @version 0.2
  * @author Secure Software Engineering Group (SSE), European Center for Security and Privacy by Design (EC SPRIDE) 
  * @author_mail siegfried.rasthofer@cased.de
  * 
@@ -36,7 +36,7 @@ public class PrivateDateLeakage extends Activity {
 		EditText passwordText = (EditText)findViewById(R.id.password);
 		
 		String uname = usernameText.toString();
-		String pwd = passwordText.toString(); //source
+		String pwd = passwordText.getText().toString(); //source
 		
 		user = new User(uname, pwd);
 	}
