@@ -9,6 +9,7 @@ The suite can be used to assess both static and dynamic taint analyses, but in p
 The distribution contains an eclipse workspace with all source-code projects as well as readily compiled APKs.
 
 DroidBench was created by Christian Fritz, Steven Arzt and Siegfried Rasthofer of the [EC SPRIDE Secure Software Engineering Group](http://sse.ec-spride.de/).
+Another Java-based benchmark-suite with the same aim as DroidBench is [SecuriBench](http://suif.stanford.edu/~livshits/work/securibench/index.html) which focuses on Web-based applications written in Java.
 
 We welcome your contributions!
 ------------------------------
