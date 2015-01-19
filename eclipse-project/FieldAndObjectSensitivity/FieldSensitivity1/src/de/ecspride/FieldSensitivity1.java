@@ -7,7 +7,7 @@ import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 /**
  * @testcase_name FieldSensitivity1
- * @version 0.1
+ * @version 0.2
  * @author Secure Software Engineering Group (SSE), European Center for Security and Privacy by Design (EC SPRIDE) 
  * @author_mail siegfried.rasthofer@cased.de
  * 
@@ -24,15 +24,16 @@ public class FieldSensitivity1 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_field_sensitivity1);
         
-        setTaint(d1);
+        d1 = setTaint(d1);
 		sendTaint();
     }
 
-	private void setTaint(Datacontainer data){
+	private Datacontainer setTaint(Datacontainer data){
 		data = new Datacontainer();
 		data.setDescription("abc");
 		TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 		data.setSecret(telephonyManager.getSimSerialNumber()); //source
+		return data;
 	}
 	
 	private void sendTaint(){

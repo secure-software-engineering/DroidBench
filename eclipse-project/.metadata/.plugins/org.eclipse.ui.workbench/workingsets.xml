@@ -140,6 +140,7 @@
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1369340279299_0" label="Window Working Set" name="Aggregate for window 1369340279298"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1389364056886_1" label="Window Working Set" name="Aggregate for window 1389364056885"/>
+<mruList name="FieldAndObjectSensitivity"/>
 <mruList name="AndroidSpecific"/>
 <mruList name="GeneralJava"/>
 <mruList name="InterComponentCommunication"/>

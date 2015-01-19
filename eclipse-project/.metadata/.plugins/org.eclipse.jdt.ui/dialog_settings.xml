@@ -15,10 +15,10 @@
 		<item value="400" key="height"/>
 		<item value="600" key="width"/>
 	</section>
-	<section name="quick_assist_proposal_size">
+	<section name="org.eclipse.ltk.ui.refactoring.settings">
 	</section>
 	<section name="RenameInformationPopup">
 	</section>
-	<section name="org.eclipse.ltk.ui.refactoring.settings">
+	<section name="quick_assist_proposal_size">
 	</section>
 </section>
