@@ -1,5 +1,4 @@
 # built application files
-#*.apk
 *.ap_
 
 # files for the dex VM
@@ -16,5 +15,9 @@ gen/
 local.properties
 
 # Eclipse project files
-.classpath
-.project
+/.metadata
+/appcompat_v7
+/appcompat_v7_2
+/appcompat_v7_3
+/appcompat_v7_4
+/eclipse-project/.metadata/.plugins/org.eclipse.core.resources/.history

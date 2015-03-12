@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.mit.icc_event_ordering"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="edu.mit.icc_event_ordering.OutFlowActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="edu.mit.icc_event_ordering.InFlowActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="edu.mit.icc_event_ordering.ACTION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="edu.mit.icc_event_ordering.IsolateActivity"
+            android:label="@string/app_name" >
+	  <intent-filter>
+	    <action android:name="edu.mit.icc_event_ordering.EDIT" />
+	    <category android:name="android.intent.category.DEFAULT" />
+	  </intent-filter>
+        </activity>
+    </application>
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+</manifest>
