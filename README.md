@@ -1,4 +1,4 @@
-DroidBench
+DroidBench 2.0
 ==========
 <p align="center">
   <img src="http://sseblog.ec-spride.de/wp-content/uploads/2013/05/droidbench_apps-300x172.png" width="400px"/>
