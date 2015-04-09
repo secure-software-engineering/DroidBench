@@ -21,6 +21,25 @@
 <entry path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
 </endorsedDirs>
 </libraryInfo>
+<libraryInfo home="C:\Program Files\Java\jre1.8.0_31" version="1.8.0_31">
+<bootpath>
+<entry path="C:\Program Files\Java\jre1.8.0_31\lib\resources.jar"/>
+<entry path="C:\Program Files\Java\jre1.8.0_31\lib\rt.jar"/>
+<entry path="C:\Program Files\Java\jre1.8.0_31\lib\sunrsasign.jar"/>
+<entry path="C:\Program Files\Java\jre1.8.0_31\lib\jsse.jar"/>
+<entry path="C:\Program Files\Java\jre1.8.0_31\lib\jce.jar"/>
+<entry path="C:\Program Files\Java\jre1.8.0_31\lib\charsets.jar"/>
+<entry path="C:\Program Files\Java\jre1.8.0_31\lib\jfr.jar"/>
+<entry path="C:\Program Files\Java\jre1.8.0_31\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Program Files\Java\jre1.8.0_31\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Program Files\Java\jre1.8.0_31\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
 <libraryInfo home="C:\Program Files\Java\jre7" version="1.7.0_51">
 <bootpath>
 <entry path="C:\Program Files\Java\jre7\lib\resources.jar"/>

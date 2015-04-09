@@ -15,11 +15,11 @@ We welcome your contributions!
 ------------------------------
 **You are most welcome to contribute additional test cases to DroidBench.** To do so, please fork the project, commit an appropriate Eclipse source project and APK, update this README and then send us a pull request.
 
-Version 2.0
-===========
-Version 2.0 comprises the following 120 test cases:
+Version 2.1-develop
+====================
+Version 2.1-develop comprises the following 121 test cases:
 
-Aliasing <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+Aliasing
 ---------
 
 * **Merge1**: Sensitive data is assigned to a heap object which is then shuffled around. Only constant data is leaked.
@@ -28,11 +28,11 @@ Arrays and Lists
 ----------------
 * **ArrayAccess1**: Stores both a tainted and an untainted value in an array and then leaks the untainted one. Array indices are constants.
 * **ArrayAccess2**: Stores both a tainted and an untainted value in an array and then leaks the untainted one. Array indices are calculated.
-* **ArrayCopy1**: Stores a tainted value in an array and then uses System.arraycopy to copy the data to a new array which is then leaked to log. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **ArrayToString1**: IMEI is stored in an array of String which is then converted back to String using Arrays.toString(). <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **ArrayCopy1**: Stores a tainted value in an array and then uses System.arraycopy to copy the data to a new array which is then leaked to log.
+* **ArrayToString1**: IMEI is stored in an array of String which is then converted back to String using Arrays.toString().
 * **HashMapAccess1**: Stores both a tainted and an untainted value in a hash map and then leaks the untainted one. Map keys are constants.
 * **ListAccess1**: Both a tainted and an untainted value are stored in a list. Only the untainted value is leaked.
-* **MultidimensionalArray1**: Stores a tainted value in a 2-dimensional array and accesses it through a reference pointing to a slice containing the tainted value. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **MultidimensionalArray1**: Stores a tainted value in a 2-dimensional array and accesses it through a reference pointing to a slice containing the tainted value.
 
 Callbacks
 ---------
@@ -67,7 +67,7 @@ Inter-App Communication
 * **SendSMS**: Reads the Device ID, passes it through Echoer, and then sends it in a text message.
 * **StartActivityForResult1**: Reads the user's geographical location (via GPS), passes it through Echoer, and then writes it to a file.
 
-Inter-Component Communication <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+Inter-Component Communication
 ------------------------------
 * **ActivityCommunication1**: Contains two activities that communicate using static fields.
 * **ActivityCommunication2**: IMEI is obtained in one Activity and stored in an Intent's extra for starting the next Activity which will then leak IMEI to log.
@@ -98,45 +98,45 @@ Lifecycle
 * **ApplicationLifecycle1**:  Obtains a secret value when the application is launched and sends it out in the onResume() method of the main activity.
 * **ApplicationLifecycle2**:  Obtains a secret value when the application is launched and sends it out in the low memory callback of the application.
 * **ApplicationLifecycle3**:  Obtains a secret value when a content provider is initialized and leaks it in the onCreate() method of the application.
-* **AsynchronousEventOrdering1**: Obtains IMEI during onResume() and leaks it during onStop() with an overwrite in onLowMemory(). <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **AsynchronousEventOrdering1**: Obtains IMEI during onResume() and leaks it during onStop() with an overwrite in onLowMemory().
 * **BroadcastReceiverLifecycle1**: Calls to sources and sinks distributed across a broadcast receiver lifecycle.
-* **BroadcastReceiverLifecycle2**: The sensitive data is read in onCreate() and sent out in a dynamically registered broadcast receiver. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/> 
-* **EventOrdering1**: IMEI is obtained the first time onLowMemory is called, and is leaked the second time onLowMemory is called, but only of no onContentChanged() occurred in between. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **BroadcastReceiverLifecycle2**: The sensitive data is read in onCreate() and sent out in a dynamically registered broadcast receiver.
+* **EventOrdering1**: IMEI is obtained the first time onLowMemory is called, and is leaked the second time onLowMemory is called, but only of no onContentChanged() occurred in between.
 * **FragmentLifecycle1**: Calls to sources and sinks distributed across a fragment lifecycle.
 * **ServiceLifecycle1**: Calls to sources and sinks distributed across a service lifecycle.
-* **ServiceLifecycle2**: IMEI is obtained at the end of onStartCommand and is stored to a service's field.  It is leaked the second time the service command starts. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **SharedPreferenceChanged1**: onCreate(), IMEI is put into the SharedPreferences and it triggers onSharedPreferenceChanged() which then leaks the IMEI to Android Log. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **ServiceLifecycle2**: IMEI is obtained at the end of onStartCommand and is stored to a service's field.  It is leaked the second time the service command starts.
+* **SharedPreferenceChanged1**: onCreate(), IMEI is put into the SharedPreferences and it triggers onSharedPreferenceChanged() which then leaks the IMEI to Android Log.
 
 General Java
 ------------
-* **Clone1**: IMEI is added to a linkedlist, and the list is cloned to a new list, then the tainted member of the newlist is leaked. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **DirectBuffer**: Test case for under/over tainted ByteBuffers. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Clone1**: IMEI is added to a linkedlist, and the list is cloned to a new list, then the tainted member of the newlist is leaked.
+* **DirectBuffer**: Test case for under/over tainted ByteBuffers.
 * **Exceptions1**: Saves a tainted value into a local variable, raises an exception and sends the value out in the exception handler.
 * **Exceptions2**: Saves a tainted value into a local variable, implicitly raises an exception (ArrayIndexOutOfBounds) and sends the data out in the exception handler.
 * **Exceptions3**: Saves a tainted value into a local variable, but the exception handler which would send it out is never invoked.
 * **Exceptions4**: Throws and exception containing a tainted value and sends it out in the exception handler.
-* **FactoryMethods1**: Obtains a LocationManager from a factory method contained in the Android operating system, reads out the location, and leaks it. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **FactoryMethods1**: Obtains a LocationManager from a factory method contained in the Android operating system, reads out the location, and leaks it.
 * **Loop1**: Contains a simple loop and a data leak.
 * **Loop2**: Retrieves location information through a callback and leaks it via nested loops.
-* **Serialization1**:  IMEI is obtained and serialized/deserialzed throught ObjectOutputStream and ObjectInputStream. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Serialization1**:  IMEI is obtained and serialized/deserialzed throught ObjectOutputStream and ObjectInputStream.
 * **SourceCodeSpecific1**: Uses unusual code construct `a = p ? b : c.`
-* **StartProcessWithSecret1**: IMEI is obtained and leaked through ProcessBuilder's start(). <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>  
+* **StartProcessWithSecret1**: IMEI is obtained and leaked through ProcessBuilder's start().  
 * **StaticInitialization1**: Passes a tainted value into a static initialization method.
 * **StaticInitialization2**: Sensitive data is obtained during static initialization of a class and leaked in non-static code
-* **StaticInitialization3**: IMEI is obtained during static initializer and is stored and overriding in the Activity's field which was not tainted at the beginning. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **StringFormatter1**: IMEI is passed to a formatter and then the formatted buffer is converted back to String before leaked to log. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **StringPatternMatching1**: IMEI is matched against .* regular expression, and the matched group is leaked. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **StringToCharArray1**: IMEI is obtained and stored in the char[]  which is then later converted to String before leaked to log. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **StringToOutputStream1**: IMEI is obtained and passed through ByteArrayOutputStream as String bytes back to String. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **StaticInitialization3**: IMEI is obtained during static initializer and is stored and overriding in the Activity's field which was not tainted at the beginning.
+* **StringFormatter1**: IMEI is passed to a formatter and then the formatted buffer is converted back to String before leaked to log.
+* **StringPatternMatching1**: IMEI is matched against .* regular expression, and the matched group is leaked.
+* **StringToCharArray1**: IMEI is obtained and stored in the char[]  which is then later converted to String before leaked to log.
+* **StringToOutputStream1**: IMEI is obtained and passed through ByteArrayOutputStream as String bytes back to String.
 * **UnreachableCode**: Passes tainted data into a method that is never called.
-* **VirtualDispatch1**: Depending on a click counter, one class or another is instantiated. However, only one of the classes actually leaks data, the only ever leaks a constant string. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **VirtualDispatch2**: A method in the base class returns untainted information, the same method in one of the derived classes returns sensitive (IMEI) information.  That information is later leaked through SMS. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **VirtualDispatch1**: Depending on a click counter, one class or another is instantiated. However, only one of the classes actually leaks data, the only ever leaks a constant string.
+* **VirtualDispatch2**: A method in the base class returns untainted information, the same method in one of the derived classes returns sensitive (IMEI) information.  That information is later leaked through SMS.
 * **VirtualDispatch3*: Two classes implement an interface, but only one of them returns sensitive data. The leak however happens on the other implementation that only returns constant data.
 * **VirtualDispatch4*: Similator to VirtualDispatch3, but with slightly more type information.
 
 Miscellaneous Android-Specific
 ------------------------------
-* **ApplicationModeling1**: Stores IMEI in Application's object and later leaks it in a different Activity. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **ApplicationModeling1**: Stores IMEI in Application's object and later leaks it in a different Activity.
 * **DirectLeak1**: The device id is read out and sent via SMS on the activity's `onCreate()` event.
 * **InactiveActivity**: Data leak in a disabled activity.
 * **LogNoLeak**: Writes untainted data into a log file.
@@ -146,8 +146,9 @@ Miscellaneous Android-Specific
 * **PrivateDataLeak1**: Summary test case containing various challenges.
 * **PrivateDataLeak2**: Leaks a value from a password field.
 * **PrivateDataLeak3**: The IMEI is written into a file, read out again and then leaked.
-* **PublicAPIField1**: IMEI is obtained and converted to 2 floating point numbers as x and y of PointF.  Value of PointF is leaked. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **PublicAPIField2**:  IMEI is retrieved and stored to Intent.action as a data holder. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **PublicAPIField1**: IMEI is obtained and converted to 2 floating point numbers as x and y of PointF.  Value of PointF is leaked.
+* **PublicAPIField2**:  IMEI is retrieved and stored to Intent.action as a data holder.
+* **View1**: The IMEI is leaked inside the draw event of a custom view. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 
 Implicit Flows
 --------------
@@ -160,8 +161,8 @@ Reflection
 * **Reflection3**: Sensitive data is stored using a setter in a reflective class, read back using a getter and then leaked. No type information on the target class is used.
 * **Reflection4**: Sensitive data is read using a function in a reflective class and leaked using another function in the same reflective class.
 
-Threading <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
------------
+Threading
+----------
 
 * **AsyncTask1**: Sensitive data is read in onCreate() and send out in a dedicated thread started using Android's AsyncTask mechanism.
 * **JavaThread1**: Sensitive data is read in onCreate() and send out in a dedicated thread started using Java's normal threading mechanism.
@@ -169,7 +170,7 @@ Threading <img src="https://raw.github.com/secure-software-engineering/DroidBenc
 * **Executor1**: Sensitive data is read in onCreate() and send out in a dedicated thread started using Java's Executor mechanism.
 * **Looper1**: Sensitive data is read in onCreate() and enqueued for a custom thread hosting an Android Looper whose handler sends out the data.
 
-Emulator Detection <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+Emulator Detection
 --------------------
 
 * **EmulatorDetection_ContentProvider1**: This test case detects the Android emulator by checking the IMEI in a content provider. The IMEI is only sent via SMS in the activity if the app runs on a real phone.
