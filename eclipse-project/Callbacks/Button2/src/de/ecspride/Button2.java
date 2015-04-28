@@ -17,7 +17,7 @@ import android.widget.Button;
  * 
  * @description Sources and sinks are called in button callbacks. There is only one data leak iff first button3 and then button1 is pressed!
  * @dataflow clickOnButton3: source -> imei; onClick (button1): imei -> sinks 
- * @number_of_leaks 2
+ * @number_of_leaks 3
  * @challenges the analysis must be able to analyze listeners, know that callback of button3 is ClickOnButton3 (defined in xml file)
  *  and has to handle the arbitrary order of the listener callbacks.
  */
@@ -57,6 +57,6 @@ public class Button2 extends Activity {
     public void clickOnButton3(View view){
 		TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
 		imei = telephonyManager.getDeviceId(); //source
-		Log.i("TAG", "Button3: " + imei);
+		Log.i("TAG", "Button3: " + imei); //sink, leak
 	}
 }
