@@ -12,8 +12,8 @@ import android.util.Log;
  * @author_mail siegfried.rasthofer@cased.de
  * 
  * @description A method that is never called contains a dataflow from source to sink
- * @dataflow source -> deviceid -> sink
- * @number_of_leaks 1
+ * @dataflow no
+ * @number_of_leaks 0
  * @challenges the analysis has to discover that the unit is not called
  */
 public class UnreachableCode extends Activity {
