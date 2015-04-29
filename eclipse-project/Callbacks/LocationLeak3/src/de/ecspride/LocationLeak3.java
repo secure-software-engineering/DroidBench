@@ -18,7 +18,7 @@ import android.util.Log;
  *  which sets the data into a field of the activity. Activity and callback are decoupled using an
  *  interface.
  * @dataflow onLocationChanged: source -> data -> onResume -> sink 
- * @number_of_leaks 2
+ * @number_of_leaks 1
  * @challenges the analysis must be able to emulate the Android activity lifecycle correctly,
  *  integrate the callback method onLocationChanged, detect the callback methods as source
  *  and connect the callback class to the activity via the interface.
