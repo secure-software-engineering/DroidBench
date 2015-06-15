@@ -10,6 +10,7 @@ import android.os.IBinder;
 import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.widget.Toast;
 
 public class ServiceEventSequence2 extends Service {
 
@@ -41,6 +42,7 @@ public class ServiceEventSequence2 extends Service {
         if(!d3.isEmpty())
         	SmsManager.getDefault().sendTextMessage("5556", null, d3, null, null);
 		
+//        Toast.makeText(getApplicationContext(), "BOUND", Toast.LENGTH_SHORT).show();
         return mBinder;
     }
     

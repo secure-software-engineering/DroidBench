@@ -16,7 +16,7 @@ public class ServiceEventSequence1 extends Service {
     private final IBinder mBinder = new LocalBinder();
     private final Random mGenerator = new Random();
     private String d1= "";
-    private String d2 = "";
+    private String d2 = "tmp";
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {

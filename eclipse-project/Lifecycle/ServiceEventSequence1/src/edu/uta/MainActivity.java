@@ -11,7 +11,6 @@ import android.os.IBinder;
 import android.util.Log;
 import android.view.View;
 
-import com.example.newservice.R;
 
 import edu.uta.ServiceEventSequence1.LocalBinder;
 
@@ -37,11 +36,12 @@ public class MainActivity extends Activity {
           Log.d("BindingActivity", "onCRRRRREATTEEEeeEE");
 
 	      Intent intent = new Intent(this, ServiceEventSequence1.class);
-	      getApplicationContext().startService(intent);
 	      
-	      getApplicationContext().bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+	      startService(intent);
+	      
+	      bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
 
-	      getApplicationContext().startService(intent);
+	      startService(intent);
 
     }
     

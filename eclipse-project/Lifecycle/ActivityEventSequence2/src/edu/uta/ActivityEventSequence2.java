@@ -8,7 +8,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import com.myexample.motivatingexample.R;
 
 import android.app.Activity;
 import android.content.Intent;
