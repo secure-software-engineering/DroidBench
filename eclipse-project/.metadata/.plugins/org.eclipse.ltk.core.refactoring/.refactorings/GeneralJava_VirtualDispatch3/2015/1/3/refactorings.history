@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename method &apos;de.ecspride.MainActivity.createOtherImpkementation()&apos; to &apos;createOtherImplementation&apos;&#x0D;&#x0A;- Original project: &apos;Callgraph_FactoryMethod1&apos;&#x0D;&#x0A;- Original element: &apos;de.ecspride.MainActivity.createOtherImpkementation()&apos;&#x0D;&#x0A;- Renamed element: &apos;de.ecspride.MainActivity.createOtherImplementation()&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;createOtherImpkementation&apos;" flags="589826" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;de.ecspride{MainActivity.java[MainActivity~createOtherImpkementation" name="createOtherImplementation" references="true" stamp="1421258177078" version="1.0"/>
-</session>

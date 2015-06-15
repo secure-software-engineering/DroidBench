@@ -17,7 +17,7 @@ We welcome your contributions!
 
 Version 2.1-develop
 ====================
-Version 2.1-develop comprises the following 121 test cases:
+Version 2.1-develop comprises the following 127 test cases:
 
 Aliasing
 ---------
@@ -86,10 +86,13 @@ Inter-Component Communication
 * **ServiceCommunication1**: IMEI is obtained and sent to a Service which then leaks the info in the Messenger's Handler.  
 * **SharedPreferences1**:  IMEI is obtained in the one Activity and stored in the SharedPreferences which is leaked by another Activity.
 * **Singletons1**: IMEI is stored in a singleton object in one Activity and leaked in a different Activity.
-* **UnresolvableIntent1**:  The app tries to start an Activity int an Intent that cannot be resolved statically.  One of the two Activities may be started based on a random boolean, and both of them leak IMEI from the starting Activity to log.   
+* **UnresolvableIntent1**:  The app tries to start an Activity int an Intent that cannot be resolved statically.  One of the two Activities may be started based on a random boolean, and both of them leak IMEI from the starting Activity to log.
 
 Lifecycle
 ---------
+* **ActivityEventSequence1**: Source in Activity.onCreate(), sink in Activity.onResume().<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **ActivityEventSequence2**: Checks whether the analysis tool correctly handles events.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **ActivityEventSequence3**: Saves and restores state using the Activity's state callbacks.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **ActivityLifecycle1**: Calls to sources and sinks distributed across an activity lifecycle.
 * **ActivityLifecycle2**: Activity class inherited from a superclass containing the lifecycle method which leaks the tainted value.
 * **ActivityLifecycle3**: Calls to sources and sinks distributed across instance state handling methods.
@@ -103,7 +106,9 @@ Lifecycle
 * **BroadcastReceiverLifecycle2**: The sensitive data is read in onCreate() and sent out in a dynamically registered broadcast receiver.
 * **EventOrdering1**: IMEI is obtained the first time onLowMemory is called, and is leaked the second time onLowMemory is called, but only of no onContentChanged() occurred in between.
 * **FragmentLifecycle1**: Calls to sources and sinks distributed across a fragment lifecycle.
-* **ServiceLifecycle1**: Calls to sources and sinks distributed across a service lifecycle.
+* **ServiceEventLifecycle1**: Obtains the IMEI in onStartCommand(), copies it in onBind(), and leaks it in onStartCommand().<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **ServiceEventLifecycle2**: Like ServiceEventLifecycle1, but performs a second copy stop in OnUnbind().<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **ServiceEventLifecycle3**: Obtains the IMEI in onStartCommand(), copies it in onBind(), and leaks it in onUnbind().<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **ServiceLifecycle2**: IMEI is obtained at the end of onStartCommand and is stored to a service's field.  It is leaked the second time the service command starts.
 * **SharedPreferenceChanged1**: onCreate(), IMEI is put into the SharedPreferences and it triggers onSharedPreferenceChanged() which then leaks the IMEI to Android Log.
 
@@ -185,4 +190,4 @@ test cases to DroidBench:
 
 * 40 apps were contributed by **The DroidSafe Team at MIT** http://mit-pac.github.io/droidsafe-src/
 * Some inter-component and inter-application test cases were contributed by Li Li from the **University of Luxembourg**
-
+* 6 apps for checking event handling were provided by the **University of Texas**

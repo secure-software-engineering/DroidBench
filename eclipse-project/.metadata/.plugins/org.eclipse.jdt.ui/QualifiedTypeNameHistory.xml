@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="de.ecspride.MainActivity.MyInterface"/>
-<fullyQualifiedTypeName name="android.graphics.drawable.PaintDrawable"/>
-<fullyQualifiedTypeName name="android.graphics.Color"/>
-<fullyQualifiedTypeName name="android.graphics.Paint"/>
-<fullyQualifiedTypeName name="android.app.Activity"/>
-<fullyQualifiedTypeName name="de.ecspride.MyView"/>
-</qualifiedTypeNameHistroy>
