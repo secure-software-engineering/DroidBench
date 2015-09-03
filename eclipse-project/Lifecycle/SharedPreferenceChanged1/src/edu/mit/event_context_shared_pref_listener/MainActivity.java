@@ -1,12 +1,10 @@
 package edu.mit.event_context_shared_pref_listener;
 
-import edu.mit.event_context_shared_pref_listener.R;
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
-import android.content.SharedPreferences;
 
 /**
  * @testcase_name Event-Context-Shared-Pref-Listener

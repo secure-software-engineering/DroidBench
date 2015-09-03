@@ -4,12 +4,10 @@ import java.util.Random;
 
 import android.app.Service;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Binder;
 import android.os.IBinder;
 import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
-import android.util.Log;
 
 public class ServiceEventSequence3 extends Service {
 

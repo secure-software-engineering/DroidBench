@@ -1,4 +1,4 @@
-DroidBench 2.0
+﻿DroidBench 2.0
 ==========
 <p align="center">
   <img src="http://sseblog.ec-spride.de/wp-content/uploads/2013/05/droidbench_apps-300x172.png" width="400px"/>
@@ -17,7 +17,7 @@ We welcome your contributions!
 
 Version 2.1-develop
 ====================
-Version 2.1-develop comprises the following 127 test cases:
+Version 2.1-develop comprises the following 132 test cases:
 
 Aliasing
 ---------
@@ -181,6 +181,15 @@ Emulator Detection
 * **EmulatorDetection_ContentProvider1**: This test case detects the Android emulator by checking the IMEI in a content provider. The IMEI is only sent via SMS in the activity if the app runs on a real phone.
 * **EmulatorDetection_IMEI1**: This test case detects the Android emulator by truncating the secret data which is leaked at a position computed from the IMEI. On an emulator, the IMEI is expected to be 00..0.
 * **EmulatorDetection_PlayStore1**: This test case detects the Android emulator by whether the Play Store app is installed on the phone. The IMEI is only sent via SMS if the app runs on a real phone.
+
+Native Code<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+------------
+
+* **JavaIDFunction**: This test case sends tainted data from Java to Native to Java and back to native where it is leaked.
+* **NativeIDFunction**: This test case sends tainted data from Java to Native and back to Java where it is leaked.
+* **SinkInNativeCode**: This test case obtains the IMEI in Java code and leaks it in native code by calling back to the Java-based Android API.
+* **SinkInNativeLibCode**: This test case obtains the IMEI in Java code and leaks it in native code using Linux sockets.
+* **SourceInNativeCode**: This test case obtains the IMEI in native code and leaks it in Java code.
 
 Acknowledgements
 =================

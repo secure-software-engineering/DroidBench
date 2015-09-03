@@ -1,21 +1,9 @@
 package edu.uta;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
-import android.telephony.TelephonyManager;
 import android.telephony.SmsManager;
-import android.view.View;
-import android.widget.Toast;
+import android.telephony.TelephonyManager;
 
 /**
  * @testcase_name lifecycle_ActivityEventSequence1
