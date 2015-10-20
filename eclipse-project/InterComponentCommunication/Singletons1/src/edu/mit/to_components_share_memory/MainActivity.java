@@ -3,7 +3,7 @@ package edu.mit.to_components_share_memory;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
-import edu.mit.R;
+import edu.mit.to_components_share_memory.R;
 
 /**
  * @testcase_name Two-Components-Share-Memory
