@@ -35,7 +35,6 @@ public class Activity2 extends Activity {
 		che = "com.example.sms.send";
 		
 		Intent im = getIntent();
-		  //value = im.getStringExtra("imei");
 		  value= getIntent().getExtras().getString("imei");
 		  Log.d("imeino", value);
 		  

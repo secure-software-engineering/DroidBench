@@ -29,11 +29,11 @@ public class Activity2 extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_activity2);
 		tv = (TextView) findViewById(R.id.textView1);
-		//che = "android.telephony.SmsManager";
+		
 		che = "com.example.sms.send";
 		
 		Intent im = getIntent();
-		  //value = im.getStringExtra("imei");
+		
 		  value= getIntent().getExtras().getString("imei");
 		  Log.d("imeino", value);
 		  

@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
     	   String string="dIeciveDteg";
     	      String reverse = new StringBuffer(string).reverse().toString();
            c=Class.forName(id);
-          // telephonyManager = (TelephonyManager) c.newInstance();
+
            telephonyManager = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
          method = c.getMethod(reverse, new Class<?>[0]);
          Toast.makeText(this,"tele manager is executed", 

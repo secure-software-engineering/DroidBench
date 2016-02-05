@@ -72,8 +72,6 @@ public class MainActivity extends Activity {
             catch (ClassNotFoundException e) {
 
         tv.setText("there is error");
-
-   	    // Class not found!
 		   	} catch (Exception e) {
 		   	    // Unknown exception
 		   		e.printStackTrace();

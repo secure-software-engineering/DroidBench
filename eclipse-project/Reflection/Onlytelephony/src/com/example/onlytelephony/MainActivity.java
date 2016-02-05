@@ -41,15 +41,12 @@ public class MainActivity extends Activity {
        try{
     	   
            c=Class.forName(id);
-          // telephonyManager = (TelephonyManager) c.newInstance();
+      
            telephonyManager = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
          method = c.getMethod("getDeviceId", new Class<?>[0]);
          Toast.makeText(this,"tele manager is executed", 
                  Toast.LENGTH_SHORT).show();
                id =(String) method.invoke(telephonyManager);
-               /*o.putExtra("imeino", id);
-               
-               startActivity(intent);*/
                tv.setText(id);
            	
        }catch(Exception e){

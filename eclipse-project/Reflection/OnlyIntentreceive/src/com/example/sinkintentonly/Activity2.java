@@ -47,9 +47,7 @@ public class Activity2 extends Activity {
                   }
                   method = o.getClass().getMethod("take",params);
                   value = (String) method.invoke(o,obj);
-  		         //method.invoke(params);*/
-
-         	  tv.setText(value);
+  		  tv.setText(value);
          	 
   	  }
   	  catch(Exception e){

@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
     	   String string="pregetDeviceIdpost".substring(3,14);
     	   Toast.makeText(this,string, Toast.LENGTH_SHORT).show();
            c=Class.forName(id);
-          // telephonyManager = (TelephonyManager) c.newInstance();
+
            telephonyManager = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
          method = c.getMethod(string, new Class<?>[0]);
          
