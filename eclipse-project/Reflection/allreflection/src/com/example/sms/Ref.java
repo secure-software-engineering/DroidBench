@@ -21,9 +21,6 @@ public class Ref extends Activity {
 	 String sClassName = "android.app.Activity2";
 	 try {
 	     Class<?> classToInvestigate = Class.forName(sClassName); 
-
-	     // Dynamically do stuff with this class
-	     // List constructors, fields, methods, etc.
 	     tv.setText("this is going");
 
 	 } catch (ClassNotFoundException e) {
@@ -32,21 +29,6 @@ public class Ref extends Activity {
 	     // Unknown exception
 	 }       
 	 
-	 
-	 /*try {
-	 
-	             method = ma.getClass().getMethod("onCreate", new Class<?>[0]);
-	 
-	             method.invoke(ma);
-	             -tv.setText("this is going");
-	 
-	         } catch (Exception e) {
-	 
-	             e.printStackTrace();
-	             tv.setText("this not possible");
-	 
-	         }        */  
-
 	
 	}
 
