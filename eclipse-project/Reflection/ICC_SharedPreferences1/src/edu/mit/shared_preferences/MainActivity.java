@@ -64,21 +64,12 @@ public class MainActivity extends Activity {
                            Toast.LENGTH_SHORT).show();
                    
       	  }
-        // im = settings.getString("imei", "");
-     
+    
         Intent i = new Intent(this,AnotherActivity.class);
         
         startActivity(i);
     }
-   /* public void give()
-    {
-    	 SharedPreferences at = getSharedPreferences(MainActivity.PREFS_NAME, 0);
-         String imei = at.getString("imei", "");
-         Log.i("DroidBench", imei); //sink, leak
-         Toast.makeText(getBaseContext(),"this is another"+imei, 
-                 Toast.LENGTH_SHORT).show();
-        
-    }*/
+  
     public String give()
     {
 		return im;
