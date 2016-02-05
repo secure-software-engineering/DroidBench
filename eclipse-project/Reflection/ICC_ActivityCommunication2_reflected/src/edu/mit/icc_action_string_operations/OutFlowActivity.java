@@ -62,13 +62,6 @@ public class OutFlowActivity extends Activity {
                    
       	  }
         
-        
-		
-		
-		/*Intent i = new Intent("ignore.edu.mit.icc_action_string_operations.ACTION".substring(7));
-		i.putExtra("DroidBench", imei);
-		
-		startActivity(i);*/
-	}
+ 	}
 
 }
