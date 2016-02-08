@@ -29,7 +29,7 @@ public class OutFlowActivity extends Activity {
 		String imei = telephonyManager.getDeviceId(); //source
 		
 		List<String> list = new LinkedList<String>();
-		list.add("edu.mit.icc_pass_action_string_through_api.ACTION");
+		list.add("edu.mit.icc_action_string_operations.ACTION");
 
 		String action = list.get(0);
 
