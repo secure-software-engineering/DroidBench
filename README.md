@@ -17,7 +17,7 @@ We welcome your contributions!
 
 Version 2.1-develop
 ====================
-Version 2.1-develop comprises the following 132 test cases:
+Version 2.1-develop comprises the following 142 test cases:
 
 Aliasing
 ---------
@@ -214,3 +214,4 @@ test cases to DroidBench:
 * 40 apps were contributed by **The DroidSafe Team at MIT** http://mit-pac.github.io/droidsafe-src/
 * Some inter-component and inter-application test cases were contributed by Li Li from the **University of Luxembourg**
 * 6 apps for checking event handling were provided by the **University of Texas**
+* 10 apps for inter-component communication in combination with reflections were provided by the **Malviya National Institute of Technology, Jaipur (INDIA)**.
