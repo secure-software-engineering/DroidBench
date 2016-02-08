@@ -1,4 +1,4 @@
-﻿DroidBench 2.0
+DroidBench 2.0
 ==========
 <p align="center">
   <img src="http://sseblog.ec-spride.de/wp-content/uploads/2013/05/droidbench_apps-300x172.png" width="400px"/>
@@ -165,6 +165,20 @@ Reflection
 * **Reflection2**: Sensitive data is stored in a field of a reflective class, read out again using a method implemented in the "unknown" class and leaked.
 * **Reflection3**: Sensitive data is stored using a setter in a reflective class, read back using a getter and then leaked. No type information on the target class is used.
 * **Reflection4**: Sensitive data is read using a function in a reflective class and leaked using another function in the same reflective class.
+
+Reflection_ICC <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+---------------
+
+* **ActivityCommunication2**: Data is obtained and sent through an implicit intent The intent is reflected. Source is getDeviceId and sink is Log.
+* **AllReflection**: Source, Sink, Intent(Explicit) all are reflected. Sink is SMS.
+* **OnlyIntent**: Intent itself is reflected during send. Intent is Explicit. Sink is SMS.
+* **OnlyIntentReceive**: Intent Send is not reflected only its receive is reflected by passing intent as object. Intent is Explicit Intent.
+* **OnlySMS**: Data is obtained and sent to Activity2 where it is leaked. Sink is reflected. Sink is SMS. 
+* **OnlyTelephony**: Source is getDeviceid and Reflection is used to call this Source API. The data is then transmitted to a second activity. Sink is in the second activity and is SMS. Sink and Intent are not Reflected.
+* **OnlyTelephony_Dynamic**: Source API is getDeviceId. The API is called using reflection along with concatenation to generate the string at run time. The data is then transmitted to Activity2 where it is leaked.
+* **OnlyTelephony_Reverse**: Source API is getDeviceId which is obtained using reverse() function. The API is called using reflection. The data is then passed on to a second activity where it is leaked.
+* **OnlyTelephony_Substring**: Source API is getDeviceId which is obtained using substring() function. The API is called using reflection. The data is then passed on to a second activity where it is leaked.
+* **SharedPreferences1**: Reflection in use of sharedpreference is done. Sink is Log
 
 Threading
 ----------
