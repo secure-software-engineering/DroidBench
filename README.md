@@ -17,12 +17,13 @@ We welcome your contributions!
 
 Version 2.1-develop
 ====================
-Version 2.1-develop comprises the following 142 test cases:
+Version 2.1-develop comprises the following 143 test cases:
 
 Aliasing
 ---------
 
 * **Merge1**: Sensitive data is assigned to a heap object which is then shuffled around. Only constant data is leaked.
+* **SimpleAliasing1**: Sensitive data is assigned to a heap object and leaked through an alias.
 
 Arrays and Lists
 ----------------
