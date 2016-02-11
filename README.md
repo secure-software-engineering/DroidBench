@@ -17,7 +17,7 @@ We welcome your contributions!
 
 Version 2.1-develop
 ====================
-Version 2.1-develop comprises the following 145 test cases:
+Version 2.1-develop comprises the following 147 test cases:
 
 Aliasing
 ---------
@@ -31,6 +31,8 @@ Arrays and Lists
 ----------------
 * **ArrayAccess1**: Stores both a tainted and an untainted value in an array and then leaks the untainted one. Array indices are constants.
 * **ArrayAccess2**: Stores both a tainted and an untainted value in an array and then leaks the untainted one. Array indices are calculated.
+* **ArrayAccess3**: Sensitive data is written into an array, read back again, and leaked. 
+* **ArrayAccess4**: Sensitive data is written into a field of an object, this object is then stored in an array and read back again. The field that gets passed to the sink, is however, a different one 	than the one that was tainted.
 * **ArrayCopy1**: Stores a tainted value in an array and then uses System.arraycopy to copy the data to a new array which is then leaked to log.
 * **ArrayToString1**: IMEI is stored in an array of String which is then converted back to String using Arrays.toString().
 * **HashMapAccess1**: Stores both a tainted and an untainted value in a hash map and then leaks the untainted one. Map keys are constants.
