@@ -49,8 +49,8 @@ public class ActMain extends Activity {
 
 				String strOut = "";
 
-				strOut += "\n- cFuncRetString("+strIMEI+"):["+cFuncRetString(strIMEI)+"]";
-				strOut += "\n- cFuncModString("+strIMEI+"):["+cFuncModString(strIMEI)+"]";
+				strOut += "\n- cFuncRetString(...):["+cFuncRetString(strIMEI)+"]";
+				strOut += "\n- cFuncModString(...):["+cFuncModString(strIMEI)+"]";
 
 				Toast.makeText(ActMain.this, strOut, Toast.LENGTH_LONG).show();
 				
