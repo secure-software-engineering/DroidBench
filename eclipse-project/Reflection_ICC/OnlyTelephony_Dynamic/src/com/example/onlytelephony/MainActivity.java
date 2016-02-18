@@ -22,7 +22,7 @@ import android.widget.Toast;
  * with concatenation to generate the string at run time. The data is then transmitted
  * to Activity2 where it is leaked.
  * @dataflow onCreate: source -> intent (imei) -> Activity2 -> sink
- * @number_of_leaks 1
+ * @number_of_leaks 2 (sendTextMessage + log)
  * @challenges The analysis must be able to handle reflective method invocation
  * and inter-component communication.
  */
