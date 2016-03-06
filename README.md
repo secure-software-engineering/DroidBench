@@ -1,5 +1,5 @@
-DroidBench 2.0
-==========
+DroidBench 3.0
+===============
 <p align="center">
   <img src="http://sseblog.ec-spride.de/wp-content/uploads/2013/05/droidbench_apps-300x172.png" width="400px"/>
 </p>
@@ -15,7 +15,7 @@ We welcome your contributions!
 ------------------------------
 **You are most welcome to contribute additional test cases to DroidBench.** To do so, please fork the project, commit an appropriate Eclipse source project and APK, update this README and then send us a pull request.
 
-Version 2.1-develop
+Version 3.0-develop
 ====================
 Version 2.1-develop comprises the following 147 test cases:
 
