@@ -17,22 +17,23 @@ We welcome your contributions!
 
 Version 3.0-develop
 ====================
-Version 2.1-develop comprises the following 147 test cases:
+
+Version 3.0-develop comprises the following 159 test cases:
 
 Aliasing
 ---------
 
-* **FlowSensitivity1**: Sensitive data is assigned to a heap object. Only after callibng the sink, an alias between the leaked object and the tainted one is created.
+* **FlowSensitivity1**: Sensitive data is assigned to a heap object. Only after callibng the sink, an alias between the leaked object and the tainted one is created.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **Merge1**: Sensitive data is assigned to a heap object which is then shuffled around. Only constant data is leaked.
-* **SimpleAliasing1**: Sensitive data is assigned to a heap object and leaked through an alias.
-* **StrongUpdate1**: Sensitive data is assigned to a heap object, but then overwritten before it is leaked.
+* **SimpleAliasing1**: Sensitive data is assigned to a heap object and leaked through an alias.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **StrongUpdate1**: Sensitive data is assigned to a heap object, but then overwritten before it is leaked.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 
 Arrays and Lists
 ----------------
 * **ArrayAccess1**: Stores both a tainted and an untainted value in an array and then leaks the untainted one. Array indices are constants.
 * **ArrayAccess2**: Stores both a tainted and an untainted value in an array and then leaks the untainted one. Array indices are calculated.
-* **ArrayAccess3**: Sensitive data is written into an array, read back again, and leaked. 
-* **ArrayAccess4**: Sensitive data is written into a field of an object, this object is then stored in an array and read back again. The field that gets passed to the sink, is however, a different one 	than the one that was tainted.
+* **ArrayAccess3**: Sensitive data is written into an array, read back again, and leaked.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/> 
+* **ArrayAccess4**: Sensitive data is written into a field of an object, this object is then stored in an array and read back again. The field that gets passed to the sink, is however, a different one 	than the one that was tainted.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **ArrayCopy1**: Stores a tainted value in an array and then uses System.arraycopy to copy the data to a new array which is then leaked to log.
 * **ArrayToString1**: IMEI is stored in an array of String which is then converted back to String using Arrays.toString().
 * **HashMapAccess1**: Stores both a tainted and an untainted value in a hash map and then leaks the untainted one. Map keys are constants.
@@ -141,8 +142,8 @@ General Java
 * **UnreachableCode**: Passes tainted data into a method that is never called.
 * **VirtualDispatch1**: Depending on a click counter, one class or another is instantiated. However, only one of the classes actually leaks data, the only ever leaks a constant string.
 * **VirtualDispatch2**: A method in the base class returns untainted information, the same method in one of the derived classes returns sensitive (IMEI) information.  That information is later leaked through SMS.
-* **VirtualDispatch3*: Two classes implement an interface, but only one of them returns sensitive data. The leak however happens on the other implementation that only returns constant data.
-* **VirtualDispatch4*: Similator to VirtualDispatch3, but with slightly more type information.
+* **VirtualDispatch3**: Two classes implement an interface, but only one of them returns sensitive data. The leak however happens on the other implementation that only returns constant data.
+* **VirtualDispatch4**: Similar to VirtualDispatch3, but with slightly more type information.
 
 Miscellaneous Android-Specific
 ------------------------------
@@ -197,22 +198,21 @@ Threading
 Emulator Detection
 --------------------
 
-* **EmulatorDetection_ContentProvider1**: This test case detects the Android emulator by checking the IMEI in a content provider. The IMEI is only sent via SMS in the activity if the app runs on a real phone.
-* **EmulatorDetection_IMEI1**: This test case detects the Android emulator by truncating the secret data which is leaked at a position computed from the IMEI. On an emulator, the IMEI is expected to be 00..0.
-* **EmulatorDetection_PlayStore1**: This test case detects the Android emulator by whether the Play Store app is installed on the phone. The IMEI is only sent via SMS if the app runs on a real phone.
-* **newedtester_battery**: This test detects the Android emulator by checking the battery status. For emulator the battery status is always 50% or 0. This app send IMEI number  via SMS if the app runs on a real phone.
-* **newedtester_blutooth**: This test detects the Android emulator by checking the bluetooth. The non-presence of Bluetooth sensor identify the environment as Emulator. This app send IMEI number  via SMS if the app runs on a real phone.
-* **newedtester_build**: This test detects the Android emulator by checking the various Build properties like SDK, Board, Brand etc. This app send IMEI number  via SMS if the app runs on a real phone.
-* **newedtester_contacts**: This test detects the Android emulator by checking the number of contacts and calllogs both. Below value of 5 for both identify the environment as Emulator. This app send IMEI number  via SMS if the app runs on a real phone.
-* **newedtester_deviceid**: This test detects the Android emulator by checking the IMEI number using getDeviceId API. IMEI value of 16 0's identify environment as Emulator. This app send IMEI number  via SMS if the app runs on a real phone.
-* **newedtester_file**: This test detects the Android emulator by checking the system files. Some files are specific to emulator while others are to device. This app send IMEI number  via SMS if the app runs on a real phone.
-* **newedtester_ip**: This test detects the Android emulator by checking the IP Address of environment. A value of 10.0.2.15 is the identification of Emulator. This app send IMEI number  via SMS if the app runs on a real phone.
-* **newedtester_pi**: This test detects the Android emulator by doing a large computation i.e calculating value of pi till n decimal places. A threshhold value is obtained by doing experiments on 100 devices and emulators. Based on this threshhold value, a decision is taken. This app send IMEI number  via SMS if the app runs on a real phone.
-* **newedtester_playstore**: This test detects the Android emulator by checking absense of Google Play Services. This app send IMEI number  via SMS if the app runs on a real phone.
-* **newedtester_sensors**: This test detects the Android emulator by counting the distinct sensors. A total of 13 different type of sensors is checked. A emulator will always have 7 or less sensors. This app send IMEI number  via SMS if the app runs on a real phone.
-* **newedtester_sunscriberid**: This test detects the Android emulator by checking Subscriber Id which always start with 310260000000000 for emulators. This app send IMEI number  via SMS if the app runs on a real phone.
-* **newedtester_voicemail**: This test detects the Android emulator by checking VoiceMail number. A VoiceMail number with value +15552175049, identify environment as emulator. This app send IMEI number  via SMS if the app runs on a real phone.
-
+* **Battery1**: This test detects the Android emulator by checking the battery status. For emulator the battery status is always 50% or 0. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Bluetooth1**: This test detects the Android emulator by checking the bluetooth. The non-presence of Bluetooth sensor identify the environment as Emulator. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Build1**: This test detects the Android emulator by checking the various Build properties like SDK, Board, Brand etc. This app send IMEI number via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Contacts1**: This test detects the Android emulator by checking the number of contacts and calllogs both. Below value of 5 for both identify the environment as Emulator. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **ContentProvider1**: This test case detects the Android emulator by checking the IMEI in a content provider. The IMEI is only sent via SMS in the activity if the app runs on a real phone.
+* **DeviceId1**: This test detects the Android emulator by checking the IMEI number using getDeviceId API. IMEI value of 16 0's identify environment as Emulator. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **File1**: This test detects the Android emulator by checking the system files. Some files are specific to emulator while others are to device. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **IMEI1**: This test case detects the Android emulator by truncating the secret data which is leaked at a position computed from the IMEI. On an emulator, the IMEI is expected to be 00..0.
+* **IP1**: This test detects the Android emulator by checking the IP Address of environment. A value of 10.0.2.15 is the identification of Emulator. This app send IMEI number via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **PI1**: This test detects the Android emulator by doing a large computation i.e calculating value of pi till n decimal places. A threshhold value is obtained by doing experiments on 100 devices and emulators. Based on this threshhold value, a decision is taken. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **PlayStore1**: This test case detects the Android emulator by whether the Play Store app is installed on the phone. The IMEI is only sent via SMS if the app runs on a real phone.
+* **PlayStore2**: This test detects the Android emulator by checking absense of Google Play Services. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Sensors1**: This test detects the Android emulator by counting the distinct sensors. A total of 13 different type of sensors is checked. A emulator will always have 7 or less sensors. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **SubscriberId1**: This test detects the Android emulator by checking Subscriber Id which always start with 310260000000000 for emulators. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **VoiceMail1**: This test detects the Android emulator by checking VoiceMail number. A VoiceMail number with value +15552175049, identify environment as emulator. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 
 Native Code<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 ------------
@@ -233,3 +233,4 @@ test cases to DroidBench:
 * Some inter-component and inter-application test cases were contributed by Li Li from the **University of Luxembourg**
 * 6 apps for checking event handling were provided by the **University of Texas**
 * 10 apps for inter-component communication in combination with reflections were provided by the **Malviya National Institute of Technology, Jaipur (INDIA)**.
+* 12 apps for emulator detection were provided by the **Malviya National Institute of Technology, Jaipur (INDIA)**. 
