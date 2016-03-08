@@ -233,4 +233,4 @@ test cases to DroidBench:
 * Some inter-component and inter-application test cases were contributed by Li Li from the **University of Luxembourg**
 * 6 apps for checking event handling were provided by the **University of Texas**
 * 10 apps for inter-component communication in combination with reflections were provided by the **Malviya National Institute of Technology, Jaipur (INDIA)**.
-* 12 apps for emulator detection were provided by the **Malviya National Institute of Technology, Jaipur (INDIA)**. 
+* 12 apps for emulator detection were provided by the **Malviya National Institute of Technology, Jaipur (INDIA)** under DeITy Project funded from Government of India.
