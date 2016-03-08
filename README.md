@@ -18,7 +18,7 @@ We welcome your contributions!
 Version 3.0-develop
 ====================
 
-Version 3.0-develop comprises the following 159 test cases:
+Version 3.0-develop comprises the following 167 test cases:
 
 Aliasing
 ---------
@@ -69,9 +69,25 @@ Field and Object Sensitivity
 
 Inter-App Communication
 ------------------------------------------
+The first test set contains three apps. The StartActivityForResult1 app obtains the sensitive data, and sends it to the Echoer app. The Echoer sends it on to the SendSMS app where it is finally leaked.
+
 * **Echoer**: Receives data and echoes it back to the sender.
 * **SendSMS**: Reads the Device ID, passes it through Echoer, and then sends it in a text message.
 * **StartActivityForResult1**: Reads the user's geographical location (via GPS), passes it through Echoer, and then writes it to a file.
+
+The second test set contains multiple apps that obtain sensitive data and send it to the Collector app where the data is leaked.
+
+* **Collector**: The data received through an intent is written into a file on the SD card.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **DeviceId_Broadcast1**: The device id is sent to a broadcast receiver and from there on to the collector app.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **DeviceId_ContentProvider1**: The device id is stored in a content provider and, independent from
+ * the content provider, sent to the Collector app.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **DeviceId_OrderedIntent1**: The device id is obtained and sent to a broadcast receiver in the current app. There are multiple broadcast receivers with different priorities. Only the higher-priority receiver relays the data to the Collector app, the lower-priority receiver only shows the data to the user (no leak).<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **DeviceId_Service1**: This app starts a service which sends the device id to the Collector app where it is leaked.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+
+* **Location1**: This app obtains the location data and sends it to the Collector app.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Location_Broadcast1**: This app obtains the location data, and sends it to a broadcast
+ * receiver in the same app. This broadcast receiver then sends the data to the
+ * Collector app.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 
 Inter-Component Communication
 ------------------------------
@@ -234,3 +250,4 @@ test cases to DroidBench:
 * 6 apps for checking event handling were provided by the **University of Texas**
 * 10 apps for inter-component communication in combination with reflections were provided by the **Malviya National Institute of Technology, Jaipur (INDIA)**.
 * 12 apps for emulator detection were provided by the **Malviya National Institute of Technology, Jaipur (INDIA)** under DeITy Project funded from Government of India.
+* 8 apps for inter-app data flow tracking were provided by the **Malviya National Institute of Technology, Jaipur (INDIA)** under DeITy Project funded from Government of India.

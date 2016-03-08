@@ -14,6 +14,19 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
+/**
+ * @testcase_name DeviceId_ContentProvider1
+ * @version 0.1
+ * @author Malaviya National Institute of Technology Jaipur, India 
+ * @author_mail er.shwetabhandari@gmail.com
+ * 
+ * @description The device id is stored in a content provider and, independent from
+ * the content provider, sent to the Collector app.
+ * @dataflow deviceid -> 
+ * @number_of_leaks 1
+ * @challenges The analysis must correctly handle content providers as well as
+ * inter-app communication through intents 
+ */
 @SuppressLint("NewApi") public class MainActivity extends Activity {
 
     String num;

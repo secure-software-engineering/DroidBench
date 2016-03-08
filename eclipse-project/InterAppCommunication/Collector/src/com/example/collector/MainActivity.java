@@ -26,6 +26,19 @@ import android.widget.Button;
 import android.widget.EditText;  
 import android.widget.Toast;  
 
+/**
+ * @testcase_name Collector
+ * @version 0.1
+ * @author Malaviya National Institute of Technology Jaipur, India 
+ * @author_mail er.shwetabhandari@gmail.com
+ * 
+ * @description The data received through an intent is written into a file on
+ * the SD card
+ * @dataflow intent -> file
+ * @number_of_leaks 1
+ * @challenges The analysis must correctly handle file write operations as well
+ * as inter-app communication through intents 
+ */
 public class MainActivity extends Activity
 {
 	TextView txtView;
