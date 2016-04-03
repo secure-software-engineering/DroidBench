@@ -15,7 +15,7 @@ import android.telephony.SmsManager;
  * @challenges the analysis must be able to model the lifecycle of Activities and allow arbitrary execution order of the Activities 
  */
 public class Activity1 extends Activity {
-	public static String data1;
+	public static String data1 = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
