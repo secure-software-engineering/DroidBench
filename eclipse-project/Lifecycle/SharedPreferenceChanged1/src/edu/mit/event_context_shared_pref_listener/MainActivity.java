@@ -31,7 +31,7 @@ public class MainActivity extends Activity implements SharedPreferences.OnShared
         
         SharedPreferences.Editor editor = settings.edit();
         editor.putString("imei", imei);
-        
+        editor.commit();
     }
 
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {

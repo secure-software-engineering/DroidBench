@@ -26,8 +26,8 @@ import android.view.Menu;
  */
 public class MainActivity extends Activity {
 
-	String latitude;
-	String longtitude;
+	String latitude = "";
+	String longtitude = "";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +79,7 @@ public class MainActivity extends Activity {
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 10, locationListener);
 
-        super.onStop();
+        super.onDestroy();
 	}
 
 }

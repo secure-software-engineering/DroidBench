@@ -187,6 +187,11 @@ Reflection
 * **Reflection2**: Sensitive data is stored in a field of a reflective class, read out again using a method implemented in the "unknown" class and leaked.
 * **Reflection3**: Sensitive data is stored using a setter in a reflective class, read back using a getter and then leaked. No type information on the target class is used.
 * **Reflection4**: Sensitive data is read using a function in a reflective class and leaked using another function in the same reflective class.
+* **Reflection5**: Sensitive data is leaked using reflective invocation without using "newInstance()" to create a class instance. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Reflection6**: Sensitive data is read using reflective invocation without using "newInstance()" to create a class instance. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Reflection7**: Use a unusual way to get the class name for reflection calls. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Reflection8**: The reflective class has two methods with the same name. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Reflection9**: Names of reflective methods and parameters are not constant strings. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 
 Reflection_ICC <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 ---------------
@@ -238,6 +243,28 @@ Native Code<img src="https://raw.github.com/secure-software-engineering/DroidBen
 * **SinkInNativeCode**: This test case obtains the IMEI in Java code and leaks it in native code by calling back to the Java-based Android API.
 * **SinkInNativeLibCode**: This test case obtains the IMEI in Java code and leaks it in native code using Linux sockets.
 * **SourceInNativeCode**: This test case obtains the IMEI in native code and leaks it in Java code.
+
+Unreachable Code <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+--------------------
+
+* **UnreachableSource1**: Sensitive data is read in a branch of "if" instruction, which will never be executed.
+* **UnreachableSink1**: Sensitive data is leaked in a branch of "switch" instruction, which will never be executed.
+* **UnreachableBoth1**: Both source and sink are in unreachable branches.
+
+Dynamic Loading <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+--------------------
+
+* **CommonLibrary1**: This is not a test case on its own. It is a shared library between app and its dynamically loaded code.
+* **DynamicLoadingTarget1**: This is not a test case on its own. It is a library which will be dynamically loaded by other test cases.
+* **DynamicSource1**: Sensitive data is read by code in a dynamically loaded class.
+* **DynamicSink1**: Sensitive data is leaked by code in a dynamically loaded class.
+* **DynamicBoth1**: Both source and sink are in a dynamically loaded class.
+
+Self-Modification <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+Notice: Different cpu architecture and different android versions lead to different memory layout. The samples in this category works on arm64_v8a, Android 6.0. Same goal could be achieved in other architecture and Android versions by slightly modify the source code of the samples.
+--------------------
+
+* **BytecodeTamper1-4**: Use native code to modify the bytecode in runtime, and create sources and sinks.
 
 Acknowledgements
 =================
