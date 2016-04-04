@@ -12,7 +12,7 @@ import dalvik.system.DexClassLoader;
  * @author Wayne State University,
  * @author_mail zhenyu.ning@wayne.edu
  * 
- * @description Use dynamically loaded code to create a source .
+ * @description Use dynamically loaded code to create a source.
  * @dataflow onCreate: source() -> source -> sink
  * @number_of_leaks 1
  * @challenges The analysis should detect dynamically loaded code.

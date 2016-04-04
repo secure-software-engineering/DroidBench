@@ -18,7 +18,7 @@ We welcome your contributions!
 Version 3.0-develop
 ====================
 
-Version 3.0-develop comprises the following 167 test cases:
+Version 3.0-develop comprises the following 172 test cases:
 
 Aliasing
 ---------
@@ -56,6 +56,15 @@ Callbacks
 * **Ordering1**: Leaks variable contents before the handler initializing them is even registered.
 * **RegisterGlobal1**: Both source and sink are part of a global (application-level) lifecycle handler.
 * **Unregister1**: Registers and directly unregisters a callback before it can be invoked. The code in the callback can thus never leak any data.
+
+Dynamic Code Loading<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+---------------------
+
+* **CommonLibrary1**: Not a test case on its own, part of the other dynamic code loading test cases. It contains the base class for the actual class that implements source and sink.
+* **DynamicBoth1**: Use dynamically loaded code to create both source and sink.
+* **DynamicSink1**: Use dynamically loaded code to create a sink.
+* **DynamicSource1**: Use dynamically loaded code to create a source.
+* **DynamicLoadingTarget1**: The actual implementation of the source and sink class defined in CommonLibrary1.
 
 Field and Object Sensitivity
 ----------------------------
@@ -207,6 +216,14 @@ Reflection_ICC <img src="https://raw.github.com/secure-software-engineering/Droi
 * **OnlyTelephony_Substring**: Source API is getDeviceId which is obtained using substring() function. The API is called using reflection. The data is then passed on to a second activity where it is leaked.
 * **SharedPreferences1**: Reflection in use of sharedpreference is done. Sink is Log
 
+Self-Modification<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+------------------
+
+* **BytecodeTamper1**: This test case uses native code to change the target of the sink method invocation. The new target actually leaks the sensitive data, whereas the original one just leaked a constant string.
+* **BytecodeTamper2**: This test case uses native code to change the target of the source method invocation. The new target actually returned the sensitive data, whereas the original one just returned a constant string.
+* **BytecodeTamper3**: This test case uses native code to change the target of both the source and the sink method invocations. The new target actually returns/leaks the sensitive data, whereas the original one just returned/leaked a constant string.
+* **BytecodeTamper4**: Contains self-modified code, but no source or sink is involved.
+
 Threading
 ----------
 
@@ -247,9 +264,9 @@ Native Code<img src="https://raw.github.com/secure-software-engineering/DroidBen
 Unreachable Code <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 --------------------
 
-* **UnreachableSource1**: Sensitive data is read in a branch of "if" instruction, which will never be executed.
-* **UnreachableSink1**: Sensitive data is leaked in a branch of "switch" instruction, which will never be executed.
 * **UnreachableBoth1**: Both source and sink are in unreachable branches.
+* **UnreachableSink1**: Sensitive data is leaked in a branch of "switch" instruction, which will never be executed.
+* **UnreachableSource1**: Sensitive data is read in a branch of "if" instruction, which will never be executed.
 
 Dynamic Loading <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 --------------------
@@ -278,3 +295,4 @@ test cases to DroidBench:
 * 10 apps for inter-component communication in combination with reflections were provided by the **Malviya National Institute of Technology, Jaipur (INDIA)**.
 * 12 apps for emulator detection were provided by the **Malviya National Institute of Technology, Jaipur (INDIA)** under DeITy Project funded from Government of India.
 * 8 apps for inter-app data flow tracking were provided by the **Malviya National Institute of Technology, Jaipur (INDIA)** under DeITy Project funded from Government of India.
+* 15 apps for dynamic code loading, reflective method calls, self-modifying code, and unreachable code  were provided by the Wayne State University.
