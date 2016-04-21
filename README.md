@@ -18,7 +18,7 @@ We welcome your contributions!
 Version 3.0-develop
 ====================
 
-Version 3.0-develop comprises the following 172 test cases:
+Version 3.0-develop comprises the following 174 test cases:
 
 Aliasing
 ---------
@@ -135,6 +135,7 @@ Lifecycle
 * **AsynchronousEventOrdering1**: Obtains IMEI during onResume() and leaks it during onStop() with an overwrite in onLowMemory().
 * **BroadcastReceiverLifecycle1**: Calls to sources and sinks distributed across a broadcast receiver lifecycle.
 * **BroadcastReceiverLifecycle2**: The sensitive data is read in onCreate() and sent out in a dynamically registered broadcast receiver.
+* **BroadcastReceiverLifecycle3**: The sensitive data is read and leaked in a dynamically registered broadcast receiver.
 * **EventOrdering1**: IMEI is obtained the first time onLowMemory is called, and is leaked the second time onLowMemory is called, but only of no onContentChanged() occurred in between.
 * **FragmentLifecycle1**: Calls to sources and sinks distributed across a fragment lifecycle.
 * **ServiceEventLifecycle1**: Obtains the IMEI in onStartCommand(), copies it in onBind(), and leaks it in onStartCommand().<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
@@ -188,7 +189,11 @@ Miscellaneous Android-Specific
 
 Implicit Flows
 --------------
-* **ImplicitFlow1-4**: Test cases for implicit flows.
+* **ImplicitFlow1**: A value from a source gets obfuscated by two different ways and is then written to the log.
+* **ImplicitFlow2**: Based on an input of a password field a log message is written.
+* **ImplicitFlow3**: This test cases checks the type of the object to determine which information to write to the log.
+* **ImplicitFlow4**: Several implicit flows exist in this test case.
+* **ImplicitFlow5**: Implicit control flow through exceptions. Only if the value is smaller than 43, an exception is thrown and then a leak happens.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 
 Reflection
 ----------
