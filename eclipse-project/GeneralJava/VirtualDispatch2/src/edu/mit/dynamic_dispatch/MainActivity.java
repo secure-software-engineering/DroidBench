@@ -11,7 +11,7 @@ import android.util.Log;
  * 
  * @description Testing dispatching of overiding methods
  * @dataflow source -> sink
- * @number_of_leaks 1
+ * @number_of_leaks 2
  * @challenges The analysis tool has to be able to differentiate the base and the derived class objects
  */
 public class MainActivity extends Activity {
