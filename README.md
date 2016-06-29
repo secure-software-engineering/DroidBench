@@ -18,7 +18,7 @@ We welcome your contributions!
 Version 3.0-develop
 ====================
 
-Version 3.0-develop comprises the following 176 test cases:
+Version 3.0-develop comprises the following 177 test cases:
 
 Aliasing
 ---------
@@ -154,6 +154,8 @@ General Java
 * **Exceptions4**: Throws an exception containing a tainted value and sends it out in the exception handler.
 * **Exceptions5**: Throws an exception containing tainted data inside a called method and catches it in the caller.
 * **Exceptions6**: Throws an implicit exception inside a called method and catches and leaks data in the catch block inside the caller.
+* **Exceptions7**: A leak happens inside an exception handler that can never be reached, because it
+handles an exception type that is never thrown.
 * **FactoryMethods1**: Obtains a LocationManager from a factory method contained in the Android operating system, reads out the location, and leaks it.
 * **Loop1**: Contains a simple loop and a data leak.
 * **Loop2**: Retrieves location information through a callback and leaks it via nested loops.
