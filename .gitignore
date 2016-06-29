@@ -7,6 +7,10 @@
 # Java class files
 *.class
 
+# AppScan Source
+*.paf
+*.ppf
+
 # generated files
 bin/
 gen/
