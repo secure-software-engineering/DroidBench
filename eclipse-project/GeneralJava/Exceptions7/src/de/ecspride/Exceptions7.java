@@ -39,9 +39,8 @@ public class Exceptions7 extends Activity {
 	private void callMe() {
 		TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
 		imei = telephonyManager.getDeviceId(); //source
-		int[] arr = new int[42];
-		arr[0] = ((int) Math.sqrt(49)) - 7;
-		System.out.println(5 - arr[0]);
+		int val = ((int) Math.sqrt(49)) - 7;
+		System.out.println(5 - val);
 	}
 
 }
