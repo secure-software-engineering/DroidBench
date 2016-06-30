@@ -1,7 +1,7 @@
 DroidBench 3.0
 ===============
 <p align="center">
-  <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/droidbench_apps.gif" width="400px"/>
+  <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/droidbench_apps.png" width="400px"/>
 </p>
 DroidBench is an open test suite for evaluating the effectiveness of taint-analysis tools specifically for Android apps. 
 The suite can be used to assess both static and dynamic taint analyses, but in particular it contains test cases for interesting static-analysis problems (field sensitivity, object sensitivity, tradeoffs in access-path lengths etc.) as well as for Android-specific challenges like correctly modeling an application's lifecycle, adequately handling asynchronous callbacks and interacting with the UI.
