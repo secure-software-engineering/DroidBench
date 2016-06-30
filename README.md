@@ -1,10 +1,10 @@
 DroidBench 3.0
 ===============
 <p align="center">
-  <img src="http://sseblog.ec-spride.de/wp-content/uploads/2013/05/droidbench_apps-300x172.png" width="400px"/>
+  <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/droidbench_apps.gif" width="400px"/>
 </p>
 DroidBench is an open test suite for evaluating the effectiveness of taint-analysis tools specifically for Android apps. 
-The suite can be used to assess both static and dynamic taint analyses, but in particular it contains test cases for interesting static-analysis problems (field sensitivity, object sensitivity, tradeoffs in access-path lengths etc.) as well as for Android-specific challenges like correctly modeling an application’s lifecycle, adequately handling asynchronous callbacks and interacting with the UI.
+The suite can be used to assess both static and dynamic taint analyses, but in particular it contains test cases for interesting static-analysis problems (field sensitivity, object sensitivity, tradeoffs in access-path lengths etc.) as well as for Android-specific challenges like correctly modeling an application's lifecycle, adequately handling asynchronous callbacks and interacting with the UI.
 
 The distribution contains an eclipse workspace with all source-code projects as well as readily compiled APKs.
 
@@ -18,7 +18,7 @@ We welcome your contributions!
 Version 3.0-develop
 ====================
 
-Version 3.0-develop comprises the following 177 test cases:
+Version 3.0-develop comprises the following 178 test cases:
 
 Aliasing
 ---------
@@ -34,6 +34,7 @@ Arrays and Lists
 * **ArrayAccess2**: Stores both a tainted and an untainted value in an array and then leaks the untainted one. Array indices are calculated.
 * **ArrayAccess3**: Sensitive data is written into an array, read back again, and leaked.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/> 
 * **ArrayAccess4**: Sensitive data is written into a field of an object, this object is then stored in an array and read back again. The field that gets passed to the sink, is however, a different one 	than the one that was tainted.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **ArrayAccess5**: Sensitive data is written into an array, but only the constant size of the array is leaked, not the data itself.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **ArrayCopy1**: Stores a tainted value in an array and then uses System.arraycopy to copy the data to a new array which is then leaked to log.
 * **ArrayToString1**: IMEI is stored in an array of String which is then converted back to String using Arrays.toString().
 * **HashMapAccess1**: Stores both a tainted and an untainted value in a hash map and then leaks the untainted one. Map keys are constants.
