@@ -18,12 +18,12 @@ We welcome your contributions!
 Version 3.0-develop
 ====================
 
-Version 3.0-develop comprises the following 178 test cases:
+Version 3.0-develop comprises the following 179 test cases:
 
 Aliasing
 ---------
 
-* **FlowSensitivity1**: Sensitive data is assigned to a heap object. Only after callibng the sink, an alias between the leaked object and the tainted one is created.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **FlowSensitivity1**: Sensitive data is assigned to a heap object. Only after calling the sink, an alias between the leaked object and the tainted one is created.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **Merge1**: Sensitive data is assigned to a heap object which is then shuffled around. Only constant data is leaked.
 * **SimpleAliasing1**: Sensitive data is assigned to a heap object and leaked through an alias.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **StrongUpdate1**: Sensitive data is assigned to a heap object, but then overwritten before it is leaked.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
@@ -199,6 +199,7 @@ Implicit Flows
 * **ImplicitFlow3**: This test cases checks the type of the object to determine which information to write to the log.
 * **ImplicitFlow4**: Several implicit flows exist in this test case.
 * **ImplicitFlow5**: Implicit control flow through exceptions. Only if the value is smaller than 43, an exception is thrown and then a leak happens.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **ImplicitFlow6**: Implicit control flow, but leaked value is the same regardless of the sensitive value.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 
 Reflection
 ----------
