@@ -18,7 +18,7 @@ We welcome your contributions!
 Version 3.0-develop
 ====================
 
-Version 3.0-develop comprises the following 179 test cases:
+Version 3.0-develop comprises the following 180 test cases:
 
 Aliasing
 ---------
@@ -243,6 +243,7 @@ Threading
 * **JavaThread2**: Sensitive data is read in onCreate() and send out in a dedicated thread started using Java's Runnable mechanism.
 * **Executor1**: Sensitive data is read in onCreate() and send out in a dedicated thread started using Java's Executor mechanism.
 * **Looper1**: Sensitive data is read in onCreate() and enqueued for a custom thread hosting an Android Looper whose handler sends out the data.
+* **TimerTask1**: Sensitive data is read in onCreate() and enqeued to be sent out 2 seconds later using Java's TimerTask architecture.
 
 Emulator Detection
 --------------------
