@@ -18,7 +18,7 @@ We welcome your contributions!
 Version 3.0-develop
 ====================
 
-Version 3.0-develop comprises the following 180 test cases:
+Version 3.0-develop comprises the following 181 test cases:
 
 Aliasing
 ---------
@@ -276,6 +276,7 @@ Native Code<img src="https://raw.github.com/secure-software-engineering/DroidBen
 Unreachable Code <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 --------------------
 
+* **SimpleUnreachable1**: Both source and sink are in an unreachable branch guarded by a simple numeric comparison.
 * **UnreachableBoth1**: Both source and sink are in unreachable branches.
 * **UnreachableSink1**: Sensitive data is leaked in a branch of "switch" instruction, which will never be executed.
 * **UnreachableSource1**: Sensitive data is read in a branch of "if" instruction, which will never be executed.
