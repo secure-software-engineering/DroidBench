@@ -18,7 +18,7 @@ We welcome your contributions!
 Version 3.0-develop
 ====================
 
-Version 3.0-develop comprises the following 181 test cases:
+Version 3.0-develop comprises the following 190 test cases:
 
 Aliasing
 ---------
