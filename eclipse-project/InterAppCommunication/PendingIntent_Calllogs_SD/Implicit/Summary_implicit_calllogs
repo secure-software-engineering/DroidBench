@@ -1,0 +1,28 @@
+1) Monday(Activity)->Tuesday(Service) 
+	Monday			Tuesday
+
+2) Monday1(Activity)->Receiver1(Receiver)
+	Monday1				Receiver1
+
+3) Monday2(Activity)->Activity2(Activity)
+	Monday2				Activity2
+
+4) Wednesday(Service)->Tuesday(Service)
+	Wednesday			Tuesday
+
+5) Wednesday1(Service)->Receiver1(Receiver)
+	Wednesday1				Receiver1
+
+6) Wednesday2(Service)->Activity2(Activity)
+	Wednesday2				Activity2
+
+7) Thursday(Receiver)->Tuesday(Servive)
+	Thursday				Tuesday
+
+
+8) Thursay1(Receiver)->Activity2(Activity)
+	Thursday1			Activity2
+
+
+9) Thursday2(Receiver)->Receiver1(Receiver)
+	Thursday2				Receiver1
