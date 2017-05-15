@@ -1,0 +1,4 @@
+## Aim : To make an application "x" that reads call logs and pass it to  application "y" which write it in the sd card.
+__Flow : Application Twin2 offers a Main activity. The activity on starting read call logs and store them in stringbuffer.Another activity of application CallWritingImplicit opens and is passed the data of stringbuffer throught intent. The activity write the data in a file.__
+
+Intent- implicitly Calling activity from activity.
