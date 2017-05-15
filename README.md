@@ -307,5 +307,5 @@ test cases to DroidBench:
 * 6 apps for checking event handling were provided by the **University of Texas**
 * 10 apps for inter-component communication in combination with reflections were provided by the **Malviya National Institute of Technology, Jaipur (INDIA)**.
 * 12 apps for emulator detection were provided by the **Malviya National Institute of Technology, Jaipur (INDIA)** under DeITy Project funded from Government of India.
-* 8 apps for inter-app data flow tracking were provided by the **Malviya National Institute of Technology, Jaipur (INDIA)** under DeITy Project funded from Government of India.
+* 64 apps for inter-app data flow tracking were provided by the **Malviya National Institute of Technology, Jaipur (INDIA)** under DeITy Project funded from Government of India.
 * 15 apps for dynamic code loading, reflective method calls, self-modifying code, and unreachable code  were provided by the Wayne State University.
