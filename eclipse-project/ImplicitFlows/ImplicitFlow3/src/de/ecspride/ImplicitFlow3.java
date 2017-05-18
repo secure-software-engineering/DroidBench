@@ -27,8 +27,8 @@ public class ImplicitFlow3 extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_implicit_flow3);
-        ArrayList arrayList = new ArrayList();
-		LinkedList linkedList = new LinkedList();
+        ArrayList<?> arrayList = new ArrayList();
+		LinkedList<?> linkedList = new LinkedList();
 		
 		//information to leak: 101
 		leakInformationBit(linkedList);
@@ -56,7 +56,7 @@ public class ImplicitFlow3 extends Activity {
   	}
 
   	
-  	private void leakInformationBit(List list){	
+  	private void leakInformationBit(List<?> list){	
   		if(list instanceof ArrayList)
   			Log.i("INFO", "0"); //sink
   		else if(list instanceof LinkedList)

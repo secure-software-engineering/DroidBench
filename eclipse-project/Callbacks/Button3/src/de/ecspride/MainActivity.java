@@ -14,7 +14,7 @@ import android.widget.Button;
  * @description A new callback is registered in another callback's handler. The second handler
  * 	leaks the data obtained by the first handler.
  * @dataflow Button1Listener: source -> imei; Button2Listener: imei -> sink
- * @number_of_leaks 1
+ * @number_of_leaks 2
  * @challenges The analysis must be able to detect callback handlers registered
  * 	in other callback handlers.
  */

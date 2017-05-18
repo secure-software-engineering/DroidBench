@@ -33,11 +33,11 @@ public class MainActivity extends Activity {
 			String action = i.getAction();
 			if (action.equals(Intent.ACTION_SEND)) {
 				Bundle extras = i.getExtras();
-				Log.i("Data recieved in Echoer: ", extras.getString("secret"));
+				Log.i("TAG", "Data received in Echoer: " + extras.getString("secret"));
 			}
 			else if (action.equals(Intent.ACTION_VIEW)){
 			    Uri uri = i.getData();
-			    Log.i("URI recieved in Echoer: ", uri.toString());	
+			    Log.i("TAG", "URI received in Echoer: " + uri.toString());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

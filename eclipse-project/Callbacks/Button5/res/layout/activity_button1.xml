@@ -11,7 +11,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="185dp"
-        android:text="@string/button" 
+        android:text="@string/button"
+        android:hint="@string/button"
         android:onClick="sendMessage"/>
 
 </RelativeLayout>

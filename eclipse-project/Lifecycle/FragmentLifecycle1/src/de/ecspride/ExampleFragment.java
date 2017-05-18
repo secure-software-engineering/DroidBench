@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.telephony.SmsManager;
 
 public class ExampleFragment extends Fragment {
-	private static String imei = null;
+	private static String imei = "";
 	
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
