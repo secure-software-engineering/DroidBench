@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
         
         String[] array = new String[1];
         
-        array[1] = imei;
+        array[0] = imei;
 
         String arrayToString = Arrays.toString(array);
         
