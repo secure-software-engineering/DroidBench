@@ -159,7 +159,20 @@ Reflection
 * **Reflection2**: Sensitive data is stored in a field of a reflective class, read out again using a method implemented in the "unknown" class and leaked.
 * **Reflection3**: Sensitive data is stored using a setter in a reflective class, read back using a getter and then leaked. No type information on the target class is used.
 * **Reflection4**: Sensitive data is read using a function in a reflective class and leaked using another function in the same reflective class.
+ICC communication with Reflection (SOURCE, SINK, INTENT and SharedPreferences) <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Onlytelephony**: Source is getDeviceid and Reflection is used to call this Source API. Sink is SMS. Sink and Intent are not Reflected.
+* **Onlytelephony_log**: Source is getDeviceid and Reflection is used to call this Source API. Sink is Log. Sink and Intent are not Reflected.
+* **OnlyIntent**: Intent itself is reflected during send. Intent is Explicit. Sink is SMS.
+* **Onlysms**: Sink is reflected. Sink is SMS. 
+* **OnlyIntentreceive**: Intent Send is not reflected only its receive is reflected by passing intent as object. Intent is Explicit Intent.
+* **allreflection**: SOurce, Sink, Intent(Explicit) all are reflected. Sink is SMS.
+* **Onlytelephony_dynamic**: Source API is getDeviceId. The API is called using reflection along with concatenation to generate the string at run time.
+* **Onlytelephony_reverse**: Source API is getDeviceId which is obtained using reverse() function. The API is called using reflection.
+* **Onlytelephony_substring**: Source API is getDeviceId which is obtained using substring() function. The API is called using reflection.
+* **ICC_ActivityCommunication2_reflected**: Implicit Intent is Reflected. Source is getDeviceId and Sink is Log.
+* **ICC_SharedPreferences1**: Reflection in use of sharedpreference is done. Sink is Log
 
+-------------------------------------------------------------
 Threading <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 -----------
 
@@ -175,6 +188,19 @@ Emulator Detection <img src="https://raw.github.com/secure-software-engineering/
 * **EmulatorDetection_ContentProvider1**: This test case detects the Android emulator by checking the IMEI in a content provider. The IMEI is only sent via SMS in the activity if the app runs on a real phone.
 * **EmulatorDetection_IMEI1**: This test case detects the Android emulator by truncating the secret data which is leaked at a position computed from the IMEI. On an emulator, the IMEI is expected to be 00..0.
 * **EmulatorDetection_PlayStore1**: This test case detects the Android emulator by whether the Play Store app is installed on the phone. The IMEI is only sent via SMS if the app runs on a real phone.
+* **newedtester_battery**: This test detects the Android emulator by checking the battery status. For emulator the battery status is always 50% or 0. This app send IMEI number  via SMS if the app runs on a real phone.
+* **newedtester_blutooth**: This test detects the Android emulator by checking the bluetooth. The non-presence of Bluetooth sensor identify the environment as Emulator. This app send IMEI number  via SMS if the app runs on a real phone.
+* **newedtester_build**: This test detects the Android emulator by checking the various Build properties like SDK, Board, Brand etc. This app send IMEI number  via SMS if the app runs on a real phone.
+* **newedtester_contacts**: This test detects the Android emulator by checking the number of contacts and calllogs both. Below value of 5 for both identify the environment as Emulator. This app send IMEI number  via SMS if the app runs on a real phone.
+* **newedtester_deviceid**: This test detects the Android emulator by checking the IMEI number using getDeviceId API. IMEI value of 16 0's identify environment as Emulator. This app send IMEI number  via SMS if the app runs on a real phone.
+* **newedtester_file**: This test detects the Android emulator by checking the system files. Some files are specific to emulator while others are to device. This app send IMEI number  via SMS if the app runs on a real phone.
+* **newedtester_ip**: This test detects the Android emulator by checking the IP Address of environment. A value of 10.0.2.15 is the identification of Emulator. This app send IMEI number  via SMS if the app runs on a real phone.
+* **newedtester_pi**: This test detects the Android emulator by doing a large computation i.e calculating value of pi till n decimal places. A threshhold value is obtained by doing experiments on 100 devices and emulators. Based on this threshhold value, a decision is taken. This app send IMEI number  via SMS if the app runs on a real phone.
+* **newedtester_playstore**: This test detects the Android emulator by checking absense of Google Play Services. This app send IMEI number  via SMS if the app runs on a real phone.
+* **newedtester_sensors**: This test detects the Android emulator by counting the distinct sensors. A total of 13 different type of sensors is checked. A emulator will always have 7 or less sensors. This app send IMEI number  via SMS if the app runs on a real phone.
+* **newedtester_sunscriberid**: This test detects the Android emulator by checking Subscriber Id which always start with 310260000000000 for emulators. This app send IMEI number  via SMS if the app runs on a real phone.
+* **newedtester_voicemail**: This test detects the Android emulator by checking VoiceMail number. A VoiceMail number with value +15552175049, identify environment as emulator. This app send IMEI number  via SMS if the app runs on a real phone.
+
 
 Acknowledgements
 =================
