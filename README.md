@@ -159,7 +159,20 @@ Reflection
 * **Reflection2**: Sensitive data is stored in a field of a reflective class, read out again using a method implemented in the "unknown" class and leaked.
 * **Reflection3**: Sensitive data is stored using a setter in a reflective class, read back using a getter and then leaked. No type information on the target class is used.
 * **Reflection4**: Sensitive data is read using a function in a reflective class and leaked using another function in the same reflective class.
+ICC communication with Reflection (SOURCE, SINK, INTENT and SharedPreferences) <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Onlytelephony**: Source is getDeviceid and Reflection is used to call this Source API. Sink is SMS. Sink and Intent are not Reflected.
+* **Onlytelephony_log**: Source is getDeviceid and Reflection is used to call this Source API. Sink is Log. Sink and Intent are not Reflected.
+* **OnlyIntent**: Intent itself is reflected during send. Intent is Explicit. Sink is SMS.
+* **Onlysms**: Sink is reflected. Sink is SMS. 
+* **OnlyIntentreceive**: Intent Send is not reflected only its receive is reflected by passing intent as object. Intent is Explicit Intent.
+* **allreflection**: SOurce, Sink, Intent(Explicit) all are reflected. Sink is SMS.
+* **Onlytelephony_dynamic**: Source API is getDeviceId. The API is called using reflection along with concatenation to generate the string at run time.
+* **Onlytelephony_reverse**: Source API is getDeviceId which is obtained using reverse() function. The API is called using reflection.
+* **Onlytelephony_substring**: Source API is getDeviceId which is obtained using substring() function. The API is called using reflection.
+* **ICC_ActivityCommunication2_reflected**: Implicit Intent is Reflected. Source is getDeviceId and Sink is Log.
+* **ICC_SharedPreferences1**: Reflection in use of sharedpreference is done. Sink is Log
 
+-------------------------------------------------------------
 Threading <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 -----------
 
