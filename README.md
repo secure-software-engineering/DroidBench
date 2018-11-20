@@ -152,6 +152,9 @@ Miscellaneous Android-Specific
 Implicit Flows
 --------------
 * **ImplicitFlow1-4**: Test cases for implicit flows.
+* **ImplicitFlow_Exception_prone_instruction**: IMEI value and its digits are written to Log through division by zero exception.
+* **ImplicitFlow_Polymorphism**: IMEI value is written to Log through a polymorphic method.
+* **ImplicitFlow_Throw**: IMEI value is written to Log through Throw instruction.
 
 Reflection
 ----------
