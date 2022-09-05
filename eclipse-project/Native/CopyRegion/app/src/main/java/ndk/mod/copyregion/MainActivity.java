@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
-import android.widget.Toast;
+import android.util.Log;
 
 
 /**
@@ -35,6 +35,6 @@ public class MainActivity extends AppCompatActivity {
         TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         String imei = telephonyManager.getDeviceId(); //source
         String copiedImei = cFuncCopyRegion(imei, imei.length());
-        Toast.makeText(MainActivity.this, "Device Info:" + copiedImei, Toast.LENGTH_LONG).show(); //sink
+        Log.i("ndkmod", copiedImei); //sink
     }
 }
