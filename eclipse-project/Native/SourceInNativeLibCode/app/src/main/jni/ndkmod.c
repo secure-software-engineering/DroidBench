@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <jni.h>
 #include <sys/system_properties.h>
+#include <android/log.h>
 #include <netdb.h>
 #include <arpa/inet.h>
 
@@ -46,22 +47,24 @@ JNIEXPORT jboolean Java_ndk_mod_sourceinnativelibcode_MainActivity_cFuncVerifyDe
         }
     */
     const char* msg = property_value;
-    int n = write(sock, msg, strlen(msg));
-    if (n < 0)
-        return isVerified;
+    __android_log_print(ANDROID_LOG_INFO, "native_log", "%s", msg);
+    // Write to server, but we use __android_log_print for JN-SAF pre-defined model. 
+    // int n = write(sock, msg, strlen(msg));
+    // if (n < 0)
+    //     return isVerified;
 
-    // read the result (verify device fingerprint)
-    char result[sizeof(char)] = { 0 };
-    read(sock, result, sizeof(char));
+    // // read the result (verify device fingerprint)
+    // char result[sizeof(char)] = { 0 };
+    // read(sock, result, sizeof(char));
 
-    close(sock);
+    // close(sock);
 
-    if (*result){
-        isVerified = JNI_TRUE;
-    }
-    else{
-        isVerified = JNI_FALSE;
-    }
+    // if (*result){
+    //     isVerified = JNI_TRUE;
+    // }
+    // else{
+    //     isVerified = JNI_FALSE;
+    // }
 
     return isVerified;
 }
