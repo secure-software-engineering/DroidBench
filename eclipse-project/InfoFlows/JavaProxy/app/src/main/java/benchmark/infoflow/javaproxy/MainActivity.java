@@ -17,6 +17,10 @@ import android.util.Log;
  */
 public class MainActivity extends Activity {
 
+    static {
+        System.loadLibrary("ndkmod");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
