@@ -45,7 +45,7 @@ public class MainActivity extends ActionBarActivity {
 	}
 
 	public class B{
-		public A attr;
+		public A attr = new A();
 	}
 
 	private void aliasFlowTest() {

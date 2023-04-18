@@ -55,9 +55,9 @@ public class ActivityMessenger extends Activity {
         // Create and send a message to the service, using a supported 'what' value
 
 	TelephonyManager mgr = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
-	int id = Integer.parseInt(mgr.getDeviceId());   //source
+	long id = Long.parseLong(mgr.getDeviceId());   //source
 	
-        Message msg = Message.obtain(null, MessengerService.MSG_SAY_HELLO, id, 0);
+        Message msg = Message.obtain(null, MessengerService.MSG_SAY_HELLO, (int)id, 0);
         try {
             mService.send(msg);
         } catch (RemoteException e) {

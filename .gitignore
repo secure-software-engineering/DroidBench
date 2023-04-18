@@ -7,6 +7,10 @@
 # Java class files
 *.class
 
+# AppScan Source
+*.paf
+*.ppf
+
 # generated files
 bin/
 gen/
@@ -21,3 +25,5 @@ local.properties
 /appcompat_v7_3
 /appcompat_v7_4
 /eclipse-project/.metadata/.plugins/org.eclipse.core.resources/.history
+/eclipse-project/.metadata
+/eclipse-project/.recommenders
