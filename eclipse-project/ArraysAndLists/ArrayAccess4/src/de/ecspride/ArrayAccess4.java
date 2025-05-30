@@ -48,6 +48,6 @@ public class ArrayAccess4 extends Activity {
         arrayData = new A[] { a, b, c };
 				
 		SmsManager sms = SmsManager.getDefault();
-        sms.sendTextMessage("+49 1234", null, arrayData[0].c, null, null);  //sink, leak
+        sms.sendTextMessage("+49 1234", null, arrayData[0].c, null, null);  //sink, no leak
     }    
 }
