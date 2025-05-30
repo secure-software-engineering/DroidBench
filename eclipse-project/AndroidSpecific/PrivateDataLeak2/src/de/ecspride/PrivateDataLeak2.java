@@ -22,7 +22,7 @@ public class PrivateDataLeak2 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_private_data_leak2);
         
-        EditText mEdit   = (EditText)findViewById(R.id.pwField);
-		Log.v("Password", mEdit.getText().toString()); //source, sink, leak
+        EditText mEdit   = (EditText)findViewById(R.id.pwField); //source
+		Log.v("Password", mEdit.getText().toString()); // sink, leak
     }
 }
