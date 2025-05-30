@@ -26,6 +26,6 @@ public class InactiveActivity extends Activity {
         TelephonyManager  mTelephonyMgr = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
 		String imei = mTelephonyMgr.getDeviceId(); //source
 		
-		Log.i("INFO", imei); //sink
+		Log.i("INFO", imei); //sink, no leak
     }    
 }
