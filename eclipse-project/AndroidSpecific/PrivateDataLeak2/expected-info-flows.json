@@ -1,0 +1,18 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int v(java.lang.String,java.lang.String)",
+      "Method": "de.ecspride.PrivateDataLeak2: void onCreate(android.os.Bundle)",
+      "Line": 26
+    },
+    {
+      "Source": "android.app.Activity: android.view.View findViewById(int)",
+      "Method": "de.ecspride.PrivateDataLeak2: void onCreate(android.os.Bundle)",
+      "Line": 25
+    }
+  ]
+}
+
+
+ 
