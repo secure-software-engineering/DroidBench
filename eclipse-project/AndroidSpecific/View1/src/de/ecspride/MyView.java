@@ -31,7 +31,7 @@ public class MyView extends View {
 		canvas.drawText("Hello World", 10, 10, paint);
 		
 		SmsManager sms = SmsManager.getDefault();
-        sms.sendTextMessage("+49 1234", null, deviceID, null, null); //source, sink, leak
+        sms.sendTextMessage("+49 1234", null, deviceID, null, null); // sink, leak
 	}
 	
 	@Override
