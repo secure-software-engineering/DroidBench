@@ -29,6 +29,6 @@ public class ArrayAccess5 extends Activity {
 		arrayData[0] = ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId(); //source
 				
 		SmsManager sms = SmsManager.getDefault();
-        sms.sendTextMessage("+49 1234", null, "Size is: " + arrayData.length, null, null);  //sink, leak
+        sms.sendTextMessage("+49 1234", null, "Size is: " + arrayData.length, null, null);  //sink, no leak
     }    
 }
