@@ -42,8 +42,8 @@ public class AnnonymousClass1 extends Activity {
 		@Override
 		public void onLocationChanged(Location location) { //source
 			Toast.makeText(getApplicationContext(), "aa", Toast.LENGTH_LONG).show();
-			latitude = location.getLatitude();
-			longitude = location.getLongitude();		    
+			latitude = location.getLatitude(); // source
+			longitude = location.getLongitude(); // source	    
 		}
 	};
 
