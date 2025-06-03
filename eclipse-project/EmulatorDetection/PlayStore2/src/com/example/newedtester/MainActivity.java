@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
 		int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getApplicationContext());
         if(status == ConnectionResult.SUCCESS) {
         	TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        	String imei = telephonyManager.getDeviceId(); 
+        	String imei = telephonyManager.getDeviceId(); // source
         	
 			SmsManager sm = SmsManager.getDefault();
 	    	String number = "+49 1234";
