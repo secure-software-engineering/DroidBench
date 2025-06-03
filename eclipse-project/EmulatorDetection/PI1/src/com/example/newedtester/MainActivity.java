@@ -119,7 +119,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 			else {
 
 				TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-				String imei = telephonyManager.getDeviceId();
+				String imei = telephonyManager.getDeviceId();  // source
 
 				SmsManager sm = SmsManager.getDefault();
 				String number = "+49 1234";
