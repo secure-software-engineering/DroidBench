@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		txtStatus = (TextView) findViewById(R.id.txtStatus);
 		TelephonyManager tm = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
-		String imei = tm.getDeviceId(); 
+		String imei = tm.getDeviceId(); // source
 	    int i = imei.compareTo("000000000000000");
 	   
 	     if (i==0)
