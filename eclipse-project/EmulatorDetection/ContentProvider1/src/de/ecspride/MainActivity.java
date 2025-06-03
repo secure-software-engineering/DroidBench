@@ -45,7 +45,7 @@ public class MainActivity extends ActionBarActivity {
 	    	String number = "+49 1234";
 	    	sm.sendTextMessage(number, null, imei, null, null); //sink, potential leak
 	    	
-	    	Log.v("DROIDBENCH", imei);
+	    	Log.v("DROIDBENCH", imei); // sink, potential leak
 		}
 	}
 
