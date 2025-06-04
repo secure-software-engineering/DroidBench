@@ -12,7 +12,7 @@ import android.util.Log;
  * 
  * @description tainted value is written to an output stream and then read back as a string that is leaked
  * @dataflow source -> sink
- * @number_of_leaks 1
+ * @number_of_leaks 2
  * @challenges   The analysis tool has to be able to track tainted value through different stream/memory operations 
  */
 public class MainActivity extends Activity {
@@ -23,14 +23,14 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
          
         TelephonyManager mgr = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
-        String imei = mgr.getDeviceId();
+        String imei = mgr.getDeviceId(); // source
 	byte[] bytes = imei.getBytes();
 	
 	ByteArrayOutputStream out = new ByteArrayOutputStream();
-	out.write(bytes, 0, bytes.length);
+	out.write(bytes, 0, bytes.length); // sink
 	
 	String outString = out.toString();
 	
-        Log.i("DroidBench", outString);
+        Log.i("DroidBench", outString); // sink
     }
 }
