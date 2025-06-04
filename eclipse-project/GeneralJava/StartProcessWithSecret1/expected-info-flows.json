@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "java.lang.ProcessBuilder: java.lang.Process start()",
+      "Method": "edu.mit.non_sink_argument_flow.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 28
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "edu.mit.non_sink_argument_flow.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 23
+    }
+  ]
+}
