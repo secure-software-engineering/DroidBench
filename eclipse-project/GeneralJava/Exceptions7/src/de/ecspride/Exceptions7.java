@@ -32,7 +32,7 @@ public class Exceptions7 extends Activity {
 		}
 		catch (ArrayIndexOutOfBoundsException ex) {
 			SmsManager sm = SmsManager.getDefault();
-			sm.sendTextMessage("+49 1234", null, imei, null, null); //sink, leak			
+			sm.sendTextMessage("+49 1234", null, imei, null, null); //sink, no leak	
 		}
 	}
 
