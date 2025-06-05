@@ -27,8 +27,8 @@ public class ImplicitFlow2 extends Activity {
     }
 
     public void checkPassword(View view){
-		EditText mEdit = (EditText)findViewById(R.id.password);
-		String userInputPassword = mEdit.getText().toString(); //source
+		EditText mEdit = (EditText)findViewById(R.id.password); //source
+		String userInputPassword = mEdit.getText().toString(); 
 		
 		if(userInputPassword.equals("superSecure"))
 			passwordCorrect = true;
