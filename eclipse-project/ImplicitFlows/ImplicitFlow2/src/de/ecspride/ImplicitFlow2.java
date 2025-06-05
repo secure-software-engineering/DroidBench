@@ -34,9 +34,9 @@ public class ImplicitFlow2 extends Activity {
 			passwordCorrect = true;
 		
 		if(passwordCorrect)
-			Log.i("INFO", "Password is correct"); //sink
+			Log.i("INFO", "Password is correct"); //sink, leak
 		else
-			Log.i("INFO", "Password is not correct"); //sink
+			Log.i("INFO", "Password is not correct"); //sink, leak
 	}
     
 }
