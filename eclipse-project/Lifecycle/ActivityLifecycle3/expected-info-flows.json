@@ -1,0 +1,16 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)",
+      "Method": "de.ecspride.MainActivity: void onRestoreInstanceState(android.os.Bundle)",
+      "Line": 39
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getSubscriberId()",
+      "Method": "de.ecspride.MainActivity: void onSaveInstanceState(android.os.Bundle)",
+      "Line": 33
+    }
+  ]
+}
+
