@@ -49,7 +49,7 @@ public class MainActivity extends Activity {
 		public void onReceive(Context context, Intent intent) {
 			String imei = ((TelephonyManager) getApplicationContext().getSystemService
 					(Context.TELEPHONY_SERVICE)).getDeviceId(); //source
-			Log.d("DroidBench", imei);
+			Log.d("DroidBench", imei); //  sink
 		}
 		
 	}
