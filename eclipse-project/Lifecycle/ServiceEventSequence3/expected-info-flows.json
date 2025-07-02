@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)",
+      "Method": "edu.uta.ServiceEventSequence3: boolean onUnbind(android.content.Intent)",
+      "Line": 46
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "edu.uta.ServiceEventSequence3: void onCreate()",
+      "Line": 26
+    }
+  ]
+}
