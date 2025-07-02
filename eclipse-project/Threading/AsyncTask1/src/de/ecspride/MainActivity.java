@@ -30,14 +30,14 @@ public class MainActivity extends Activity {
 		TelephonyManager telephonyManager = (TelephonyManager)
 				getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
 		MyAsyncTask async = new MyAsyncTask();
-		async.execute(telephonyManager.getDeviceId());
+		async.execute(telephonyManager.getDeviceId()); // source
 	}
 	
 	private class MyAsyncTask extends AsyncTask<String, String, String> {
 
 		@Override
 		protected String doInBackground(String... params) {
-			Log.d("DroidBench", params[0]);
+			Log.d("DroidBench", params[0]); // sink
 			return "Done";
 		}
 		
