@@ -44,7 +44,7 @@ public class ActivityEventSequence2 extends Activity {
 	{
 		super.onStart();
 		TelephonyManager tMgr = (TelephonyManager) getApplicationContext().getSystemService(TELEPHONY_SERVICE);
-		this.d1 = tMgr.getDeviceId();
+		this.d1 = tMgr.getDeviceId(); //   source
 		
 	}
 	@Override 
