@@ -23,14 +23,14 @@ public class MainActivity extends Activity implements SharedPreferences.OnShared
         setContentView(R.layout.activity_main);
 
         TelephonyManager mgr = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
-        String imei = mgr.getDeviceId();
+        String imei = mgr.getDeviceId(); //  source
 
         
         SharedPreferences settings = getSharedPreferences("settings", 0);
         settings.registerOnSharedPreferenceChangeListener(this);
         
         SharedPreferences.Editor editor = settings.edit();
-        editor.putString("imei", imei);
+        editor.putString("imei", imei); //   sink
         editor.commit();
     }
 
