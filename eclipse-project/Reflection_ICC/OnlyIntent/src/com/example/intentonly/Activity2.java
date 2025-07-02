@@ -22,7 +22,7 @@ public class Activity2 extends Activity {
 		Intent im = getIntent();
 		value = im.getStringExtra("imeino");
 		sm = SmsManager.getDefault();
-		sm.sendTextMessage(phoneNo, null,value,null, null);
+		sm.sendTextMessage(phoneNo, null,value,null, null); // sink
 		tv.setText("message sent");
 	}
 	@Override
