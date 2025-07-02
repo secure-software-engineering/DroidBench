@@ -67,7 +67,7 @@ public class ActivityEventSequence2 extends Activity {
 	{
 		super.onStop();
 		if(!d1.isEmpty())
-			SmsManager.getDefault().sendTextMessage(recpNo, null, d1, null, null);
+			SmsManager.getDefault().sendTextMessage(recpNo, null, d1, null, null); //  sink
 		
 	}
 
