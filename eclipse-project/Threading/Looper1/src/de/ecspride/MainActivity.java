@@ -49,7 +49,7 @@ public class MainActivity extends ActionBarActivity {
 		
 		TelephonyManager telephonyManager = (TelephonyManager)
 				getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
-		String deviceId = telephonyManager.getDeviceId();
+		String deviceId = telephonyManager.getDeviceId(); //  source
 
 		Message msg = new Message();
 		msg.obj = deviceId;
