@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
 
     public String getSource() {
         TelephonyManager tm = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
-        return tm.getDeviceId();
+        return tm.getDeviceId(); //  source
     }
 
     public String getOtherThings() {
@@ -42,6 +42,6 @@ public class MainActivity extends Activity {
     }
 
     public void maliciousMethod(String param) {
-        Log.e("DroidBench", param);
+        Log.e("DroidBench", param); //  sink
     }
 }
