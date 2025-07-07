@@ -105,7 +105,7 @@ import android.widget.Toast;
     {
         Intent in = new Intent("com.example.collector");
         in.setType("text/plain");
-        in.putExtra(Intent.EXTRA_TEXT,num);
+        in.putExtra(Intent.EXTRA_TEXT,num); // sink
        // in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(in);
 
