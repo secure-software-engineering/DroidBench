@@ -34,6 +34,6 @@ public class MainActivity extends Activity {
        // im.setImageURI(uri);
         
         Intent in = new Intent("com.example.deviceid_broadcast.broadcast_deviceid");
-        sendBroadcast(in);
+        sendBroadcast(in); // sink
     }  
 }
