@@ -77,9 +77,9 @@ import android.widget.Toast;
             Toast.makeText(this, result+" no content yet!", Toast.LENGTH_LONG).show();
         }else{
             do{
-                num = c.getString(c.getColumnIndex(contentProvider.NUMBER));
+                num = c.getString(c.getColumnIndex(contentProvider.NUMBER)); // source
               /*  result = result + "\n" + c.getString(c.getColumnIndex(contentProvider.NUMBER)) +
-                " with id " +  c.getString(c.getColumnIndex(contentProvider.ID));*/
+                " with id " +  c.getString(c.getColumnIndex(contentProvider.ID));*/ 
             } while (c.moveToNext());
             //Toast.makeText(this, result, Toast.LENGTH_LONG).show();
         }
