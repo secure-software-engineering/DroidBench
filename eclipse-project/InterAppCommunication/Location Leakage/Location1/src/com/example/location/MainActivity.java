@@ -53,9 +53,9 @@ public class MainActivity extends Activity implements LocationListener,View.OnCl
     public void onLocationChanged(Location location)
     {
         loc = loc.concat("Latitude:");
-        loc = loc.concat(Double.toString(location.getLatitude()));
+        loc = loc.concat(Double.toString(location.getLatitude())); //  source
         loc = loc.concat(", Longitude:");
-        loc = loc.concat(Double.toString(location.getLongitude()));
+        loc = loc.concat(Double.toString(location.getLongitude())); //  source
     }
 
 
@@ -65,7 +65,7 @@ public class MainActivity extends Activity implements LocationListener,View.OnCl
         Intent in = new Intent("com.example.collector");
         in.putExtra(Intent.EXTRA_TEXT, loc);
         in.setType("text/plain");
-        startActivity(in);
+        startActivity(in); // sink
         //Toast.makeText(location.this, loc, Toast.LENGTH_SHORT).show();
     }
 
