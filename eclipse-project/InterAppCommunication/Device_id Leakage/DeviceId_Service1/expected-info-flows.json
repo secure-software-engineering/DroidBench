@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.app.Activity: android.content.ComponentName startService(android.content.Intent)",
+      "Method": "com.example.deviceid_service.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 36
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "com.example.deviceid_service.Service_deviceid: void onStart(android.content.Intent,int)",
+      "Line": 30
+    }
+  ]
+}
