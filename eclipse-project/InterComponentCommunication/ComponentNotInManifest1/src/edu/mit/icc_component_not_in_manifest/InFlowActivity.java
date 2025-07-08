@@ -15,7 +15,7 @@ public class InFlowActivity extends Activity {
 		
 		Intent i = getIntent();
 		String imei = i.getStringExtra("DroidBench");
-		Log.i("DroidBench", imei); // sink
+		Log.i("DroidBench", imei); // no leak because InFlowActivity is not mentioned in the AndroidManifest.xml 
 	}
 
 }
