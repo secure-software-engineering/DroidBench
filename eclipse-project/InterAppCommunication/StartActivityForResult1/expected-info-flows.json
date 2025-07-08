@@ -1,0 +1,36 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.app.Activity: void startActivityForResult(android.content.Intent,int)",
+      "Method": "org.cert.WriteFile.Button1Listener: void onClick(android.view.View)",
+      "Line": 27
+    },
+    {
+      "Source": "android.location.LocationManager: android.location.Location getLastKnownLocation(java.lang.String)",
+      "Method": "org.cert.WriteFile.Button1Listener: java.lang.String getMyLocation()",
+      "Line": 32
+    },
+
+    {
+      "Sink": "java.io.OutputStream: void write(byte[])",
+      "Method": "org.cert.WriteFile.MainActivity: void onActivityResult(int,int,android.content.Intent)",
+      "Line": 57
+    },
+    {
+      "Source": "android.content.Intent: android.os.Bundle getExtras()",
+      "Method": "org.cert.WriteFile.MainActivity: void onActivityResult(int,int,android.content.Intent)",
+      "Line": 53
+    },
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "org.cert.WriteFile.MainActivity: void onActivityResult(int,int,android.content.Intent)",
+      "Line": 59
+    },
+    {
+      "Source": "android.content.Intent: android.os.Bundle getExtras()",
+      "Method": "org.cert.WriteFile.MainActivity: void onActivityResult(int,int,android.content.Intent)",
+      "Line": 53
+    }
+  ]
+}
