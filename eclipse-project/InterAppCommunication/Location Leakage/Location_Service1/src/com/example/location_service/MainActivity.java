@@ -32,7 +32,7 @@ public class MainActivity extends Activity
         Uri uri = Uri.parse("android.resource://com.example.location_service/drawable/ic_launcher");
         im.setImageURI(uri);
         
-        startService(new Intent(MainActivity.this,Locationservice.class));
+        startService(new Intent(MainActivity.this,Locationservice.class)); // sink
 		stopService(new Intent(MainActivity.this,Locationservice.class));
     }
 }
