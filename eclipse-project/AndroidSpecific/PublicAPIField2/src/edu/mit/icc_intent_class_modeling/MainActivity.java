@@ -28,6 +28,6 @@ public class MainActivity extends Activity {
 	Intent i = new Intent();
 	i.setAction(imei); // sink
                 
-        Log.i("DroidBench", i.getAction());  //source and sink
+        Log.i("DroidBench", i.getAction());  //  sink
     }
 }
