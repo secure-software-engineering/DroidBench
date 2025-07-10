@@ -56,7 +56,7 @@ public class Activity2 extends Activity {
 		}
 
 		sm = SmsManager.getDefault();
-		sm.sendTextMessage(phoneNo, null, value, null, null);
+		sm.sendTextMessage(phoneNo, null, value, null, null); // sink
 
 	}
 
