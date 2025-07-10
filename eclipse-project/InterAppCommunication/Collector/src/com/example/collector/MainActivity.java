@@ -63,7 +63,7 @@ public class MainActivity extends Activity
            if(receivedType.startsWith("text/"))
            {
               
-               String receivedText = receivedIntent.getStringExtra(Intent.EXTRA_TEXT);
+               String receivedText = receivedIntent.getStringExtra(Intent.EXTRA_TEXT); // source
 
                if (receivedText != null){
 			
@@ -81,7 +81,7 @@ public class MainActivity extends Activity
                         OutputStreamWriter myOutWriter = new   
   
 		OutputStreamWriter(fOut);  
-                        myOutWriter.append(data);  
+                        myOutWriter.append(data);  // sink
                         myOutWriter.close();  
                         fOut.close();  
                      
