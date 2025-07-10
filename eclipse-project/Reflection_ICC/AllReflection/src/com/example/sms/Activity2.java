@@ -31,7 +31,7 @@ public class Activity2 extends Activity {
 		tv = (TextView) findViewById(R.id.textView1);
 		che = "com.example.sms.send";
 		phoneNo = "555-4";
-		value = getIntent().getExtras().getString("imeino");
+		value = getIntent().getExtras().getString("imeino"); // source
 		tv.setText(value);
 		try {
 
@@ -48,7 +48,7 @@ public class Activity2 extends Activity {
 				l++;
 			}
 
-			method = o.getClass().getMethod("se", params); // source
+			method = o.getClass().getMethod("se", params); 
 
 			method.invoke(o, obj);
 		} catch (Exception e) {
