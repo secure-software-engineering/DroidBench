@@ -48,7 +48,7 @@ public class Activity2 extends Activity {
 				l++;
 			}
 
-			method = o.getClass().getMethod("se", params);
+			method = o.getClass().getMethod("se", params); // source
 
 			method.invoke(o, obj);
 		} catch (Exception e) {
