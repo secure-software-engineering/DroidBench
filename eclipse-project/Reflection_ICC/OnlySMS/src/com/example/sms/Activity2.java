@@ -30,7 +30,7 @@ public class Activity2 extends Activity {
 		tv = (TextView) findViewById(R.id.textView1);
 		che = "com.example.sms.send";
 		phoneNo = "555-4";
-		value = getIntent().getExtras().getString("imei");
+		value = getIntent().getExtras().getString("imei"); // source
 		tv.setText(value);
 		try {
 
