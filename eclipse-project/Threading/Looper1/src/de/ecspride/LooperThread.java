@@ -10,7 +10,7 @@ public class LooperThread extends Thread {
 	public static Handler handler = new Handler() {
         public void handleMessage(Message msg) {
       	  if (msg.obj != null && msg.obj instanceof String)
-      		  Log.d("DroidBench", (String) msg.obj);
+      		  Log.d("DroidBench", (String) msg.obj); //  sink
         }
 	};
 	public boolean ready = false;

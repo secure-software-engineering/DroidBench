@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		TelephonyManager mgr = (TelephonyManager) this
 				.getSystemService(TELEPHONY_SERVICE);
-		String imei = mgr.getDeviceId();
+		String imei = mgr.getDeviceId(); // source
 		// AnotherActivity at = new AnotherActivity();
 		SharedPreferences settings = getSharedPreferences("MyPrefsFile", 0);
 		che = "edu.mit.shared_preferences.write";

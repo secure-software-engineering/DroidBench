@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
+import android.os.Bundle;
 
 /**
  * @testcase_name NativeIDFunction
@@ -45,7 +46,7 @@ public class ActMain extends Activity {
 				String strIMEI = "";
 				
 				TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-				strIMEI = telephonyManager.getDeviceId() + "foo";
+				strIMEI = telephonyManager.getDeviceId() + "foo"; //   source
 
 				String strOut = "";
 

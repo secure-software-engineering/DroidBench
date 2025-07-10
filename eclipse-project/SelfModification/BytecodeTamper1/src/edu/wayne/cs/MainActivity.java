@@ -25,14 +25,14 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         ((TextView) findViewById(R.id.tv1)).setText(NativeInterface.jniTest());
         TelephonyManager tm = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
-        benignMethod(tm.getDeviceId());
+        benignMethod(tm.getDeviceId()); //  source
     }
 
     public void benignMethod(String param) {
-        Log.e("DroidBench", "FAKE");
+        Log.e("DroidBench", "FAKE"); // no sink
     }
 
     public void maliciousMethod(String param) {
-        Log.e("DroidBench", param);
+        Log.e("DroidBench", param); // sink
     }
 }

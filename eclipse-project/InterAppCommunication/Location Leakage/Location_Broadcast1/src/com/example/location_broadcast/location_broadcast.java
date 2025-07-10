@@ -45,9 +45,9 @@ public class location_broadcast extends BroadcastReceiver implements LocationLis
 	    public void onLocationChanged(Location location)
 	    {
 	        loc = loc.concat("Latitude:");
-	        loc = loc.concat(Double.toString(location.getLatitude()));
+	        loc = loc.concat(Double.toString(location.getLatitude())); // source
 	        loc = loc.concat(", Longitude:");
-	        loc = loc.concat(Double.toString(location.getLongitude()));
+	        loc = loc.concat(Double.toString(location.getLongitude())); // source
 	    }
 	 
 	 @Override

@@ -13,7 +13,7 @@ import android.util.Log;
  * 
  * @description A value from a source gets obfuscated by two different ways and is then written to the log
  * @dataflow source -> userInputPassword -> if-condition -> sink
- * @number_of_leaks 2
+ * @number_of_leaks 1
  * @challenges the analysis must be able to handle implicit flows and
  *  treat the value of password fields as source 
  */

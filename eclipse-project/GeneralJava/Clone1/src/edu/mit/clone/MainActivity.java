@@ -23,12 +23,12 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
          
         TelephonyManager mgr = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
-        String imei = mgr.getDeviceId();
+        String imei = mgr.getDeviceId(); // source
         LinkedList<String> list = new LinkedList<String>();
         list.add(imei);
 
         LinkedList<String> list2 = (LinkedList<String>)list.clone();
 
-        Log.i("DroidBench", list2.get(0));
+        Log.i("DroidBench", list2.get(0)); //  sink
     }
 }

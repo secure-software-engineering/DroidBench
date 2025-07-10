@@ -13,7 +13,7 @@ public class Receiver3 extends BroadcastReceiver {
         // TODO Auto-generated method stub
         String s = intent.getExtras().getString("data");
         TelephonyManager telephonyManager = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
-        s = s.concat(telephonyManager.getDeviceId());
+        s = s.concat(telephonyManager.getDeviceId()); // source
         Toast.makeText(context, "RCVR 3.." + s, Toast.LENGTH_LONG).show();
         setResultData(s);
     }

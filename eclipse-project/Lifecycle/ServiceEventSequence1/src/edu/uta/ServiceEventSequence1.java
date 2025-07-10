@@ -20,7 +20,7 @@ public class ServiceEventSequence1 extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 		TelephonyManager tMgr = (TelephonyManager) getApplicationContext().getSystemService(TELEPHONY_SERVICE);
 		this.d1 = tMgr.getDeviceId();
-		SmsManager.getDefault().sendTextMessage("5556", null, d2, null, null);
+		SmsManager.getDefault().sendTextMessage("5556", null, d2, null, null); //  sink
 		
         return Service.START_NOT_STICKY;
     }

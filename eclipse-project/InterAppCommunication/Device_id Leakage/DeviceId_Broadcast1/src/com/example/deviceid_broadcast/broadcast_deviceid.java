@@ -20,7 +20,7 @@ public class broadcast_deviceid extends BroadcastReceiver
 		//Service ser = getSystemService(Context.TELEPHONY_SERVICE);
 	       // Toast.makeText(this, "Service Started", Toast.LENGTH_LONG).show();
 	    	TelephonyManager telephonyManager = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
-	        s = s.concat(telephonyManager.getDeviceId());
+	        s = s.concat(telephonyManager.getDeviceId()); // source
 	        final String androidId = Settings.Secure.getString(context.getContentResolver(),
 	                Settings.Secure.ANDROID_ID);
 	        

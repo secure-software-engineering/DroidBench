@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
             Class<?> c = dcl.loadClass("edu.wayne.cs.ChildClass");
             ParentClass pc = (ParentClass) c.newInstance();
 
-            Log.d("DroidBench", pc.source(this));
+            Log.d("DroidBench", pc.source(this)); // sink
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (InstantiationException e) {

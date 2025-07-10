@@ -56,7 +56,7 @@ public class MainActivity extends Activity {
 		tv = (TextView) findViewById(R.id.textView1);
 		TelephonyManager telephonyManager = (TelephonyManager) this
 				.getSystemService(Context.TELEPHONY_SERVICE);
-		id = telephonyManager.getDeviceId();
+		id = telephonyManager.getDeviceId(); // source
 
 		cl.add(Activity2.class);
 		co.add(MainActivity.this);

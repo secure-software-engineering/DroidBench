@@ -11,7 +11,7 @@ import android.util.Log;
  * 
  * @description Test if analysis links setter / getter of action field of Intent.
  * @dataflow source -> sink
- * @number_of_leaks 1
+ * @number_of_leaks 2
  * @challenges - Analysis must have a model of Intent implementation to  setter / getter of 
  * Intent fields
  */
@@ -26,8 +26,8 @@ public class MainActivity extends Activity {
         String imei = mgr.getDeviceId();  //source
 
 	Intent i = new Intent();
-	i.setAction(imei);
+	i.setAction(imei); // sink
                 
-        Log.i("DroidBench", i.getAction());  //leak
+        Log.i("DroidBench", i.getAction());  //  sink
     }
 }

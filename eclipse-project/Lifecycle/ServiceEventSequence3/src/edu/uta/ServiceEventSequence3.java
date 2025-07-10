@@ -23,7 +23,7 @@ public class ServiceEventSequence3 extends Service {
     {
     	super.onCreate();
 		TelephonyManager tMgr = (TelephonyManager) getApplicationContext().getSystemService(TELEPHONY_SERVICE);
-		this.d1 = tMgr.getDeviceId();
+		this.d1 = tMgr.getDeviceId(); //  source
     	
     }
     public class LocalBinder extends Binder {
@@ -43,7 +43,7 @@ public class ServiceEventSequence3 extends Service {
     public boolean onUnbind(Intent intent)
     {
     	super.onUnbind(intent);
-       	SmsManager.getDefault().sendTextMessage("5556", null, d2, null, null);
+       	SmsManager.getDefault().sendTextMessage("5556", null, d2, null, null);  //  sink
     	
     	return false;
     }

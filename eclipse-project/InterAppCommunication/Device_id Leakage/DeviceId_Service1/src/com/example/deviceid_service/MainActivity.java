@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
         
         
        // Toast.makeText(MainActivity.this, "Service Started", Toast.LENGTH_LONG).show();
-		startService(new Intent(MainActivity.this,Service_deviceid.class));
+		startService(new Intent(MainActivity.this,Service_deviceid.class)); // sink
 		stopService(new Intent(MainActivity.this,Service_deviceid.class));
     }
    

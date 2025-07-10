@@ -26,9 +26,9 @@ public class ImplicitFlow4 extends Activity {
     }
     //callback from layout xml
     public void checkUsernamePassword(View view){
-		EditText editPassword = (EditText)findViewById(R.id.password); 
+		EditText editPassword = (EditText)findViewById(R.id.password);  //source
 		EditText editUsername = (EditText)findViewById(R.id.username);
-		String password = editPassword.getText().toString(); //source
+		String password = editPassword.getText().toString(); 
 		String username = editUsername.getText().toString();
 		
 		Log.i("TAG", "bevor try"); //sink

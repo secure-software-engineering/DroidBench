@@ -25,7 +25,7 @@ public class ApplicationLifecyle1 extends Application {
 		super.onCreate();
 		
 		TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-		imei = tm.getDeviceId();
+		imei = tm.getDeviceId(); //  source
 	}
 
 

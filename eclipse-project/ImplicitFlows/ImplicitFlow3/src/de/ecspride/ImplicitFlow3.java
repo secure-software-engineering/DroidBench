@@ -42,8 +42,8 @@ public class ImplicitFlow3 extends Activity {
   	public void leakData(View view){
   		Log.i("INFO", "before1");
   		//leak bit about correct password
-  		EditText mEdit = (EditText)findViewById(R.id.password);
-  		String userInputPassword = mEdit.getText().toString(); //source
+  		EditText mEdit = (EditText)findViewById(R.id.password); //source
+  		String userInputPassword = mEdit.getText().toString(); 
   		Log.i("INFO", "before2");
   		
   		Interface classTmp;

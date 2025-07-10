@@ -30,7 +30,7 @@ public class ActivityEventSequence1 extends Activity {
 	public void onStart()
 	{
 		TelephonyManager tMgr = (TelephonyManager) getApplicationContext().getSystemService(TELEPHONY_SERVICE);
-		this.d1 = tMgr.getDeviceId();
+		this.d1 = tMgr.getDeviceId(); //  source
 		super.onStart();
 	}
 	
@@ -45,7 +45,7 @@ public class ActivityEventSequence1 extends Activity {
 	@Override
 	public void onResume()
 	{
-		SmsManager.getDefault().sendTextMessage(recpNo, null, d1, null, null);
+		SmsManager.getDefault().sendTextMessage(recpNo, null, d1, null, null); //  sink
 		super.onResume();
 	}
 	

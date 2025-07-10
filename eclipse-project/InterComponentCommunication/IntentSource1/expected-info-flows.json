@@ -1,0 +1,25 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.app.Activity: void startActivityForResult(android.content.Intent,int)",
+      "Method": "lu.uni.snt.serval.IntentSource1: void onCreate(android.os.Bundle)",
+      "Line": 29
+    },
+    {
+      "Source": "android.content.Intent: android.os.Bundle getExtras()",
+      "Method": "lu.uni.snt.serval.IntentSource1: void onActivityResult(int,int,android.content.Intent)",
+      "Line": 37
+    },
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "lu.uni.snt.serval.IntentSource1: void onActivityResult(int,int,android.content.Intent)",
+      "Line": 40
+    },
+    {
+      "Source": "android.content.Intent: android.os.Bundle getExtras()",
+      "Method": "lu.uni.snt.serval.IntentSource1: void onActivityResult(int,int,android.content.Intent)",
+      "Line": 37
+    }
+  ]
+}

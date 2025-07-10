@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_private_date_leakage);
         
         TelephonyManager mgr = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
-        MyView.deviceID = mgr.getDeviceId();
+        MyView.deviceID = mgr.getDeviceId(); // source
     }
    
 }

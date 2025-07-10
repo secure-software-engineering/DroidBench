@@ -1,0 +1,16 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int d(java.lang.String,java.lang.String)",
+      "Method": "de.ecspride.MethodOverride1: void attachBaseContext(android.content.Context)",
+      "Line": 32
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "de.ecspride.MethodOverride1: void attachBaseContext(android.content.Context)",
+      "Line": 31
+    }
+  ]
+}
+

@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
     
     protected void onStop() {
         super.onStop();
-        Log.i("DroidBench", Singleton.v().s);
+        Log.i("DroidBench", Singleton.v().s); // sink
     }
     
 }

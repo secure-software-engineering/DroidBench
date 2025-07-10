@@ -20,7 +20,7 @@ import android.view.ViewGroup;
  * 
  * @description Sensitive data is assigned to a heap object, but then overwritten
  * 		before it is leaked
- * @dataflow source -> heap object -> alias -> nothing
+ * @dataflow source -> heap object -> alias -> leak
  * @number_of_leaks 1
  * @challenges The alias analysis must support strong updates for not causing a
  * 		false positive.

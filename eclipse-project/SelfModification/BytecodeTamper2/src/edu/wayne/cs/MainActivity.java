@@ -25,12 +25,12 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         ((TextView) findViewById(R.id.tv1)).setText(NativeInterface.jniTest());
         String info = getOtherThings();
-        Log.d("DroidBench", info);
+        Log.d("DroidBench", info); // sink
     }
 
     public String getSource() {
         TelephonyManager tm = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
-        return tm.getDeviceId();
+        return tm.getDeviceId(); //  source
     }
 
     public String getOtherThings() {

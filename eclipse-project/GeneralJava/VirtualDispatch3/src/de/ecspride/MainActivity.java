@@ -45,7 +45,7 @@ public class MainActivity extends ActionBarActivity {
 		MyInterface myif = createInterfaceImplementation();
 		String data = myif.getString();
 		SmsManager sms = SmsManager.getDefault();
-        sms.sendTextMessage("+49 1234", null, data, null, null); // sink, leak
+        sms.sendTextMessage("+49 1234", null, data, null, null); // sink, no leak
         
         MyInterface foo = createOtherImplementation();
         System.out.println(foo);

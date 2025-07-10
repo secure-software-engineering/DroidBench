@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.app.Activity: void sendBroadcast(android.content.Intent)",
+      "Method": "com.example.deviceid_broadcast.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 37
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "com.example.deviceid_broadcast.broadcast_deviceid: void onReceive(android.content.Context,android.content.Intent)",
+      "Line": 23
+    }
+  ]
+}

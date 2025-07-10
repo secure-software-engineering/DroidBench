@@ -73,7 +73,7 @@ public class MainActivity extends ActionBarActivity {
 		q.b = deviceId;
 
 		SmsManager sms = SmsManager.getDefault();
-        sms.sendTextMessage("+49 1234", null, a.attr.b, null, null); // sink, leak
+        sms.sendTextMessage("+49 1234", null, a.attr.b, null, null); // sink, no leak
 	}
 
 	@Override

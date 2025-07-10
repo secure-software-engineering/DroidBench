@@ -14,8 +14,8 @@ public class MyLocationListener implements LocationListener {
 	
 	@Override
 	public void onLocationChanged(Location arg0) {
-		dataProvider.setData("Longitude: " + arg0.getLongitude()
-				+ ", Latitude: " + arg0.getLatitude());
+		dataProvider.setData("Longitude: " + arg0.getLongitude() // source
+				+ ", Latitude: " + arg0.getLatitude()); // source
 	}
 
 	@Override

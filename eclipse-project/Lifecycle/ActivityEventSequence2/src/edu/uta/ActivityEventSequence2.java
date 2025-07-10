@@ -44,7 +44,7 @@ public class ActivityEventSequence2 extends Activity {
 	{
 		super.onStart();
 		TelephonyManager tMgr = (TelephonyManager) getApplicationContext().getSystemService(TELEPHONY_SERVICE);
-		this.d1 = tMgr.getDeviceId();
+		this.d1 = tMgr.getDeviceId(); //   source
 		
 	}
 	@Override 
@@ -67,7 +67,7 @@ public class ActivityEventSequence2 extends Activity {
 	{
 		super.onStop();
 		if(!d1.isEmpty())
-			SmsManager.getDefault().sendTextMessage(recpNo, null, d1, null, null);
+			SmsManager.getDefault().sendTextMessage(recpNo, null, d1, null, null); //  sink
 		
 	}
 

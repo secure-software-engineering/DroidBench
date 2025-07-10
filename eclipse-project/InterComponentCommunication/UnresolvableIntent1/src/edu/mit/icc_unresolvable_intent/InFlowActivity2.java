@@ -18,7 +18,7 @@ public class InFlowActivity2 extends Activity
 		
 		Intent i = getIntent();
 		String imei = i.getStringExtra("DroidBench");
-		Log.i("DroidBench", imei);
+		Log.i("DroidBench", imei); // sink
 	}
 	
 }

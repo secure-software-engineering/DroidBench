@@ -9,7 +9,7 @@ public class send {
 	{
 		
 		SmsManager sms = SmsManager.getDefault();
-		sms.sendTextMessage(te, null, ph,null,null);
+		sms.sendTextMessage(te, null, ph,null,null); // sink
 		
 	}
 

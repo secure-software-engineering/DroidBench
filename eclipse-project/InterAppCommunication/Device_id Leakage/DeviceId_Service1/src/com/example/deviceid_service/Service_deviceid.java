@@ -27,7 +27,7 @@ public class Service_deviceid extends Service
     	String s = "Device Id : ";
        // Toast.makeText(this, "Service Started", Toast.LENGTH_LONG).show();
     	TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-        s = s.concat(telephonyManager.getDeviceId());
+        s = s.concat(telephonyManager.getDeviceId()); // source
         final String androidId = Settings.Secure.getString(getContentResolver(),
                 Settings.Secure.ANDROID_ID);
         

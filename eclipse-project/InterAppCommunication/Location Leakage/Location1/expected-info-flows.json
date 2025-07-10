@@ -1,0 +1,25 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.app.Activity: void startActivity(android.content.Intent)",
+      "Method": "com.example.location.MainActivity: void onClick(android.view.View)",
+      "Line": 68
+    },
+    {
+      "Source": "android.location.Location: double getLatitude()",
+      "Method": "com.example.location.MainActivity: void onLocationChanged(android.location.Location)",
+      "Line": 56
+    },
+    {
+      "Sink": "android.app.Activity: void startActivity(android.content.Intent)",
+      "Method": "com.example.location.MainActivity: void onClick(android.view.View)",
+      "Line": 68
+    },
+    {
+      "Source": "android.location.Location: double getLongitude()",
+      "Method": "com.example.location.MainActivity: void onLocationChanged(android.location.Location)",
+      "Line": 58
+    }
+  ]
+}

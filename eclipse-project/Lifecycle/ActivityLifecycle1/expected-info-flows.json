@@ -1,0 +1,16 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "java.net.HttpURLConnection: void connect()",
+      "Method": "de.ecspride.ActivityLifecycle1: void connect()",
+      "Line": 54
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "de.ecspride.ActivityLifecycle1: void onCreate(android.os.Bundle)",
+      "Line": 34
+    }
+  ]
+}
+
