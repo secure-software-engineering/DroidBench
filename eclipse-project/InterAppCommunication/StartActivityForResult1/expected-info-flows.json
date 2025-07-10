@@ -2,16 +2,35 @@
   "expected-info-flows":
   [
     {
-      "Sink": "android.app.Activity: void startActivityForResult(android.content.Intent,int)",
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
       "Method": "org.cert.WriteFile.Button1Listener: void onClick(android.view.View)",
-      "Line": 27
+      "Line": 26
     },
     {
-      "Source": "android.location.LocationManager: android.location.Location getLastKnownLocation(java.lang.String)",
+      "Source": "android.location.Location: double getLatitude()",
       "Method": "org.cert.WriteFile.Button1Listener: java.lang.String getMyLocation()",
-      "Line": 32
+      "Line": 36
     },
-
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "org.cert.WriteFile.Button1Listener: void onClick(android.view.View)",
+      "Line": 26
+    },
+    {
+      "Source": "android.location.Location: double getLongitude()",
+      "Method": "org.cert.WriteFile.Button1Listener: java.lang.String getMyLocation()",
+      "Line": 35
+    },
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "org.cert.WriteFile.MainActivity: void onActivityResult(int,int,android.content.Intent)",
+      "Line": 65
+    },
+    {
+      "Source": "android.content.Intent: android.os.Bundle getExtras()",
+      "Method": "org.cert.WriteFile.MainActivity: void onActivityResult(int,int,android.content.Intent)",
+      "Line": 51
+    },
     {
       "Sink": "java.io.OutputStream: void write(byte[])",
       "Method": "org.cert.WriteFile.MainActivity: void onActivityResult(int,int,android.content.Intent)",
@@ -34,3 +53,5 @@
     }
   ]
 }
+
+
