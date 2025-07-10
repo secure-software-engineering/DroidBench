@@ -26,7 +26,7 @@ public class IntentSource1 extends Activity {
 
 		Intent intent = this.getIntent();
 		intent.setAction("android.intent.action.MAIN");
-		this.startActivityForResult(intent, 1);
+		this.startActivityForResult(intent, 1); // sink
 	}
 
 	@Override
@@ -34,10 +34,10 @@ public class IntentSource1 extends Activity {
 	{
 		if (requestCode == 1)
 		{
-			Bundle b = data.getExtras();
+			Bundle b = data.getExtras(); // source
 			for (String key : b.keySet())
 			{
-				Log.i("SnT", "dump: " + b.get(key));
+				Log.i("SnT", "dump: " + b.get(key)); // source
 			}
 		}
 		
