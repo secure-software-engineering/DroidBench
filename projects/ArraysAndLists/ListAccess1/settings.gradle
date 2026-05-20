@@ -1,0 +1,2 @@
+rootProject.name = "ListAccess1"
+include ':app'

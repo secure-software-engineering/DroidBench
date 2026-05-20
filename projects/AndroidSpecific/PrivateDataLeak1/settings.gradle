@@ -1,0 +1,2 @@
+rootProject.name = "PrivateDataLeak1"
+include ':app'

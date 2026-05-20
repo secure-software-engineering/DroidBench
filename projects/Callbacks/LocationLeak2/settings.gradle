@@ -1,0 +1,2 @@
+rootProject.name = "LocationLeak2"
+include ':app'

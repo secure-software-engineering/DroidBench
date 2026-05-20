@@ -1,0 +1,5 @@
+rootProject.name = "Library2"
+include ':app'
+
+include ':library'
+project(':library').projectDir = new File('../Library1/app')

@@ -1,0 +1,2 @@
+rootProject.name = "ActivityLifecycle1"
+include ':app'

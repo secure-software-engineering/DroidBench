@@ -1,0 +1,2 @@
+rootProject.name = "SourceCodeSpecific1"
+include ':app'

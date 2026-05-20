@@ -1,0 +1,2 @@
+rootProject.name = "ArrayToString1"
+include ':app'

@@ -1,0 +1,2 @@
+rootProject.name = "PublicAPIField2"
+include ':app'

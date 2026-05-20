@@ -1,0 +1,2 @@
+rootProject.name = "Exceptions3"
+include ':app'

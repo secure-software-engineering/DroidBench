@@ -1,0 +1,2 @@
+rootProject.name = "AnonymousClass1"
+include ':app'

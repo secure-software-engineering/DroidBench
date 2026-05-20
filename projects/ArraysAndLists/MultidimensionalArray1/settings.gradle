@@ -1,0 +1,2 @@
+rootProject.name = "MultidimensionalArray1"
+include ':app'

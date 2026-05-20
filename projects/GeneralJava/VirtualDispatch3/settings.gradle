@@ -1,0 +1,2 @@
+rootProject.name = "VirtualDispatch3"
+include ':app'
