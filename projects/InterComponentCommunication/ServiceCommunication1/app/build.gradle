@@ -4,11 +4,12 @@ plugins {
 
 android {
     compileSdkVersion 33
-    buildToolsVersion "33.0.0"
+buildToolsVersion "36.0.0"
+    enableKotlin = false
 
     defaultConfig {
-        applicationId "edu.mit.icc_service_messages"
-        namespace 'edu.mit.icc_service_messages'
+        applicationId = "edu.mit.icc_service_messages"
+        namespace = 'edu.mit.icc_service_messages'
         minSdkVersion null
         targetSdkVersion null
         versionCode 1
@@ -19,7 +20,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     buildFeatures {
-        viewBinding false
+        viewBinding = false
     }
     lint {
         disable.add("ExpiredTargetSdkVersion")

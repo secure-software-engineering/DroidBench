@@ -4,11 +4,12 @@ plugins {
 
 android {
     compileSdkVersion 33
-    buildToolsVersion "33.0.0"
+buildToolsVersion "36.0.0"
+    enableKotlin = false
 
     defaultConfig {
-        applicationId "edu.mit.outputstream"
-        namespace 'edu.mit.outputstream'
+        applicationId = "edu.mit.outputstream"
+        namespace = 'edu.mit.outputstream'
         minSdkVersion 19
         targetSdkVersion 19
         versionCode 1
@@ -19,7 +20,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     buildFeatures {
-        viewBinding false
+        viewBinding = false
     }
     lint {
         disable.add("ExpiredTargetSdkVersion")
