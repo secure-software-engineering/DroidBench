@@ -14,7 +14,7 @@ We welcome your contributions!
 
 Building
 ===========
-We use gradle for build. Build using the following command:
+Prebuild APKs can be found in the ```apk``` folder. If you want to build the APKs yourself, you can use the following command:
 ```
 cd projects
 ./gradlew assemble
