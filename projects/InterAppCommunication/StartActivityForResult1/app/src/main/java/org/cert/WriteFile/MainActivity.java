@@ -60,9 +60,8 @@ public class MainActivity extends Activity {
 		    	} catch (Exception e) {
 		    	  e.printStackTrace();
 		    	}
+                        Log.i("In WriteFile: ", "Data received");
 	    	}
-	    	else
-	    		Log.i("In WriteFile: ", "Data recieved");
 	    }
 	  }
 	  else

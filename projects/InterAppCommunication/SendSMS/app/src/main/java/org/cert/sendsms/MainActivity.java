@@ -33,15 +33,13 @@ public class MainActivity extends Activity {
 	  if (resultCode == 0 && requestCode == 0 && data != null) {
 	    if (data.hasExtra("secret")) {
 	    	if(data.getExtras().getString("secret") != null){
-	    		Log.v("In SendSMS: ", "Data recieved");	    		
+	    		Log.v("In SendSMS: ", "Data received");	    		
 	    		sendSMSMessage(data.getExtras().getString("secret"));
 	    	}
-	    	else
-	    		Log.i("In SendSMS: ", "Data recieved");
 	    }
 	  }
 	  else
-  		Log.i("In SendSMS: ", "No data recieved");
+  		Log.i("In SendSMS: ", "No data received");
 		  
 	}
 	
