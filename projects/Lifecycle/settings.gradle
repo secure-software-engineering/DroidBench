@@ -1,0 +1,5 @@
+rootProject.name = 'Lifecycle'
+
+
+includeBuild 'ActivityLifecycle1'
+includeBuild 'ActivityLifecycle2'

@@ -1,0 +1,14 @@
+tasks.register('assemble') {
+    group = 'build'
+    description = 'Assembles all apps'
+    
+    dependsOn gradle.includedBuild('ActivityLifecycle1').task(':app:assemble')
+    dependsOn gradle.includedBuild('ActivityLifecycle2').task(':app:assemble')
+}
+tasks.register('clean') {
+    group = 'build'
+    description = 'Removes all build artifacts'
+    
+    dependsOn gradle.includedBuild('ActivityLifecycle1').task(':app:clean')
+    dependsOn gradle.includedBuild('ActivityLifecycle2').task(':app:clean')
+}
