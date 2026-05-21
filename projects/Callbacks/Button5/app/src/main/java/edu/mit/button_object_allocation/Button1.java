@@ -26,11 +26,13 @@ public class Button1 extends Activity {
         setContentView(R.layout.activity_button1);
         
         TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-	imei = telephonyManager.getDeviceId(); //source
+        imei = telephonyManager.getDeviceId(); //source
     }
 
     public void sendMessage(View view){
-	Log.i("DroidBench", ((Button)view).getHint().toString());  //sink on second call to sendMessage(), second click of button
-	((Button)view).setHint(imei);  
+        Object hint = ((Button)view).getHint();
+        if (hint != null)
+            Log.i("DroidBench", hint.toString());  //sink on second call to sendMessage(), second click of button
+        ((Button)view).setHint(imei);  
     }
 }
