@@ -16,12 +16,11 @@
      attribute brings in the Android platform namespace, and the package
      supplies a unique name for the application.  When writing your
      own application, the package name must be changed from "com.example.*"
-     to come from a domain that you own or have control over. --><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="edu.mit.icc_service_messages">
-    &gt;
+     to come from a domain that you own or have control over. --><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0">
+   
 
 
-    <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="19"/>
-
+   
     <application android:hardwareAccelerated="true" android:label="ActivityMessenger">
 
 

@@ -14,8 +14,12 @@ We welcome your contributions!
 
 Building
 ===========
-We use gradle for build.
-
+We use gradle for build. Build using the following command:
+```
+cd projects
+./gradlew assemble
+```
+Depending on the system configuration, you may need to set the ```ANDROID_HOME``` environment variable.
 
 Version 3.0
 ===========
