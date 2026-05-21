@@ -1,0 +1,16 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "edu.mit.icc_intent_class_modeling.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 31
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "edu.mit.icc_intent_class_modeling.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 26
+    }
+   
+  ]
+}

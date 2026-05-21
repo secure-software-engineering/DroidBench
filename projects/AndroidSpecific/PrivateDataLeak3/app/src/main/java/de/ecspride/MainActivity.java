@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
 
 		try {
 			FileOutputStream fos = openFileOutput("out.txt", Context.MODE_PRIVATE);
-			fos.write(imei.getBytes());
+			fos.write(imei.getBytes()); // sink, leak
 			fos.close();
 		}
 		catch (Exception ex) {

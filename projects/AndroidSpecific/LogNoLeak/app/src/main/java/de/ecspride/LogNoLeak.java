@@ -26,6 +26,7 @@ public class LogNoLeak extends Activity {
     } 
     
 	public void onPause(){
-		Log.i("TAG", notTainted); //sink, no leak
+		super.onPause();
+        Log.i("TAG", notTainted); //sink, no leak
 	}
 }

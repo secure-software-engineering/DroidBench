@@ -28,13 +28,13 @@ public class MainActivity extends Activity {
 
 		TelephonyManager telephonyManager = (TelephonyManager)
 				getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
-		final String deviceId = telephonyManager.getDeviceId();
+		final String deviceId = telephonyManager.getDeviceId(); //  source
 		
 		new Thread(new Runnable() {
 			
 			@Override
 			public void run() {
-				Log.d("DroidBench", deviceId);
+				Log.d("DroidBench", deviceId); //  sink
 			}
 			
 		}).start();

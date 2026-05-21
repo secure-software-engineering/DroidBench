@@ -1,0 +1,2 @@
+rootProject.name = "ActivityEventSequence2"
+include ':app'

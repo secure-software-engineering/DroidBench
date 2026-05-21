@@ -1,0 +1,2 @@
+rootProject.name = "DeviceId1"
+include ':app'

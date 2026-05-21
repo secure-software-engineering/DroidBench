@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
 	}
 
 	public class B{
-		public A attr;
+		public A attr = new A();
 	}
 
 	private void aliasFlowTest() {
@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
 		q.b = deviceId;
 
 		SmsManager sms = SmsManager.getDefault();
-        sms.sendTextMessage("+49 1234", null, a.attr.b, null, null); // sink, leak
+        sms.sendTextMessage("+49 1234", null, a.attr.b, null, null); // sink, no leak
 	}
 
 }

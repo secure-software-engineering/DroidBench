@@ -24,12 +24,14 @@ public class MainActivity extends Activity {
     }
 
     protected void onStop() {
-	Log.i("DroidBench", imei); //sink, possible leak
+	    super.onStop();
+        Log.i("DroidBench", imei); //sink, possible leak
     }	
 
     protected void onResume() {
-	TelephonyManager mgr = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
-	imei = mgr.getDeviceId();  //source
+        super.onResume();
+        TelephonyManager mgr = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
+        imei = mgr.getDeviceId();  //source
     }
     
     public void onLowMemory() {

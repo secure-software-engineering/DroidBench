@@ -1,0 +1,25 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "edu.mit.icc_unresolvable_intent.InFlowActivity: void onCreate(android.os.Bundle)",
+      "Line": 18
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "edu.mit.icc_unresolvable_intent.OutFlowActivity: void onCreate(android.os.Bundle)",
+      "Line": 36
+    },
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "edu.mit.icc_unresolvable_intent.InFlowActivity2: void onCreate(android.os.Bundle)",
+      "Line": 21
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "edu.mit.icc_unresolvable_intent.OutFlowActivity: void onCreate(android.os.Bundle)",
+      "Line": 36
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+rootProject.name = "OnlyTelephony_Dynamic"
+include ':app'

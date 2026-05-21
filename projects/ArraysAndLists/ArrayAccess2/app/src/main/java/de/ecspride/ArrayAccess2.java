@@ -27,7 +27,7 @@ public class ArrayAccess2 extends Activity {
         
         String[] array = new String[10];
 		TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE); //source
-		array[5] = telephonyManager.getDeviceId();
+		array[5] = telephonyManager.getDeviceId(); // source
 		array[4] = "no taint";
 		
 		SmsManager sm = SmsManager.getDefault();

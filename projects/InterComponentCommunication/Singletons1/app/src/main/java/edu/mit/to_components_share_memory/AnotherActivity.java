@@ -13,6 +13,6 @@ public class AnotherActivity extends Activity {
         setContentView(R.layout.activity_main);
          
         TelephonyManager mgr = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
-        Singleton.v().s = mgr.getDeviceId();
+        Singleton.v().s = mgr.getDeviceId(); // source
     }
 }

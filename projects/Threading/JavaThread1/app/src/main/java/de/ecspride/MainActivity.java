@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
 
 		TelephonyManager telephonyManager = (TelephonyManager)
 				getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
-		new MyThread(telephonyManager.getDeviceId()).start();
+		new MyThread(telephonyManager.getDeviceId()).start(); //  source
 	}
 
 	private class MyThread extends Thread {
@@ -41,7 +41,7 @@ public class MainActivity extends Activity {
 	    
 		@Override
 	    public void run() {
-			Log.d("DroidBench", deviceId);
+			Log.d("DroidBench", deviceId); //  sink
 	    }
 	
 	}

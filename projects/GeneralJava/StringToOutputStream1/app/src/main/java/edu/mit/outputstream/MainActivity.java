@@ -23,14 +23,14 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
          
         TelephonyManager mgr = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
-        String imei = mgr.getDeviceId();
+        String imei = mgr.getDeviceId(); // source
 	byte[] bytes = imei.getBytes();
 	
 	ByteArrayOutputStream out = new ByteArrayOutputStream();
-	out.write(bytes, 0, bytes.length);
+	out.write(bytes, 0, bytes.length); 
 	
 	String outString = out.toString();
 	
-        Log.i("DroidBench", outString);
+        Log.i("DroidBench", outString); // sink
     }
 }

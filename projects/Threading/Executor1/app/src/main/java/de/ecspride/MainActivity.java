@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
 
 		TelephonyManager telephonyManager = (TelephonyManager)
 				getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
-		Executors.newCachedThreadPool().execute(new MyRunnable(telephonyManager.getDeviceId()));
+		Executors.newCachedThreadPool().execute(new MyRunnable(telephonyManager.getDeviceId()));  // source
 	}
 	
 	private class MyRunnable implements Runnable {
@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
 
 		@Override
 		public void run() {
-			Log.d("DroidBench", deviceId);
+			Log.d("DroidBench", deviceId); // sink
 		}
 		
 	}

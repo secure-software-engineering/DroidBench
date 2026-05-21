@@ -22,7 +22,7 @@ import android.widget.Button;
  *  and has to handle the arbitrary order of the listener callbacks.
  */
 public class Button2 extends Activity {
-	private String imei = null;
+	private String imei = "";
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class Button2 extends Activity {
 		    	sm.sendTextMessage(number, null, imei, null, null); //sink, potential leak
 		        Log.i("TAG", "sendIMEI: " + imei); //sink, potential leak
 		        
-		        imei = null;
+		        imei = "";
 		    }
 		});
 		
@@ -48,7 +48,7 @@ public class Button2 extends Activity {
 		button2.setOnClickListener(new View.OnClickListener() {
 		    @Override
 		    public void onClick(View v) {
-		        imei = null;
+		        imei = "";
 		        Log.i("TAG", "Button 2: " + imei); //sink, no leak
 		    }
 		});

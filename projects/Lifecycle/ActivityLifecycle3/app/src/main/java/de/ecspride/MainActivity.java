@@ -19,7 +19,7 @@ import android.telephony.TelephonyManager;
  *  in particular the less common instanceState callbacks
  */
 public class MainActivity extends Activity {
-	public String s;
+	public String s = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

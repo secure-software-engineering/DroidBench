@@ -1,0 +1,5 @@
+rootProject.name = "DynamicBoth1"
+include ':app'
+
+include ':library'
+project(':library').projectDir = new File('../CommonLibrary1/app')

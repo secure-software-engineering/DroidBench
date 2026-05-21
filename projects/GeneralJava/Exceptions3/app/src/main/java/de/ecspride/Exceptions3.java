@@ -8,7 +8,7 @@ import android.telephony.TelephonyManager;
 
 /**
  * @testcase_name Exceptions3
- * @version 0.1
+ * @version 0.2
  * @author Secure Software Engineering Group (SSE), European Center for Security and Privacy by Design (EC SPRIDE) 
  * @author_mail steven.arzt@cased.de
  * 

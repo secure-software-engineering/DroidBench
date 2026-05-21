@@ -1,0 +1,31 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 33
+    buildToolsVersion "36.0.0"
+    enableKotlin = false
+
+    defaultConfig {
+        applicationId = "edu.wayne.cs"
+        namespace = 'edu.wayne.cs'
+        minSdkVersion 8
+        targetSdkVersion 17
+        versionCode 1
+        versionName "1.0"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding = false
+    }
+    lint {
+        disable.add("ExpiredTargetSdkVersion")
+    }
+}
+dependencies {
+   implementation project(':library')
+}
