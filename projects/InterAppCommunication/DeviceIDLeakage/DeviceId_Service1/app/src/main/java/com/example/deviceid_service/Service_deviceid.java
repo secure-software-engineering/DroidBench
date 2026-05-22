@@ -35,7 +35,7 @@ public class Service_deviceid extends Service
         in.setType("text/plain");
         in.putExtra(Intent.EXTRA_TEXT,s);
         in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(in);
+        startActivity(in); // sink
 
     }
 

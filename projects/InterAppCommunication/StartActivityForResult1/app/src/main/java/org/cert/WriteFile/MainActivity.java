@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {				// SOURCE
 	  if (resultCode == 0 && requestCode == 0 && data != null) {
 	    if (data.hasExtra("secret")) {
-	    	if(data.getExtras().getString("secret") != null){
+	    	if(data.getExtras().getString("secret") != null){ //sink
 		    	String filename = "sinkFile.txt";
 		    	String sinkData = data.getExtras().getString("secret");		// another source
 		    	FileOutputStream outputStream;	
@@ -65,7 +65,7 @@ public class MainActivity extends Activity {
 	    }
 	  }
 	  else
-  		Log.i("Back in WriteFile: ", "No data recieved");
+  		Log.i("Back in WriteFile: ", "No data received");
 		  
 	}
 

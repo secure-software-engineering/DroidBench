@@ -9,7 +9,6 @@ public class Receiver2 extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        // TODO Auto-generated method stub
         String res = getResultData();
         Intent in = new Intent("com.example.collector");
         in.setType("text/plain");

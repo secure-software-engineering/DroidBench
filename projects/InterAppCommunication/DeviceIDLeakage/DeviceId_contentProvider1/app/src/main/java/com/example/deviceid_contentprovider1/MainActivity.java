@@ -22,7 +22,7 @@ import android.widget.Toast;
  * 
  * @description The device id is stored in a content provider and, independent from
  * the content provider, sent to the Collector app.
- * @dataflow deviceid -> 
+ * @dataflow deviceid -> Content provider -> Intent
  * @number_of_leaks 1
  * @challenges The analysis must correctly handle content providers as well as
  * inter-app communication through intents 
@@ -30,7 +30,7 @@ import android.widget.Toast;
 @SuppressLint("NewApi") public class MainActivity extends Activity {
 
     String num;
-    String message="Device Id :";
+    String message = "Device Id :";
     Context context = null;
     String portnum;
     Button b1;
@@ -58,7 +58,7 @@ import android.widget.Toast;
         ContentValues values = new ContentValues();
 
         TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-        message = message.concat(telephonyManager.getDeviceId());
+        message = message.concat(telephonyManager.getDeviceId()); //source
 
         values.put(contentProvider.NUMBER,message);
         getContentResolver().insert(contentProvider.CONTENT_URI, values);
@@ -67,7 +67,7 @@ import android.widget.Toast;
     }
 
     public void showAll() {
-        // Show all the birthdays sorted by friend's name
+        // Retrieve the port
         String URL = "content://com.example.srikanth.provider/port";
         Uri port = Uri.parse(URL);
         Cursor c = getContentResolver().query(port, null, null, null, "number");
@@ -77,15 +77,11 @@ import android.widget.Toast;
             Toast.makeText(this, result+" no content yet!", Toast.LENGTH_LONG).show();
         }else{
             do{
-                num = c.getString(c.getColumnIndex(contentProvider.NUMBER)); // source
-              /*  result = result + "\n" + c.getString(c.getColumnIndex(contentProvider.NUMBER)) +
-                " with id " +  c.getString(c.getColumnIndex(contentProvider.ID));*/ 
+                num = c.getString(c.getColumnIndex(contentProvider.NUMBER)); // ICC source
             } while (c.moveToNext());
-            //Toast.makeText(this, result, Toast.LENGTH_LONG).show();
         }
 
         portnum = num;
-       // Toast.makeText(this, Integer.toString(num), Toast.LENGTH_LONG).show();
         sendDeviceId();
 
 
@@ -94,11 +90,9 @@ import android.widget.Toast;
     public void deleteAll() {
 
         String URL = "content://com.example.srikanth.provider/port";
-        Uri friends = Uri.parse(URL);
+        Uri port = Uri.parse(URL);
         int count = getContentResolver().delete(
-                friends, null, null);
-       // String countNum = "Port: "+ count +" records are deleted.";
-        //Toast.makeText(getBaseContext(), countNum, Toast.LENGTH_LONG).show();
+                port, null, null);
     }
 
     private void sendDeviceId()
@@ -106,7 +100,6 @@ import android.widget.Toast;
         Intent in = new Intent("com.example.collector");
         in.setType("text/plain");
         in.putExtra(Intent.EXTRA_TEXT,num); // sink
-       // in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(in);
 
 

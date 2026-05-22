@@ -29,6 +29,6 @@ public class MainActivity extends Activity
         setContentView(R.layout.activity_main);
         
         Intent in = new Intent("com.example.location_broadcast.location_broadcast");
-        sendBroadcast(in); // sink
+        sendBroadcast(in);
     }
 }

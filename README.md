@@ -54,7 +54,9 @@ Arrays and Lists
 * **ArrayCopy1**: Stores a tainted value in an array and then uses System.arraycopy to copy the data to a new array which is then leaked to log.
 * **ArrayToString1**: IMEI is stored in an array of String which is then converted back to String using Arrays.toString().
 * **HashMapAccess1**: Stores both a tainted and an untainted value in a hash map and then leaks the untainted one. Map keys are constants.
+* **HashMapAccess2**: Stores both a tainted and an untainted value in a hash map and then leaks the tainted one. Map keys are constants.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **ListAccess1**: Both a tainted and an untainted value are stored in a list. Only the untainted value is leaked.
+* **ListAccess2**: Both a tainted and an untainted value are stored in a list. The tainted value is leaked.
 * **MultidimensionalArray1**: Stores a tainted value in a 2-dimensional array and accesses it through a reference pointing to a slice containing the tainted value.
 
 Callbacks

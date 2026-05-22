@@ -53,7 +53,7 @@ public class Locationservice extends Service implements LocationListener
         in.putExtra(Intent.EXTRA_TEXT, loc);
         in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         in.setType("text/plain");
-        startActivity(in);
+        startActivity(in); //sink
         
         Toast.makeText(this, "Service Destroyed", Toast.LENGTH_LONG).show();
     }

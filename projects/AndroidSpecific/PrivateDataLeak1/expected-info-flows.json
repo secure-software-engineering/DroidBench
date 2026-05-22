@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)",
+      "Method": "de.ecspride.PrivateDateLeakage: void sendMessage(android.view.View)",
+      "Line": 54
+    },
+    {
+      "Source": "de.ecspride.PrivateDateLeakage: android.view.View findViewById(int)",
+      "Method": "de.ecspride.PrivateDateLeakage: void onRestart()",
+      "Line": 36
+    }
+  ]
+}

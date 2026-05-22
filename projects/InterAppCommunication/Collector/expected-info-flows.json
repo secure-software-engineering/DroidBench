@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "java.io.OutputStreamWriter: java.io.Writer append(java.lang.CharSequence)",
+      "Method": "com.example.collector.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 84
+    },
+    {
+      "Source": "android.content.Intent: java.lang.String getStringExtra(java.lang.String)",
+      "Method": "com.example.collector.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 66
+    }
+  ]
+}

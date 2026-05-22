@@ -9,14 +9,13 @@ import android.telephony.TelephonyManager;
 
 public class MyContentProvider extends ContentProvider {
 	
-	public static boolean isEmulator = false;
+	public static boolean isEmulator = true;
 
 	@Override
 	public boolean onCreate() {
         TelephonyManager telephonyManager = (TelephonyManager) getContext().getSystemService(Context.TELEPHONY_SERVICE);
 		String imei = telephonyManager.getDeviceId();
-		if (imei.contains("0000"))
-			isEmulator = true;
+		isEmulator = imei.contains("0000");
 		return true;
 	}
 	

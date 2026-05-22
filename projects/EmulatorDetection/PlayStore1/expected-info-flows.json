@@ -1,0 +1,25 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)",
+      "Method": "de.ecspride.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 57
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "de.ecspride.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 53
+    },
+    {
+      "Sink": "android.util.Log: int v(java.lang.String,java.lang.String)",
+      "Method": "de.ecspride.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 59
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "de.ecspride.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 53
+    }
+  ]
+}

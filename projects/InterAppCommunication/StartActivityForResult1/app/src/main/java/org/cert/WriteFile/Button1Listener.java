@@ -23,17 +23,17 @@ public class Button1Listener implements OnClickListener {
 
 		String curLoc = getMyLocation();
 		i.putExtra("secret", curLoc);
-		Log.i("Phase2_3: ", "Sending implicit Intent with MIME data type text/plain: Current Location "+ curLoc);
+		Log.i("Phase2_3: ", "Sending implicit Intent with MIME data type text/plain: Current Location "+ curLoc); // SINK
 		this.act.startActivityForResult(i, 0);			// SINK
 	}
 	
 	private String getMyLocation(){
 		LocationManager lm = (LocationManager) this.act.getSystemService(Context.LOCATION_SERVICE); 
-		Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);	// SOURCE
+		Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 		
 		try {
-			double longitude = location.getLongitude();
-			double latitude = location.getLatitude();
+			double longitude = location.getLongitude(); //SOURCE
+			double latitude = location.getLatitude(); //SOURCE
 			String curLonStr = String.valueOf(longitude);
 			String curLatStr = String.valueOf(latitude);
 			return "Longitude: "+curLonStr+", Latitude: "+curLatStr;

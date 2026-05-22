@@ -37,7 +37,7 @@ public class location_broadcast extends BroadcastReceiver implements LocationLis
         in.putExtra(Intent.EXTRA_TEXT, loc);
         in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         in.setType("text/plain");
-        context.startActivity(in);
+        context.startActivity(in); //sink
         
 	}
 	

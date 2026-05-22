@@ -1,0 +1,19 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)",
+      "Method": "com.example.onlytelephony.Activity2: void onCreate(android.os.Bundle)",
+      "Line": 40
+    },
+    {
+      "Source": "android.app.Activity: android.content.Intent getIntent()",
+      "Method": "com.example.onlytelephony.Activity2: void onCreate(android.os.Bundle)",
+      "Line": 37
+    }
+
+
+  ]
+}
+
+

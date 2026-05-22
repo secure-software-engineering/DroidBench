@@ -25,7 +25,6 @@ public class contentProvider extends ContentProvider
     static final String NUMBER = "number";
 
     static final int PORT = 1;
-    static final int PORT_ID = 2;
 
     DBHelper dbHelper;
 
@@ -38,7 +37,6 @@ public class contentProvider extends ContentProvider
     static{
         uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
         uriMatcher.addURI(PROVIDER_NAME, "port", PORT);
-        uriMatcher.addURI(PROVIDER_NAME, "port/#", PORT_ID);
     }
 
             // database declarations
@@ -59,19 +57,19 @@ public class contentProvider extends ContentProvider
         public DBHelper(Context context) {
 
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
-            // TODO Auto-generated constructor stub
+            
         }
 
         @Override
         public void onCreate(SQLiteDatabase db) {
-            // TODO Auto-generated method stub
+            
             db.execSQL(CREATE_TABLE);
         }
 
 
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-            // TODO Auto-generated method stub
+            
             Log.w(DBHelper.class.getName(),
                     "Upgrading database from version " + oldVersion + " to "
                             + newVersion + ". Old data will be destroyed");
@@ -84,7 +82,7 @@ public class contentProvider extends ContentProvider
 
     @Override
     public boolean onCreate() {
-        // TODO Auto-generated method stub
+        
         Context context = getContext();
         dbHelper = new DBHelper(context);
         // permissions to be writable
@@ -99,7 +97,7 @@ public class contentProvider extends ContentProvider
     @Override
     public Cursor query(Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
-        // TODO Auto-generated method stub
+        
         SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
         // the TABLE_NAME to query on
         queryBuilder.setTables(TABLE_NAME);
@@ -108,9 +106,6 @@ public class contentProvider extends ContentProvider
             // maps all database column names
             case PORT:
                 queryBuilder.setProjectionMap(PortMap);
-                break;
-            case PORT_ID:
-                queryBuilder.appendWhere( ID + "=" + uri.getLastPathSegment());
                 break;
             default:
                 throw new IllegalArgumentException("Unknown URI " + uri);
@@ -131,7 +126,7 @@ public class contentProvider extends ContentProvider
 
     @Override
     public Uri insert(Uri uri, ContentValues values) {
-        // TODO Auto-generated method stub
+        
         long row = database.insert(TABLE_NAME, "", values);
         // If record is added successfully
         if(row > 0) {
@@ -145,17 +140,11 @@ public class contentProvider extends ContentProvider
     @Override
     public int update(Uri uri, ContentValues values, String selection,
                       String[] selectionArgs) {
-        // TODO Auto-generated method stub
+        
         int count = 0;
         switch (uriMatcher.match(uri)){
             case PORT:
                 count = database.update(TABLE_NAME, values, selection, selectionArgs);
-                break;
-            case PORT_ID:
-                count = database.update(TABLE_NAME, values, ID +
-                        " = " + uri.getLastPathSegment() +
-                (!TextUtils.isEmpty(selection) ? " AND (" +
-                selection + ')' : ""), selectionArgs);
                 break;
             default:
                 throw new IllegalArgumentException("Unsupported URI " + uri );
@@ -166,18 +155,12 @@ public class contentProvider extends ContentProvider
 
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
-        // TODO Auto-generated method stub
+        
         int count = 0;
         switch (uriMatcher.match(uri)){
             case PORT:
                 // delete all the records of the table
                 count = database.delete(TABLE_NAME, selection, selectionArgs);
-                break;
-            case PORT_ID:
-                String id = uri.getLastPathSegment(); //gets the id
-                count = database.delete( TABLE_NAME, ID +  " = " + id +
-                (!TextUtils.isEmpty(selection) ? " AND (" +
-                selection + ')' : ""), selectionArgs);
                 break;
             default:
                 throw new IllegalArgumentException("Unsupported URI " + uri);
@@ -187,14 +170,10 @@ public class contentProvider extends ContentProvider
     }
     @Override
     public String getType(Uri uri) {
-        // TODO Auto-generated method stub
+        
         switch (uriMatcher.match(uri)){
-            // Get all friend-birthday records
             case PORT:
-                return "vnd.android.cursor.dir/vnd.example.friends";
-            // Get a particular fri
-            case PORT_ID:
-                return "vnd.android.cursor.item/vnd.example.friends";
+                return "vnd.android.cursor.dir/vnd.example.port";
             default:
                 throw new IllegalArgumentException("Unsupported URI: " + uri);
         }

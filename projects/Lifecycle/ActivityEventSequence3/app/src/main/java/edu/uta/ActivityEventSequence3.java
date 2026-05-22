@@ -44,7 +44,7 @@ public class ActivityEventSequence3 extends Activity {
 	{
 		Toast.makeText(this, "d3 is: " + d3, Toast.LENGTH_SHORT).show();
 		if(!d3.equalsIgnoreCase(""))
-			SmsManager.getDefault().sendTextMessage(recpNo, null, d3, null, null);
+			SmsManager.getDefault().sendTextMessage(recpNo, null, d3, null, null); //sink
 		super.onResume();
 	}
 	
@@ -52,7 +52,7 @@ public class ActivityEventSequence3 extends Activity {
 	public void onUserLeaveHint(){
 		this.d2 = this.d1;
 		TelephonyManager tMgr = (TelephonyManager) getApplicationContext().getSystemService(TELEPHONY_SERVICE);
-		this.d1 = tMgr.getDeviceId();
+		this.d1 = tMgr.getDeviceId(); //source
 		super.onUserLeaveHint();
 	}
 	

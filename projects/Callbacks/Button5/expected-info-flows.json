@@ -1,0 +1,16 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "edu.mit.button_object_allocation.Button5: void sendMessage(android.view.View)",
+      "Line": 35
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "edu.mit.button_object_allocation.Button5: void onCreate(android.os.Bundle)",
+      "Line": 29
+    }
+
+  ]
+}

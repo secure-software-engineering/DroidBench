@@ -33,10 +33,10 @@ public class PrivateDateLeakage extends Activity {
 	protected void onRestart(){
 		super.onRestart();
 		EditText usernameText = (EditText)findViewById(R.id.username);
-		EditText passwordText = (EditText)findViewById(R.id.password);
+		EditText passwordText = (EditText)findViewById(R.id.password); //source
 		
 		String uname = usernameText.toString();
-		String pwd = passwordText.getText().toString(); //source
+		String pwd = passwordText.getText().toString();
 		
 		user = new User(uname, pwd);
 	}

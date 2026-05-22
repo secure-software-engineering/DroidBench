@@ -10,7 +10,6 @@ public class Receiver3 extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        // TODO Auto-generated method stub
         String s = intent.getExtras().getString("data");
         TelephonyManager telephonyManager = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
         s = s.concat(telephonyManager.getDeviceId()); // source

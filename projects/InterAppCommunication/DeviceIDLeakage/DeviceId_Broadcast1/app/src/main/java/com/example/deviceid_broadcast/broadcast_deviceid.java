@@ -28,7 +28,7 @@ public class broadcast_deviceid extends BroadcastReceiver
 	        in.setType("text/plain");
 	        in.putExtra(Intent.EXTRA_TEXT,s);
 	        in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-	        context.startActivity(in);
+	        context.startActivity(in); // sink
 	}
 
 	

@@ -1,0 +1,57 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "org.cert.WriteFile.Button1Listener: void onClick(android.view.View)",
+      "Line": 26
+    },
+    {
+      "Source": "android.location.Location: double getLatitude()",
+      "Method": "org.cert.WriteFile.Button1Listener: java.lang.String getMyLocation()",
+      "Line": 36
+    },
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "org.cert.WriteFile.Button1Listener: void onClick(android.view.View)",
+      "Line": 26
+    },
+    {
+      "Source": "android.location.Location: double getLongitude()",
+      "Method": "org.cert.WriteFile.Button1Listener: java.lang.String getMyLocation()",
+      "Line": 35
+    },
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "org.cert.WriteFile.MainActivity: void onActivityResult(int,int,android.content.Intent)",
+      "Line": 59
+    },
+    {
+      "Source": "android.content.Intent: android.os.Bundle getExtras()",
+      "Method": "org.cert.WriteFile.MainActivity: void onActivityResult(int,int,android.content.Intent)",
+      "Line": 51
+    },
+    {
+      "Sink": "java.io.OutputStream: void write(byte[])",
+      "Method": "org.cert.WriteFile.MainActivity: void onActivityResult(int,int,android.content.Intent)",
+      "Line": 57
+    },
+    {
+      "Source": "android.content.Intent: android.os.Bundle getExtras()",
+      "Method": "org.cert.WriteFile.MainActivity: void onActivityResult(int,int,android.content.Intent)",
+      "Line": 53
+    },
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "org.cert.WriteFile.MainActivity: void onActivityResult(int,int,android.content.Intent)",
+      "Line": 59
+    },
+    {
+      "Source": "android.content.Intent: android.os.Bundle getExtras()",
+      "Method": "org.cert.WriteFile.MainActivity: void onActivityResult(int,int,android.content.Intent)",
+      "Line": 53
+    }
+  ]
+}
+
+

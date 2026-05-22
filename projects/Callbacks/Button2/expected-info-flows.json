@@ -1,0 +1,35 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)",
+      "Method": "de.ecspride.Button2$1: void onClick(android.view.View)",
+      "Line": 39
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "de.ecspride.Button2: void clickOnButton3(android.view.View)",
+      "Line": 59
+    },
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "de.ecspride.Button2$1: void onClick(android.view.View)",
+      "Line": 40
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "de.ecspride.Button2: void clickOnButton3(android.view.View)",
+      "Line": 59
+    },
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "de.ecspride.Button2: void clickOnButton3(android.view.View)",
+      "Line": 60
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "de.ecspride.Button2: void clickOnButton3(android.view.View)",
+      "Line": 59
+    }
+  ]
+}
