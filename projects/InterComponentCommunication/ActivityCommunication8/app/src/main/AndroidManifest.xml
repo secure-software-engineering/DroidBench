@@ -14,7 +14,7 @@
         
         <activity android:exported="true" android:label="@string/app_name" android:name="edu.mit.icc_pass_action_string_through_api.InFlowActivity">
             <intent-filter>
-                <action android:name="edu.mit.icc_action_string_operations.ACTION"/>
+                <action android:name="edu.mit.icc_pass_action_string_through_api.ACTION"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
