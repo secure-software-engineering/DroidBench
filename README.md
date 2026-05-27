@@ -1,7 +1,5 @@
 DroidBench 3.0-DEVELOPMENT
 ===============
-DroidBench 3.0
-===============
 <p align="center">
   <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/droidbench_apps.png" width="400px"/>
 </p>
