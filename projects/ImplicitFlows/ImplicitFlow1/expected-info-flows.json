@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "de.ecspride.ImplicitFlow1: void writeToLog(java.lang.String)",
+      "Line": 77
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "de.ecspride.ImplicitFlow1: void onCreate(android.os.Bundle)",
+      "Line": 27
+    }
+  ]
+}

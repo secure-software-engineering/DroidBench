@@ -1,0 +1,25 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "de.ecspride.ImplicitFlow3$ClassA: void leakInfo()",
+      "Line": 72
+    },
+    {
+      "Source": "android.app.Activity: android.view.View findViewById(int)",
+      "Method": "de.ecspride.ImplicitFlow3: void leakData(android.view.View)",
+      "Line": 45
+    },
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "de.ecspride.ImplicitFlow3$ClassB: void leakInfo()",
+      "Line": 78
+    },
+    {
+      "Source": "android.app.Activity: android.view.View findViewById(int)",
+      "Method": "de.ecspride.ImplicitFlow3: void leakData(android.view.View)",
+      "Line": 45
+    }
+  ]
+}

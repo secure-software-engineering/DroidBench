@@ -1,0 +1,2 @@
+rootProject.name = "StaticInitialization2"
+include ':app'

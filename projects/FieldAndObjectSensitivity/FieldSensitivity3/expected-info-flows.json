@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)",
+      "Method": "de.ecspride.FieldSensitivity3: void onCreate(android.os.Bundle)",
+      "Line": 32
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getSimSerialNumber()",
+      "Method": "de.ecspride.FieldSensitivity3: void onCreate(android.os.Bundle)",
+      "Line": 29
+    }
+  ]
+}

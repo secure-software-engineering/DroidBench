@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "edu.mit.icc_service_messages.MessengerService$IncomingHandler: void handleMessage(android.os.Message)",
+      "Line": 41
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "edu.mit.icc_service_messages.ActivityMessenger: void sayHello(android.view.View)",
+      "Line": 58
+    }
+  ]
+}

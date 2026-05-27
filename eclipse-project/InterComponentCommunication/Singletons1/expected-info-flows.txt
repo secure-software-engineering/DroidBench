@@ -1,1 +1,0 @@
-FLOW:<edu.mit.MainActivity: void onStop()>|{<android.util.Log: int i(java.lang.String,java.lang.String)>/LOG/Line: edu.mit.MainActivity 28}<={<android.telephony.TelephonyManager: java.lang.String getDeviceId()>/UNIQUE_IDENTIFIER/Line: edu.mit.AnotherActivity 17/ARG}

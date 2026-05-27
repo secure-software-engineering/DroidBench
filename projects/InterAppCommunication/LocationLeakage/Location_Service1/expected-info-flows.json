@@ -1,0 +1,25 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.app.Activity: void startActivity(android.content.Intent)",
+      "Method": "com.example.location_service.Locationservice: void onDestroy()",
+      "Line": 56
+    },
+    {
+      "Source": "android.location.Location: double getLatitude()",
+      "Method": "com.example.location_service.Locationservice: void onLocationChanged(android.location.Location)",
+      "Line": 45
+    },
+    {
+      "Sink": "android.app.Activity: void startActivity(android.content.Intent)",
+      "Method": "com.example.location_service.Locationservice: void onDestroy()",
+      "Line": 56
+    },
+    {
+      "Source": "android.location.Location: double getLongitude()",
+      "Method": "com.example.location_service.Locationservice: void onLocationChanged(android.location.Location)",
+      "Line": 47
+    }
+  ]
+}

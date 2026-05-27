@@ -1,0 +1,2 @@
+rootProject.name = "UnreachableSource1"
+include ':app'

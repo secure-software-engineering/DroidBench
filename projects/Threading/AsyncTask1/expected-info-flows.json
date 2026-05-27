@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int d(java.lang.String,java.lang.String)",
+      "Method": "de.ecspride.MainActivity$MyAsyncTask: java.lang.String doInBackground(java.lang.String[])",
+      "Line": 40
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "de.ecspride.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 33
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Reflection_Reflection7</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="class_name">edu.wayne.cs.ConcreteClass</string>
+    <string name="method_name">foo</string>
+
+</resources>

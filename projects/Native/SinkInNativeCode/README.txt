@@ -1,0 +1,1 @@
+This package contains the different possible types of inter-environment calls (DVM and Native code).

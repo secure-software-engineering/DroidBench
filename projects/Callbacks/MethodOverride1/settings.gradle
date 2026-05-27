@@ -1,0 +1,2 @@
+rootProject.name = "MethodOverride1"
+include ':app'

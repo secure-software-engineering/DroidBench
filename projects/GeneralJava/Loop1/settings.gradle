@@ -1,0 +1,2 @@
+rootProject.name = "Loop1"
+include ':app'

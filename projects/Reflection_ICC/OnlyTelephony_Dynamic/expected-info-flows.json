@@ -1,0 +1,29 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int d(java.lang.String,java.lang.String)",
+      "Method": "com.example.onlytelephony.Activity2: void onCreate(android.os.Bundle)",
+      "Line": 39
+    },
+    {
+      "Source": "android.app.Activity: android.content.Intent getIntent()",
+      "Method": "com.example.onlytelephony.Activity2: void onCreate(android.os.Bundle)",
+      "Line": 38
+    },
+    {
+      "Sink": "android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)",
+      "Method": "com.example.onlytelephony.Activity2: void onCreate(android.os.Bundle)",
+      "Line": 42
+    },
+    {
+      "Source": "android.app.Activity: android.content.Intent getIntent()",
+      "Method": "com.example.onlytelephony.Activity2: void onCreate(android.os.Bundle)",
+      "Line": 38
+    }
+
+
+  ]
+}
+
+

@@ -1,0 +1,2 @@
+rootProject.name = "Location_Service1"
+include ':app'

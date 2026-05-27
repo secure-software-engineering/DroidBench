@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "edu.mit.activity_asynchronous_event_ordering.MainActivity: void onStop()",
+      "Line": 28
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "edu.mit.activity_asynchronous_event_ordering.MainActivity: void onResume()",
+      "Line": 34
+    }
+  ]
+}

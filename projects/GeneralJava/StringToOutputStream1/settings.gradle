@@ -1,0 +1,2 @@
+rootProject.name = "StringToOutputStream1"
+include ':app'

@@ -1,0 +1,2 @@
+rootProject.name = "JavaThread1"
+include ':app'

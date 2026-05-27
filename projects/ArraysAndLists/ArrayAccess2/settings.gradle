@@ -1,0 +1,2 @@
+rootProject.name = "ArrayAccess2"
+include ':app'

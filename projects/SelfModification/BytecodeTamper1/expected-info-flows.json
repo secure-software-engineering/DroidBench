@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int e(java.lang.String,java.lang.String)",
+      "Method": "edu.wayne.cs.MainActivity: void maliciousMethod(java.lang.String)",
+      "Line": 36
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "edu.wayne.cs.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 28
+    }
+  ]
+}

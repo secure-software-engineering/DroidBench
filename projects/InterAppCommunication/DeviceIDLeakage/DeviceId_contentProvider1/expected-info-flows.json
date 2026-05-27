@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)",
+      "Method": "com.example.deviceid_contentprovider1.MainActivity: void sendDeviceId()",
+      "Line": 102
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "com.example.deviceid_contentprovider1.MainActivity: void sendPort()",
+      "Line": 61
+    }
+  ]
+}

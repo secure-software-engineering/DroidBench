@@ -1,0 +1,17 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "edu.mit.fragments.ArticleFragment: void updateArticleView(int,java.lang.String)",
+      "Line": 69
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "edu.mit.fragments.HeadlinesFragment: void onListItemClick(android.widget.ListView,android.view.View,int,long)",
+      "Line": 81
+    }
+  ]
+}
+
+

@@ -1,0 +1,32 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 33
+buildToolsVersion "36.0.0"
+    enableKotlin = false
+
+    defaultConfig {
+        applicationId = "de.ecspride"
+        namespace = 'de.ecspride'
+        minSdkVersion 4
+        targetSdkVersion 4
+        versionCode 1
+        versionName "1.0"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding = false
+    }
+    lint {
+        disable.add("ExpiredTargetSdkVersion")
+    }
+}
+
+dependencies {
+    implementation 'com.android.support:support-v4:21.0.3'
+}

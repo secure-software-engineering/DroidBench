@@ -1,0 +1,2 @@
+rootProject.name = "DirectLeak1"
+include ':app'

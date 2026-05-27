@@ -1,0 +1,25 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "de.ecspride.ImplicitFlow4: void checkUsernamePassword(android.view.View)",
+      "Line": 38
+    },
+    {
+      "Source": "android.app.Activity: android.view.View findViewById(int)",
+      "Method": "de.ecspride.ImplicitFlow4: void checkUsernamePassword(android.view.View)",
+      "Line": 29
+    },
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "de.ecspride.ImplicitFlow4: void checkUsernamePassword(android.view.View)",
+      "Line": 40
+    },
+    {
+      "Source": "android.app.Activity: android.view.View findViewById(int)",
+      "Method": "de.ecspride.ImplicitFlow4: void checkUsernamePassword(android.view.View)",
+      "Line": 29
+    }
+  ]
+}
