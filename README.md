@@ -242,6 +242,8 @@ Reflection_ICC <img src="https://raw.github.com/secure-software-engineering/Droi
 Self-Modification<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 ------------------
 
+Notice: Different cpu architecture and different android versions lead to different memory layout. The samples in this category works on arm64_v8a, Android 6.0. Same goal could be achieved in other architecture and Android versions by slightly modify the source code of the samples.
+
 * **BytecodeTamper1**: This test case uses native code to change the target of the sink method invocation. The new target actually leaks the sensitive data, whereas the original one just leaked a constant string.
 * **BytecodeTamper2**: This test case uses native code to change the target of the source method invocation. The new target actually returned the sensitive data, whereas the original one just returned a constant string.
 * **BytecodeTamper3**: This test case uses native code to change the target of both the source and the sink method invocations. The new target actually returns/leaks the sensitive data, whereas the original one just returned/leaked a constant string.
@@ -302,11 +304,6 @@ Dynamic Loading <img src="https://raw.github.com/secure-software-engineering/Dro
 * **DynamicSink1**: Sensitive data is leaked by code in a dynamically loaded class.
 * **DynamicBoth1**: Both source and sink are in a dynamically loaded class.
 
-Self-Modification <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
-Notice: Different cpu architecture and different android versions lead to different memory layout. The samples in this category works on arm64_v8a, Android 6.0. Same goal could be achieved in other architecture and Android versions by slightly modify the source code of the samples.
---------------------
-
-* **BytecodeTamper1-4**: Use native code to modify the bytecode in runtime, and create sources and sinks.
 
 Acknowledgements
 =================
