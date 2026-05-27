@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 DroidBench 3.0-DEVELOPMENT
-==========
-=======
+===============
 DroidBench 3.0
 ===============
 <p align="center">
@@ -19,7 +17,6 @@ We welcome your contributions!
 ------------------------------
 **You are most welcome to contribute additional test cases to DroidBench.** To do so, please fork the project, commit an appropriate Eclipse source project and APK, update this README and then send us a pull request.
 
-<<<<<<< HEAD
 Building
 ===========
 Prebuild APKs can be found in the ```apk``` folder. If you want to build the APKs yourself, you can use the following command:
@@ -46,8 +43,6 @@ Arrays and Lists
 ----------------
 * **ArrayAccess1**: Stores both a tainted and an untainted value in an array and then leaks the untainted one. Array indices are constants.
 * **ArrayAccess2**: Stores both a tainted and an untainted value in an array and then leaks the untainted one. Array indices are calculated.
-<<<<<<< HEAD
-=======
 * **ArrayAccess3**: Sensitive data is written into an array, read back again, and leaked.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/> 
 * **ArrayAccess4**: Sensitive data is written into a field of an object, this object is then stored in an array and read back again. The field that gets passed to the sink, is however, a different one 	than the one that was tainted.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 * **ArrayAccess5**: Sensitive data is written into an array, but only the constant size of the array is leaked, not the data itself.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
@@ -103,8 +98,6 @@ The first test set contains three apps. The StartActivityForResult1 app obtains 
 * **SendSMS**: Reads the Device ID, passes it through Echoer, and then sends it in a text message.
 * **StartActivityForResult1**: Reads the user's geographical location (via GPS), passes it through Echoer, and then writes it to a file.
 
-<<<<<<< HEAD
-=======
 The second test set contains multiple apps that obtain sensitive data and send it to the Collector app where the data is leaked.
 
 * **Collector**: The data received through an intent is written into a file on the SD card.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
@@ -119,7 +112,6 @@ The second test set contains multiple apps that obtain sensitive data and send i
  * receiver in the same app. This broadcast receiver then sends the data to the
  * Collector app.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
 
->>>>>>> e6f73b69ffe2f2e85497f5b4e4f30f8df6735312
 Inter-Component Communication
 ------------------------------
 * **ActivityCommunication1**: Contains two activities that communicate using static fields.
@@ -156,12 +148,7 @@ Lifecycle
 * **ApplicationLifecycle3**:  Obtains a secret value when a content provider is initialized and leaks it in the onCreate() method of the application.
 * **AsynchronousEventOrdering1**: Obtains IMEI during onResume() and leaks it during onStop() with an overwrite in onLowMemory().
 * **BroadcastReceiverLifecycle1**: Calls to sources and sinks distributed across a broadcast receiver lifecycle.
-<<<<<<< HEAD
-* **BroadcastReceiverLifecycle2**: The sensitive data is read in onCreate() and sent out in a dynamically registered broadcast receiver. 
-* **EventOrdering1**: IMEI is obtained the first time onLowMemory is called, and is leaked the second time onLowMemory is called, but only of no onContentChanged() occurred in between.
-* **FragmentLifecycle1**: Calls to sources and sinks distributed across a fragment lifecycle.
-* **ServiceLifecycle1**: Calls to sources and sinks distributed across a service lifecycle.
-=======
+
 * **BroadcastReceiverLifecycle2**: The sensitive data is read in onCreate() and sent out in a dynamically registered broadcast receiver.
 * **BroadcastReceiverLifecycle3**: The sensitive data is read and leaked in a dynamically registered broadcast receiver.
 * **EventOrdering1**: IMEI is obtained the first time onLowMemory is called, and is leaked the second time onLowMemory is called, but only of no onContentChanged() occurred in between.
