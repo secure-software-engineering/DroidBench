@@ -5,7 +5,7 @@ package edu.wayne.cs;
  */
 public class NativeInterface {
     static {
-        System.load("libmyjni.so");
+        System.loadLibrary("myjni");
     }
 
     public static native String jniTest();
