@@ -10,6 +10,16 @@ import android.view.Menu;
 import android.widget.Button;
 import android.widget.Toast;
 
+/**
+ * @testcase_name SendSMS
+ * @version 0.1
+ * 
+ * @description Reads the Device ID, passes it through Echoer, and then sends it in a text message.
+ * @dataflow deviceid -> echoer app -> SMS, deviceid -> startActivityForResult, deviceid -> log
+ * @number_of_leaks 3
+ * @challenges the dataflow goes through an external application (the echoer application)
+ *
+ */
 public class MainActivity extends Activity {
 
 	@Override

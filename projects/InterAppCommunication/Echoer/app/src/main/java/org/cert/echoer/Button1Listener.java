@@ -18,7 +18,7 @@ public class Button1Listener implements OnClickListener {
 		try {
 //			this.act.i.putExtra("resultData", "new secret");
 			Log.i("In Echoer", "Echoing data back to caller using setResult()");
-			this.act.setResult(0, this.act.i);
+			this.act.setResult(0, this.act.i); // sink
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

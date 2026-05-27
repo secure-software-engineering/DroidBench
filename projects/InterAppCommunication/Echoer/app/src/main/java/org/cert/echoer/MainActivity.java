@@ -8,6 +8,16 @@ import android.util.Log;
 import android.view.Menu;
 import android.widget.Button;
 
+/**
+ * @testcase_name Echoer
+ * @version 0.1
+ * 
+ * @description Receives data and echoes it back to the sender.
+ * @dataflow getExtras -> Log, getData -> Log, getIntent() -> setResult
+ * @number_of_leaks 3
+ * @challenges the sensitive data comes from outside the application using getIntent() on MainActivity.
+ *
+ */
 public class MainActivity extends Activity {
 
 	Intent i;
@@ -29,7 +39,7 @@ public class MainActivity extends Activity {
 
 	private void getDataFromIntent(){
 		try {
-			i = getIntent();
+			i = getIntent(); // source
 			String action = i.getAction();
 			if (action.equals(Intent.ACTION_SEND)) {
 				Bundle extras = i.getExtras(); // source

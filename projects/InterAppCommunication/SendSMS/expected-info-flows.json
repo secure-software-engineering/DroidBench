@@ -24,12 +24,12 @@
     {
       "Sink": "android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)",
       "Method": "org.cert.sendsms.MainActivity: void sendSMSMessage(java.lang.String)",
-      "Line": 50
+      "Line": 60
     },
     {
       "Source": "android.content.Intent: android.os.Bundle getExtras()",
       "Method": "org.cert.sendsms.MainActivity: void onActivityResult(int,int,android.content.Intent)",
-      "Line": 37
+      "Line": 47
     }
   ]
 }
