@@ -1,7 +1,7 @@
 DroidBench 3.0-DEVELOPMENT
 ===============
 <p align="center">
-  <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/droidbench_apps.png" width="400px"/>
+  <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/droidbench_apps.png" width="400px"/>
 </p>
 DroidBench is an open test suite for evaluating the effectiveness of taint-analysis tools specifically for Android apps. 
 The suite can be used to assess both static and dynamic taint analyses, but in particular it contains test cases for interesting static-analysis problems (field sensitivity, object sensitivity, tradeoffs in access-path lengths etc.) as well as for Android-specific challenges like correctly modeling an application's lifecycle, adequately handling asynchronous callbacks and interacting with the UI.
@@ -32,22 +32,22 @@ Version 3.0-develop comprises the following 190 test cases:
 Aliasing
 ---------
 
-* **FlowSensitivity1**: Sensitive data is assigned to a heap object. Only after calling the sink, an alias between the leaked object and the tainted one is created.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **FlowSensitivity1**: Sensitive data is assigned to a heap object. Only after calling the sink, an alias between the leaked object and the tainted one is created.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 * **Merge1**: Sensitive data is assigned to a heap object which is then shuffled around. Only constant data is leaked.
-* **SimpleAliasing1**: Sensitive data is assigned to a heap object and leaked through an alias.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **StrongUpdate1**: Sensitive data is assigned to a heap object, but then overwritten before it is leaked.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **SimpleAliasing1**: Sensitive data is assigned to a heap object and leaked through an alias.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **StrongUpdate1**: Sensitive data is assigned to a heap object, but then overwritten before it is leaked.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 
 Arrays and Lists
 ----------------
 * **ArrayAccess1**: Stores both a tainted and an untainted value in an array and then leaks the untainted one. Array indices are constants.
 * **ArrayAccess2**: Stores both a tainted and an untainted value in an array and then leaks the untainted one. Array indices are calculated.
-* **ArrayAccess3**: Sensitive data is written into an array, read back again, and leaked.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/> 
-* **ArrayAccess4**: Sensitive data is written into a field of an object, this object is then stored in an array and read back again. The field that gets passed to the sink, is however, a different one 	than the one that was tainted.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **ArrayAccess5**: Sensitive data is written into an array, but only the constant size of the array is leaked, not the data itself.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **ArrayAccess3**: Sensitive data is written into an array, read back again, and leaked.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/> 
+* **ArrayAccess4**: Sensitive data is written into a field of an object, this object is then stored in an array and read back again. The field that gets passed to the sink, is however, a different one 	than the one that was tainted.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **ArrayAccess5**: Sensitive data is written into an array, but only the constant size of the array is leaked, not the data itself.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 * **ArrayCopy1**: Stores a tainted value in an array and then uses System.arraycopy to copy the data to a new array which is then leaked to log.
 * **ArrayToString1**: IMEI is stored in an array of String which is then converted back to String using Arrays.toString().
 * **HashMapAccess1**: Stores both a tainted and an untainted value in a hash map and then leaks the untainted one. Map keys are constants.
-* **HashMapAccess2**: Stores both a tainted and an untainted value in a hash map and then leaks the tainted one. Map keys are constants.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **HashMapAccess2**: Stores both a tainted and an untainted value in a hash map and then leaks the tainted one. Map keys are constants.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 * **ListAccess1**: Both a tainted and an untainted value are stored in a list. Only the untainted value is leaked.
 * **ListAccess2**: Both a tainted and an untainted value are stored in a list. The tainted value is leaked.
 * **MultidimensionalArray1**: Stores a tainted value in a 2-dimensional array and accesses it through a reference pointing to a slice containing the tainted value.
@@ -69,7 +69,7 @@ Callbacks
 * **RegisterGlobal1**: Both source and sink are part of a global (application-level) lifecycle handler.
 * **Unregister1**: Registers and directly unregisters a callback before it can be invoked. The code in the callback can thus never leak any data.
 
-Dynamic Code Loading<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+Dynamic Code Loading<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 ---------------------
 
 * **CommonLibrary1**: Not a test case on its own, part of the other dynamic code loading test cases. It contains the base class for the actual class that implements source and sink.
@@ -98,17 +98,17 @@ The first test set contains three apps. The StartActivityForResult1 app obtains 
 
 The second test set contains multiple apps that obtain sensitive data and send it to the Collector app where the data is leaked.
 
-* **Collector**: The data received through an intent is written into a file on the SD card.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **DeviceId_Broadcast1**: The device id is sent to a broadcast receiver and from there on to the collector app.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Collector**: The data received through an intent is written into a file on the SD card.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **DeviceId_Broadcast1**: The device id is sent to a broadcast receiver and from there on to the collector app.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 * **DeviceId_ContentProvider1**: The device id is stored in a content provider and, independent from
- * the content provider, sent to the Collector app.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **DeviceId_OrderedIntent1**: The device id is obtained and sent to a broadcast receiver in the current app. There are multiple broadcast receivers with different priorities. Only the higher-priority receiver relays the data to the Collector app, the lower-priority receiver only shows the data to the user (no leak).<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **DeviceId_Service1**: This app starts a service which sends the device id to the Collector app where it is leaked.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+ * the content provider, sent to the Collector app.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **DeviceId_OrderedIntent1**: The device id is obtained and sent to a broadcast receiver in the current app. There are multiple broadcast receivers with different priorities. Only the higher-priority receiver relays the data to the Collector app, the lower-priority receiver only shows the data to the user (no leak).<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **DeviceId_Service1**: This app starts a service which sends the device id to the Collector app where it is leaked.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 
-* **Location1**: This app obtains the location data and sends it to the Collector app.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Location1**: This app obtains the location data and sends it to the Collector app.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 * **Location_Broadcast1**: This app obtains the location data, and sends it to a broadcast
  * receiver in the same app. This broadcast receiver then sends the data to the
- * Collector app.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+ * Collector app.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 
 Inter-Component Communication
 ------------------------------
@@ -133,9 +133,9 @@ Inter-Component Communication
 
 Lifecycle
 ---------
-* **ActivityEventSequence1**: Source in Activity.onCreate(), sink in Activity.onResume().<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **ActivityEventSequence2**: Checks whether the analysis tool correctly handles events.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **ActivityEventSequence3**: Saves and restores state using the Activity's state callbacks.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **ActivityEventSequence1**: Source in Activity.onCreate(), sink in Activity.onResume().<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **ActivityEventSequence2**: Checks whether the analysis tool correctly handles events.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **ActivityEventSequence3**: Saves and restores state using the Activity's state callbacks.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 * **ActivityLifecycle1**: Calls to sources and sinks distributed across an activity lifecycle.
 * **ActivityLifecycle2**: Activity class inherited from a superclass containing the lifecycle method which leaks the tainted value.
 * **ActivityLifecycle3**: Calls to sources and sinks distributed across instance state handling methods.
@@ -151,9 +151,9 @@ Lifecycle
 * **BroadcastReceiverLifecycle3**: The sensitive data is read and leaked in a dynamically registered broadcast receiver.
 * **EventOrdering1**: IMEI is obtained the first time onLowMemory is called, and is leaked the second time onLowMemory is called, but only of no onContentChanged() occurred in between.
 * **FragmentLifecycle1**: Calls to sources and sinks distributed across a fragment lifecycle.
-* **ServiceEventLifecycle1**: Obtains the IMEI in onStartCommand(), copies it in onBind(), and leaks it in onStartCommand().<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **ServiceEventLifecycle2**: Like ServiceEventLifecycle1, but performs a second copy stop in OnUnbind().<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **ServiceEventLifecycle3**: Obtains the IMEI in onStartCommand(), copies it in onBind(), and leaks it in onUnbind().<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **ServiceEventLifecycle1**: Obtains the IMEI in onStartCommand(), copies it in onBind(), and leaks it in onStartCommand().<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **ServiceEventLifecycle2**: Like ServiceEventLifecycle1, but performs a second copy stop in OnUnbind().<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **ServiceEventLifecycle3**: Obtains the IMEI in onStartCommand(), copies it in onBind(), and leaks it in onUnbind().<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 * **ServiceLifecycle2**: IMEI is obtained at the end of onStartCommand and is stored to a service's field.  It is leaked the second time the service command starts.
 * **SharedPreferenceChanged1**: onCreate(), IMEI is put into the SharedPreferences and it triggers onSharedPreferenceChanged() which then leaks the IMEI to Android Log.
 
@@ -202,7 +202,7 @@ Miscellaneous Android-Specific
 * **PrivateDataLeak3**: The IMEI is written into a file, read out again and then leaked.
 * **PublicAPIField1**: IMEI is obtained and converted to 2 floating point numbers as x and y of PointF.  Value of PointF is leaked.
 * **PublicAPIField2**:  IMEI is retrieved and stored to Intent.action as a data holder.
-* **View1**: The IMEI is leaked inside the draw event of a custom view. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **View1**: The IMEI is leaked inside the draw event of a custom view. <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 
 Implicit Flows
 --------------
@@ -210,8 +210,8 @@ Implicit Flows
 * **ImplicitFlow2**: Based on an input of a password field a log message is written.
 * **ImplicitFlow3**: This test cases checks the type of the object to determine which information to write to the log.
 * **ImplicitFlow4**: Several implicit flows exist in this test case.
-* **ImplicitFlow5**: Implicit control flow through exceptions. Only if the value is smaller than 43, an exception is thrown and then a leak happens.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **ImplicitFlow6**: Implicit control flow, but leaked value is the same regardless of the sensitive value.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **ImplicitFlow5**: Implicit control flow through exceptions. Only if the value is smaller than 43, an exception is thrown and then a leak happens.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **ImplicitFlow6**: Implicit control flow, but leaked value is the same regardless of the sensitive value.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 
 Reflection
 ----------
@@ -219,13 +219,13 @@ Reflection
 * **Reflection2**: Sensitive data is stored in a field of a reflective class, read out again using a method implemented in the "unknown" class and leaked.
 * **Reflection3**: Sensitive data is stored using a setter in a reflective class, read back using a getter and then leaked. No type information on the target class is used.
 * **Reflection4**: Sensitive data is read using a function in a reflective class and leaked using another function in the same reflective class.
-* **Reflection5**: Sensitive data is leaked using reflective invocation without using "newInstance()" to create a class instance. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **Reflection6**: Sensitive data is read using reflective invocation without using "newInstance()" to create a class instance. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **Reflection7**: Use a unusual way to get the class name for reflection calls. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **Reflection8**: The reflective class has two methods with the same name. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **Reflection9**: Names of reflective methods and parameters are not constant strings. <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Reflection5**: Sensitive data is leaked using reflective invocation without using "newInstance()" to create a class instance. <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **Reflection6**: Sensitive data is read using reflective invocation without using "newInstance()" to create a class instance. <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **Reflection7**: Use a unusual way to get the class name for reflection calls. <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **Reflection8**: The reflective class has two methods with the same name. <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **Reflection9**: Names of reflective methods and parameters are not constant strings. <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 
-Reflection_ICC <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+Reflection_ICC <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 ---------------
 
 * **ActivityCommunication2**: Data is obtained and sent through an implicit intent The intent is reflected. Source is getDeviceId and sink is Log.
@@ -239,7 +239,7 @@ Reflection_ICC <img src="https://raw.github.com/secure-software-engineering/Droi
 * **OnlyTelephony_Substring**: Source API is getDeviceId which is obtained using substring() function. The API is called using reflection. The data is then passed on to a second activity where it is leaked.
 * **SharedPreferences1**: Reflection in use of sharedpreference is done. Sink is Log
 
-Self-Modification<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+Self-Modification<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 ------------------
 
 * **BytecodeTamper1**: This test case uses native code to change the target of the sink method invocation. The new target actually leaks the sensitive data, whereas the original one just leaked a constant string.
@@ -260,23 +260,23 @@ Threading
 Emulator Detection
 --------------------
 
-* **Battery1**: This test detects the Android emulator by checking the battery status. For emulator the battery status is always 50% or 0. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **Bluetooth1**: This test detects the Android emulator by checking the bluetooth. The non-presence of Bluetooth sensor identify the environment as Emulator. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **Build1**: This test detects the Android emulator by checking the various Build properties like SDK, Board, Brand etc. This app send IMEI number via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **Contacts1**: This test detects the Android emulator by checking the number of contacts and calllogs both. Below value of 5 for both identify the environment as Emulator. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **Battery1**: This test detects the Android emulator by checking the battery status. For emulator the battery status is always 50% or 0. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **Bluetooth1**: This test detects the Android emulator by checking the bluetooth. The non-presence of Bluetooth sensor identify the environment as Emulator. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **Build1**: This test detects the Android emulator by checking the various Build properties like SDK, Board, Brand etc. This app send IMEI number via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **Contacts1**: This test detects the Android emulator by checking the number of contacts and calllogs both. Below value of 5 for both identify the environment as Emulator. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 * **ContentProvider1**: This test case detects the Android emulator by checking the IMEI in a content provider. The IMEI is only sent via SMS in the activity if the app runs on a real phone.
-* **DeviceId1**: This test detects the Android emulator by checking the IMEI number using getDeviceId API. IMEI value of 16 0's identify environment as Emulator. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **File1**: This test detects the Android emulator by checking the system files. Some files are specific to emulator while others are to device. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **DeviceId1**: This test detects the Android emulator by checking the IMEI number using getDeviceId API. IMEI value of 16 0's identify environment as Emulator. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **File1**: This test detects the Android emulator by checking the system files. Some files are specific to emulator while others are to device. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 * **IMEI1**: This test case detects the Android emulator by truncating the secret data which is leaked at a position computed from the IMEI. On an emulator, the IMEI is expected to be 00..0.
-* **IP1**: This test detects the Android emulator by checking the IP Address of environment. A value of 10.0.2.15 is the identification of Emulator. This app send IMEI number via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **PI1**: This test detects the Android emulator by doing a large computation i.e calculating value of pi till n decimal places. A threshhold value is obtained by doing experiments on 100 devices and emulators. Based on this threshhold value, a decision is taken. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **IP1**: This test detects the Android emulator by checking the IP Address of environment. A value of 10.0.2.15 is the identification of Emulator. This app send IMEI number via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **PI1**: This test detects the Android emulator by doing a large computation i.e calculating value of pi till n decimal places. A threshhold value is obtained by doing experiments on 100 devices and emulators. Based on this threshhold value, a decision is taken. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 * **PlayStore1**: This test case detects the Android emulator by whether the Play Store app is installed on the phone. The IMEI is only sent via SMS if the app runs on a real phone.
-* **PlayStore2**: This test detects the Android emulator by checking absense of Google Play Services. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **Sensors1**: This test detects the Android emulator by counting the distinct sensors. A total of 13 different type of sensors is checked. A emulator will always have 7 or less sensors. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **SubscriberId1**: This test detects the Android emulator by checking Subscriber Id which always start with 310260000000000 for emulators. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
-* **VoiceMail1**: This test detects the Android emulator by checking VoiceMail number. A VoiceMail number with value +15552175049, identify environment as emulator. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+* **PlayStore2**: This test detects the Android emulator by checking absense of Google Play Services. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **Sensors1**: This test detects the Android emulator by counting the distinct sensors. A total of 13 different type of sensors is checked. A emulator will always have 7 or less sensors. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **SubscriberId1**: This test detects the Android emulator by checking Subscriber Id which always start with 310260000000000 for emulators. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **VoiceMail1**: This test detects the Android emulator by checking VoiceMail number. A VoiceMail number with value +15552175049, identify environment as emulator. This app send IMEI number  via SMS if the app runs on a real phone.<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 
-Native Code<img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+Native Code<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 ------------
 
 * **JavaIDFunction**: This test case sends tainted data from Java to Native to Java and back to native where it is leaked.
@@ -285,7 +285,7 @@ Native Code<img src="https://raw.github.com/secure-software-engineering/DroidBen
 * **SinkInNativeLibCode**: This test case obtains the IMEI in Java code and leaks it in native code using Linux sockets.
 * **SourceInNativeCode**: This test case obtains the IMEI in native code and leaks it in Java code.
 
-Unreachable Code <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+Unreachable Code <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 --------------------
 
 * **SimpleUnreachable1**: Both source and sink are in an unreachable branch guarded by a simple numeric comparison.
@@ -293,7 +293,7 @@ Unreachable Code <img src="https://raw.github.com/secure-software-engineering/Dr
 * **UnreachableSink1**: Sensitive data is leaked in a branch of "switch" instruction, which will never be executed.
 * **UnreachableSource1**: Sensitive data is read in a branch of "if" instruction, which will never be executed.
 
-Dynamic Loading <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+Dynamic Loading <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 --------------------
 
 * **CommonLibrary1**: This is not a test case on its own. It is a shared library between app and its dynamically loaded code.
@@ -302,7 +302,7 @@ Dynamic Loading <img src="https://raw.github.com/secure-software-engineering/Dro
 * **DynamicSink1**: Sensitive data is leaked by code in a dynamically loaded class.
 * **DynamicBoth1**: Both source and sink are in a dynamically loaded class.
 
-Self-Modification <img src="https://raw.github.com/secure-software-engineering/DroidBench/develop/new.gif"/>
+Self-Modification <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 Notice: Different cpu architecture and different android versions lead to different memory layout. The samples in this category works on arm64_v8a, Android 6.0. Same goal could be achieved in other architecture and Android versions by slightly modify the source code of the samples.
 --------------------
 
