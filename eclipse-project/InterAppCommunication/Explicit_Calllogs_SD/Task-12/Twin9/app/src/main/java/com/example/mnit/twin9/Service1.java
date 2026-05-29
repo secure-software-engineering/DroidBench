@@ -9,7 +9,7 @@ import android.database.Cursor;
 import android.os.IBinder;
 import android.provider.CallLog;
 
-import android.support.v4.app.ActivityCompat;
+
 import android.util.Log;
 
 import java.io.Serializable;
@@ -36,7 +36,7 @@ public class Service1 extends Service {
         String strOrder = android.provider.CallLog.Calls.DATE + " DESC";
 
 
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED) {
+        if (checkSelfPermission(Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
