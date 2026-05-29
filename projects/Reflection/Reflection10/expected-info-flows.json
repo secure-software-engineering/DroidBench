@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])",
+      "Method": "com.example.network_reflection: java.lang.Object doInBackground(java.lang.Object[])",
+      "Line": 40
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getLine1Number()",
+      "Method": "com.example.network_reflection: void onCreate(android.os.Bundle)",
+      "Line": 32
+    }
+  ]
+}

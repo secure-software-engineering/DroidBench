@@ -1,5 +1,5 @@
 package com.example.network_reflection;
 
 public class BaseClass {
-	public String imei;
+	public String line1;
 }
