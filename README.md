@@ -224,6 +224,8 @@ Reflection
 * **Reflection7**: Use a unusual way to get the class name for reflection calls. <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 * **Reflection8**: The reflective class has two methods with the same name. <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 * **Reflection9**: Names of reflective methods and parameters are not constant strings. <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **Reflection10**: Reads the telephone number, passes it to an AsyncTask, which uses reflection to store it in an object. Then uses reflection to read the telephone number from the object and sends it to the internet. <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **Reflection10-NoFlow**: Based on Reflection10, but uses a different getter, so no sensitive data is leaked. <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 
 Reflection_ICC <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 ---------------
@@ -238,16 +240,6 @@ Reflection_ICC <img src="https://raw.github.com/secure-software-engineering/Droi
 * **OnlyTelephony_Reverse**: Source API is getDeviceId which is obtained using reverse() function. The API is called using reflection. The data is then passed on to a second activity where it is leaked.
 * **OnlyTelephony_Substring**: Source API is getDeviceId which is obtained using substring() function. The API is called using reflection. The data is then passed on to a second activity where it is leaked.
 * **SharedPreferences1**: Reflection in use of sharedpreference is done. Sink is Log
-
-Self-Modification<img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
-------------------
-
-Notice: Different cpu architecture and different android versions lead to different memory layout. The samples in this category works on arm64_v8a, Android 6.0. Same goal could be achieved in other architecture and Android versions by slightly modify the source code of the samples.
-
-* **BytecodeTamper1**: This test case uses native code to change the target of the sink method invocation. The new target actually leaks the sensitive data, whereas the original one just leaked a constant string.
-* **BytecodeTamper2**: This test case uses native code to change the target of the source method invocation. The new target actually returned the sensitive data, whereas the original one just returned a constant string.
-* **BytecodeTamper3**: This test case uses native code to change the target of both the source and the sink method invocations. The new target actually returns/leaks the sensitive data, whereas the original one just returned/leaked a constant string.
-* **BytecodeTamper4**: Contains self-modified code, but no source or sink is involved.
 
 Threading
 ----------
