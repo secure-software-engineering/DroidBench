@@ -225,6 +225,7 @@ Reflection
 * **Reflection8**: The reflective class has two methods with the same name. <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 * **Reflection9**: Names of reflective methods and parameters are not constant strings. <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 * **Reflection10**: Reads the telephone number, passes it to an AsyncTask, which uses reflection to store it in an object. Then uses reflection to read the telephone number from the object and sends it to the internet. <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
+* **Reflection10-NoFlow**: Based on Reflection10, but uses a different getter, so no sensitive data is leaked. <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 
 Reflection_ICC <img src="https://raw.github.com/secure-software-engineering/DroidBench/master/new.gif"/>
 ---------------
