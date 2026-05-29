@@ -1,0 +1,2 @@
+rootProject.name = "DeviceId_OrderedIntent1"
+include ':app'

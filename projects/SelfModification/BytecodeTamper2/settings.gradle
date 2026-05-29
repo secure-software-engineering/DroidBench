@@ -1,0 +1,2 @@
+rootProject.name = "BytecodeTamper2"
+include ':app'

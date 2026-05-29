@@ -1,0 +1,2 @@
+rootProject.name = "DeviceId_contentProvider1"
+include ':app'

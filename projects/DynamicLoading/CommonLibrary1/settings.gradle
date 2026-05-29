@@ -1,0 +1,2 @@
+rootProject.name = "CommonLibrary1"
+include ':app'

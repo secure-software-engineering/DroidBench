@@ -1,0 +1,2 @@
+rootProject.name = "BroadcastTaintAndLeak1"
+include ':app'

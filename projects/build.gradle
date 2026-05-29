@@ -1,0 +1,16 @@
+tasks.register('assemble') {
+    group = 'build'
+    description = 'Assembles all apps'
+    
+    gradle.includedBuilds.each { included ->
+        dependsOn included.task(':assemble')
+    }
+}
+tasks.register('clean') {
+    group = 'build'
+    description = 'Removes all build artifacts'
+    
+    gradle.includedBuilds.each { included ->
+        dependsOn included.task(':clean')
+    }
+}

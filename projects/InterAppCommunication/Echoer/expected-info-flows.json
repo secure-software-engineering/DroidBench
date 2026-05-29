@@ -1,0 +1,25 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "org.cert.echoer.MainActivity: void getDataFromIntent()",
+      "Line": 46
+    },
+    {
+      "Source": "android.content.Intent: android.os.Bundle getExtras()",
+      "Method": "org.cert.echoer.MainActivity: void getDataFromIntent()",
+      "Line": 45
+    },
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "org.cert.echoer.MainActivity: void getDataFromIntent()",
+      "Line": 50
+    },
+    {
+      "Source": "android.content.Intent: android.net.Uri getData()",
+      "Method": "org.cert.echoer.MainActivity: void getDataFromIntent()",
+      "Line": 49
+    }
+  ]
+}

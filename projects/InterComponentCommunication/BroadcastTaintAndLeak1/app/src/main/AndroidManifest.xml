@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0.0">
+    <application android:label="BroadcastTest">
+        <activity android:exported="true" android:label="BroadcastTest" android:name="edu.mit.icc_broadcast_programmatic_intentfilter.BroadcastTest">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+</manifest>

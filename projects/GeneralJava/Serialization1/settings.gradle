@@ -1,0 +1,2 @@
+rootProject.name = "Serialization1"
+include ':app'

@@ -1,0 +1,35 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "org.cert.sendsms.Button1Listener: void onClick(android.view.View)",
+      "Line": 25
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "org.cert.sendsms.Button1Listener: void onClick(android.view.View)",
+      "Line": 23
+    },
+    {
+      "Sink": "android.app.Activity: void startActivityForResult(android.content.Intent,int)",
+      "Method": "org.cert.sendsms.Button1Listener: void onClick(android.view.View)",
+      "Line": 26
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "org.cert.sendsms.Button1Listener: void onClick(android.view.View)",
+      "Line": 23
+    },
+    {
+      "Sink": "android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)",
+      "Method": "org.cert.sendsms.MainActivity: void sendSMSMessage(java.lang.String)",
+      "Line": 60
+    },
+    {
+      "Source": "android.content.Intent: android.os.Bundle getExtras()",
+      "Method": "org.cert.sendsms.MainActivity: void onActivityResult(int,int,android.content.Intent)",
+      "Line": 47
+    }
+  ]
+}

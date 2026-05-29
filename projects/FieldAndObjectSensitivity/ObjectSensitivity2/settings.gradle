@@ -1,0 +1,2 @@
+rootProject.name = "ObjectSensitivity2"
+include ':app'

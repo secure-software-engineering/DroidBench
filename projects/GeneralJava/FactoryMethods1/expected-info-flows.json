@@ -1,0 +1,27 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int d(java.lang.String,java.lang.String)",
+      "Method": "de.ecspride.FactoryMethods1: void onCreate(android.os.Bundle)",
+      "Line": 37
+    },
+    {
+      "Source": "android.location.Location: double getLatitude()",
+      "Method": "de.ecspride.FactoryMethods1: void onCreate(android.os.Bundle)",
+      "Line": 37
+    },
+    {
+      "Sink": "android.util.Log: int d(java.lang.String,java.lang.String)",
+      "Method": "de.ecspride.FactoryMethods1: void onCreate(android.os.Bundle)",
+      "Line": 38
+    },
+    {
+      "Source": "android.location.Location: double getLongitude()",
+      "Method": "de.ecspride.FactoryMethods1: void onCreate(android.os.Bundle)",
+      "Line": 38
+    }
+  ]
+}
+
+

@@ -1,0 +1,2 @@
+rootProject.name = "StrongUpdate1"
+include ':app'

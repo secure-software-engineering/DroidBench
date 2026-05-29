@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.app.Activity: void startActivity(android.content.Intent)",
+      "Method": "de.ecspride.IntentSink2: void startIntent(android.view.View)",
+      "Line": 41
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "de.ecspride.IntentSink2: void startIntent(android.view.View)",
+      "Line": 36
+    }
+  ]
+}

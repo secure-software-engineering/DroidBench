@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int i(java.lang.String,java.lang.String)",
+      "Method": "edu.mit.service_lifecycle.MyService: int onStartCommand(android.content.Intent,int,int)",
+      "Line": 13
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "edu.mit.service_lifecycle.MyService: int onStartCommand(android.content.Intent,int,int)",
+      "Line": 16
+    }
+  ]
+}

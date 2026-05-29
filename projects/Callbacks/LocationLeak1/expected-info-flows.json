@@ -1,0 +1,25 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int d(java.lang.String,java.lang.String)",
+      "Method": "de.ecspride.LocationLeak1: void onResume()",
+      "Line": 44
+    },
+    {
+      "Source": "android.location.Location: double getLatitude()",
+      "Method": "de.ecspride.LocationLeak1$MyLocationListener: void onLocationChanged(android.location.Location)",
+      "Line": 51
+    },
+    {
+      "Sink": "android.util.Log: int d(java.lang.String,java.lang.String)",
+      "Method": "de.ecspride.LocationLeak1: void onResume()",
+      "Line": 45
+    },
+    {
+      "Source": "android.location.Location: double getLongitude()",
+      "Method": "de.ecspride.LocationLeak1$MyLocationListener: void onLocationChanged(android.location.Location)",
+      "Line": 52
+    }
+  ]
+}

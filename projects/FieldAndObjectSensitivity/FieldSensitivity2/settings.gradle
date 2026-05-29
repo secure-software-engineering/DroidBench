@@ -1,0 +1,2 @@
+rootProject.name = "FieldSensitivity2"
+include ':app'

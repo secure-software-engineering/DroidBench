@@ -1,0 +1,2 @@
+rootProject.name = "ImplicitFlow2"
+include ':app'

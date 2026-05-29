@@ -1,0 +1,2 @@
+rootProject.name = "ActivityCommunication7"
+include ':app'

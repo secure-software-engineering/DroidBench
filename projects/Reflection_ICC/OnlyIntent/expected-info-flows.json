@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)",
+      "Method": "com.example.intentonly.Activity2: void onCreate(android.os.Bundle)",
+      "Line": 25
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "com.example.intentonly.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 59
+    }
+  ]
+}

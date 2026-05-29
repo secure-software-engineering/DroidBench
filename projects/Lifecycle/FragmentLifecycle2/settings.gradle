@@ -1,0 +1,2 @@
+rootProject.name = "FragmentLifecycle2"
+include ':app'

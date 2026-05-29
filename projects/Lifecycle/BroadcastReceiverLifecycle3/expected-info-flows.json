@@ -1,0 +1,17 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.util.Log: int d(java.lang.String,java.lang.String)",
+      "Method": "de.ecspride.MainActivity$MyReceiver: void onReceive(android.content.Context,android.content.Intent)",
+      "Line": 52
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "de.ecspride.MainActivity$MyReceiver: void onReceive(android.content.Context,android.content.Intent)",
+      "Line": 51
+    }
+  ]
+}
+
+

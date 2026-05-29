@@ -1,0 +1,7 @@
+rootProject.name = 'DroidBench'
+
+rootDir.eachDir { dir ->
+    if (new File(dir, 'settings.gradle').exists() || new File(dir, 'build.gradle').exists()) {
+        includeBuild dir
+    }
+}

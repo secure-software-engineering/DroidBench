@@ -1,0 +1,25 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.app.Activity: void startActivity(android.content.Intent)",
+      "Method": "com.example.location_broadcast.location_broadcast: void onReceive(android.content.Context,android.content.Intent)",
+      "Line": 40
+    },
+    {
+      "Source": "android.location.Location: double getLatitude()",
+      "Method": "com.example.location_broadcast.location_broadcast: void onLocationChanged(android.location.Location)",
+      "Line": 48
+    },
+    {
+      "Sink": "android.app.Activity: void startActivity(android.content.Intent)",
+      "Method": "com.example.location_broadcast.location_broadcast: void onReceive(android.content.Context,android.content.Intent)",
+      "Line": 40
+    },
+    {
+      "Source": "android.location.Location: double getLongitude()",
+      "Method": "com.example.location_broadcast.location_broadcast: void onLocationChanged(android.location.Location)",
+      "Line": 50
+    }
+  ]
+}

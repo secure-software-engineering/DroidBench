@@ -1,0 +1,2 @@
+rootProject.name = "SimpleAliasing1"
+include ':app'

@@ -1,0 +1,27 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdkVersion 33
+buildToolsVersion "36.0.0"
+    enableKotlin = false
+
+    defaultConfig {
+        namespace = 'edu.wayne.cs.lib'
+        minSdkVersion 8
+        targetSdkVersion 18
+        versionCode 1
+        versionName "1.0"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding = false
+    }
+    lint {
+        disable.add("ExpiredTargetSdkVersion")
+    }
+}

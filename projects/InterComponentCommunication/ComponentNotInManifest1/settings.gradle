@@ -1,0 +1,2 @@
+rootProject.name = "ComponentNotInManifest1"
+include ':app'
