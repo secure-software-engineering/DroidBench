@@ -14,14 +14,14 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-                    ComponentName name = new ComponentName("com.example.mnit.twin10", "com.example.mnit.twin10.Service1");
+        ComponentName name = new ComponentName("com.example.mnit.twin10", "com.example.mnit.twin10.Service1");
 
-                    Intent abc = new Intent();
-                    abc.setComponent(name);
-                    ComponentName c = getApplication().startService(abc);
-                    if (c == null) {
-                        Log.e("error", "failed to start with " + abc);
-                    }
+        Intent abc = new Intent();
+        abc.setComponent(name);
+        ComponentName c = getApplication().startService(abc);
+        if (c == null) {
+            Log.e("error", "failed to start with " + abc);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

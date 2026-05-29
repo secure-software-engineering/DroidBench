@@ -23,10 +23,10 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final StringBuffer sb1=getCallDetails();
-                    Intent intent = new Intent(Intent.ACTION_MAIN);
-                    intent.putExtra("destination", (Serializable) sb1);
-                    intent.setComponent(new ComponentName("com.example.mnit.callwritngactivity","com.example.mnit.callwritngactivity.MainActivity"));
-                    startActivity(intent);
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.putExtra("destination", (Serializable) sb1);
+        intent.setComponent(new ComponentName("com.example.mnit.callwritngactivity","com.example.mnit.callwritngactivity.MainActivity"));
+        startActivity(intent);
 
 
 
@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
 
         }
         Cursor managedCursor = getContentResolver().query(CallLog.Calls.CONTENT_URI, null,
-                null, null, strOrder);
+                               null, null, strOrder);
         int number = managedCursor.getColumnIndex(CallLog.Calls.NUMBER);
         int type = managedCursor.getColumnIndex(CallLog.Calls.TYPE);
         int date = managedCursor.getColumnIndex(CallLog.Calls.DATE);
@@ -65,19 +65,19 @@ public class MainActivity extends Activity {
             h++;
             int callcode = Integer.parseInt(callTypeCode);
             switch (callcode) {
-                case CallLog.Calls.OUTGOING_TYPE:
-                    callType = "Outgoing";
-                    break;
-                case CallLog.Calls.INCOMING_TYPE:
-                    callType = "Incoming";
-                    break;
-                case CallLog.Calls.MISSED_TYPE:
-                    callType = "Missed";
-                    break;
+            case CallLog.Calls.OUTGOING_TYPE:
+                callType = "Outgoing";
+                break;
+            case CallLog.Calls.INCOMING_TYPE:
+                callType = "Incoming";
+                break;
+            case CallLog.Calls.MISSED_TYPE:
+                callType = "Missed";
+                break;
             }
             sb.append("\nPhone Number:--- " + phNum + " \nCall Type:--- "
-                    + callType + " \nCall Date:--- " + callDate
-                    + " \nCall duration in sec :--- " + callDuration);
+                      + callType + " \nCall Date:--- " + callDate
+                      + " \nCall duration in sec :--- " + callDuration);
             sb.append("\n----------------------------------");
         }
         managedCursor.close();

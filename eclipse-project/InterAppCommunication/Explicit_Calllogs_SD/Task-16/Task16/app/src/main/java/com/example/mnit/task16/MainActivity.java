@@ -15,25 +15,25 @@ public class MainActivity extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {
 
-            if (checkSelfPermission(Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED) {
-                // TODO: Consider calling
-                //    ActivityCompat#requestPermissions
-                // here to request the missing permissions, and then overriding
-                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                //                                          int[] grantResults)
-                // to handle the case where the user grants the permission. See the documentation
-                // for ActivityCompat#requestPermissions for more details.
-                return;
-            }
+        if (checkSelfPermission(Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
 
-                    ComponentName name = new ComponentName("com.example.mnit.task16", "com.example.mnit.task16.Receivercall");
+        ComponentName name = new ComponentName("com.example.mnit.task16", "com.example.mnit.task16.Receivercall");
 
-                    Intent abc = new Intent();
-                    abc.setComponent(name);
-                    sendBroadcast(abc);
+        Intent abc = new Intent();
+        abc.setComponent(name);
+        sendBroadcast(abc);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        }
+    }
 
     @Override
     protected void onStart() {

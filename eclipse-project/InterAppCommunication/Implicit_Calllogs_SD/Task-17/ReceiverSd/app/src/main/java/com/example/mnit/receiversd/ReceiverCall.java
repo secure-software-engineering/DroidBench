@@ -1,15 +1,12 @@
 package com.example.mnit.receiversd;
 
 import android.content.BroadcastReceiver;
-
-
-       import android.content.Context;
-        import android.content.Intent;
-        import android.os.Environment;
-        import android.widget.Toast;
-
-        import java.io.File;
-        import java.io.FileOutputStream;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Environment;
+import android.widget.Toast;
+import java.io.File;
+import java.io.FileOutputStream;
 
 public class ReceiverCall extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {

@@ -24,11 +24,11 @@ public class MainActivity extends Activity {
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-                    ComponentName name = new ComponentName("com.example.mnit.task18", "com.example.mnit.task18.ReceiverSd");
+        ComponentName name = new ComponentName("com.example.mnit.task18", "com.example.mnit.task18.ReceiverSd");
 
-                    Intent abc = new Intent();
-                    abc.setComponent(name);
-                    sendBroadcast(abc);
+        Intent abc = new Intent();
+        abc.setComponent(name);
+        sendBroadcast(abc);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }

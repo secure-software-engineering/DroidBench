@@ -7,14 +7,12 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.CallLog;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -47,18 +45,20 @@ public class MainActivity extends Activity {
 
                 for (int idx = 0; idx < cursor.getColumnCount(); idx++) {
                     String column=cursor.getColumnName(idx);
-                    if(column.equals("address")){
+                    if(column.equals("address")) {
                         msgData += " " + cursor.getColumnName(idx) + ":" + cursor.getString(idx);
-                    msgData+="\n";}
-                    if(column.equals("date")){
+                        msgData+="\n";
+                    }
+                    if(column.equals("date")) {
                         Date date = new Date(cursor.getLong(4));
                         String formattedDate = new SimpleDateFormat("MM/dd/yyyy").format(date);
                         msgData +=cursor.getColumnName(idx) + ":" + formattedDate;
                         msgData+="\n";
-                        }
-                    if(column.equals("body")){
+                    }
+                    if(column.equals("body")) {
                         msgData += " " + cursor.getColumnName(idx) + ":" + cursor.getString(idx);
-                        msgData+="\n";}
+                        msgData+="\n";
+                    }
                 }
 
 
@@ -71,4 +71,5 @@ public class MainActivity extends Activity {
             // empty box, no SMS
         }
         return msgData;
-    } }
+    }
+}

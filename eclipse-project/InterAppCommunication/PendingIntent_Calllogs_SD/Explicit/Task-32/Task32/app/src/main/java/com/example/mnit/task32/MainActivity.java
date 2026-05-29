@@ -9,45 +9,45 @@ import android.util.Log;
 public class MainActivity extends AppCompatActivity {
 
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
 
-            ComponentName name = new ComponentName("com.example.mnit.task32", "com.example.mnit.task32.Servicecall");
+        ComponentName name = new ComponentName("com.example.mnit.task32", "com.example.mnit.task32.Servicecall");
 
-            Intent abc = new Intent();
-            abc.setComponent(name);
-            ComponentName c = getApplication().startService(abc);
-            if (c == null) {
-                Log.e("error", "failed to start with " + abc);
-            }
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
+        Intent abc = new Intent();
+        abc.setComponent(name);
+        ComponentName c = getApplication().startService(abc);
+        if (c == null) {
+            Log.e("error", "failed to start with " + abc);
         }
-
-        @Override
-        protected void onStart() {
-            ComponentName name = new ComponentName("com.example.mnit.task32", "com.example.mnit.task32.Servicecall");
-
-            Intent abc = new Intent();
-            abc.setComponent(name);
-            ComponentName c = getApplication().startService(abc);
-            if (c == null) {
-                Log.e("error", "failed to start with " + abc);
-            }
-
-            super.onStart();
-        }
-
-        @Override
-        protected void onResume() {
-            ComponentName name = new ComponentName("com.example.mnit.task32", "com.example.mnit.task32.Servicecall");
-
-            Intent abc = new Intent();
-            abc.setComponent(name);
-            ComponentName c = getApplication().startService(abc);
-            if (c == null) {
-                Log.e("error", "failed to start with " + abc);
-            }
-            super.onResume();
-        }
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
     }
+
+    @Override
+    protected void onStart() {
+        ComponentName name = new ComponentName("com.example.mnit.task32", "com.example.mnit.task32.Servicecall");
+
+        Intent abc = new Intent();
+        abc.setComponent(name);
+        ComponentName c = getApplication().startService(abc);
+        if (c == null) {
+            Log.e("error", "failed to start with " + abc);
+        }
+
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        ComponentName name = new ComponentName("com.example.mnit.task32", "com.example.mnit.task32.Servicecall");
+
+        Intent abc = new Intent();
+        abc.setComponent(name);
+        ComponentName c = getApplication().startService(abc);
+        if (c == null) {
+            Log.e("error", "failed to start with " + abc);
+        }
+        super.onResume();
+    }
+}

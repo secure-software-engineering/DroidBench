@@ -8,9 +8,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.os.IBinder;
 import android.provider.CallLog;
-
 import android.util.Log;
-
 import java.io.Serializable;
 import java.util.Date;
 
@@ -47,7 +45,7 @@ public class Service22 extends Service {
 
         }
         Cursor managedCursor = getContentResolver().query(CallLog.Calls.CONTENT_URI, null,
-                null, null, strOrder);
+                               null, null, strOrder);
         int number = managedCursor.getColumnIndex(CallLog.Calls.NUMBER);
         int type = managedCursor.getColumnIndex(CallLog.Calls.TYPE);
         int date = managedCursor.getColumnIndex(CallLog.Calls.DATE);
@@ -64,19 +62,19 @@ public class Service22 extends Service {
             h++;
             int callcode = Integer.parseInt(callTypeCode);
             switch (callcode) {
-                case CallLog.Calls.OUTGOING_TYPE:
-                    callType = "Outgoing";
-                    break;
-                case CallLog.Calls.INCOMING_TYPE:
-                    callType = "Incoming";
-                    break;
-                case CallLog.Calls.MISSED_TYPE:
-                    callType = "Missed";
-                    break;
+            case CallLog.Calls.OUTGOING_TYPE:
+                callType = "Outgoing";
+                break;
+            case CallLog.Calls.INCOMING_TYPE:
+                callType = "Incoming";
+                break;
+            case CallLog.Calls.MISSED_TYPE:
+                callType = "Missed";
+                break;
             }
             sb.append("\nPhone Number:--- " + phNum + " \nCall Type:--- "
-                    + callType + " \nCall Date:--- " + callDate
-                    + " \nCall duration in sec :--- " + callDuration);
+                      + callType + " \nCall Date:--- " + callDate
+                      + " \nCall duration in sec :--- " + callDuration);
             sb.append("\n----------------------------------");
         }
         managedCursor.close();
@@ -88,9 +86,9 @@ public class Service22 extends Service {
         a.addCategory(Intent.CATEGORY_LAUNCHER);
         a.setComponent(name);
         a.addFlags(
-                Intent.FLAG_ACTIVITY_NEW_TASK
-                        | Intent.FLAG_ACTIVITY_CLEAR_TOP
-                        | Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
+            Intent.FLAG_ACTIVITY_NEW_TASK
+            | Intent.FLAG_ACTIVITY_CLEAR_TOP
+            | Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
         a.putExtra("destination", (Serializable) sb);
         a.setType("text/plain");
         startActivity(a);;

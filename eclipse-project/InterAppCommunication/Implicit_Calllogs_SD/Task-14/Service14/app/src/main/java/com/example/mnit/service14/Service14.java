@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Environment;
 import android.os.IBinder;
 import android.util.Log;
-
 import java.io.File;
 import java.io.FileOutputStream;
 
@@ -36,8 +35,7 @@ public class Service14 extends Service {
             fos.write(sb.getBytes());
             fos.close();
 
-        }        catch (Exception e)
-        {
+        }        catch (Exception e) {
 
         }
 

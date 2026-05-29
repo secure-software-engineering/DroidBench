@@ -1,7 +1,6 @@
 package com.example.mnit.thursday2;
 
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 /**

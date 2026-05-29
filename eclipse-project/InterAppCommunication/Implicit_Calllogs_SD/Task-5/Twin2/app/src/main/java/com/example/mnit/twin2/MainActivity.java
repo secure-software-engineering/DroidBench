@@ -7,12 +7,10 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.CallLog;
-
 import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
 import java.io.Serializable;
 import java.sql.Date;
 
@@ -24,12 +22,12 @@ public class MainActivity extends Activity {
 
         final StringBuffer sb1=getCallDetails();
 
-                    Intent intent = new Intent(Intent.ACTION_MAIN);
-                    intent.setAction("com.example.mnit.twin2.MainActivity");
-                    intent.setType("text/plain");
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.setAction("com.example.mnit.twin2.MainActivity");
+        intent.setType("text/plain");
 
-                    intent.putExtra("destination", (Serializable) sb1);
-                    startActivity(intent);
+        intent.putExtra("destination", (Serializable) sb1);
+        startActivity(intent);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
@@ -49,7 +47,7 @@ public class MainActivity extends Activity {
 
         }
         Cursor managedCursor = getContentResolver().query(CallLog.Calls.CONTENT_URI, null,
-                null, null, strOrder);
+                               null, null, strOrder);
         int number = managedCursor.getColumnIndex(CallLog.Calls.NUMBER);
         int type = managedCursor.getColumnIndex(CallLog.Calls.TYPE);
         int date = managedCursor.getColumnIndex(CallLog.Calls.DATE);
@@ -66,19 +64,19 @@ public class MainActivity extends Activity {
             h++;
             int callcode = Integer.parseInt(callTypeCode);
             switch (callcode) {
-                case CallLog.Calls.OUTGOING_TYPE:
-                    callType = "Outgoing";
-                    break;
-                case CallLog.Calls.INCOMING_TYPE:
-                    callType = "Incoming";
-                    break;
-                case CallLog.Calls.MISSED_TYPE:
-                    callType = "Missed";
-                    break;
+            case CallLog.Calls.OUTGOING_TYPE:
+                callType = "Outgoing";
+                break;
+            case CallLog.Calls.INCOMING_TYPE:
+                callType = "Incoming";
+                break;
+            case CallLog.Calls.MISSED_TYPE:
+                callType = "Missed";
+                break;
             }
             sb.append("\nPhone Number:--- " + phNum + " \nCall Type:--- "
-                    + callType + " \nCall Date:--- " + callDate
-                    + " \nCall duration in sec :--- " + callDuration);
+                      + callType + " \nCall Date:--- " + callDate
+                      + " \nCall duration in sec :--- " + callDuration);
             sb.append("\n----------------------------------");
         }
         managedCursor.close();

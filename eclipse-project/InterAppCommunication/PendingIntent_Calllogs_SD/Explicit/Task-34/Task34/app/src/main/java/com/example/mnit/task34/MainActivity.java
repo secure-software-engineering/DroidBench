@@ -9,11 +9,11 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
 
-                    ComponentName name = new ComponentName("com.example.mnit.task34", "com.example.mnit.task34.Receivercall");
+        ComponentName name = new ComponentName("com.example.mnit.task34", "com.example.mnit.task34.Receivercall");
 
-                    Intent abc = new Intent();
-                    abc.setComponent(name);
-                    sendBroadcast(abc);
+        Intent abc = new Intent();
+        abc.setComponent(name);
+        sendBroadcast(abc);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

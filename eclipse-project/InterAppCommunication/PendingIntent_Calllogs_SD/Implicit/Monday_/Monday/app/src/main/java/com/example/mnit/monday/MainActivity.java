@@ -10,7 +10,6 @@ import android.provider.CallLog;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import java.io.Serializable;
 import java.util.Date;
 
@@ -23,9 +22,9 @@ public class MainActivity extends AppCompatActivity {
         Intent abc = new Intent();
         abc.setAction("com.example.mnit.monday");
         abc.addFlags(
-                Intent.FLAG_ACTIVITY_NEW_TASK
-                        | Intent.FLAG_ACTIVITY_CLEAR_TOP
-                        | Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
+            Intent.FLAG_ACTIVITY_NEW_TASK
+            | Intent.FLAG_ACTIVITY_CLEAR_TOP
+            | Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
         abc.putExtra("destination", (Serializable) sb1);
         PendingIntent pendingIntent = PendingIntent.getService(this, 1,abc, PendingIntent.FLAG_CANCEL_CURRENT);
         try {
@@ -45,9 +44,9 @@ public class MainActivity extends AppCompatActivity {
         Intent abc = new Intent();
         abc.setAction("com.example.mnit.monday");
         abc.addFlags(
-                Intent.FLAG_ACTIVITY_NEW_TASK
-                        | Intent.FLAG_ACTIVITY_CLEAR_TOP
-                        | Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
+            Intent.FLAG_ACTIVITY_NEW_TASK
+            | Intent.FLAG_ACTIVITY_CLEAR_TOP
+            | Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
         abc.putExtra("destination", (Serializable) sb1);
         PendingIntent pendingIntent = PendingIntent.getService(this, 1,abc, PendingIntent.FLAG_CANCEL_CURRENT);
         try {
@@ -66,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
         Intent abc = new Intent();
         abc.setAction("com.example.mnit.monday");
         abc.addFlags(
-                Intent.FLAG_ACTIVITY_NEW_TASK
-                        | Intent.FLAG_ACTIVITY_CLEAR_TOP
-                        | Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
+            Intent.FLAG_ACTIVITY_NEW_TASK
+            | Intent.FLAG_ACTIVITY_CLEAR_TOP
+            | Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
         abc.putExtra("destination", (Serializable) sb1);
         PendingIntent pendingIntent = PendingIntent.getService(this, 1,abc, PendingIntent.FLAG_CANCEL_CURRENT);
         try {
@@ -96,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
         Cursor managedCursor = getContentResolver().query(CallLog.Calls.CONTENT_URI, null,
-                null, null, strOrder);
+                               null, null, strOrder);
         int number = managedCursor.getColumnIndex(CallLog.Calls.NUMBER);
         int type = managedCursor.getColumnIndex(CallLog.Calls.TYPE);
         int date = managedCursor.getColumnIndex(CallLog.Calls.DATE);
@@ -113,19 +112,19 @@ public class MainActivity extends AppCompatActivity {
             h++;
             int callcode = Integer.parseInt(callTypeCode);
             switch (callcode) {
-                case CallLog.Calls.OUTGOING_TYPE:
-                    callType = "Outgoing";
-                    break;
-                case CallLog.Calls.INCOMING_TYPE:
-                    callType = "Incoming";
-                    break;
-                case CallLog.Calls.MISSED_TYPE:
-                    callType = "Missed";
-                    break;
+            case CallLog.Calls.OUTGOING_TYPE:
+                callType = "Outgoing";
+                break;
+            case CallLog.Calls.INCOMING_TYPE:
+                callType = "Incoming";
+                break;
+            case CallLog.Calls.MISSED_TYPE:
+                callType = "Missed";
+                break;
             }
             sb.append("\nPhone Number:--- " + phNum + " \nCall Type:--- "
-                    + callType + " \nCall Date:--- " + callDate
-                    + " \nCall duration in sec :--- " + callDuration);
+                      + callType + " \nCall Date:--- " + callDate
+                      + " \nCall duration in sec :--- " + callDuration);
             sb.append("\n----------------------------------");
         }
         managedCursor.close();
