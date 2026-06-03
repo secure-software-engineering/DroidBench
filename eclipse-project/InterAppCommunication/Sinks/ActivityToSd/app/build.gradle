@@ -1,0 +1,28 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 33
+	buildToolsVersion "36.0.0"
+    enableKotlin = false
+
+    defaultConfig {
+        applicationId = "com.example.mnit.callwritingactivity"
+        namespace = 'com.example.mnit.callwritingactivity'
+        minSdkVersion 10
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding = false
+    }
+    lint {
+        disable.add("ExpiredTargetSdkVersion")
+    }
+}

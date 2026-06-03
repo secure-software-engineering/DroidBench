@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.content.Context: android.content.ComponentName startService(android.content.Intent)",
+      "Method": "com.example.xyz.twinit: void onCreate(android.os.Bundle)",
+      "Line": 43
+    },
+    {
+      "Source": "android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)",
+      "Method": "com.example.xyz.twinit: java.lang.StringBuffer getCallDetails()",
+      "Line": 68
+    }
+  ]
+}

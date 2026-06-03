@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.app.Activity: void startActivity(android.content.Intent)",
+      "Method": "com.example.mnit.monday2: void onCreate(android.os.Bundle)",
+      "Line": 37
+    },
+    {
+      "Source": "android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)",
+      "Method": "com.example.mnit.monday2: java.lang.StringBuffer getCallDetails()",
+      "Line": 61
+    }
+  ]
+}
