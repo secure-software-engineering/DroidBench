@@ -47,11 +47,11 @@ public class ActivityLifecycle1 extends Activity {
 
 	 private void connect() throws IOException{
     	URL url = new URL(URL);
-    	HttpURLConnection conn = (HttpURLConnection) url.openConnection(); //sink, leak
+    	HttpURLConnection conn = (HttpURLConnection) url.openConnection(); 
         conn.setRequestMethod("GET");
         conn.setDoInput(true);
         // Starts the query
-        conn.connect();
+        conn.connect(); //sink, leak
     }
     
 }
