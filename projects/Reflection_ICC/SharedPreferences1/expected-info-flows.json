@@ -10,9 +10,17 @@
       "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
       "Method": "edu.mit.shared_preferences.MainActivity: void onCreate(android.os.Bundle)",
       "Line": 46
+    },
+    {
+      "Sink": "android.util.Log: int d(java.lang.String,java.lang.String)",
+      "Method": "edu.mit.shared_preferences.AnotherActivity: void onCreate(android.os.Bundle)",
+      "Line": 50
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "edu.mit.shared_preferences.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 46
     }
 
   ]
 }
-
-

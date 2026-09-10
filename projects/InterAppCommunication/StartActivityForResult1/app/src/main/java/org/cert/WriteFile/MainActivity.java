@@ -22,7 +22,7 @@ import android.widget.Button;
  * 		startActivityForResult which writes it to a file.
  * @dataflow getLastKnownLocation -> startActivityForResult
  * 		-> onActivityResult -> FileOutputStream
- * @number_of_leaks 1
+ * @number_of_leaks 6
  * @challenges Inter-component communication using startActivityForResult
  * 		must be handled correctly
  */
@@ -45,10 +45,10 @@ public class MainActivity extends Activity {
 	}
 	
 	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {				// SOURCE
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {			
 	  if (resultCode == 0 && requestCode == 0 && data != null) {
 	    if (data.hasExtra("secret")) {
-	    	if(data.getExtras().getString("secret") != null){ //sink
+	    	if(data.getExtras().getString("secret") != null){ //source
 		    	String filename = "sinkFile.txt";
 		    	String sinkData = data.getExtras().getString("secret");		// another source
 		    	FileOutputStream outputStream;	

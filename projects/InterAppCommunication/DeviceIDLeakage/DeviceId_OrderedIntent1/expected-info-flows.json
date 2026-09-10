@@ -2,9 +2,9 @@
   "expected-info-flows":
   [
     {
-      "Sink": "android.app.Activity: void sendOrderedBroadcast(android.content.Intent,java.lang.String)",
-      "Method": "com.example.deviceid_orderedintent.MainActivity$1: void onClick(android.view.View)",
-      "Line": 47
+      "Sink": "android.content.Context: void startActivity(android.content.Intent)",
+      "Method": "com.example.deviceid_orderedintent.Receiver2: void onReceive(android.content.Context,android.content.Intent)",
+      "Line": 17
     },
     {
       "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",

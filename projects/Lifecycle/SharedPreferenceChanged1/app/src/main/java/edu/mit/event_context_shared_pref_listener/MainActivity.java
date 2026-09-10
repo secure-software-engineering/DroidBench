@@ -11,7 +11,7 @@ import android.util.Log;
  * 
  * @description Test that an event from the runtime is called with the appropriate context (argument)
  * @dataflow source -> sink
- * @number_of_leaks 1
+ * @number_of_leaks 2
  * @challenges - In this case, the change listener has to be called with the shared preferences 
  * that are changed.
  */
@@ -36,6 +36,6 @@ public class MainActivity extends Activity implements SharedPreferences.OnShared
 
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         String imei = sharedPreferences.getString(key, "");
-        Log.i("DroidBench", imei);
+        Log.i("DroidBench", imei); // sink
     }
 }

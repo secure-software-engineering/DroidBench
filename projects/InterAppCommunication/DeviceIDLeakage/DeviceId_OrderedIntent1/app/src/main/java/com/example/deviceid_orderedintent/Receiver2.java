@@ -14,7 +14,7 @@ public class Receiver2 extends BroadcastReceiver {
         in.setType("text/plain");
         in.putExtra(Intent.EXTRA_TEXT,res);
         in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(in);
+        context.startActivity(in); //sink
         Toast.makeText(context, "RCVR 2.." + res, Toast.LENGTH_LONG).show();
         //setResultData(res);
     }

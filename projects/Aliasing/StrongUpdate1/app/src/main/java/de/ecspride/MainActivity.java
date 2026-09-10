@@ -19,8 +19,8 @@ import android.view.ViewGroup;
  * 
  * @description Sensitive data is assigned to a heap object, but then overwritten
  * 		before it is leaked
- * @dataflow source -> heap object -> alias -> leak
- * @number_of_leaks 1
+ * @dataflow source -> heap object -> alias -> no leak
+ * @number_of_leaks 0
  * @challenges The alias analysis must support strong updates for not causing a
  * 		false positive.
  */
@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
         A f = e.attr;
         
 		SmsManager sms = SmsManager.getDefault();
-        sms.sendTextMessage("+49 1234", null, f.b, null, null); // sink, leak
+        sms.sendTextMessage("+49 1234", null, f.b, null, null); // sink, no leak
 	}
 
 }

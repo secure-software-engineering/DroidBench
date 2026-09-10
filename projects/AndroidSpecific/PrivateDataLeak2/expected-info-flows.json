@@ -7,12 +7,9 @@
       "Line": 26
     },
     {
-      "Source": "android.app.Activity: android.view.View findViewById(int)",
+      "Source": "de.ecspride.PrivateDataLeak2: android.view.View findViewById(int)",
       "Method": "de.ecspride.PrivateDataLeak2: void onCreate(android.os.Bundle)",
       "Line": 25
     }
   ]
 }
-
-
- 

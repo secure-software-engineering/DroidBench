@@ -34,7 +34,7 @@ public class Exceptions3 extends Activity {
 		}
 		catch (RuntimeException ex) {
 			SmsManager sm = SmsManager.getDefault();
-			sm.sendTextMessage("+49 1234", null, imei, null, null); //sink, leak
+			sm.sendTextMessage("+49 1234", null, imei, null, null); //sink, no leak
 		}
 	}
 

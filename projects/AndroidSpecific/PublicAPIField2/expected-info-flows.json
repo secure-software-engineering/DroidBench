@@ -10,7 +10,16 @@
       "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
       "Method": "edu.mit.icc_intent_class_modeling.MainActivity: void onCreate(android.os.Bundle)",
       "Line": 26
-    }
-   
+    },
+    {
+      "Sink": "android.content.Intent: android.content.Intent setAction(java.lang.String)",
+      "Method": "edu.mit.icc_intent_class_modeling.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 29
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "edu.mit.icc_intent_class_modeling.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 26
+    }   
   ]
 }

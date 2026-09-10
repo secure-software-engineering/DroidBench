@@ -2,14 +2,14 @@
   "expected-info-flows":
   [
     {
-      "Sink": "android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)",
+      "Sink": "mod.ndk.ActMain: java.lang.String cFuncSendData(java.lang.String)",
       "Method": "mod.ndk.ActMain$1: void onClick(android.view.View)",
-      "Line": 59
+      "Line": 43
     },
     {
       "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
       "Method": "mod.ndk.ActMain$1: void onClick(android.view.View)",
-      "Line": 49
+      "Line": 41
     }
   ]
 }

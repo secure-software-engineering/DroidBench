@@ -51,7 +51,7 @@ public class MainActivity extends Activity {
 		int1 = "android.content.Intent";
 
 		try {
-			String string = "pregetDeviceIdpost".substring(3, 14);
+			String string = "pregetDeviceIdpost".substring(3, 14); // source
 			Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
 			c = Class.forName(id);
 

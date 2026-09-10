@@ -4,12 +4,12 @@
     {
       "Sink": "android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)",
       "Method": "mod.ndk.ActMain$1: void onClick(android.view.View)",
-      "Line": 59
+      "Line": 45
     },
     {
-      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Source": "mod.ndk.ActMain: java.lang.String cFuncGetIMEI(android.content.Context)",
       "Method": "mod.ndk.ActMain$1: void onClick(android.view.View)",
-      "Line": 49
+      "Line": 40
     }
   ]
 }
