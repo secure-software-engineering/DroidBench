@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "mod.ndk.ActMain: java.lang.String cFuncSendData(java.lang.String)",
+      "Method": "mod.ndk.ActMain$1: void onClick(android.view.View)",
+      "Line": 43
+    },
+    {
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "mod.ndk.ActMain$1: void onClick(android.view.View)",
+      "Line": 41
+    }
+  ]
+}
