@@ -1,0 +1,15 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)",
+      "Method": "mod.ndk.ActMain$1: void onClick(android.view.View)",
+      "Line": 45
+    },
+    {
+      "Source": "mod.ndk.ActMain: java.lang.String cFuncGetIMEI(android.content.Context)",
+      "Method": "mod.ndk.ActMain$1: void onClick(android.view.View)",
+      "Line": 40
+    }
+  ]
+}
