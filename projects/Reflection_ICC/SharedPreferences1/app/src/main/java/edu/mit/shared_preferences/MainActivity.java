@@ -20,7 +20,7 @@ import android.widget.Toast;
  * 
  * @description Reflection in use of sharedpreference is done. Sink is Log
  * @dataflow onCreate: source -> intent (imei) -> Activity2 -> sink
- * @number_of_leaks 1
+ * @number_of_leaks 2
  * @challenges The analysis must be able to handle reflective method invocation
  * and inter-component communication.
  */
