@@ -20,6 +20,16 @@
       "Source": "android.content.Intent: android.net.Uri getData()",
       "Method": "org.cert.echoer.MainActivity: void getDataFromIntent()",
       "Line": 49
+    },
+    {
+      "Sink": "android.app.Activity: void setResult(int,android.content.Intent)",
+      "Method": "org.cert.echoer.Button1Listener: void onClick(android.view.View)",
+      "Line": 21
+    },
+    {
+      "Source": "android.app.Activity: android.content.Intent getIntent()",
+      "Method": "org.cert.echoer.MainActivity: void getDataFromIntent()",
+      "Line": 42
     }
   ]
 }
