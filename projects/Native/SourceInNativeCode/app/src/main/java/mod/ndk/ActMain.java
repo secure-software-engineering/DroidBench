@@ -37,7 +37,7 @@ public class ActMain extends Activity {
 		button.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				String strOut = "\n- cFuncGetIMEI(this):["+cFuncGetIMEI(getApplicationContext())+"]";
+				String strOut = "\n- cFuncGetIMEI(this):["+cFuncGetIMEI(getApplicationContext())+"]"; // source
 
 				Toast.makeText(ActMain.this, strOut, Toast.LENGTH_LONG).show();
 				
