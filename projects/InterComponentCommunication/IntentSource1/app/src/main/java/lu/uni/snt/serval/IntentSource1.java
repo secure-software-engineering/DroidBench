@@ -24,7 +24,7 @@ public class IntentSource1 extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_activity1);
 
-		Intent intent = this.getIntent();
+		Intent intent = this.getIntent(); // source
 		intent.setAction("android.intent.action.MAIN");
 		this.startActivityForResult(intent, 1); // sink
 	}
