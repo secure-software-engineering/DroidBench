@@ -2,7 +2,7 @@
   "expected-info-flows":
   [
     {
-      "Sink": "android.app.Activity: void startActivity(android.content.Intent)",
+      "Sink": "android.content.ContextWrapper: void startActivity(android.content.Intent)",
       "Method": "com.example.location_service.Locationservice: void onDestroy()",
       "Line": 56
     },
@@ -12,7 +12,7 @@
       "Line": 45
     },
     {
-      "Sink": "android.app.Activity: void startActivity(android.content.Intent)",
+      "Sink": "android.content.ContextWrapper: void startActivity(android.content.Intent)",
       "Method": "com.example.location_service.Locationservice: void onDestroy()",
       "Line": 56
     },
