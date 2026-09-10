@@ -1,0 +1,17 @@
+{
+  "expected-info-flows":
+  [
+    {
+      "Sink": "mod.ndk.ActMain: boolean cFuncDoTheMagic(android.content.Context)",
+      "Method": "mod.ndk.ActMain$1: void onClick(android.view.View)",
+      "Line": 42
+    },
+    {
+      "Source": "mod.ndk.ActMain: boolean cFuncDoTheMagic(android.content.Context)",
+      "Method": "mod.ndk.ActMain$1: void onClick(android.view.View)",
+      "Line": 42
+    }
+  ]
+}
+
+
