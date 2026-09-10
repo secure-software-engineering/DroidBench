@@ -22,7 +22,7 @@ import android.widget.Button;
  * 		startActivityForResult which writes it to a file.
  * @dataflow getLastKnownLocation -> startActivityForResult
  * 		-> onActivityResult -> FileOutputStream
- * @number_of_leaks 1
+ * @number_of_leaks 6
  * @challenges Inter-component communication using startActivityForResult
  * 		must be handled correctly
  */
