@@ -41,7 +41,7 @@ public class MainActivity extends Activity {
 
 		TelephonyManager telephonyManager = (TelephonyManager) this
 				.getSystemService(Context.TELEPHONY_SERVICE);
-		id = telephonyManager.getDeviceId();
+		id = telephonyManager.getDeviceId(); // source
 
 		Intent i = new Intent(this, Activity2.class);
 		i.putExtra("imei", id);
