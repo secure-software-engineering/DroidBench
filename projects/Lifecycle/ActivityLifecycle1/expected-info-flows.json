@@ -2,7 +2,7 @@
   "expected-info-flows":
   [
     {
-      "Sink": "java.net.HttpURLConnection: void connect()",
+      "Sink": "java.net.URLConnection: void connect()",
       "Method": "de.ecspride.ActivityLifecycle1: void connect()",
       "Line": 54
     },
