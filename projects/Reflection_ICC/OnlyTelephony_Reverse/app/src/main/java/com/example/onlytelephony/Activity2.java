@@ -27,7 +27,7 @@ public class Activity2 extends Activity {
 		setContentView(R.layout.activity_activity2);
 		tv = (TextView) findViewById(R.id.textView1);
 		Intent im = getIntent();
-		value= getIntent().getExtras().getString("imei"); // source	  
+		value= getIntent().getExtras().getString("imei"); 
 		SmsManager sm = SmsManager.getDefault();
 		sm.sendTextMessage(phoneNo, null, value,null, null); // sink
 		 
