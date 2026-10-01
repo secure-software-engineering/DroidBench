@@ -39,7 +39,7 @@ public class ActMain extends Activity {
 		button.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				cFuncDoTheMagic(getApplicationContext());
+				cFuncDoTheMagic(getApplicationContext()); // source, sink
 				Toast.makeText(ActMain.this, "ok", Toast.LENGTH_LONG).show();
 			}
 		});

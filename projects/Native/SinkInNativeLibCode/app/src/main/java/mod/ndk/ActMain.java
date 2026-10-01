@@ -38,9 +38,9 @@ public class ActMain extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-				String strIMEI = telephonyManager.getDeviceId();
+				String strIMEI = telephonyManager.getDeviceId(); // source
 
-				String strOut = "\n- cFuncSendData(imei):["+cFuncSendData(strIMEI + "\n")+"]";
+				String strOut = "\n- cFuncSendData(imei):["+cFuncSendData(strIMEI + "\n")+"]"; // sink, leak
 				Toast.makeText(ActMain.this, strOut, Toast.LENGTH_LONG).show();
 			}
 		});

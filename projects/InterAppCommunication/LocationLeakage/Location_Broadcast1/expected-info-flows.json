@@ -2,7 +2,7 @@
   "expected-info-flows":
   [
     {
-      "Sink": "android.app.Activity: void startActivity(android.content.Intent)",
+      "Sink": "android.content.Context: void startActivity(android.content.Intent)",
       "Method": "com.example.location_broadcast.location_broadcast: void onReceive(android.content.Context,android.content.Intent)",
       "Line": 40
     },
@@ -12,7 +12,7 @@
       "Line": 48
     },
     {
-      "Sink": "android.app.Activity: void startActivity(android.content.Intent)",
+      "Sink": "android.content.Context: void startActivity(android.content.Intent)",
       "Method": "com.example.location_broadcast.location_broadcast: void onReceive(android.content.Context,android.content.Intent)",
       "Line": 40
     },

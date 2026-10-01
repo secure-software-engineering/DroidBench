@@ -7,9 +7,9 @@
       "Line": 39
     },
     {
-      "Source": "android.app.Activity: android.content.Intent getIntent()",
-      "Method": "com.example.onlytelephony.Activity2: void onCreate(android.os.Bundle)",
-      "Line": 38
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "com.example.onlytelephony.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 59
     },
     {
       "Sink": "android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)",
@@ -17,9 +17,9 @@
       "Line": 42
     },
     {
-      "Source": "android.app.Activity: android.content.Intent getIntent()",
-      "Method": "com.example.onlytelephony.Activity2: void onCreate(android.os.Bundle)",
-      "Line": 38
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "com.example.onlytelephony.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 59
     }
 
 

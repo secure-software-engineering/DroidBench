@@ -24,7 +24,7 @@ public class IntentSource1 extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_activity1);
 
-		Intent intent = this.getIntent();
+		Intent intent = this.getIntent(); // source
 		intent.setAction("android.intent.action.MAIN");
 		this.startActivityForResult(intent, 1); // sink
 	}
@@ -34,10 +34,10 @@ public class IntentSource1 extends Activity {
 	{
 		if (requestCode == 1)
 		{
-			Bundle b = data.getExtras(); // source
+			Bundle b = data.getExtras();
 			for (String key : b.keySet())
 			{
-				Log.i("SnT", "dump: " + b.get(key)); // source
+				Log.i("SnT", "dump: " + b.get(key)); // source and sink
 			}
 		}
 		

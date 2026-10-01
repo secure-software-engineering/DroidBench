@@ -2,7 +2,7 @@
   "expected-info-flows":
   [
     {
-      "Sink": "android.app.Activity: void startActivity(android.content.Intent)",
+      "Sink": "android.content.ContextWrapper: void startActivity(android.content.Intent)",
       "Method": "com.example.deviceid_service.Service_deviceid: void onStart(android.content.Intent,int)",
       "Line": 38
     },

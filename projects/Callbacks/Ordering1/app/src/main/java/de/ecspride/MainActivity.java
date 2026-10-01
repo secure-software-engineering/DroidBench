@@ -20,7 +20,7 @@ import android.view.Menu;
  * @description This example leaks variable contents before the handler initializing them is
  * 	even registered
  * @dataflow onLocationChanged: source -> latitude, longtitude; onCreate: latitude -> sink, longtitude -> sink 
- * @number_of_leaks 2
+ * @number_of_leaks 0
  * @challenges The analysis must take the order of callback registration and sink call
  * 	into account.
  */
@@ -34,8 +34,8 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		Log.d("Latitude", "Latitude: " + latitude); //sink, leak
-    	Log.d("Longtitude", "Longtitude: " + longtitude); //sink, leak
+		Log.d("Latitude", "Latitude: " + latitude); //sink, no leak
+    	Log.d("Longtitude", "Longtitude: " + longtitude); //sink, no leak
 	}
 
 	@Override

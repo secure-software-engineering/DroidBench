@@ -2,7 +2,7 @@
   "expected-info-flows":
   [
     {
-      "Sink": "android.app.Activity: void startActivity(android.content.Intent)",
+      "Sink": "android.content.Context: void startActivity(android.content.Intent)",
       "Method": "com.example.deviceid_broadcast.broadcast_deviceid: void onReceive(android.content.Context,android.content.Intent)",
       "Line": 31
     },

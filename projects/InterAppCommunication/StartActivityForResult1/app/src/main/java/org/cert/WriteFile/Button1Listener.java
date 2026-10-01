@@ -24,7 +24,7 @@ public class Button1Listener implements OnClickListener {
 		String curLoc = getMyLocation();
 		i.putExtra("secret", curLoc);
 		Log.i("Phase2_3: ", "Sending implicit Intent with MIME data type text/plain: Current Location "+ curLoc); // SINK
-		this.act.startActivityForResult(i, 0);			// SINK
+		this.act.startActivityForResult(i, 0);
 	}
 	
 	private String getMyLocation(){

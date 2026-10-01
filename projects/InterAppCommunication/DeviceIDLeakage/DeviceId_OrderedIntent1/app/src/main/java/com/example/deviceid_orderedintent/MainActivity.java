@@ -44,7 +44,7 @@ public class MainActivity extends Activity
 			{
 				Intent in = new Intent("com.example.deviceid_orderedintent");
 		        in.putExtra("data", s);
-		        sendOrderedBroadcast(in, null); //sink
+		        sendOrderedBroadcast(in, null); 
 			}
         	
         });

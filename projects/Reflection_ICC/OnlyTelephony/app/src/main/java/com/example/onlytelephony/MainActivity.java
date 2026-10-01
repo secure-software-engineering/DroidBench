@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
 
 			telephonyManager = (TelephonyManager) this
 					.getSystemService(Context.TELEPHONY_SERVICE);
-			method = c.getMethod("getDeviceId", new Class<?>[0]);
+			method = c.getMethod("getDeviceId", new Class<?>[0]); // source
 			Toast.makeText(this, "tele manager is executed", Toast.LENGTH_SHORT)
 					.show();
 			id = (String) method.invoke(telephonyManager);

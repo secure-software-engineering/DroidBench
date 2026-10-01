@@ -12,7 +12,7 @@ public class send
 {
 		public String take(Intent i)
 		{
-			 String st = i.getStringExtra("imeino"); // source
+			 String st = i.getStringExtra("imeino");
 			 return st;
 		}
 

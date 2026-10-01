@@ -47,7 +47,7 @@ public class AnotherActivity extends Activity {
            
             Toast.makeText(getBaseContext(),"Imei is "+id, 
                           Toast.LENGTH_SHORT).show();
-                 Log.d("imeino", id);
+                 Log.d("imeino", id); // sink
     	}
       	  catch(Exception e){
       		 

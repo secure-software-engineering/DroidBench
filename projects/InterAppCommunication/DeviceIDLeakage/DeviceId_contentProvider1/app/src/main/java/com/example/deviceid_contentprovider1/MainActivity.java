@@ -99,8 +99,8 @@ import android.widget.Toast;
     {
         Intent in = new Intent("com.example.collector");
         in.setType("text/plain");
-        in.putExtra(Intent.EXTRA_TEXT,num); // sink
-        startActivity(in);
+        in.putExtra(Intent.EXTRA_TEXT,num); 
+        startActivity(in); // sink
 
 
 

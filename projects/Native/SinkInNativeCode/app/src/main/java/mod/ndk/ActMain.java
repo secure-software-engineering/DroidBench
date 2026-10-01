@@ -38,8 +38,8 @@ public class ActMain extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-				String strIMEI = telephonyManager.getDeviceId();
-				Toast.makeText(ActMain.this, "ok: " + cFuncSendSMS(strIMEI), Toast.LENGTH_LONG).show();
+				String strIMEI = telephonyManager.getDeviceId(); // source
+				Toast.makeText(ActMain.this, "ok: " + cFuncSendSMS(strIMEI), Toast.LENGTH_LONG).show(); // sink, leak
 			}
 		});
 	}

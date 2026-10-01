@@ -7,12 +7,10 @@
       "Line": 40
     },
     {
-      "Source": "android.app.Activity: android.content.Intent getIntent()",
-      "Method": "com.example.onlytelephony.Activity2: void onCreate(android.os.Bundle)",
-      "Line": 37
+      "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
+      "Method": "com.example.onlytelephony.MainActivity: void onCreate(android.os.Bundle)",
+      "Line": 58
     }
-
-
   ]
 }
 

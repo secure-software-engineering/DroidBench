@@ -3,12 +3,12 @@
   [
     {
       "Sink": "android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)",
-      "Method": "com.example.newedtester.MainActivity$2: void onReceive(android.content.Context,android.content.Intent)",
+      "Method": "com.example.newedtester.MainActivity$1: void onReceive(android.content.Context,android.content.Intent)",
       "Line": 59
     },
     {
       "Source": "android.telephony.TelephonyManager: java.lang.String getDeviceId()",
-      "Method": "com.example.newedtester.MainActivity$2: void onReceive(android.content.Context,android.content.Intent)",
+      "Method": "com.example.newedtester.MainActivity$1: void onReceive(android.content.Context,android.content.Intent)",
       "Line": 55
     }
   ]

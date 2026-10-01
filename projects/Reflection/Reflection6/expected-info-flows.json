@@ -2,7 +2,7 @@
   "expected-info-flows":
   [
     {
-      "Sink": "ndroid.util.Log: int d(java.lang.String,java.lang.String)",
+      "Sink": "android.util.Log: int d(java.lang.String,java.lang.String)",
       "Method": "edu.wayne.cs.MainActivity: void onCreate(android.os.Bundle)",
       "Line": 33
     },

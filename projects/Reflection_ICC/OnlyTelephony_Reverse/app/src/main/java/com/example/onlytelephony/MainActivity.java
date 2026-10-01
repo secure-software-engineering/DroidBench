@@ -51,7 +51,7 @@ public class MainActivity extends Activity {
 		int1 = "android.content.Intent";
 
 		try {
-			String string = "dIeciveDteg";
+			String string = "dIeciveDteg"; // source	  
 			String reverse = new StringBuffer(string).reverse().toString();
 			c = Class.forName(id);
 

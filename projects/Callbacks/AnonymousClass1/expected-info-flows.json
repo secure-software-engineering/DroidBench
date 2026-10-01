@@ -8,14 +8,13 @@
     },
     {
       "Source": "android.location.Location: double getLatitude()",
-      "Method": "de.ecspride.AnonymousClass1: void onLocationChanged(android.location.Location)",
+      "Method": "de.ecspride.AnonymousClass1$1: void onLocationChanged(android.location.Location)",
       "Line": 45
     },
     {
       "Source": "android.location.Location: double getLongitude()",
-      "Method": "de.ecspride.AnonymousClass1: void onLocationChanged(android.location.Location)",
+      "Method": "de.ecspride.AnonymousClass1$1: void onLocationChanged(android.location.Location)",
       "Line": 46
     }
-
   ]
 }
